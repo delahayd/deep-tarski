@@ -1,0 +1,5 @@
+include "../rew_type.zf".
+rewrite[name "LabelCong_3"] forall (A B C A1 B1 C1 : point). Cong_3 A B C A1 B1 C1 <=> Cong A B A1 B1 && Cong A C A1 C1 && Cong B C B1 C1.
+#cong_symmetry
+assert[name "Labelcong_symmetry"] forall (A B C D : point). Cong A B C D => Cong C D A B.
+goal forall (A B C A1 B1 C1 : point). Cong_3 A B C A1 B1 C1 => Cong_3 A1 B1 C1 A B C.

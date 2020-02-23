@@ -1,0 +1,3 @@
+lemme : perp_distinct l12_9 perp_sym invert_one_side lea_in_angle nlta l8_3 one_side_transitivity perp_left_comm in_angle_one_side par_strict_not_col_4 lta_comm per_not_col par_strict_comm not_col_distincts perp_in_sym col_permutation_5 perp_not_col2 col_one_side_out acute_per__lta os_distincts one_side_symmetry l12_6 par_strict_left_comm perp_in_per l11_24 perp_perp_in par_not_col_strict perp_comm col_trivial_3 l10_15
+rewrite : 
+destruct : HB' HUn

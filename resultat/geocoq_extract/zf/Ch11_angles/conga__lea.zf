@@ -1,0 +1,9 @@
+include "../tarski_term_def.zf".
+#conga_diff56
+assert[name "Labelconga_diff56"] forall (A B C A1 B1 C1 : point). CongA A B C A1 B1 C1 => C1!=B1.
+#conga_diff45
+assert[name "Labelconga_diff45"] forall (A B C A1 B1 C1 : point). CongA A B C A1 B1 C1 => A1!=B1.
+#in_angle_trivial_2
+assert[name "Labelin_angle_trivial_2"] forall (A B C : point). A!=B => C!=B => InAngle C A B C.
+rewrite[name "LabelLeA"] forall (A B C D E F : point). LeA A B C D E F <=> (exists (P : point). InAngle P D E F && CongA A B C D E P).
+goal forall (A B C D E F : point). CongA A B C D E F => LeA A B C D E F.

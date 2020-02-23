@@ -1,0 +1,6 @@
+include "../tarski_term_def.zf".
+#anga_is_ang
+assert[name "Labelanga_is_ang"] forall (a : point->point->point->prop). Q_CongA_Acute a => Q_CongA a.
+#ex_points_ang
+assert[name "Labelex_points_ang"] forall (a : point->point->point->prop). Q_CongA a => (exists (A B C : point). a A B C).
+goal forall (a : point->point->point->prop). Q_CongA_Acute a => (exists (A B C : point). a A B C).

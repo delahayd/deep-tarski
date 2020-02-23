@@ -1,0 +1,2 @@
+lemme : l4_18 cong_identity cong_transitivity cong_symmetry l4_13
+rewrite : Cong_3

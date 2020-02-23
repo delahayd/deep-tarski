@@ -1,0 +1,16 @@
+include "../rew_type.zf".
+rewrite[name "LabelQ_CongA"] forall (a : point->point->point->prop). Q_CongA a <=> (exists (A B C : point). A != B && C != B && (forall (X Y Z : point). CongA A B C X Y Z <=> a X Y Z)).
+rewrite[name "LabelQ_CongA_Acute"] forall (a : point->point->point->prop). Q_CongA_Acute a <=> (exists (A B C : point). Acute A B C && (forall (X Y Z : point). CongA A B C X Y Z <=> a X Y Z)).
+rewrite[name "LabelQ_CongA_nFlat"] forall (a : point->point->point->prop). Q_CongA_nFlat a <=> Q_CongA a && (forall (A B C : point). a A B C => ~ Bet A B C).
+rewrite[name "LabelQ_CongA_nNull"] forall (a : point->point->point->prop). Q_CongA_nNull a <=> Q_CongA a && (forall (A B C : point). a A B C => ~ Out B A C).
+#acute_distincts
+assert[name "Labelacute_distincts"] forall (A B C : point). Acute A B C => A!=B && C!=B.
+#ang_conga
+assert[name "Labelang_conga"] forall (A B C A1 B1 C1 : point) (a : point->point->point->prop). Q_CongA a => a A1 B1 C1 => a A B C => CongA A B C A1 B1 C1.
+#bet_conga_bet
+assert[name "Labelbet_conga_bet"] forall (A B C A1 B1 C1 : point). Bet A B C => CongA A B C A1 B1 C1 => Bet A1 B1 C1.
+#conga_refl
+assert[name "Labelconga_refl"] forall (A B C : point). A!=B => C!=B => CongA A B C A B C.
+#out_conga_out
+assert[name "Labelout_conga_out"] forall (A B C D E F : point). Out B A C => CongA A B C D E F => Out E D F.
+goal forall (a : point->point->point->prop). Q_CongA_nNull a <=> (Q_CongA a && (exists (A B C : point). a A B C && ~Out B A C)).

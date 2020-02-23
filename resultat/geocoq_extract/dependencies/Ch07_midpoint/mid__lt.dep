@@ -1,0 +1,3 @@
+lemme : between_cong cong_reflexivity midpoint_distinct_1
+rewrite : 
+destruct : HM

@@ -1,0 +1,3 @@
+lemme : not_col_permutation_4 per2_col_eq col_permutation_4 per_perp_in l8_15_1 eq_dec_points between_symmetry per13_preserves_bet l6_21 perp_col l5_3 perp_in_sym l8_18_existence perp_perp_in perp_in_comm perp_comm ts_distincts between_identity perp_in_right_comm l8_7 not_col_distincts col_trivial_3 between_exchange2 perp_left_comm perp_per_bet between_trivial2 col_permutation_5 between_trivial not_col_permutation_1 bet_col between_exchange4 col_trivial_2 perp_in_per not_col_permutation_5
+rewrite : TS
+destruct : 

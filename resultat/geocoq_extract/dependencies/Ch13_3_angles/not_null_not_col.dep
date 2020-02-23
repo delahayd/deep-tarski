@@ -1,0 +1,3 @@
+lemme : acute_col_out out_conga_out anga_conga anga_acute
+rewrite : Q_CongA_Null_Acute
+destruct : 

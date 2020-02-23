@@ -1,0 +1,5 @@
+include "../tarski_term_def.zf".
+#lg_cong
+assert[name "Labellg_cong"] forall (A B C D : point) (l : point->point->prop). Q_Cong l => l A B => l C D => Cong A B C D.
+rewrite[name "LabelLen"] forall (A B : point) (l : point->point->prop). Len A B l <=> Q_Cong l && l A B.
+goal forall (A B C D : point) (l : point->point->prop). Len A B l => Len C D l => Cong A B C D.

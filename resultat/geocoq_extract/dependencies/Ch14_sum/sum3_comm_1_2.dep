@@ -1,0 +1,3 @@
+lemme : sum3_col sum_comm
+rewrite : sum3
+destruct : 

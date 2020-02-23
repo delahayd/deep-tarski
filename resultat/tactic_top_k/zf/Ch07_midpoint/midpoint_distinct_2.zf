@@ -1,0 +1,11 @@
+include "../rew_type.zf".
+rewrite[name "LabelMidpoint"] forall (M A B : point). Midpoint M A B <=> Bet A M B && Cong A M M B.
+rewrite[name "LabelOut"] forall (P A B : point). Out P A B <=> A != P && B != P && (Bet P A B || Bet P B A).
+rewrite[name "LabelReflectL"] forall (P1 P A B : point). ReflectL P1 P A B <=> (exists (X : point). Midpoint X P P1 && Col A B X) && (Perp A B P P1 || P = P1).
+#between_identity
+assert[name "Labelbetween_identity"] forall (A B : point). Bet A B A => A=B.
+#col_permutation_5
+assert[name "Labelcol_permutation_5"] forall (A B C : point). Col A B C => Col A C B.
+#cong_identity
+assert[name "Labelcong_identity"] forall (A B C : point). Cong A B C C => A = B.
+goal forall (I A B : point). I!=A => Midpoint I A B => A!=B && I!=B.

@@ -1,0 +1,62 @@
+include "../tarski_term_def.zf".
+#col_permutation_3
+assert[name "Labelcol_permutation_3"] forall (A B C : point). Col A B C => Col C B A.
+#lea123456_lta__lta
+assert[name "Labellea123456_lta__lta"] forall (A B C D E F G H I : point). LeA A B C D E F => LtA D E F G H I => LtA A B C G H I.
+#cong_symmetry
+assert[name "Labelcong_symmetry"] forall (A B C D : point). Cong A B C D => Cong C D A B.
+#bet_dec
+assert[name "Labelbet_dec"] forall (A B C : point). Bet A B C || ~Bet A B C.
+#l6_6
+assert[name "Labell6_6"] forall (P A B : point). Out P A B => Out P B A.
+#l2_11
+assert[name "Labell2_11"] forall (A B C A1 B1 C1 : point). Bet A B C => Bet A1 B1 C1 => Cong A B A1 B1 => Cong B C B1 C1 => Cong A C A1 C1.
+#cong2_lt__lt
+assert[name "Labelcong2_lt__lt"] forall (A B C D A1 B1 C1 D1 : point). Lt A B C D => Cong A B A1 B1 =>Cong C D C1 D1 => Lt A1 B1 C1 D1.
+#cong_4321
+assert[name "Labelcong_4321"] forall (A B C D : point). Cong A B C D => Cong D C B A.
+#lt_comm
+assert[name "Labellt_comm"] forall (A B C D : point). Lt A B C D => Lt B A D C.
+#not_bet_out
+assert[name "Labelnot_bet_out"] forall (A B C : point). Col A B C => ~Bet A B C => Out B A C.
+#triangle_strict_inequality
+assert[name "Labeltriangle_strict_inequality"] forall (A B C D : point). Bet A B D => Cong B C B D => ~Bet A B C => Lt A C A D.
+#out_cong_cong
+assert[name "Labelout_cong_cong"] forall (B A A0 E D D0 : point). Out B A A0 => Out E D D0 => Cong B A E D => Cong B A0 E D0 => Cong A A0 D D0.
+#lta_diff
+assert[name "Labellta_diff"] forall (A B C D E F : point). LtA A B C D E F => LtA A B C D E F && A!=B && C!=B && D!=E && F!=E.
+#lta_comm
+assert[name "Labellta_comm"] forall (A B C D E F : point). LtA A B C D E F => LtA C B A F E D.
+#l11_31_2
+assert[name "Labell11_31_2"] forall (A B C D E F : point). A!=B => C!=B => D!=E => F!=E => Bet D E F =>LeA A B C D E F.
+#cong_reflexivity
+assert[name "Labelcong_reflexivity"] forall (A B : point). Cong A B A B.
+#l11_21_b
+assert[name "Labell11_21_b"] forall (A B C A1 B1 C1 : point). Out B A C => Out B1 A1 C1 => CongA A B C A1 B1 C1.
+#nlta
+assert[name "Labelnlta"] forall (A B C : point). ~LtA A B C A B C.
+#l11_31_1
+assert[name "Labell11_31_1"] forall (A B C D E F : point). Out B A C => D!=E => F!=E => LeA A B C D E F.
+#lea456789_lta__lta
+assert[name "Labellea456789_lta__lta"] forall (A B C D E F G H I : point). LtA A B C D E F => LeA D E F G H I => LtA A B C G H I.
+#t18_18_aux
+assert[name "Labelt18_18_aux"] forall (A B C D E F : point). Cong A B D E => Cong A C D F => LtA F D E C A B => ~Col A B C => ~Col D E F => Le D F D E => Lt E F B C.
+#between_symmetry
+assert[name "Labelbetween_symmetry"] forall (A B C : point). Bet A B C => Bet C B A.
+#cong_transitivity
+assert[name "Labelcong_transitivity"] forall (A B C D E F : point). Cong A B C D => Cong C D E F => Cong A B E F.
+#segment_construction_3
+assert[name "Labelsegment_construction_3"] forall (A B X Y : point). A!=B => X!=Y => (exists (C : point). Out A B C && Cong A C X Y).
+#le_cases
+assert[name "Labelle_cases"] forall (A B C D : point). Le A B C D || Le C D A B.
+#not_col_permutation_5
+assert[name "Labelnot_col_permutation_5"] forall (A B C : point). ~Col A B C => ~Col A C B.
+#segment_construction
+assert[name "Labelsegment_construction"] forall (A B C D : point). exists (E :point). Bet A B E && Cong B E C D.
+#conga_line
+assert[name "Labelconga_line"] forall (A B C A1 B1 C1 : point). A!=B => B!=C => A1 !=B1 => B1!=C1 => Bet A B C => Bet A1 B1 C1 => CongA A B C A1 B1 C1.
+#col_permutation_5
+assert[name "Labelcol_permutation_5"] forall (A B C : point). Col A B C => Col A C B.
+#triangle_strict_reverse_inequality
+assert[name "Labeltriangle_strict_reverse_inequality"] forall (A B C D : point). Out A B D => Cong A C A D => ~Out A B C => Lt B C B D.
+goal forall (A B C D E F : point). Cong A B D E => Cong A C D F => LtA F D E C A B => Lt E F B C.

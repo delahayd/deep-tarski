@@ -1,0 +1,17 @@
+include "../tarski_term_def.zf".
+#between_exchange4
+assert[name "Labelbetween_exchange4"] forall (A B C D : point). Bet A B C => Bet A C D => Bet A B D.
+#cong_symmetry
+assert[name "Labelcong_symmetry"] forall (A B C D : point). Cong A B C D => Cong C D A B.
+#between_cong
+assert[name "Labelbetween_cong"] forall (A B C : point). Bet A C B => Cong A C A B => C=B.
+#between_equality
+assert[name "Labelbetween_equality"] forall (A B C : point). Bet A B C => Bet B A C => A=B.
+#l5_5_1
+assert[name "Labell5_5_1"] forall (A B C D : point). Le A B C D => (exists (x : point). Bet A B x && Cong A x C D).
+#between_symmetry
+assert[name "Labelbetween_symmetry"] forall (A B C : point). Bet A B C => Bet C B A.
+#cong_transitivity
+assert[name "Labelcong_transitivity"] forall (A B C D E F : point). Cong A B C D => Cong C D E F => Cong A B E F.
+rewrite[name "LabelLe"] forall (A B C D : point). Le A B C D <=> (exists (E : point). (Bet C E D && Cong A B C E)).
+goal forall (A B C D : point). Le A B C D => Le C D A B => Cong A B C D.

@@ -1,0 +1,7 @@
+include "../tarski_term_def.zf".
+#bet_conga_bet
+assert[name "Labelbet_conga_bet"] forall (A B C A1 B1 C1 : point). Bet A B C => CongA A B C A1 B1 C1 => Bet A1 B1 C1.
+#ang_conga
+assert[name "Labelang_conga"] forall (A B C A1 B1 C1 : point) (a : point->point->point->prop). Q_CongA a => a A1 B1 C1 => a A B C => CongA A B C A1 B1 C1.
+rewrite[name "LabelAng_Flat"] forall (a : point->point->point->prop). Ang_Flat a <=> Q_CongA a && (forall (A B C : point). a A B C => Bet A B C).
+goal forall (A B C : point) (a : point->point->point->prop). Q_CongA a => a A B C => Bet A B C => Ang_Flat a.

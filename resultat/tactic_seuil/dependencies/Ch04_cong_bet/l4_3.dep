@@ -1,0 +1,2 @@
+lemme : l4_2 cong_symmetry cong_trivial_identity cong_commutativity
+rewrite : IFSC

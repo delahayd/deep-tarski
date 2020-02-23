@@ -1,0 +1,27 @@
+include "../tarski_term_def.zf".
+val O : point.
+val E : point.
+val E1 : point.
+assert ~Col O E E1.
+#col_permutation_5
+assert[name "Labelcol_permutation_5"] forall (A B C : point). Col A B C => Col A C B.
+#col_trivial_1
+assert[name "Labelcol_trivial_1"] forall (A B : point). Col A A B.
+#grid_not_par
+assert[name "Labelgrid_not_par"] ~Par O E E E1 && ~Par O E O E1 && ~Par O E1 E E1 && O!=E && O!=E1 && E!=E1.
+#col_permutation_2
+assert[name "Labelcol_permutation_2"] forall (A B C : point). Col A B C => Col C A B.
+#col_transitivity_1
+assert[name "Labelcol_transitivity_1"] forall (P Q A B : point). P!=Q => Col P Q A => Col P Q B => Col P A B.
+#col_permutation_4
+assert[name "Labelcol_permutation_4"] forall (A B C : point). Col A B C => Col B A C.
+#col_trivial_3
+assert[name "Labelcol_trivial_3"] forall (A B : point). Col A B A.
+#col_trivial_2
+assert[name "Labelcol_trivial_2"] forall (A B : point). Col A B B.
+#l6_21
+assert[name "Labell6_21"] forall (A B C D P Q : point). ~Col A B C => C!=D => Col A B P => Col A B Q => Col C D P => Col C D Q => P=Q.
+#col_permutation_1
+assert[name "Labelcol_permutation_1"] forall (A B C : point). Col A B C => Col B C A.
+rewrite[name "LabelProj"] forall (P Q A B X Y : point). Proj P Q A B X Y <=> A != B && X != Y && ~Par A B X Y  && Col A B Q && (Par P Q X Y || P = Q).
+goal forall (A A1 : point). Proj A A1 O E1 E E1 => Col O E A => Col O E A1 => A=O.

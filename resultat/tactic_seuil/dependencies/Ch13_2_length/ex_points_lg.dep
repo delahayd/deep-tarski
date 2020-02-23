@@ -1,0 +1,2 @@
+lemme : between_symmetry eq_dec_points cong_symmetry cong_reflexivity
+rewrite : Q_Cong

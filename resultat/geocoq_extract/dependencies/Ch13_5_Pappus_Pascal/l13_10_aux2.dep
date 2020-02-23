@@ -1,0 +1,3 @@
+lemme : acute_trivial cong_identity null_anga null_lcos anga_exists col_trivial_3 lg_cong ex_eql anga_col_null lcos_eql_lcos
+rewrite : Q_Cong_Null
+destruct : 

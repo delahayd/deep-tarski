@@ -1,0 +1,21 @@
+digraph "unsat_graph" {
+  vertex_0 [color=red, label="[]", shape=box, style=filled];
+  vertex_0 -> vertex_1 [label="s_sup-\l\{X0[0] → sk_B[1], \l X1[0] → sk_A[1], \l X2[0] → sk_P11[1], \l X7[1] → sk_P1 X2 X0 X1[0]\}[1]\l", dir="back"];
+  vertex_1 [shape=box, label="forall (X7:point). ¬ReflectL sk_P11 X7 sk_A sk_B\l", style=filled];
+  vertex_1 -> vertex_2 [label="cnf", dir="back"];
+  vertex_2 [shape=box, label="negated_goal\l  ¬ (∀ A/141:point B/142:point P1/143:point.\l        ((A/141 ≠ B/142) ⇒\l         (∃ P/144:point. (ReflectL P1/143 P/144 A/141 B/142))))\l  # skolems: [].\l", style=filled];
+  vertex_2 -> vertex_3 [label="cnf.neg", dir="back"];
+  vertex_3 [color=green, shape=box, label="goal\l  [file\l   \"../resultat/geocoq_extract/zf/Ch10_line_reflexivity/l10_6_existence_spec.zf\" \l   \"zf_stmt_128\"]\l  ∀ A/141:point B/142:point P1/143:point.\l    ((A/141 ≠ B/142) ⇒\l     (∃ P/144:point. (ReflectL P1/143 P/144 A/141 B/142))).\l", style=filled];
+  vertex_0 -> vertex_4 [label="s_sup-\l\{X0[0] → sk_B[1], \l X1[0] → sk_A[1], \l X2[0] → sk_P11[1], \l X7[1] → sk_P1 X2 X0 X1[0]\}[0]\l", dir="back"];
+  vertex_4 [shape=box, label="forall (X0:point) (X1:point) (X2:point). ReflectL X2 (sk_P1 X2 X0 X1) X1 X0\l", style=filled];
+  vertex_4 -> vertex_5 [label="s_sup-\l\{X1[0] → sk_P1 X4 X5 X6[1], X4[1] → X0[0], X5[1] → X3[0], X6[1] → X2[0]\}[0]\l", dir="back"];
+  vertex_5 [shape=box, label="forall (X0:point) (X1:point) (X2:point) (X3:point).\l[ReflectL X0 X1 X2 X3 ∨ ¬ReflectL X1 X0 X2 X3]\l", style=filled];
+  vertex_5 -> vertex_6 [label="cnf", dir="back"];
+  vertex_6 [color=yellow, shape=box, label="assert\l  [file\l   \"../resultat/geocoq_extract/zf/Ch10_line_reflexivity/l10_6_existence_spec.zf\" \l   \"Labell10_4_spec\"]\l  ∀ A/133:point B/134:point P/135:point P1/136:point.\l    ((ReflectL P/135 P1/136 A/133 B/134) ⇒\l     (ReflectL P1/136 P/135 A/133 B/134)).\l", style=filled];
+  vertex_4 -> vertex_7 [label="s_sup-\l\{X1[0] → sk_P1 X4 X5 X6[1], X4[1] → X0[0], X5[1] → X3[0], X6[1] → X2[0]\}[1]\l", dir="back"];
+  vertex_7 [shape=box, label="forall (X4:point) (X5:point) (X6:point). ReflectL (sk_P1 X4 X5 X6) X4 X6 X5\l", style=filled];
+  vertex_7 -> vertex_8 [label="cnf", dir="back"];
+  vertex_8 [color=yellow, shape=box, label="assert\l  [file\l   \"../resultat/geocoq_extract/zf/Ch10_line_reflexivity/l10_6_existence_spec.zf\" \l   \"Labell10_2_existence_spec\"]\l  ∀ A/137:point B/138:point P/139:point.\l    (∃ P1/140:point. (ReflectL P1/140 P/139 A/137 B/138)).\l", style=filled];
+  }
+
+

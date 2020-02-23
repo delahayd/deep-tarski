@@ -1,0 +1,2 @@
+lemme : conga_sym conga_right_comm col_permutation_4 conga_left_comm between_symmetry conga_diff56 par_trans eq_dec_points cong_symmetry
+rewrite : LeA InAngle GtA LtA CongA

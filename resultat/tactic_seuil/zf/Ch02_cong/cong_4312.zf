@@ -1,0 +1,8 @@
+include "../rew_type.zf".
+#cong_inner_transitivity
+assert[name "Labelcong_inner_transitivity"] forall (A B C D E F : point). Cong A B C D => Cong A B E F => Cong C D E F.
+#cong_pseudo_reflexivity
+assert[name "Labelcong_pseudo_reflexivity"] forall (A B : point). Cong A B B A.
+#cong_symmetry
+assert[name "Labelcong_symmetry"] forall (A B C D : point). Cong A B C D => Cong C D A B.
+goal forall (A B C D : point). Cong A B C D => Cong D C A B.

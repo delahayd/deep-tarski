@@ -1,0 +1,2 @@
+lemme : col_cong_bet between_trivial between_symmetry eq_dec_points cong_left_commutativity cong_identity outer_transitivity_between2 cong_symmetry bet_cong_eq
+rewrite :

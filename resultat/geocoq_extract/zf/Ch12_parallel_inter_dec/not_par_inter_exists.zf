@@ -1,0 +1,14 @@
+include "../tarski_term_def.zf".
+#col_trivial_1
+assert[name "Labelcol_trivial_1"] forall (A B : point). Col A A B.
+#eq_dec_points
+assert[name "Labeleq_dec_points"] forall (A B : point). A=B || A!=B.
+#all_coplanar
+assert[name "Labelall_coplanar"] forall (A B C D : point). Coplanar A B C D.
+#col_trivial_2
+assert[name "Labelcol_trivial_2"] forall (A B : point). Col A B B.
+#inter_dec
+assert[name "Labelinter_dec"] (forall (A B C D : point). (exists (I : point). Col I A B && Col I C D) || ~(exists (I : point). Col I A B && Col I C D)).
+rewrite[name "LabelPar_strict"] forall (A B C D : point). Par_strict A B C D <=> A != B && C != D && Coplanar A B C D && ~(exists (X : point). Col X A B && Col X C D).
+rewrite[name "LabelPar"] forall (A B C D : point). Par A B C D <=> Par_strict A B C D || (A != B && C != D && Col A C D && Col B C D).
+goal forall (A1 B1 A2 B2 : point). ~Par A1 B1 A2 B2 => (exists (X : point). Col X A1 B1 && Col X A2 B2).

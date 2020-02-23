@@ -1,0 +1,8 @@
+include "../tarski_term_def.zf".
+#perp_distinct
+assert[name "Labelperp_distinct"] forall (A B C D : point). Perp A B C D => A!=B && C!=D.
+#is_image_is_image_spec
+assert[name "Labelis_image_is_image_spec"] forall (P P1 A B : point). A!=B => (Reflect P1 P A B <=> ReflectL P1 P A B ).
+#l10_6_uniqueness
+assert[name "Labell10_6_uniqueness"] forall (A B P P1 P2 : point). Reflect P P1 A B => Reflect P P2 A B => P1=P2.
+goal forall (A B P P1 P2 : point). ReflectL P P1 A B => ReflectL P P2 A B => P1=P2.

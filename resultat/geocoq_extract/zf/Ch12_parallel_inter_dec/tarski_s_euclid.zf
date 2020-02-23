@@ -1,0 +1,4 @@
+include "../tarski_term_def.zf".
+#euclid
+assert[name "Labeleuclid"] forall (A B C D T : point). Bet A D T => Bet B D C => A!=D =>(exists (X Y : point). Bet A B X && Bet A C Y && Bet X T Y).
+goal forall (A B C D T : point). Bet A D T => Bet B D C => A!=D => (exists (X Y : point). Bet A B X && Bet A C Y && Bet X T Y).

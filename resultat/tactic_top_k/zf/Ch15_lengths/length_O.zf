@@ -1,0 +1,12 @@
+include "../rew_type.zf".
+rewrite[name "LabelLeP"] forall (O E E1 A B : point). LeP O E E1 A B <=> LtP O E E1 A B || A = B.
+rewrite[name "LabelLength"] forall (O E E1 A B L: point). Length O E E1 A B L <=> O != E && Col O E L && LeP O E E1 O L && Cong O L A B.
+rewrite[name "LabelOut"] forall (P A B : point). Out P A B <=> A != P && B != P && (Bet P A B || Bet P B A).
+rewrite[name "LabelPs"] forall (O E A : point). Ps O E A <=> Out O A E.
+#between_trivial2
+assert[name "Labelbetween_trivial2"] forall (A B : point). Bet A A B.
+#col_trivial_3
+assert[name "Labelcol_trivial_3"] forall (A B : point). Col A B A.
+#cong_reflexivity
+assert[name "Labelcong_reflexivity"] forall (A B : point). Cong A B A B.
+goal forall (O E E1 : point). O!=E => Length O E E1 O O O.

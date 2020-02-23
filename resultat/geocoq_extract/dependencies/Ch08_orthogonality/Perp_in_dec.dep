@@ -1,0 +1,3 @@
+lemme : eq_dec_points col_trivial_3 col_trivial_1 col_col_per_per Per_dec
+rewrite : Perp_at
+destruct : 

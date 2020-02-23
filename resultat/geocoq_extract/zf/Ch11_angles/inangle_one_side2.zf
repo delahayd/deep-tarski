@@ -1,0 +1,10 @@
+include "../tarski_term_def.zf".
+#not_col_permutation_5
+assert[name "Labelnot_col_permutation_5"] forall (A B C : point). ~Col A B C => ~Col A C B.
+#inangle_one_side
+assert[name "Labelinangle_one_side"] forall (A B C P Q : point). ~Col A B C => ~Col A B P => ~Col A B Q => InAngle P A B C => InAngle Q A B C => OS A B P Q.
+#not_col_permutation_2
+assert[name "Labelnot_col_permutation_2"] forall (A B C : point). ~Col A B C => ~Col C A B.
+#l11_24
+assert[name "Labell11_24"] forall (P A B C : point). InAngle P A B C => InAngle P C B A.
+goal forall (A B C P Q : point). ~Col A B C => ~Col A B P => ~Col A B Q => ~Col C B P => ~Col C B Q => InAngle P A B C => InAngle Q A B C => OS A B P Q && OS C B P Q.

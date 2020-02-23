@@ -1,0 +1,3 @@
+lemme : eq_dec_points l10_10_spec l7_13 is_image_is_image_spec l7_2
+rewrite : Reflect
+destruct : 

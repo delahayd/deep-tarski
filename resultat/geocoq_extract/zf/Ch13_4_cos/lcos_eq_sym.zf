@@ -1,0 +1,3 @@
+include "../tarski_term_def.zf".
+rewrite[name "LabelEq_Lcos"] forall (la lb : point->point->prop) (a b : point->point->point->prop). Eq_Lcos la a lb b <=> (exists (lp : point->point->prop). Lcos lp la a && Lcos lp lb b).
+goal forall (la lb : point->point->prop) (a b : point->point->point->prop). Eq_Lcos la a lb b => Eq_Lcos lb b la a.

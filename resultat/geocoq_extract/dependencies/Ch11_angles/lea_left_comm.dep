@@ -1,0 +1,3 @@
+lemme : conga_left_comm
+rewrite : LeA
+destruct : 

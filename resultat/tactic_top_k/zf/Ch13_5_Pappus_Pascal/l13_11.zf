@@ -1,0 +1,8 @@
+include "../rew_type.zf".
+#l13_10
+assert[name "Labell13_10"] forall (A B C A1 B1 C1 O : point). ~Col O A A1 => B!=O => C!=O => Col O A B => Col O B C => B1!=O => C1!=O => Col O A1 B1 => Col O B1 C1 => Perp2 B C1 C B1 O => Perp2 C A1 A C1 O => Perp2 A B1 B A1 O.
+#par_perp2
+assert[name "Labelpar_perp2"] forall (A B C D P : point). Par A B C D => Perp2 A B C D P.
+#perp2_par
+assert[name "Labelperp2_par"] forall (A B C D O : point). Perp2 A B C D O => Par A B C D.
+goal forall (A B C A1 B1 C1 O : point). ~Col O A A1 => B!=O => C!=O => Col O A B => Col O B C => B1!=O => C1!=O => Col O A1 B1 => Col O B1 C1 => Par B C1 C B1 => Par C A1 A C1 => Par A B1 B A1.

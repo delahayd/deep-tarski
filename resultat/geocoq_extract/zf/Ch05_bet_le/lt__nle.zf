@@ -1,0 +1,4 @@
+include "../tarski_term_def.zf".
+#le__nlt
+assert[name "Labelle__nlt"] forall (A B C D : point). Le A B C D => ~Lt C D A B.
+goal forall (A B C D : point). Lt A B C D => ~Le C D A B.

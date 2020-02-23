@@ -1,0 +1,6 @@
+include "../tarski_term_def.zf".
+#obtuse_gea_obtuse
+assert[name "Labelobtuse_gea_obtuse"] forall (A B C D E F : point). Obtuse D E F => GeA A B C D E F => Obtuse A B C.
+#conga__lea
+assert[name "Labelconga__lea"] forall (A B C D E F : point). CongA A B C D E F => LeA A B C D E F.
+goal forall (A B C D E F : point). Obtuse A B C => CongA A B C D E F => Obtuse D E F.

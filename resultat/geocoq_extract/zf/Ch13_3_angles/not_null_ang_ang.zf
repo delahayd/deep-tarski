@@ -1,0 +1,3 @@
+include "../tarski_term_def.zf".
+rewrite[name "LabelQ_CongA_nNull"] forall (a : point->point->point->prop). Q_CongA_nNull a <=> Q_CongA a && (forall (A B C : point). a A B C => ~ Out B A C).
+goal forall (a : point->point->point->prop). Q_CongA_nNull a => Q_CongA a.

@@ -1,0 +1,4 @@
+include "../rew_type.zf".
+#perp_right_comm
+assert[name "Labelperp_right_comm"] forall (A B C D : point). Perp A B C D => Perp A B D C.
+goal forall ( A B C D : point). Perp A B C D || Perp B A C D ||Perp A B D C || Perp B A D C || Perp C D A B || Perp C D B A || Perp D C A B || Perp D C B A => Perp A B C D.

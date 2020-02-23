@@ -1,0 +1,32 @@
+digraph "unsat_graph" {
+  vertex_0 [color=red, label="[]", shape=box, style=filled];
+  vertex_0 -> vertex_1 [label="s_sup-\l\{X0[1] → sk_X sk_D sk_C sk_B sk_A[0]\}[1]\l", dir="back"];
+  vertex_1 [shape=box, label="forall (X0:point). ¬Perp_at X0 sk_C sk_D sk_A sk_B\l", style=filled];
+  vertex_1 -> vertex_2 [label="rw_clause\l\{X5[1] → sk_C[0], X6[1] → sk_D[0], X7[1] → sk_A[0], X8[1] → sk_B[0]\}[1]\l", dir="back"];
+  vertex_2 [color=navajowhite, shape=box, label="(¬Perp X5 X6 X7 X8 := [¬Perp_at X9 X5 X6 X7 X8] [B])\l", style=filled];
+  vertex_2 -> vertex_3 [label="rw.lit", dir="back"];
+  vertex_3 [color=yellow, shape=box, label="rewrite\l  [file \"../resultat/geocoq_extract/zf/Ch08_orthogonality/perp_sym.zf\" \l   \"LabelPerp\"]\l  ¬ Perp X5 X6 X7 X8 =\> ¬ Perp_at X9 X5 X6 X7 X8.\l", style=filled];
+  vertex_1 -> vertex_4 [label="rw_clause\l\{X5[1] → sk_C[0], X6[1] → sk_D[0], X7[1] → sk_A[0], X8[1] → sk_B[0]\}[0]\l", dir="back"];
+  vertex_4 [shape=box, label="¬Perp sk_C sk_D sk_A sk_B\l", style=filled];
+  vertex_4 -> vertex_5 [label="cnf", dir="back"];
+  vertex_5 [shape=box, label="negated_goal\l  ¬ (∀ A/143:point B/144:point C/145:point D/146:point.\l        ((Perp A/143 B/144 C/145 D/146) ⇒ (Perp C/145 D/146 A/143 B/144)))\l  # skolems: [].\l", style=filled];
+  vertex_5 -> vertex_6 [label="cnf.neg", dir="back"];
+  vertex_6 [color=green, shape=box, label="goal\l  [file \"../resultat/geocoq_extract/zf/Ch08_orthogonality/perp_sym.zf\" \l   \"zf_stmt_128\"]\l  ∀ A/143:point B/144:point C/145:point D/146:point.\l    ((Perp A/143 B/144 C/145 D/146) ⇒ (Perp C/145 D/146 A/143 B/144)).\l", style=filled];
+  vertex_0 -> vertex_7 [label="s_sup-\l\{X0[1] → sk_X sk_D sk_C sk_B sk_A[0]\}[0]\l", dir="back"];
+  vertex_7 [shape=box, label="Perp_at (sk_X sk_D sk_C sk_B sk_A) sk_C sk_D sk_A sk_B\l", style=filled];
+  vertex_7 -> vertex_8 [label="s_sup-\l\{X0[0] → sk_X sk_D sk_C sk_B sk_A[1], \l X1[0] → sk_C[1], \l X2[0] → sk_D[1], \l X3[0] → sk_A[1], \l X4[0] → sk_B[1]\}[0]\l", dir="back"];
+  vertex_8 [shape=box, label="forall (X0:point) (X1:point) (X2:point) (X3:point) (X4:point).\l[Perp_at X0 X1 X2 X3 X4 ∨ ¬Perp_at X0 X3 X4 X1 X2]\l", style=filled];
+  vertex_8 -> vertex_9 [label="cnf", dir="back"];
+  vertex_9 [color=yellow, shape=box, label="assert\l  [file \"../resultat/geocoq_extract/zf/Ch08_orthogonality/perp_sym.zf\" \l   \"Labell8_12\"]\l  ∀ A/133:point B/134:point C/135:point D/136:point X/137:point.\l    ((Perp_at X/137 A/133 B/134 C/135 D/136) ⇒\l     (Perp_at X/137 C/135 D/136 A/133 B/134)).\l", style=filled];
+  vertex_7 -> vertex_10 [label="s_sup-\l\{X0[0] → sk_X sk_D sk_C sk_B sk_A[1], \l X1[0] → sk_C[1], \l X2[0] → sk_D[1], \l X3[0] → sk_A[1], \l X4[0] → sk_B[1]\}[1]\l", dir="back"];
+  vertex_10 [shape=box, label="Perp_at (sk_X sk_D sk_C sk_B sk_A) sk_A sk_B sk_C sk_D\l", style=filled];
+  vertex_10 -> vertex_11 [label="rw_clause\l\{X5[1] → sk_A[0], X6[1] → sk_B[0], X7[1] → sk_C[0], X8[1] → sk_D[0]\}[1]\l", dir="back"];
+  vertex_11 [color=navajowhite, shape=box, label="(Perp X5 X6 X7 X8 := [Perp_at (sk_X X8 X7 X6 X5) X5 X6 X7 X8] [B])\l", style=filled];
+  vertex_11 -> vertex_12 [label="rw.lit", dir="back"];
+  vertex_12 [color=yellow, shape=box, label="rewrite\l  [file \"../resultat/geocoq_extract/zf/Ch08_orthogonality/perp_sym.zf\" \l   \"LabelPerp\"]\l  Perp X5 X6 X7 X8 =\> Perp_at (sk_X X8 X7 X6 X5) X5 X6 X7 X8.\l", style=filled];
+  vertex_10 -> vertex_13 [label="rw_clause\l\{X5[1] → sk_A[0], X6[1] → sk_B[0], X7[1] → sk_C[0], X8[1] → sk_D[0]\}[0]\l", dir="back"];
+  vertex_13 [shape=box, label="Perp sk_A sk_B sk_C sk_D\l", style=filled];
+  vertex_13 -> vertex_5 [label="cnf", dir="back"];
+  }
+
+

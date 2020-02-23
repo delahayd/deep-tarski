@@ -1,0 +1,91 @@
+include "../tarski_term_def.zf".
+#between_identity
+assert[name "Labelbetween_identity"] forall (A B : point). Bet A B A => A=B.
+#col_trivial_1
+assert[name "Labelcol_trivial_1"] forall (A B : point). Col A A B.
+#bet_neq12__neq
+assert[name "Labelbet_neq12__neq"] forall (A B C : point). Bet A B C => A!=B=>A!=C.
+#outer_transitivity_between
+assert[name "Labelouter_transitivity_between"] forall (A B C D : point). Bet A B C=> Bet B C D => B!=C => Bet A B D.
+#bet_col
+assert[name "Labelbet_col"] forall (A B C : point). Bet A B C => Col A B C.
+#cong_symmetry
+assert[name "Labelcong_symmetry"] forall (A B C D : point). Cong A B C D => Cong C D A B.
+#col_permutation_2
+assert[name "Labelcol_permutation_2"] forall (A B C : point). Col A B C => Col C A B.
+#between_symmetry
+assert[name "Labelbetween_symmetry"] forall (A B C : point). Bet A B C => Bet C B A.
+#l8_13_2
+assert[name "Labell8_13_2"] forall (A B C D X : point) . A!=B => C!=D => Col X A B => Col X C D => (exists (U V : point). Col U A B && Col V C D && U!=X && V!=X && Per U X V) => Perp_at X A B C D.
+#cong_identity
+assert[name "Labelcong_identity"] forall (A B C : point). Cong A B C C => A = B.
+#col_permutation_3
+assert[name "Labelcol_permutation_3"] forall (A B C : point). Col A B C => Col C B A.
+#midpoint_col
+assert[name "Labelmidpoint_col"] forall (A M B : point). Midpoint M A B => Col M A B.
+#cong_4321
+assert[name "Labelcong_4321"] forall (A B C D : point). Cong A B C D => Cong D C B A.
+#cong_diff_2
+assert[name "Labelcong_diff_2"] forall (A B C D : point). B!=A => Cong A B C D => C!=D.
+#bet_neq21__neq
+assert[name "Labelbet_neq21__neq"] forall (A B C : point). Bet A B C => B!=A=>A!=C.
+#l7_22
+assert[name "Labell7_22"] forall (A1 A2 B1 B2 C M1 M2 : point). Bet A1 C A2 => Bet B1 C B2 => Cong C A1 C B1 => Cong C A2 C B2 => Midpoint M1 A1 B1 => Midpoint M2 A2 B2 => Bet M1 C M2.
+#segment_construction
+assert[name "Labelsegment_construction"] forall (A B C D : point). exists (E :point). Bet A B E && Cong B E C D.
+#midpoint_distinct_1
+assert[name "Labelmidpoint_distinct_1"] forall (I A B : point). A!=B => Midpoint I A B => I!=A && I!=B.
+#l8_2
+assert[name "Labell8_2"] forall (A B C : point). Per A B C => Per C B A.
+#cong_diff_4
+assert[name "Labelcong_diff_4"] forall (A B C D : point). D!=C => Cong A B C D => A!=B.
+#outer_transitivity_between2
+assert[name "Labelouter_transitivity_between2"] forall (A B C D : point). Bet A B C => Bet B C D => B!=C => Bet A C D.
+#symmetric_point_uniqueness
+assert[name "Labelsymmetric_point_uniqueness"] forall (A P P1 P2 : point). Midpoint P A P1 => Midpoint P A P2 => P1=P2.
+#cong_3421
+assert[name "Labelcong_3421"] forall (A B C D : point). Cong A B C D => Cong C D B A.
+#col_permutation_1
+assert[name "Labelcol_permutation_1"] forall (A B C : point). Col A B C => Col B C A.
+#col_transitivity_1
+assert[name "Labelcol_transitivity_1"] forall (P Q A B : point). P!=Q => Col P Q A => Col P Q B => Col P A B.
+#col_permutation_4
+assert[name "Labelcol_permutation_4"] forall (A B C : point). Col A B C => Col B A C.
+#col_permutation_5
+assert[name "Labelcol_permutation_5"] forall (A B C : point). Col A B C => Col A C B.
+#cong_diff
+assert[name "Labelcong_diff"] forall (A B C D : point). A!=B => Cong A B C D => C!=D.
+#midpoint_bet
+assert[name "Labelmidpoint_bet"] forall (A B C : point). Midpoint B A C => Bet A B C.
+#l8_10
+assert[name "Labell8_10"] forall (A B C A B C A1 B1 C1 : point). Per A B C => Cong_3 A B C A1 B1 C1 => Per A1 B1 C1.
+#l7_25
+assert[name "Labell7_25"] forall (A B C : point). Cong C A C B => (exists (X : point). Midpoint X A B).
+#l7_2
+assert[name "Labell7_2"] forall (M A B : point). Midpoint M A B => Midpoint M B A.
+#cong_commutativity
+assert[name "Labelcong_commutativity"] forall (A B C D : point). Cong A B C D => Cong B A D C.
+#midpoint_distinct_3
+assert[name "Labelmidpoint_distinct_3"] forall (I A B : point). I!=B => Midpoint I A B => A!=B && I!=A.
+#not_col_distincts
+assert[name "Labelnot_col_distincts"] forall (A B C : point). ~Col A B C => ~Col A B C && A!=B && B!=C && A!=C.
+#l7_3
+assert[name "Labell7_3"] forall (M A : point). Midpoint M A A => M=A.
+#cong_reflexivity
+assert[name "Labelcong_reflexivity"] forall (A B : point). Cong A B A B.
+#five_segment_with_def
+assert[name "Labelfive_segment_with_def"] forall (A B C D A1 B1 C1 D1 : point). OFSC A B C D A1 B1 C1 D1 => A!=B => Cong C D C1 D1.
+#col_trivial_3
+assert[name "Labelcol_trivial_3"] forall (A B : point). Col A B A.
+#cong_right_commutativity
+assert[name "Labelcong_right_commutativity"] forall (A B C D : point). Cong A B C D => Cong A B D C.
+#between_equality
+assert[name "Labelbetween_equality"] forall (A B C : point). Bet A B C => Bet B A C => A=B.
+rewrite[name "LabelPerp"] forall (A B C D : point). Perp A B C D <=> (exists (X : point). Perp_at X A B C D).
+rewrite[name "LabelPer"] forall (A B C : point). Per A B C <=> (exists (C1 : point). Midpoint B C C1 && Cong A C A C1).
+rewrite[name "LabelPerp_at"] forall (X A B C D : point). Perp_at X A B C D <=> A != B && C != D && Col X A B && Col X C D && (forall (U V : point). Col U A B => Col V C D => Per U X V).
+rewrite[name "LabelCol"] forall (A B C : point). Col A B C <=> Bet A B C || Bet B C A || Bet C A B.
+rewrite[name "LabelOFSC"] forall (A B C D A1 B1 C1 D1 : point). OFSC A B C D A1 B1 C1 D1 <=> Bet A B C && Bet A1 B1 C1 && Cong A B A1 B1 && Cong B C B1 C1 && Cong A D A1 D1 && Cong B D B1 D1.
+rewrite[name "LabelMidpoint"] forall (M A B : point). Midpoint M A B <=> Bet A M B && Cong A M M B.
+rewrite[name "LabelCong_3"] forall (A B C A1 B1 C1 : point). Cong_3 A B C A1 B1 C1 <=> Cong A B A1 B1 && Cong A C A1 C1 && Cong B C B1 C1.
+goal forall (A B C : point). ~Col A B C => (exists (X : point). Col A B X && Perp A B C X).

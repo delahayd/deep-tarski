@@ -1,0 +1,2 @@
+lemme : between_identity col_permutation_5 cong_identity between_trivial2
+rewrite : ReflectL Midpoint Out

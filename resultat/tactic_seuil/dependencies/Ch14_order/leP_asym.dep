@@ -1,0 +1,2 @@
+lemme : diff_pos_diff_neg not_pos_and_neg
+rewrite : Ar2 LeP LtP

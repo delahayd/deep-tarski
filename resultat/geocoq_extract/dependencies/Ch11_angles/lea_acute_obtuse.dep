@@ -1,0 +1,3 @@
+lemme : conga_preserves_lta l11_16 lta_trans conga_refl
+rewrite : Acute CongA LtA InAngle LeA Obtuse GtA
+destruct : 

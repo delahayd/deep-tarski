@@ -1,0 +1,4 @@
+include "../tarski_term_def.zf".
+#l4_16
+assert[name "Labell4_16"] forall (A B C D A1 B1 C1 D1 : point). FSC A B C D A1 B1 C1 D1 => A!=B => Cong C D C1 D1.
+goal forall (O E I J K S U X Y Z : point). O!=E => Col O E I => Col O E J => Col O E K => Cong_3 O E I S U X => Cong_3 O E J S U Y => Cong_3 O E K S U Z => Cong_5 O E I J K S U X Y Z.

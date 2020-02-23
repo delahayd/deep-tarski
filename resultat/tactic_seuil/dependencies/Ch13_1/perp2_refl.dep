@@ -1,0 +1,2 @@
+lemme : col_trivial_1 between_trivial2 perp_comm l8_18_existence out_trivial l8_2 between_symmetry l10_2_existence_spec l10_15 not_col_exists perp_sym
+rewrite : Col Perp2 Out

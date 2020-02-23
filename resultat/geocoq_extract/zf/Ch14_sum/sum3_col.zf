@@ -1,0 +1,6 @@
+include "../tarski_term_def.zf".
+#sum_ar2
+assert[name "Labelsum_ar2"] forall (O E E1 A B C : point). Sum O E E1 A B C => Ar2 O E E1 A B C.
+rewrite[name "LabelAr2"] forall (O E E1 A B C : point). Ar2 O E E1 A B C <=> ~ Col O E E1 && Col O E A && Col O E B && Col O E C.
+rewrite[name "Labelsum3"] forall (O E E1 A B C S : point). sum3 O E E1 A B C S <=> (exists (AB : point). Sum O E E1 A B AB && Sum O E E1 AB C S).
+goal forall (O E E1 A B C S : point). sum3 O E E1 A B C S => ~Col O E E1 && Col O E A && Col O E B && Col O E C && Col O E S.

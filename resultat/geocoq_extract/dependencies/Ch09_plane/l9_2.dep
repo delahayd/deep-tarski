@@ -1,0 +1,3 @@
+lemme : between_symmetry
+rewrite : TS
+destruct : H1

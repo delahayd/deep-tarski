@@ -1,0 +1,139 @@
+include "../tarski_term_def.zf".
+val O : point.
+val E : point.
+val E1 : point.
+assert ~Col O E E1.
+#le_pos_prod_le
+assert[name "Labelle_pos_prod_le"] forall (O E E1 A B C AC BC : point). LeP O E E1 A B => LeP O E E1 O C => Prod O E E1 A C AC => Prod O E E1 B C BC => LeP O E E1 AC BC.
+#diff_null
+assert[name "Labeldiff_null"] forall (O E E1 A : point). ~Col O E E1 => Col O E A => Diff O E E1 A A O.
+#bet_lt12_le13
+assert[name "Labelbet_lt12_le13"] forall (O E E1 A B C : point). Bet A B C => LtP O E E1 A B => LeP O E E1 A C.
+#length_pos
+assert[name "Labellength_pos"] forall (O E E1 A B L : point). Length O E E1 A B L => LeP O E E1 O L.
+#bet_betCood
+assert[name "Labelbet_betCood"] forall (O E E1 S U1 U2 A AX AY B BX BY C CX CY : point). Cd O E S U1 U2 A AX AY => Cd O E S U1 U2 B BX BY => Cd O E S U1 U2 C CX CY => Bet A B C => Bet AX BX CX && Bet AY BY CY.
+#prod_null
+assert[name "Labelprod_null"] forall (O E E1 A B : point). Prod O E E1 A B O => A=O || B=O.
+#between_identity
+assert[name "Labelbetween_identity"] forall (A B : point). Bet A B A => A=B.
+#sum_comm
+assert[name "Labelsum_comm"] forall (A B C : point). Sum O E E1 A B C => Sum O E E1 B A C.
+#prod_O_r_eq
+assert[name "Labelprod_O_r_eq"] forall (A B : point). Col O E A => Col O E B => (exists (C : point). Prod O E E1 A B C).
+#length_existence
+assert[name "Labellength_existence"] forall (O E E1 A B : point). ~Col O E E1 => (exists (AB : point). Length O E E1 A B AB).
+#length_id
+assert[name "Labellength_id"] forall (O E E1 A B : point). (A=B && O!=E)<=>Length O E E1 A B O.
+#same_abscissa_col
+assert[name "Labelsame_abscissa_col"] forall (O E E1 S U1 U2 A AX AY B BX BY C CX CY : point). Cd O E S U1 U2 A AX AY => Cd O E S U1 U2 B BX BY => Cd O E S U1 U2 C CX CY => Col A B C.
+#prod_O_l_eq
+assert[name "Labelprod_O_l_eq"] forall (O E E1 A B C : point). Prodp O E E1 A B C => Prod O E E1 A B C.
+#prod_0_r
+assert[name "Labelprod_0_r"] forall (O E E1 A : point). ~Col O E E1 => Col O E A => Prod O E E1 A O O.
+#sum_uniquenessA
+assert[name "Labelsum_uniquenessA"] forall (B X Y C : point). Sum O E E1 X B C => Sum O E E1 Y B C => X=Y.
+#distr_r
+assert[name "Labeldistr_r"] forall (O E E1 A B C D AC BC DC : point). Sum O E E1 A B D => Prod O E E1 A C AC => Prod O E E1 B C BC => (Prod O E E1 D C DC => Sum O E E1 AC BC DC).
+#bet_lt21_le31
+assert[name "Labelbet_lt21_le31"] forall (O E E1 A B C : point). Bet A B C => LtP O E E1 B A => LeP O E E1 C A.
+#opp_prod
+assert[name "Labelopp_prod"] forall (O E E1 ME X MX : point). Opp O E E1 E ME => Opp O E E1 X MX => Prod O E E1 X ME MX.
+#sum_O_B
+assert[name "Labelsum_O_B"] forall (B : point). Col O E B => Sum O E E1 O B B.
+#l5_12_b
+assert[name "Labell5_12_b"] forall (A B C : point). Col A B C => Le A B A C => Le B C A C => Bet A B C.
+#pos_inv_pos
+assert[name "Labelpos_inv_pos"] forall (O E E1 A IA : point). O!=A => LeP O E E1 O A => Prod O E E1 A IA E => LeP O E E1 O IA.
+#col_trivial_1
+assert[name "Labelcol_trivial_1"] forall (A B : point). Col A A B.
+#l16_9_1
+assert[name "Labell16_9_1"] forall (O E E1 X Y XY XMY : point). Col O E X => Col O E Y => Is_length O E E1 X Y XY => LeP O E E1 Y X => Diff O E E1 X Y XMY => XY=XMY.
+#coord_exchange_axes
+assert[name "Labelcoord_exchange_axes"] forall (O E S U1 U2 P X Y : point). Cd O E S U1 U2 P X Y => Cd O E S U2 U1 P X Y.
+#diff_ar2
+assert[name "Labeldiff_ar2"] forall (O E E1 A B AMB : point). Diff O E E1 A B AMB => Ar2 O E E1 A B AMB.
+#eq_points_coordinates
+assert[name "Labeleq_points_coordinates"] forall (O E S U1 U2 P1 X1 Y1 P2 X2 Y2 : point). Cd O E S U1 U2 P1 X1 Y1 => Cd O E S U1 U2 P2 X2 Y2 => (P1=P2 <=> (X1=X2 && Y1=Y2)).
+#distr_l
+assert[name "Labeldistr_l"] forall (O E E1 A : point). ~Col O E E1 => Col O E A => Prod O E E1 A O O.
+#prod_uniquenessA
+assert[name "Labelprod_uniquenessA"] forall (O E E1 A A1 B C : point). B!=O => Prod O E E1 A B C => Prod O E E1 A1 B C => A=A1.
+#diff_opp
+assert[name "Labeldiff_opp"] forall (O E E1 A B AmB BmA : point). Diff O E E1 A B AmB => Diff O E E1 B A BmA => Opp O E E1 AmB BmA.
+#prod_assoc1
+assert[name "Labelprod_assoc1"] forall (O E E1 A B C AB BC ABC : point). Prod O E E1 A B AB => Prod O E E1 B C BC => (Prod O E E1 A BC ABC => Prod O E E1 AB C ABC).
+#prod_0_l
+assert[name "Labelprod_0_l"] forall (O E E1 A B C APC BPC : point). LeP O E E1 A B => Sum O E E1 A C APC => Sum O E E1 B C BPC => LeP O E E1 APC BPC.
+#opp_comm
+assert[name "Labelopp_comm"] forall (X Y : point). Opp O E E1 X Y => Opp O E E1 Y X.
+#prod_1_r
+assert[name "Labelprod_1_r"] forall (O E E1 A : point). ~Col O E E1 => Col O E A => Prod O E E1 A E A.
+#opp0
+assert[name "Labelopp0"] Opp O E E1 O O.
+#length_leP_le_1
+assert[name "Labellength_leP_le_1"] forall (O E E1 A B C D AB CD : point). Length O E E1 A B AB => Length O E E1 C D CD => LeP O E E1 AB CD => Le A B C D.
+#diff_uniqueness
+assert[name "Labeldiff_uniqueness"] forall (O E E1 A B D1 D2 : point). Diff O E E1 A B D1 => Diff O E E1 A B D2 => D1=D2.
+#diff_2_prod
+assert[name "Labeldiff_2_prod"] forall (O E E1 A B AMB BMA ME : point). Opp O E E1 E ME => Diff O E E1 A B AMB => Diff O E E1 B A BMA => Prod O E E1 AMB ME BMA.
+#prod_exists
+assert[name "Labelprod_exists"] forall (A B : point). Col O E A => Col O E B => (exists (C : point). Prod O E E1 A B C).
+#diff_sum
+assert[name "Labeldiff_sum"] forall (O E E1 A B S : point). Diff O E E1 S A B => Sum O E E1 A B S.
+#compatibility_of_sum_with_order
+assert[name "Labelcompatibility_of_sum_with_order"] forall (O E E1 A B C APC BPC : point). LeP O E E1 A B => Sum O E E1 A C APC => Sum O E E1 B C BPC => LeP O E E1 APC BPC.
+#eq_dec_points
+assert[name "Labeleq_dec_points"] forall (A B : point). A=B || A!=B.
+#characterization_of_betweenness
+assert[name "Labelcharacterization_of_betweenness"] forall (O E E1 S U1 U2 A AX AY B BX BY C CX CY BXMAX BYMAY CXMAX CYMAY : point). Cd O E S U1 U2 A AX AY => Cd O E S U1 U2 B BX BY => Cd O E S U1 U2 C CX CY => Diff O E E1 BX AX BXMAX => Diff O E E1 BY AY BYMAY => Diff O E E1 CX AX CXMAX => Diff O E E1 CY AY CYMAY => (Bet A B C <=> (exists (T : point). O != E && Col O E T && LeP O E E1 O T && LeP O E E1 T E && Prod O E E1 T CXMAX BXMAX && Prod O E E1 T CYMAY BYMAY)).
+#prod_uniqueness
+assert[name "Labelprod_uniqueness"] forall (A B C1 C2 : point). Prod O E E1 A B C1 => Prod O E E1 A B C2 => C1=C2.
+#prod_uniquenessB
+assert[name "Labelprod_uniquenessB"] forall (O E E1 A B1 B C : point). A!=O => Prod O E E1 A B C => Prod O E E1 A B1 C => B=B1.
+#opp_exists
+assert[name "Labelopp_exists"] forall (A : point). Col O E A => (exists (MA : point). Opp O E E1 A MA).
+#diff_exists
+assert[name "Labeldiff_exists"] forall (O E E1 A B : point). ~Col O E E1 => Col O E A => Col O E B => (exists (D : point). Diff O E E1 A B D).
+#sum_uniqueness
+assert[name "Labelsum_uniqueness"] forall (A B C1 C2 : point). Sum O E E1 A B C1 => Sum O E E1 A B C2 => C1=C2.
+#prod_assoc2
+assert[name "Labelprod_assoc2"] forall (O E E1 A B C AB BC ABC : point). Prod O E E1 A B AB => Prod O E E1 B C BC => (Prod O E E1 AB C ABC => Prod O E E1 A BC ABC).
+#sum_exists
+assert[name "Labelsum_exists"] forall (A B : point). Col O E A => Col O E B => (exists (C : point). Sum O E E1 A B C).
+#length_sym
+assert[name "Labellength_sym"] forall (O E E1 A B AB : point).Length O E E1 A B AB => Length O E E1 B A AB.
+#leP_asym
+assert[name "LabelleP_asym"] forall (O E E1 A B : point). LeP O E E1 A B => LeP O E E1 B A => A=B.
+#not_col_distincts
+assert[name "Labelnot_col_distincts"] forall (A B C : point). ~Col A B C => ~Col A B C && A!=B && B!=C && A!=C.
+#sum_diff_diff
+assert[name "Labelsum_diff_diff"] forall (O E E1 AX BX CX AXMBX AXMCX BXMCX : point). Diff O E E1 AX BX AXMBX => Diff O E E1 AX CX AXMCX => Diff O E E1 BX CX BXMCX => Sum O E E1 AXMBX BXMCX AXMCX.
+#length_eq_or_opp
+assert[name "Labellength_eq_or_opp"] forall (O E E1 A B L1 L2 : point). Length O E E1 A B L1 => Diff O E E1 A B L2 => L1=L2 || Opp O E E1 L1 L2.
+#prod_1_l
+assert[name "Labelprod_1_l"] forall (O E E1 A IA : point). O!=A => LeP O E E1 O A => Prod O E E1 A IA E => LeP O E E1 O IA.
+#leP_trans
+assert[name "LabelleP_trans"] forall (O E E1 A B C : point). LeP O E E1 A B => LeP O E E1 B C => LeP O E E1 A C.
+#inv_exists
+assert[name "Labelinv_exists"] forall (O E E1 A : point). ~Col O E E1 => Col O E A => A!=O => (exists (IA : point). Prod O E E1 IA A E).
+#diff_null_eq
+assert[name "Labeldiff_null_eq"] forall (O E E1 A B : point). Diff O E E1 A B O => A=B.
+#diff_uniquenessA
+assert[name "Labeldiff_uniquenessA"] forall (O E E1 A A1 B C : point). Diff O E E1 A B C => Diff O E E1 A1 B C => A=A1.
+#col_2_le_or_ge
+assert[name "Labelcol_2_le_or_ge"] forall (O E E1 A B : point). ~Col O E E1 => Col O E A => Col O E B => LeP O E E1 A B || LeP O E E1 B A.
+#opp_uniqueness
+assert[name "Labelopp_uniqueness"] forall (A MA1 MA2 : point). Opp O E E1 A MA1 => Opp O E E1 A MA2 => MA1=MA2.
+#prod_comm
+assert[name "Labelprod_comm"] forall (O E E1 A B C : point). Prod O E E1 A B C => Prod O E E1 B A C.
+#col_trivial_2
+assert[name "Labelcol_trivial_2"] forall (A B : point). Col A B B.
+#compatibility_of_prod_with_order
+assert[name "Labelcompatibility_of_prod_with_order"] forall (O E E1 A B AB : point). LeP O E E1 O A => LeP O E E1 O B => Prod O E E1 A B AB =>LeP O E E1 O AB.
+rewrite[name "LabelSum"] forall (O E E1 A B C : point). Sum O E E1 A B C <=> Ar2 O E E1 A B C && (exists (A1 C1 : point). Pj E E1 A  A1 && Col O E1 A1 && Pj O E  A1 C1 && Pj O E1 B  C1 && Pj E1 E C1 C).
+rewrite[name "LabelOpp"] forall (O E E1 A B : point). Opp O E E1 A B <=> Sum O E E1 B A O.
+rewrite[name "LabelProd"] forall (O E E1 A B C : point). Prod O E E1 A B C <=> Ar2 O E E1 A B C && (exists (B1 : point). Pj E E1 B B1 && Col O E1 B1 && Pj E1 A B1 C).
+rewrite[name "LabelLength"] forall (O E E1 A B L: point). Length O E E1 A B L <=> O != E && Col O E L && LeP O E E1 O L && Cong O L A B.
+rewrite[name "LabelAr2"] forall (O E E1 A B C : point). Ar2 O E E1 A B C <=> ~ Col O E E1 && Col O E A && Col O E B && Col O E C.
+goal forall (O E E1 S U1 U2 A AX AY B BX BY C CX CY AXMBX AYMBY BXMCX BYMCY XProd YProd : point). Cd O E S U1 U2 A AX AY => Cd O E S U1 U2 B BX BY => Cd O E S U1 U2 C CX CY => Diff O E E1 AX BX AXMBX => Diff O E E1 AY BY AYMBY => Diff O E E1 BX CX BXMCX => Diff O E E1 BY CY BYMCY => Prod O E E1 AXMBX BYMCY XProd => Prod O E E1 AYMBY BXMCX YProd => (Col A B C <=> XProd=YProd).

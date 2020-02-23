@@ -1,0 +1,3 @@
+lemme : lt_diff_ps bet_lt12_le23 diff_O_A diff_ar2 diff_sum eq_dec_points diff_null diff_opp opp_exists diff_exists sum_assoc_2 sum_opp sum_O_B not_col_distincts opp_midpoint sum_comm opp_comm ltP_neq sum_assoc_1 l7_15 bet_col diff_null_eq diff_uniqueness bet_neq21__neq opp_uniqueness sum_A_O
+rewrite : Opp Sum Ar2
+destruct : HLt

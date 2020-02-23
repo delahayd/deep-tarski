@@ -1,0 +1,39 @@
+digraph "unsat_graph" {
+  vertex_0 [color=red, label="[]", shape=box, style=filled];
+  vertex_0 -> vertex_1 [label="simplify_reflect-", dir="back"];
+  vertex_1 [shape=box, label="sk_B ≠ sk_B1\l", style=filled];
+  vertex_1 -> vertex_2 [label="cnf", dir="back"];
+  vertex_2 [shape=box, label="negated_goal\l  ¬ (∀ O/149:point E/150:point E1/151:point A/152:point B1/153:point \l        B/154:point C/155:point.\l        ((A/152 ≠ O/149) ⇒\l         ((Prod O/149 E/150 E1/151 A/152 B/154 C/155) ⇒\l          ((Prod O/149 E/150 E1/151 A/152 B1/153 C/155) ⇒ (B/154 = B1/153)))))\l  # skolems: [].\l", style=filled];
+  vertex_2 -> vertex_3 [label="cnf.neg", dir="back"];
+  vertex_3 [color=green, shape=box, label="goal\l  [file \"../resultat/geocoq_extract/zf/Ch14_prod/prod_uniquenessB.zf\" \l   \"zf_stmt_132\"]\l  ∀ O/149:point E/150:point E1/151:point A/152:point B1/153:point \l    B/154:point C/155:point.\l    ((A/152 ≠ O/149) ⇒\l     ((Prod O/149 E/150 E1/151 A/152 B/154 C/155) ⇒\l      ((Prod O/149 E/150 E1/151 A/152 B1/153 C/155) ⇒ (B/154 = B1/153)))).\l", style=filled];
+  vertex_0 -> vertex_4 [label="simplify_reflect-", dir="back"];
+  vertex_4 [shape=box, label="sk_B = sk_B1\l", style=filled];
+  vertex_4 -> vertex_5 [label="s_sup-\l\{X0[0] → sk_B[1]\}[0]\l", dir="back"];
+  vertex_5 [shape=box, label="forall (X0:point). [X0 = sk_B1 ∨ ¬Prod sk_O sk_E sk_E1 X0 sk_A sk_C]\l", style=filled];
+  vertex_5 -> vertex_6 [label="simplify_reflect-", dir="back"];
+  vertex_6 [shape=box, label="sk_A ≠ sk_O\l", style=filled];
+  vertex_6 -> vertex_2 [label="cnf", dir="back"];
+  vertex_5 -> vertex_7 [label="simplify_reflect-", dir="back"];
+  vertex_7 [shape=box, label="forall (X0:point).\l[X0 = sk_B1 ∨ sk_A = sk_O ∨ ¬Prod sk_O sk_E sk_E1 X0 sk_A sk_C]\l", style=filled];
+  vertex_7 -> vertex_8 [label="s_sup-\l\{X0[0] → sk_B1[1], \l X2[0] → sk_O[1], \l X3[0] → sk_A[1], \l X4[0] → sk_E[1], \l X5[0] → sk_E1[1], \l X6[0] → sk_C[1]\}[0]\l", dir="back"];
+  vertex_8 [shape=box, label="forall (X0:point) (X1:point) (X2:point) (X3:point) (X4:point) (X5:point) \l       (X6:point).\l[X1 = X0\l ∨ X3 = X2\l ∨ ¬Prod X2 X4 X5 X0 X3 X6\l ∨ ¬Prod X2 X4 X5 X1 X3 X6]\l", style=filled];
+  vertex_8 -> vertex_9 [label="cnf", dir="back"];
+  vertex_9 [color=yellow, shape=box, label="assert\l  [file \"../resultat/geocoq_extract/zf/Ch14_prod/prod_uniquenessB.zf\" \l   \"Labelprod_uniquenessA\"]\l  ∀ O/136:point E/137:point E1/138:point A/139:point A1/140:point \l    B/141:point C/142:point.\l    ((B/141 ≠ O/136) ⇒\l     ((Prod O/136 E/137 E1/138 A/139 B/141 C/142) ⇒\l      ((Prod O/136 E/137 E1/138 A1/140 B/141 C/142) ⇒ (A/139 = A1/140)))).\l", style=filled];
+  vertex_7 -> vertex_10 [label="s_sup-\l\{X0[0] → sk_B1[1], \l X2[0] → sk_O[1], \l X3[0] → sk_A[1], \l X4[0] → sk_E[1], \l X5[0] → sk_E1[1], \l X6[0] → sk_C[1]\}[1]\l", dir="back"];
+  vertex_10 [shape=box, label="Prod sk_O sk_E sk_E1 sk_B1 sk_A sk_C\l", style=filled];
+  vertex_10 -> vertex_11 [label="s_sup-\l\{X7[0] → sk_O[1], \l X8[0] → sk_E[1], \l X9[0] → sk_E1[1], \l X10[0] → sk_B1[1], \l X11[0] → sk_A[1], \l X12[0] → sk_C[1]\}[0]\l", dir="back"];
+  vertex_11 [shape=box, label="forall (X7:point) (X8:point) (X9:point) (X10:point) (X11:point) (X12:point).\l[Prod X7 X8 X9 X10 X11 X12 ∨ ¬Prod X7 X8 X9 X11 X10 X12]\l", style=filled];
+  vertex_11 -> vertex_12 [label="cnf", dir="back"];
+  vertex_12 [color=yellow, shape=box, label="assert\l  [file \"../resultat/geocoq_extract/zf/Ch14_prod/prod_uniquenessB.zf\" \l   \"Labelprod_comm\"]\l  ∀ O/143:point E/144:point E1/145:point A/146:point B/147:point \l    C/148:point.\l    ((Prod O/143 E/144 E1/145 A/146 B/147 C/148) ⇒\l     (Prod O/143 E/144 E1/145 B/147 A/146 C/148)).\l", style=filled];
+  vertex_10 -> vertex_13 [label="s_sup-\l\{X7[0] → sk_O[1], \l X8[0] → sk_E[1], \l X9[0] → sk_E1[1], \l X10[0] → sk_B1[1], \l X11[0] → sk_A[1], \l X12[0] → sk_C[1]\}[1]\l", dir="back"];
+  vertex_13 [shape=box, label="Prod sk_O sk_E sk_E1 sk_A sk_B1 sk_C\l", style=filled];
+  vertex_13 -> vertex_2 [label="cnf", dir="back"];
+  vertex_4 -> vertex_14 [label="s_sup-\l\{X0[0] → sk_B[1]\}[1]\l", dir="back"];
+  vertex_14 [shape=box, label="Prod sk_O sk_E sk_E1 sk_B sk_A sk_C\l", style=filled];
+  vertex_14 -> vertex_11 [label="s_sup-\l\{X7[0] → sk_O[1], \l X8[0] → sk_E[1], \l X9[0] → sk_E1[1], \l X10[0] → sk_B[1], \l X11[0] → sk_A[1], \l X12[0] → sk_C[1]\}[0]\l", dir="back"];
+  vertex_14 -> vertex_15 [label="s_sup-\l\{X7[0] → sk_O[1], \l X8[0] → sk_E[1], \l X9[0] → sk_E1[1], \l X10[0] → sk_B[1], \l X11[0] → sk_A[1], \l X12[0] → sk_C[1]\}[1]\l", dir="back"];
+  vertex_15 [shape=box, label="Prod sk_O sk_E sk_E1 sk_A sk_B sk_C\l", style=filled];
+  vertex_15 -> vertex_2 [label="cnf", dir="back"];
+  }
+
+

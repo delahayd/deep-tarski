@@ -1,0 +1,4 @@
+include "../tarski_term_def.zf".
+#point_construction_different
+assert[name "Labelpoint_construction_different"] forall (A B : point). exists (C : point). Bet A B C && B!=C.
+goal forall (A : point). exists (B : point). A!=B.

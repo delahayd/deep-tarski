@@ -1,0 +1,3 @@
+lemme : perp_perp_in perp_distinct perp_col perp_comm col_trivial_3 col_permutation_1 perp_sym col_permutation_5 col_trivial_2 col_permutation_4 l8_18_uniqueness l8_16_1
+rewrite : Perp Perp_at
+destruct : 

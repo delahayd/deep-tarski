@@ -1,0 +1,3 @@
+include "../tarski_term_def.zf".
+rewrite[name "LabelLength"] forall (O E E1 A B L: point). Length O E E1 A B L <=> O != E && Col O E L && LeP O E E1 O L && Cong O L A B.
+goal forall (O E E1 A B L : point). Length O E E1 A B L => LeP O E E1 O L.

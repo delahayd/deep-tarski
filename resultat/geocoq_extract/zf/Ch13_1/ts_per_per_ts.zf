@@ -1,0 +1,71 @@
+include "../tarski_term_def.zf".
+#not_col_permutation_4
+assert[name "Labelnot_col_permutation_4"] forall (A B C : point). ~Col A B C => ~Col B A C.
+#per2_col_eq
+assert[name "Labelper2_col_eq"] forall (A P P1 B : point). A!=P => A!=P1 => Per A P B => Per A P1 B => Col P A P1 => P=P1.
+#col_permutation_4
+assert[name "Labelcol_permutation_4"] forall (A B C : point). Col A B C => Col B A C.
+#per_perp_in
+assert[name "Labelper_perp_in"] forall (A B C : point). A!=B => B!=C => Per A B C => Perp_at B A B B C.
+#l8_15_1
+assert[name "Labell8_15_1"] forall (A B C X : point). A!=B => Col A B X => Perp A B C X => Perp_at X A B C X.
+#eq_dec_points
+assert[name "Labeleq_dec_points"] forall (A B : point). A=B || A!=B.
+#between_symmetry
+assert[name "Labelbetween_symmetry"] forall (A B C : point). Bet A B C => Bet C B A.
+#per13_preserves_bet
+assert[name "Labelper13_preserves_bet"] forall (A B C A1 C1 : point). Bet A B C => B!=A1 => B!=C1 => Col A1 B C1 => Per B A1 C1 => Per B C1 C => Bet A1 B C1.
+#l6_21
+assert[name "Labell6_21"] forall (A B C D P Q : point). ~Col A B C => C!=D => Col A B P => Col A B Q => Col C D P => Col C D Q => P=Q.
+#perp_col
+assert[name "Labelperp_col"] forall (A B C D E : point). A!=E => Perp A B C D => Col A B E => Perp A E C D.
+#l5_3
+assert[name "Labell5_3"] forall (A B C D : point). Bet A B D => Bet A C D => Bet A B C || Bet A C B.
+#perp_in_sym
+assert[name "Labelperp_in_sym"] forall (A B C D X : point). Perp_at X A B C D => Perp_at X C D A B.
+#l8_18_existence
+assert[name "Labell8_18_existence"] forall (A B C : point). ~Col A B C => (exists (X : point). Col A B X && Perp A B C X).
+#perp_perp_in
+assert[name "Labelperp_perp_in"] forall (A B C : point). Perp A B C A => Perp_at A A B C A.
+#perp_in_comm
+assert[name "Labelperp_in_comm"] forall (A B C D X : point). Perp_at X A B C D => Perp_at X B A D C.
+#perp_comm
+assert[name "Labelperp_comm"] forall (A B C D : point). Perp A B C D => Perp B A D C.
+#ts_distincts
+assert[name "Labelts_distincts"] forall (A B P Q : point). TS A B P Q => A!=B && A!=P && A!=Q && B!=P && B!=Q && P!=Q.
+#between_identity
+assert[name "Labelbetween_identity"] forall (A B : point). Bet A B A => A=B.
+#perp_in_right_comm
+assert[name "Labelperp_in_right_comm"] forall (A B C D X : point). Perp_at X A B C D => Perp_at X A B D C.
+#l8_7
+assert[name "Labell8_7"] forall (A B C : point). Per A B C => Per A C B => B=C.
+#not_col_distincts
+assert[name "Labelnot_col_distincts"] forall (A B C : point). ~Col A B C => ~Col A B C && A!=B && B!=C && A!=C.
+#col_trivial_3
+assert[name "Labelcol_trivial_3"] forall (A B : point). Col A B A.
+#between_exchange2
+assert[name "Labelbetween_exchange2"] forall (A B C D : point). Bet A B D => Bet B C D => Bet A C D.
+#perp_left_comm
+assert[name "Labelperp_left_comm"] forall (A B C D : point). Perp A B C D => Perp B A C D.
+#perp_per_bet
+assert[name "Labelperp_per_bet"] forall (A B C P : point). ~Col A B C => Col A P C => Per A B C => Perp_at P P B A C => Bet A P C.
+#between_trivial2
+assert[name "Labelbetween_trivial2"] forall (A B : point). Bet A A B.
+#col_permutation_5
+assert[name "Labelcol_permutation_5"] forall (A B C : point). Col A B C => Col A C B.
+#between_trivial
+assert[name "Labelbetween_trivial"] forall (A B : point). Bet A B B.
+#not_col_permutation_1
+assert[name "Labelnot_col_permutation_1"] forall (A B C : point). ~Col A B C => ~Col B C A.
+#bet_col
+assert[name "Labelbet_col"] forall (A B C : point). Bet A B C => Col A B C.
+#between_exchange4
+assert[name "Labelbetween_exchange4"] forall (A B C D : point). Bet A B C => Bet A C D => Bet A B D.
+#col_trivial_2
+assert[name "Labelcol_trivial_2"] forall (A B : point). Col A B B.
+#perp_in_per
+assert[name "Labelperp_in_per"] forall (A B C : point). Perp_at B A B B C => Per A B C.
+#not_col_permutation_5
+assert[name "Labelnot_col_permutation_5"] forall (A B C : point). ~Col A B C => ~Col A C B.
+rewrite[name "LabelTS"] forall (A B P Q : point). TS A B P Q <=> ~(Col P A B) && ~(Col Q A B) && (exists (T : point). Col T A B && Bet P T Q).
+goal forall (A B C D : point). TS A B C D => Per B C A => Per B D A => TS C D A B.

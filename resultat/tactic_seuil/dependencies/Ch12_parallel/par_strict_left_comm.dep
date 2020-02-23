@@ -1,0 +1,2 @@
+lemme : col_permutation_5 col_trivial_1 par_strict_right_comm par_left_comm par_strict_one_side col_trivial_3 cong_pseudo_reflexivity
+rewrite : Perp Par_strict Par Le

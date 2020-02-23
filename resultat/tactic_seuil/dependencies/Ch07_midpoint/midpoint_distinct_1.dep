@@ -1,0 +1,2 @@
+lemme : l7_20 col_permutation_5 col_trivial_1 between_trivial2 between_symmetry cong_reflexivity col_trivial_3 cong_identity not_col_exists cong_symmetry perp_right_comm
+rewrite : ReflectL Midpoint Out

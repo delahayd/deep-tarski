@@ -1,0 +1,3 @@
+lemme : cong_symmetry l2_11 cong_right_commutativity bet_neq12__neq outer_transitivity_between between_symmetry cong_left_commutativity segment_construction outer_transitivity_between2
+rewrite : CongA
+destruct : 

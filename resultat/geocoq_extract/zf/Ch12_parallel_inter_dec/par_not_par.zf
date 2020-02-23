@@ -1,0 +1,4 @@
+include "../tarski_term_def.zf".
+#par_trans
+assert[name "Labelpar_trans"] forall (A1 A2 B1 B2 C1 C2 : point). Par A1 A2 B1 B2 => Par B1 B2 C1 C2 => Par A1 A2 C1 C2.
+goal forall (A B C D P Q : point). Par A B C D => ~Par A B P Q => ~Par C D P Q.

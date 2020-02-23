@@ -1,0 +1,10 @@
+include "../tarski_term_def.zf".
+#col_permutation_5
+assert[name "Labelcol_permutation_5"] forall (A B C : point). Col A B C => Col A C B.
+#l11_43_aux
+assert[name "Labell11_43_aux"] forall (A B C : point). ~Col A B C => (Per B A C || Obtuse B A C) => Acute A B C.
+#obtuse_sym
+assert[name "Labelobtuse_sym"] forall (A B C : point). Obtuse A B C => Obtuse C B A.
+#l8_2
+assert[name "Labell8_2"] forall (A B C : point). Per A B C => Per C B A.
+goal forall (A B C : point). ~Col A B C => (Per B A C || Obtuse B A C) => Acute A B C && Acute A C B.

@@ -1,0 +1,7 @@
+include "../rew_type.zf".
+rewrite[name "LabelInter"] forall (A1 A2 B1 B2 X : point). Inter A1 A2 B1 B2 X <=> (exists (P : point). Col P B1 B2 && ~Col P A1 A2) &&Col A1 A2 X && Col B1 B2 X.
+#col_permutation_1
+assert[name "Labelcol_permutation_1"] forall (A B C : point). Col A B C => Col B C A.
+#col_permutation_5
+assert[name "Labelcol_permutation_5"] forall (A B C : point). Col A B C => Col A C B.
+goal forall (A B C D X : point). Inter A B C D X => Inter B A D C X.

@@ -1,0 +1,15 @@
+include "../tarski_term_def.zf".
+#between_exchange4
+assert[name "Labelbetween_exchange4"] forall (A B C D : point). Bet A B C => Bet A C D => Bet A B D.
+#l5_3
+assert[name "Labell5_3"] forall (A B C D : point). Bet A B D => Bet A C D => Bet A B C || Bet A C B.
+#between_exchange2
+assert[name "Labelbetween_exchange2"] forall (A B C D : point). Bet A B D => Bet B C D => Bet A C D.
+#l5_1
+assert[name "Labell5_1"] forall (A B C D : point). A!=B => Bet A B C => Bet A B D => Bet A C D || Bet A D C.
+#between_inner_transitivity
+assert[name "Labelbetween_inner_transitivity"] forall (A B C D : point). Bet A B D => Bet B C D => Bet A B C.
+#between_symmetry
+assert[name "Labelbetween_symmetry"] forall (A B C : point). Bet A B C => Bet C B A.
+rewrite[name "LabelOut"] forall (P A B : point). Out P A B <=> A != P && B != P && (Bet P A B || Bet P B A).
+goal forall (A B C X P : point). Out B A C => Out B X P => Bet A X C => Out B A P && Out B C P.

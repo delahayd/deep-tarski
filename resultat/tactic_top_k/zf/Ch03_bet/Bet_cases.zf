@@ -1,0 +1,4 @@
+include "../rew_type.zf".
+#between_symmetry
+assert[name "Labelbetween_symmetry"] forall (A B C : point). Bet A B C => Bet C B A.
+goal forall (A B C : point). Bet A B C || Bet C B A => Bet A B C.

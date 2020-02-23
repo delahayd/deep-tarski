@@ -1,0 +1,4 @@
+include "../tarski_term_def.zf".
+#eq_dec_points
+assert[name "Labeleq_dec_points"] forall (A B : point). A=B || A!=B.
+goal forall (P Q R : point). P!=Q => (R!=P || R!=Q).

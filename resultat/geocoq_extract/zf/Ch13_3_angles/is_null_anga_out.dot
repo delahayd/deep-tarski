@@ -1,0 +1,25 @@
+digraph "unsat_graph" {
+  vertex_0 [color=red, label="[]", shape=box, style=filled];
+  vertex_0 -> vertex_1 [label="s_sup-\l", dir="back"];
+  vertex_1 [shape=box, label="¬Out sk_B1 sk_A1 sk_C1\l", style=filled];
+  vertex_1 -> vertex_2 [label="cnf", dir="back"];
+  vertex_2 [shape=box, label="negated_goal\l  ¬ (∀ A/137:point B/138:point C/139:point \l        a/140:(point → point → point → prop).\l        ((Q_CongA_Acute a/140) ⇒\l         ((a/140 A/137 B/138 C/139) ⇒\l          ((Q_CongA_Null_Acute a/140) ⇒ (Out B/138 A/137 C/139)))))\l  # skolems: [].\l", style=filled];
+  vertex_2 -> vertex_3 [label="cnf.neg", dir="back"];
+  vertex_3 [color=green, shape=box, label="goal\l  [file \"../resultat/geocoq_extract/zf/Ch13_3_angles/is_null_anga_out.zf\" \l   \"zf_stmt_128\"]\l  ∀ A/137:point B/138:point C/139:point \l    a/140:(point → point → point → prop).\l    ((Q_CongA_Acute a/140) ⇒\l     ((a/140 A/137 B/138 C/139) ⇒\l      ((Q_CongA_Null_Acute a/140) ⇒ (Out B/138 A/137 C/139)))).\l", style=filled];
+  vertex_0 -> vertex_4 [label="s_sup-\l", dir="back"];
+  vertex_4 [shape=box, label="Out sk_B1 sk_A1 sk_C1\l", style=filled];
+  vertex_4 -> vertex_5 [label="s_sup-\l\{X0[0] → sk_C1[1], X1[0] → sk_A1[1], X2[0] → sk_B1[1]\}[0]\l", dir="back"];
+  vertex_5 [shape=box, label="forall (X0:point) (X1:point) (X2:point). [Out X2 X1 X0 ∨ ¬sk_a X1 X2 X0]\l", style=filled];
+  vertex_5 -> vertex_6 [label="rw_clause\l\{F0[1] → sk_a[0]\}[1]\l", dir="back"];
+  vertex_6 [color=navajowhite, shape=box, label="(Q_CongA_Null_Acute F0 := [Out X1 X2 X3 ∨ ¬F0 X2 X1 X3∧\l                           Q_CongA_Acute F0] [B])\l", style=filled];
+  vertex_6 -> vertex_7 [label="rw.lit", dir="back"];
+  vertex_7 [color=yellow, shape=box, label="rewrite\l  [file \"../resultat/geocoq_extract/zf/Ch13_3_angles/is_null_anga_out.zf\" \l   \"LabelQ_CongA_Null_Acute\"]\l  Q_CongA_Null_Acute F0\l  =\> Out X1 X2 X3 ∨ ¬ F0 X2 X1 X3 && Q_CongA_Acute F0.\l", style=filled];
+  vertex_5 -> vertex_8 [label="rw_clause\l\{F0[1] → sk_a[0]\}[0]\l", dir="back"];
+  vertex_8 [shape=box, label="Q_CongA_Null_Acute sk_a\l", style=filled];
+  vertex_8 -> vertex_2 [label="cnf", dir="back"];
+  vertex_4 -> vertex_9 [label="s_sup-\l\{X0[0] → sk_C1[1], X1[0] → sk_A1[1], X2[0] → sk_B1[1]\}[1]\l", dir="back"];
+  vertex_9 [shape=box, label="sk_a sk_A1 sk_B1 sk_C1\l", style=filled];
+  vertex_9 -> vertex_2 [label="cnf", dir="back"];
+  }
+
+

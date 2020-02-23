@@ -1,0 +1,4 @@
+include "../rew_type.zf".
+rewrite[name "LabelEqL"] forall (l1 l2 : point->point->prop). EqL l1 l2 <=> (forall (A B : point). l1 A B <=> l2 A B).
+rewrite[name "LabelQ_Cong"] forall (A B C D E F : point) (l : point->point->prop). Q_Cong l <=> (exists (A B : point). forall X Y. Cong A B X Y <=> l X Y).
+goal forall (l1 l2 : point->point->prop). Q_Cong l1 => EqL l1 l2 => Q_Cong l2.

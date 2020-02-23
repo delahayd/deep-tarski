@@ -1,0 +1,3 @@
+include "../rew_type.zf".
+rewrite[name "LabelInAngle"] forall (P A B C : point). InAngle P A B C <=> A != B && C != B && P != B && (exists (X : point). Bet A X C && (X = B || Out B X P)).
+goal forall (A B C P : point). InAngle P A B C || ~InAngle P A B C.

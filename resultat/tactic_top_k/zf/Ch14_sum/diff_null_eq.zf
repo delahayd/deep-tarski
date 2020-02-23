@@ -1,0 +1,9 @@
+include "../rew_type.zf".
+rewrite[name "LabelAr2"] forall (O E E1 A B C : point). Ar2 O E E1 A B C <=> ~ Col O E E1 && Col O E A && Col O E B && Col O E C.
+#diff_ar2
+assert[name "Labeldiff_ar2"] forall (O E E1 A B AMB : point). Diff O E E1 A B AMB => Ar2 O E E1 A B AMB.
+#diff_null
+assert[name "Labeldiff_null"] forall (O E E1 A : point). ~Col O E E1 => Col O E A => Diff O E E1 A A O.
+#diff_uniquenessB
+assert[name "Labeldiff_uniquenessB"] forall (O E E1 A B B1 C : point). Diff O E E1 A B C => Diff O E E1 A B1 C => B=B1.
+goal forall (O E E1 A B : point). Diff O E E1 A B O => A=B.

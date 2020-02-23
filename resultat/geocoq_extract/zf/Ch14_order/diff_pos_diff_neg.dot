@@ -1,0 +1,38 @@
+digraph "unsat_graph" {
+  vertex_0 [color=red, label="[]", shape=box, style=filled];
+  vertex_0 -> vertex_1 [label="s_sup-\l", dir="back"];
+  vertex_1 [shape=box, label="¬Ng sk_O sk_E sk_BmA\l", style=filled];
+  vertex_1 -> vertex_2 [label="cnf", dir="back"];
+  vertex_2 [shape=box, label="negated_goal\l  ¬ (∀ O/148:point E/149:point E1/150:point A/151:point B/152:point \l        AmB/153:point BmA/154:point.\l        ((Diff O/148 E/149 E1/150 A/151 B/152 AmB/153) ⇒\l         ((Diff O/148 E/149 E1/150 B/152 A/151 BmA/154) ⇒\l          ((Ps O/148 E/149 AmB/153) ⇒ (Ng O/148 E/149 BmA/154)))))\l  # skolems: [].\l", style=filled];
+  vertex_2 -> vertex_3 [label="cnf.neg", dir="back"];
+  vertex_3 [color=green, shape=box, label="goal\l  [file \"../resultat/geocoq_extract/zf/Ch14_order/diff_pos_diff_neg.zf\" \l   \"zf_stmt_132\"]\l  ∀ O/148:point E/149:point E1/150:point A/151:point B/152:point \l    AmB/153:point BmA/154:point.\l    ((Diff O/148 E/149 E1/150 A/151 B/152 AmB/153) ⇒\l     ((Diff O/148 E/149 E1/150 B/152 A/151 BmA/154) ⇒\l      ((Ps O/148 E/149 AmB/153) ⇒ (Ng O/148 E/149 BmA/154)))).\l", style=filled];
+  vertex_0 -> vertex_4 [label="s_sup-\l", dir="back"];
+  vertex_4 [shape=box, label="Ng sk_O sk_E sk_BmA\l", style=filled];
+  vertex_4 -> vertex_5 [label="simplify", dir="back"];
+  vertex_5 [shape=box, label="[¬true ∨ Ng sk_O sk_E sk_BmA]\l", style=filled];
+  vertex_5 -> vertex_6 [label="demod", dir="back"];
+  vertex_6 [shape=box, label="Ps sk_O sk_E sk_AmB\l", style=filled];
+  vertex_6 -> vertex_2 [label="cnf", dir="back"];
+  vertex_5 -> vertex_7 [label="demod", dir="back"];
+  vertex_7 [shape=box, label="[¬Ps sk_O sk_E sk_AmB ∨ Ng sk_O sk_E sk_BmA]\l", style=filled];
+  vertex_7 -> vertex_8 [label="s_sup-\l\{X0[1] → sk_O[0], \l X1[1] → sk_E[0], \l X2[1] → sk_AmB[0], \l X3[1] → sk_BmA[0], \l X4[1] → sk_E1[0]\}[1]\l", dir="back"];
+  vertex_8 [shape=box, label="forall (X0:point) (X1:point) (X2:point) (X3:point) (X4:point).\l[¬Ps X0 X1 X2 ∨ Ng X0 X1 X3 ∨ ¬Opp X0 X1 X4 X2 X3]\l", style=filled];
+  vertex_8 -> vertex_9 [label="cnf", dir="back"];
+  vertex_9 [color=yellow, shape=box, label="assert\l  [file \"../resultat/geocoq_extract/zf/Ch14_order/diff_pos_diff_neg.zf\" \l   \"Labelpos_opp_neg\"]\l  ∀ O/136:point E/137:point E1/138:point A/139:point mA/140:point.\l    ((Ps O/136 E/137 A/139) ⇒\l     ((Opp O/136 E/137 E1/138 A/139 mA/140) ⇒ (Ng O/136 E/137 mA/140))).\l", style=filled];
+  vertex_7 -> vertex_10 [label="s_sup-\l\{X0[1] → sk_O[0], \l X1[1] → sk_E[0], \l X2[1] → sk_AmB[0], \l X3[1] → sk_BmA[0], \l X4[1] → sk_E1[0]\}[0]\l", dir="back"];
+  vertex_10 [shape=box, label="Opp sk_O sk_E sk_E1 sk_AmB sk_BmA\l", style=filled];
+  vertex_10 -> vertex_11 [label="s_sup-\l\{X0[0] → sk_BmA[1]\}[0]\l", dir="back"];
+  vertex_11 [shape=box, label="forall (X0:point).\l[Opp sk_O sk_E sk_E1 sk_AmB X0 ∨ ¬Diff sk_O sk_E sk_E1 sk_B sk_A X0]\l", style=filled];
+  vertex_11 -> vertex_12 [label="s_sup-\l\{X5[0] → sk_O[1], \l X6[0] → sk_E[1], \l X7[0] → sk_E1[1], \l X8[0] → sk_A[1], \l X9[0] → sk_B[1], \l X10[0] → sk_AmB[1]\}[0]\l", dir="back"];
+  vertex_12 [shape=box, label="forall (X5:point) (X6:point) (X7:point) (X8:point) (X9:point) (X10:point) \l       (X11:point).\l[¬Diff X5 X6 X7 X8 X9 X10\l ∨ Opp X5 X6 X7 X10 X11\l ∨ ¬Diff X5 X6 X7 X9 X8 X11]\l", style=filled];
+  vertex_12 -> vertex_13 [label="cnf", dir="back"];
+  vertex_13 [color=yellow, shape=box, label="assert\l  [file \"../resultat/geocoq_extract/zf/Ch14_order/diff_pos_diff_neg.zf\" \l   \"Labeldiff_opp\"]\l  ∀ O/141:point E/142:point E1/143:point A/144:point B/145:point \l    AmB/146:point BmA/147:point.\l    ((Diff O/141 E/142 E1/143 A/144 B/145 AmB/146) ⇒\l     ((Diff O/141 E/142 E1/143 B/145 A/144 BmA/147) ⇒\l      (Opp O/141 E/142 E1/143 AmB/146 BmA/147))).\l", style=filled];
+  vertex_11 -> vertex_14 [label="s_sup-\l\{X5[0] → sk_O[1], \l X6[0] → sk_E[1], \l X7[0] → sk_E1[1], \l X8[0] → sk_A[1], \l X9[0] → sk_B[1], \l X10[0] → sk_AmB[1]\}[1]\l", dir="back"];
+  vertex_14 [shape=box, label="Diff sk_O sk_E sk_E1 sk_A sk_B sk_AmB\l", style=filled];
+  vertex_14 -> vertex_2 [label="cnf", dir="back"];
+  vertex_10 -> vertex_15 [label="s_sup-\l\{X0[0] → sk_BmA[1]\}[1]\l", dir="back"];
+  vertex_15 [shape=box, label="Diff sk_O sk_E sk_E1 sk_B sk_A sk_BmA\l", style=filled];
+  vertex_15 -> vertex_2 [label="cnf", dir="back"];
+  }
+
+

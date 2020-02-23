@@ -1,0 +1,3 @@
+lemme : is_len_cong cong_reflexivity out_trivial l6_11_uniqueness
+rewrite : Out
+destruct : 

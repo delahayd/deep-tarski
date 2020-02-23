@@ -1,0 +1,3 @@
+lemme : lcos3_lg_anga lcos3_eql_lcos3 lcos3_uniqueness
+rewrite : Eq_Lcos3
+destruct : 

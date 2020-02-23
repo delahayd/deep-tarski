@@ -1,0 +1,12 @@
+include "../tarski_term_def.zf".
+#l7_3_2
+assert[name "Labell7_3_2"] forall (A : point). Midpoint A A A.
+#col_permutation_4
+assert[name "Labelcol_permutation_4"] forall (A B C : point). Col A B C => Col B A C.
+#cong_reflexivity
+assert[name "Labelcong_reflexivity"] forall (A B : point). Cong A B A B.
+#midpoint_bet
+assert[name "Labelmidpoint_bet"] forall (A B C : point). Midpoint B A C => Bet A B C.
+#col_permutation_5
+assert[name "Labelcol_permutation_5"] forall (A B C : point). Col A B C => Col A C B.
+goal forall (A B P : point). Col P A B => ReflectL P P A B.

@@ -1,0 +1,2 @@
+include "../rew_type.zf".
+goal forall (P A B : point). Out P A B || ~Out P A B.

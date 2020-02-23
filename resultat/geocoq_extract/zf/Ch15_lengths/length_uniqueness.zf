@@ -1,0 +1,34 @@
+include "../tarski_term_def.zf".
+val O : point.
+val E : point.
+val E1 : point.
+assert ~Col O E E1.
+#between_equality
+assert[name "Labelbetween_equality"] forall (A B C : point). Bet A B C => Bet B A C => A=B.
+#diff_sum
+assert[name "Labeldiff_sum"] forall (O E E1 A B S : point). Diff O E E1 S A B => Sum O E E1 A B S.
+#length_Ar2
+assert[name "Labellength_Ar2"] forall (O E E1 A B AB : point). Length O E E1 A B AB => (Col O E AB && ~Col O E E1) || AB=O.
+#between_symmetry
+assert[name "Labelbetween_symmetry"] forall (A B C : point). Bet A B C => Bet C B A.
+#cong_transitivity
+assert[name "Labelcong_transitivity"] forall (A B C D E F : point). Cong A B C D => Cong C D E F => Cong A B E F.
+#l7_20
+assert[name "Labell7_20"] forall (M A B : point). Col A M B => Cong M A M B => A=B || Midpoint M A B.
+#l6_6
+assert[name "Labell6_6"] forall (P A B : point). Out P A B => Out P B A.
+#l6_7
+assert[name "Labell6_7"] forall (P A B C : point). Out P A B => Out P B C => Out P A C.
+#cong_symmetry
+assert[name "Labelcong_symmetry"] forall (A B C D : point). Cong A B C D => Cong C D A B.
+#cong_identity
+assert[name "Labelcong_identity"] forall (A B C : point). Cong A B C C => A = B.
+#sum_O_B_eq
+assert[name "Labelsum_O_B_eq"] forall (B C : point). Sum O E E1 O B C => B=C.
+rewrite[name "LabelOut"] forall (P A B : point). Out P A B <=> A != P && B != P && (Bet P A B || Bet P B A).
+rewrite[name "LabelLength"] forall (O E E1 A B L: point). Length O E E1 A B L <=> O != E && Col O E L && LeP O E E1 O L && Cong O L A B.
+rewrite[name "LabelMidpoint"] forall (M A B : point). Midpoint M A B <=> Bet A M B && Cong A M M B.
+rewrite[name "LabelLtP"] forall (O E E1 A B : point). LtP O E E1 A B <=> (exists (D : point). Diff O E E1 B A D && Ps O E D).
+rewrite[name "LabelPs"] forall (O E A : point). Ps O E A <=> Out O A E.
+rewrite[name "LabelLeP"] forall (O E E1 A B : point). LeP O E E1 A B <=> LtP O E E1 A B || A = B.
+goal forall (O E E1 A B AB AB1 : point). Length O E E1 A B AB => Length O E E1 A B AB1 => AB=AB1.

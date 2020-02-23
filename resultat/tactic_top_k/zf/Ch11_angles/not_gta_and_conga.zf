@@ -1,0 +1,6 @@
+include "../rew_type.zf".
+rewrite[name "LabelGtA"] forall (A B C D E F : point). GtA A B C D E F <=> LtA D E F A B C.
+rewrite[name "LabelLtA"] forall (A B C D E F : point). LtA A B C D E F <=> LeA A B C D E F && ~ CongA A B C D E F.
+#conga_sym
+assert[name "Labelconga_sym"] forall (A B C A1 B1 C1 : point). CongA A B C A1 B1 C1 => CongA A1 B1 C1 A B C.
+goal forall (A B C D E F : point). ~(GtA A B C D E F && CongA A B C D E F).

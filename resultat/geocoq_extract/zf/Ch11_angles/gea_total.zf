@@ -1,0 +1,4 @@
+include "../tarski_term_def.zf".
+#lea_total
+assert[name "Labellea_total"] forall (A B C D E F : point). A!=B => B!=C => D!=E => E!=F => LeA A B C D E F || LeA D E F A B C.
+goal forall (A B C D E F : point). A!=B => B!=C => D!=E => E!=F => GeA A B C D E F || GeA D E F A B C.

@@ -1,0 +1,5 @@
+include "../rew_type.zf".
+rewrite[name "LabelLength"] forall (O E E1 A B L: point). Length O E E1 A B L <=> O != E && Col O E L && LeP O E E1 O L && Cong O L A B.
+#cong_symmetry
+assert[name "Labelcong_symmetry"] forall (A B C D : point). Cong A B C D => Cong C D A B.
+goal forall (O E E1 A B AB : point). Length O E E1 A B AB => Cong A B O AB.

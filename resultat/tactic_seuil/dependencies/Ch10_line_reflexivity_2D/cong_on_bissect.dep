@@ -1,0 +1,2 @@
+lemme : cong_perp_or_mid perp_comm perp_in_perp l8_2 col_permutation_1 perp_perp_col col_trivial_2 col_trivial_3 cong_commutativity cong_symmetry perp_right_comm perp_sym
+rewrite :

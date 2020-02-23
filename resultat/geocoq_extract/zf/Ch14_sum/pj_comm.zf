@@ -1,0 +1,6 @@
+include "../tarski_term_def.zf".
+#pj_right_comm
+assert[name "Labelpj_right_comm"] forall (A B C D : point). Pj A B C D => Pj A B D C.
+#pj_left_comm
+assert[name "Labelpj_left_comm"] forall (A B C D : point). Pj A B C D => Pj B A C D.
+goal forall (A B C D : point). Pj A B C D => Pj B A D C.

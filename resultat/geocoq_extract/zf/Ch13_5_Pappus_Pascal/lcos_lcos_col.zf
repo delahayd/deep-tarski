@@ -1,0 +1,15 @@
+include "../tarski_term_def.zf".
+#lcos_lg_anga
+assert[name "Labellcos_lg_anga"] forall (lp l : point->point->prop) (a : point->point->point->prop).Lcos lp l a => Lcos lp l a && Q_Cong l && Q_Cong lp && Q_CongA_Acute a.
+#l8_2
+assert[name "Labell8_2"] forall (A B C : point). Per A B C => Per C B A.
+#anga_sym
+assert[name "Labelanga_sym"] forall (A B C : point) (a : point->point->point->prop). Q_CongA_Acute a => a A B C => a C B A.
+#lcos_lg_not_null
+assert[name "Labellcos_lg_not_null"] forall (lp l : point->point->prop) (a : point->point->point->prop). Lcos l lp a => ~Q_Cong_Null l && ~Q_Cong_Null lp.
+#lcos_per
+assert[name "Labellcos_per"] forall (A B C : point) (lp l : point->point->prop) (a : point->point->point->prop). Q_CongA_Acute a =>Q_Cong l => Q_Cong lp => Lcos lp l a => l A C => lp A B => a A B C => Per A B C.
+#per_per_col
+assert[name "Labelper_per_col"] forall (A B C X : point). Per A X C => X!=C => Per B X C => Col A B X.
+rewrite[name "LabelQ_Cong_Null"] forall (l : point->point->prop). Q_Cong_Null l <=> Q_Cong l && (exists (A : point). l A A).
+goal forall (O A B P : point) (lp la lb : point->point->prop) (a b : point->point->point->prop). Lcos lp la a => Lcos lp lb b => la O A => lb O B => lp O P => a A O P => b B O P => Col A B P.

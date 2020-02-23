@@ -1,0 +1,3 @@
+lemme : cong_symmetry cong_right_commutativity cong_reflexivity construction_uniqueness segment_construction
+rewrite : CongA
+destruct : 

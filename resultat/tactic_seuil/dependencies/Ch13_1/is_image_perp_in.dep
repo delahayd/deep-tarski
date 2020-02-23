@@ -1,0 +1,2 @@
+lemme : col_permutation_5 col_permutation_3 col_permutation_1 perp_in_right_comm l8_14_2_1b_bis perp_in_sym midpoint_col
+rewrite : ReflectL Reflect

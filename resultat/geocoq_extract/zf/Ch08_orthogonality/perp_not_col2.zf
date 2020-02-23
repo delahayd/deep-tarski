@@ -1,0 +1,16 @@
+include "../tarski_term_def.zf".
+#col_permutation_3
+assert[name "Labelcol_permutation_3"] forall (A B C : point). Col A B C => Col C B A.
+#perp_not_eq_2
+assert[name "Labelperp_not_eq_2"] forall (A B C D : point). Perp A B C D => C!=D.
+#col_trivial_3
+assert[name "Labelcol_trivial_3"] forall (A B : point). Col A B A.
+#col_trivial_1
+assert[name "Labelcol_trivial_1"] forall (A B : point). Col A A B.
+#l8_14_2_1b_bis
+assert[name "Labell8_14_2_1b_bis"] forall (A B C D X : point). Perp A B C D => Col X A B => Col X C D => Perp_at X A B C D.
+#l8_14_3
+assert[name "Labell8_14_3"] forall (A B C D X Y : point). Perp_at X A B C D => Perp_at Y A B C D => X=Y.
+#col_permutation_5
+assert[name "Labelcol_permutation_5"] forall (A B C : point). Col A B C => Col A C B.
+goal forall (A B C D : point). Perp A B C D => ~ Col A B C || ~Col A B D.

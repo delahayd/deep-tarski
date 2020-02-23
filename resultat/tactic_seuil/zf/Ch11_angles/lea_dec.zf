@@ -1,0 +1,6 @@
+include "../rew_type.zf".
+#angle_construction_1
+assert[name "Labelangle_construction_1"] forall (A B C A1 B1 P : point). ~Col A B C => ~Col A1 B1 P => (exists (C1 : point). CongA A B C A1 B1 C1 && OS A1 B1 C1 P).
+#lea_in_angle
+assert[name "Labellea_in_angle"] forall (A B C P : point). LeA A B P A B C => OS A B C P => InAngle P A B C.
+goal forall (A B C D E F : point). LeA A B C D E F || ~LeA A B C D E F.

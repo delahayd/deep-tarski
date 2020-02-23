@@ -1,0 +1,5 @@
+include "../tarski_term_def.zf".
+#le_left_comm
+assert[name "Labelle_left_comm"] forall (A B C D : point). Le A B C D => Le B A C D.
+rewrite[name "LabelGe"] forall (A B C D : point). Ge A B C D <=> Le C D A B.
+goal forall (A B C D : point). Ge A B C D => Ge A B D C.

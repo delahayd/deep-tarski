@@ -1,0 +1,4 @@
+include "../rew_type.zf".
+#l5_12_a
+assert[name "Labell5_12_a"] forall (A B C : point). Bet A B C => Le A B A C && Le B C A C.
+goal forall (A B C : point). Bet A B C => Le B C A C.

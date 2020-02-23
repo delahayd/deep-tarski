@@ -1,0 +1,3 @@
+include "../rew_type.zf".
+rewrite[name "LabelLe"] forall (A B C D : point). Le A B C D <=> (exists (E : point). (Bet C E D && Cong A B C E)).
+goal forall (P A B : point). Out P A B || ~Out P A B.

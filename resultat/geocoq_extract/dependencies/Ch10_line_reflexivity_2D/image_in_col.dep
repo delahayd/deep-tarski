@@ -1,0 +1,3 @@
+lemme : eq_dec_points perp_distinct col_permutation_2 col_trivial_3 l7_3 cong_commutativity col_trivial_1 l7_2 image_in_is_image_spec is_image_spec_col_cong per_per_col col_trivial_2 l8_2
+rewrite : Per ReflectL_at
+destruct : 

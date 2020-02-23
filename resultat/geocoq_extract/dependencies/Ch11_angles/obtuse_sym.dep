@@ -1,0 +1,3 @@
+lemme : lta_right_comm
+rewrite : Obtuse GtA
+destruct : 

@@ -1,0 +1,4 @@
+include "../rew_type.zf".
+#par_symmetry
+assert[name "Labelpar_symmetry"] forall (A B C D : point). Par A B C D => Par C D A B.
+goal forall (A B C D : point). Par A B C D || Par B A C D || Par A B D C || Par B A D C || Par C D A B || Par C D B A || Par D C A B || Par D C B A => Par A B C D.

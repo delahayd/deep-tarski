@@ -1,0 +1,3 @@
+lemme : diff_O_A sum_diff diff_ar2 prod_exists compatibility_of_prod_with_order diff_sum distr_r sum_assoc_1 opp_exists sum_comm compatibility_of_sum_with_order diff_exists diff_uniqueness sum_A_O sum_O_B
+rewrite : Opp Sum Prod Ar2
+destruct : 

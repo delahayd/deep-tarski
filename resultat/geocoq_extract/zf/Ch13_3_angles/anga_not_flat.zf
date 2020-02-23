@@ -1,0 +1,10 @@
+include "../tarski_term_def.zf".
+#anga_acute
+assert[name "Labelanga_acute"] forall (A B C : point) (a : point->point->point->prop). Q_CongA_Acute a => a A B C => Acute A B C.
+#acute_not_bet
+assert[name "Labelacute_not_bet"] forall (A B C : point). Acute A B C => ~Bet A B C.
+#anga_is_ang
+assert[name "Labelanga_is_ang"] forall (a : point->point->point->prop). Q_CongA_Acute a => Q_CongA a.
+rewrite[name "LabelQ_CongA_Acute"] forall (a : point->point->point->prop). Q_CongA_Acute a <=> (exists (A B C : point). Acute A B C && (forall (X Y Z : point). CongA A B C X Y Z <=> a X Y Z)).
+rewrite[name "LabelQ_CongA_nFlat"] forall (a : point->point->point->prop). Q_CongA_nFlat a <=> Q_CongA a && (forall (A B C : point). a A B C => ~ Bet A B C).
+goal forall (a : point->point->point->prop). Q_CongA_Acute a => Q_CongA_nFlat a.

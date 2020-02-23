@@ -1,0 +1,3 @@
+lemme : perp_perp_in col_trivial_1 col_trivial_3
+rewrite : Perp_at
+destruct : 

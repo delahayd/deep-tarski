@@ -1,0 +1,3 @@
+lemme : eq_dec_points cong_symmetry segment_construction_2 le_trivial l5_5_2
+rewrite : Le
+destruct : 

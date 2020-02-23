@@ -1,0 +1,10 @@
+include "../tarski_term_def.zf".
+#perp_in_right_comm
+assert[name "Labelperp_in_right_comm"] forall (A B C D X : point). Perp_at X A B C D => Perp_at X A B D C.
+#perp_in_sym
+assert[name "Labelperp_in_sym"] forall (A B C D X : point). Perp_at X A B C D => Perp_at X C D A B.
+#perp_in_left_comm
+assert[name "Labelperp_in_left_comm"] forall (A B C D X : point). Perp_at X A B C D => Perp_at X B A C D.
+#perp_in_comm
+assert[name "Labelperp_in_comm"] forall (A B C D X : point). Perp_at X A B C D => Perp_at X B A D C.
+goal forall ( X A B C D : point). Perp_at X A B C D =>Perp_at X A B C D && Perp_at X B A C D && Perp_at X A B D C && Perp_at X B A D C && Perp_at X C D A B && Perp_at X C D B A && Perp_at X D C A B && Perp_at X D C B A.

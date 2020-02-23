@@ -1,0 +1,6 @@
+include "../tarski_term_def.zf".
+#between_trivial2
+assert[name "Labelbetween_trivial2"] forall (A B : point). Bet A A B.
+#between_trivial
+assert[name "Labelbetween_trivial"] forall (A B : point). Bet A B B.
+goal forall (A B C : point). ~Bet A B C => A!=B && B!=C.

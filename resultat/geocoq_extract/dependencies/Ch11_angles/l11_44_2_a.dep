@@ -1,0 +1,3 @@
+lemme : conga__or_out_ts col_permutation_3 out_conga conga_preserves_lta l6_6 col_permutation_2 bet_out col_permutation_1 out_one_side lta_trans conga_right_comm conga_sym out_col out_trivial l9_9 l11_44_1_a conga_refl bet_col col_transitivity_1 l11_41 not_col_distincts between_symmetry col_permutation_4 col_permutation_5 cong_identity
+rewrite : Lt Le LeA
+destruct : 

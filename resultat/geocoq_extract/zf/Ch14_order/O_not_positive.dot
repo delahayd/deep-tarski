@@ -1,0 +1,23 @@
+digraph "unsat_graph" {
+  vertex_0 [color=red, label="[]", shape=box, style=filled];
+  vertex_0 -> vertex_1 [label="simplify", dir="back"];
+  vertex_1 [color=red, label="[]", shape=box, style=filled];
+  vertex_1 -> vertex_2 [label="rw_clause\l\{X0[1] → sk_O[0], X1[1] → sk_O[0], X2[1] → sk_E[0]\}[1]\l", dir="back"];
+  vertex_2 [color=navajowhite, shape=box, label="(Out X0 X1 X2 := [X1 ≠ X0∧\l                  Bet X0 X1 X2 ∨ Bet X0 X2 X1∧\l                  X2 ≠ X0] [B])\l", style=filled];
+  vertex_2 -> vertex_3 [label="rw.lit", dir="back"];
+  vertex_3 [color=yellow, shape=box, label="rewrite\l  [file \"../resultat/geocoq_extract/zf/Ch14_order/O_not_positive.zf\" \l   \"LabelOut\"]\l  Out X0 X1 X2 =\> X1 ≠ X0 && Bet X0 X1 X2 ∨ Bet X0 X2 X1 && X2 ≠ X0.\l", style=filled];
+  vertex_1 -> vertex_4 [label="rw_clause\l\{X0[1] → sk_O[0], X1[1] → sk_O[0], X2[1] → sk_E[0]\}[0]\l", dir="back"];
+  vertex_4 [shape=box, label="Out sk_O sk_O sk_E\l", style=filled];
+  vertex_4 -> vertex_5 [label="rw\l\{X3[1] → sk_O[0], X4[1] → sk_O[0], X5[1] → sk_E[0]\}[1]\l", dir="back"];
+  vertex_5 [color=navajowhite, shape=box, label="(Ps X3 X5 X4 := Out X3 X4 X5 [T])\l", style=filled];
+  vertex_5 -> vertex_6 [label="", dir="back"];
+  vertex_6 [color=yellow, shape=box, label="rewrite\l  [file \"../resultat/geocoq_extract/zf/Ch14_order/O_not_positive.zf\" \l   \"LabelPs\"]\l  Ps X3 X5 X4 = Out X3 X4 X5.\l", style=filled];
+  vertex_4 -> vertex_7 [label="rw", dir="back"];
+  vertex_7 [shape=box, label="Ps sk_O sk_E sk_O\l", style=filled];
+  vertex_7 -> vertex_8 [label="cnf", dir="back"];
+  vertex_8 [shape=box, label="negated_goal\l  ¬ (∀ O/139:point E/140:point. (¬ (Ps O/139 E/140 O/139)))\l  # skolems: [].\l", style=filled];
+  vertex_8 -> vertex_9 [label="cnf.neg", dir="back"];
+  vertex_9 [color=green, shape=box, label="goal\l  [file \"../resultat/geocoq_extract/zf/Ch14_order/O_not_positive.zf\" \l   \"zf_stmt_128\"]\l  ∀ O/139:point E/140:point. (¬ (Ps O/139 E/140 O/139)).\l", style=filled];
+  }
+
+

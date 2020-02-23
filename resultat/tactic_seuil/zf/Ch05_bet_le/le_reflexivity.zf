@@ -1,0 +1,10 @@
+include "../rew_type.zf".
+#between_trivial
+assert[name "Labelbetween_trivial"] forall (A B : point). Bet A B B.
+#cong__le
+assert[name "Labelcong__le"] forall (A B C D : point). Cong A B C D => Le A B C D.
+#cong_reflexivity
+assert[name "Labelcong_reflexivity"] forall (A B : point). Cong A B A B.
+#cong_reverse_identity
+assert[name "Labelcong_reverse_identity"] forall (A C D : point). Cong A A C D => C=D.
+goal forall (A B : point). Le A B A B.

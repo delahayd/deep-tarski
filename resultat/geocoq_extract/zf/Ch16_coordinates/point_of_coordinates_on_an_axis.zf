@@ -1,0 +1,27 @@
+include "../tarski_term_def.zf".
+#per_perp
+assert[name "Labelper_perp"] forall (A B C : point). A!=B => B!=C => Per A B C => Perp A B B C.
+#l4_13
+assert[name "Labell4_13"] forall (A B C A1 B1 C1 : point). Col A B C => Cong_3 A B C A1 B1 C1 => Col A1 B1 C1.
+#cong_symmetry
+assert[name "Labelcong_symmetry"] forall (A B C D : point). Cong A B C D => Cong C D A B.
+#col_trivial_3
+assert[name "Labelcol_trivial_3"] forall (A B : point). Col A B A.
+#cong_trivial_identity
+assert[name "Labelcong_trivial_identity"] forall (A B : point). Cong A A B B.
+#perp_col0
+assert[name "Labelperp_col0"] forall (A B C D X Y : point). Perp A B C D => X!=Y => Col A B X => Col A B Y => Perp C D X Y.
+#all_coplanar
+assert[name "Labelall_coplanar"] forall (A B C D : point). Coplanar A B C D.
+#perp_right_comm
+assert[name "Labelperp_right_comm"] forall (A B C D : point). Perp A B C D => Perp A B D C.
+#perp_comm
+assert[name "Labelperp_comm"] forall (A B C D : point). Perp A B C D => Perp B A D C.
+#cong_4321
+assert[name "Labelcong_4321"] forall (A B C D : point). Cong A B C D => Cong D C B A.
+#l4_14
+assert[name "Labell4_14"] forall (A B C A1 B1 : point). Col A B C => Cong A B A1 B1 => (exists (C1 : point). Cong_3 A B C A1 B1 C1).
+#cong_diff
+assert[name "Labelcong_diff"] forall (A B C D : point). A!=B => Cong A B C D => C!=D.
+rewrite[name "LabelCong_3"] forall (A B C A1 B1 C1 : point). Cong_3 A B C A1 B1 C1 <=> Cong A B A1 B1 && Cong A C A1 C1 && Cong B C B1 C1.
+goal forall (O E S U1 U2 X : point). Cs O E S U1 U2 => Col O E X => O!=X => (exists (P : point). Cd O E S U1 U2 P X O).

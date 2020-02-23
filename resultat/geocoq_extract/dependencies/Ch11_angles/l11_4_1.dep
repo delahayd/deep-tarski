@@ -1,0 +1,3 @@
+lemme : out_cong_cong l11_3 cong_commutativity l6_7 col_permutation_5 l4_16 cong_symmetry l6_6 out_col
+rewrite : FSC CongA Out Cong_3
+destruct : 

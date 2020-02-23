@@ -1,0 +1,3 @@
+lemme : prod_0_r prod_uniqueness
+rewrite : Prod Ar2
+destruct : 

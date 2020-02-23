@@ -1,0 +1,7 @@
+include "../rew_type.zf".
+rewrite[name "LabelLeA"] forall (A B C D E F : point). LeA A B C D E F <=> (exists (P : point). InAngle P D E F && CongA A B C D E P).
+#conga_left_comm
+assert[name "Labelconga_left_comm"] forall (A B C D E F : point). CongA A B C D E F => CongA C B A D E F.
+#lta_right_comm
+assert[name "Labellta_right_comm"] forall (A B C D E F : point). LtA A B C D E F => LtA A B C F E D.
+goal forall (A B C D E F : point). LeA A B C D E F => LeA C B A D E F.

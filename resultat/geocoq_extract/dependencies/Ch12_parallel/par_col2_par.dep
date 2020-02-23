@@ -1,0 +1,3 @@
+lemme : eq_dec_points col_permutation_2 par_distincts par_col_par par_right_comm col_transitivity_1
+rewrite : 
+destruct : 

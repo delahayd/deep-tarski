@@ -1,0 +1,20 @@
+digraph "unsat_graph" {
+  vertex_0 [color=red, label="[]", shape=box, style=filled];
+  vertex_0 -> vertex_1 [label="s_sup-\l", dir="back"];
+  vertex_1 [shape=box, label="¬Cong sk_B sk_A sk_D sk_C\l", style=filled];
+  vertex_1 -> vertex_2 [label="cnf", dir="back"];
+  vertex_2 [shape=box, label="negated_goal\l  ¬ (∀ A/161:point B/162:point C/163:point D/164:point.\l        ((Cong A/161 B/162 D/164 C/163)\l         ∨ (Cong B/162 A/161 D/164 C/163)\l         ∨ (Cong C/163 D/164 B/162 A/161)\l         ∨ ((Cong D/164 C/163 B/162 A/161) ⇒\l              (Cong A/161 B/162 C/163 D/164))\l         ∨ (Cong D/164 C/163 A/161 B/162)\l         ∨ (Cong C/163 D/164 A/161 B/162)\l         ∨ (Cong B/162 A/161 C/163 D/164)\l         ∨ (Cong A/161 B/162 C/163 D/164)))\l  # skolems: [].\l", style=filled];
+  vertex_2 -> vertex_3 [label="cnf.neg", dir="back"];
+  vertex_3 [color=green, shape=box, label="goal\l  [file \"../resultat/geocoq_extract/zf/Ch02_cong/Cong_cases.zf\" \"zf_stmt_128\"]\l  ∀ A/161:point B/162:point C/163:point D/164:point.\l    ((Cong A/161 B/162 D/164 C/163)\l     ∨ (Cong B/162 A/161 D/164 C/163)\l     ∨ (Cong C/163 D/164 B/162 A/161)\l     ∨ ((Cong D/164 C/163 B/162 A/161) ⇒ (Cong A/161 B/162 C/163 D/164))\l     ∨ (Cong D/164 C/163 A/161 B/162)\l     ∨ (Cong C/163 D/164 A/161 B/162)\l     ∨ (Cong B/162 A/161 C/163 D/164)\l     ∨ (Cong A/161 B/162 C/163 D/164)).\l", style=filled];
+  vertex_0 -> vertex_4 [label="s_sup-\l", dir="back"];
+  vertex_4 [shape=box, label="Cong sk_B sk_A sk_D sk_C\l", style=filled];
+  vertex_4 -> vertex_5 [label="s_sup-\l\{X0[0] → sk_B[1], X1[0] → sk_A[1], X2[0] → sk_D[1], X3[0] → sk_C[1]\}[0]\l", dir="back"];
+  vertex_5 [shape=box, label="forall (X0:point) (X1:point) (X2:point) (X3:point).\l[Cong X0 X1 X2 X3 ∨ ¬Cong X2 X3 X0 X1]\l", style=filled];
+  vertex_5 -> vertex_6 [label="cnf", dir="back"];
+  vertex_6 [color=yellow, shape=box, label="assert\l  [file \"../resultat/geocoq_extract/zf/Ch02_cong/Cong_cases.zf\" \l   \"Labelcong_symmetry\"]\l  ∀ A/133:point B/134:point C/135:point D/136:point.\l    ((Cong A/133 B/134 C/135 D/136) ⇒ (Cong C/135 D/136 A/133 B/134)).\l", style=filled];
+  vertex_4 -> vertex_7 [label="s_sup-\l\{X0[0] → sk_B[1], X1[0] → sk_A[1], X2[0] → sk_D[1], X3[0] → sk_C[1]\}[1]\l", dir="back"];
+  vertex_7 [shape=box, label="Cong sk_D sk_C sk_B sk_A\l", style=filled];
+  vertex_7 -> vertex_2 [label="cnf", dir="back"];
+  }
+
+

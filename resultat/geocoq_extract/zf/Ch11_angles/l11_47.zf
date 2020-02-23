@@ -1,0 +1,42 @@
+include "../tarski_term_def.zf".
+#le_left_comm
+assert[name "Labelle_left_comm"] forall (A B C D : point). Le A B C D => Le B A C D.
+#per_col_eq
+assert[name "Labelper_col_eq"] forall (A B C : point). Per A B C => Col A B C => B!=C => A=B.
+#col_permutation_1
+assert[name "Labelcol_permutation_1"] forall (A B C : point). Col A B C => Col B C A.
+#l11_46
+assert[name "Labell11_46"] forall (A B C : point). ~Col A B C => (Per A B C || Obtuse A B C) => Lt B A A C && Lt B C A C.
+#l8_14_2_1a
+assert[name "Labell8_14_2_1a"] forall (X A B C D : point). Perp_at X A B C D => Perp A B C D.
+#col_trivial_1
+assert[name "Labelcol_trivial_1"] forall (A B : point). Col A A B.
+#not_col_distincts
+assert[name "Labelnot_col_distincts"] forall (A B C : point). ~Col A B C => ~Col A B C && A!=B && B!=C && A!=C.
+#per_col
+assert[name "Labelper_col"] forall (A B C D : point). B!=C => Per A B C => Col B C D => Per A B D.
+#perp_in_sym
+assert[name "Labelperp_in_sym"] forall (A B C D X : point). Perp_at X A B C D => Perp_at X C D A B.
+#l8_2
+assert[name "Labell8_2"] forall (A B C : point). Per A B C => Per C B A.
+#col_permutation_5
+assert[name "Labelcol_permutation_5"] forall (A B C : point). Col A B C => Col A C B.
+#perp_in_comm
+assert[name "Labelperp_in_comm"] forall (A B C D X : point). Perp_at X A B C D => Perp_at X B A D C.
+#l8_7
+assert[name "Labell8_7"] forall (A B C : point). Per A B C => Per A C B => B=C.
+#perp_in_per
+assert[name "Labelperp_in_per"] forall (A B C : point). Perp_at B A B B C => Per A B C.
+#l8_14_3
+assert[name "Labell8_14_3"] forall (A B C D X Y : point). Perp_at X A B C D => Perp_at Y A B C D => X=Y.
+#perp_perp_in
+assert[name "Labelperp_perp_in"] forall (A B C : point). Perp A B C A => Perp_at A A B C A.
+#l5_12_b
+assert[name "Labell5_12_b"] forall (A B C : point). Col A B C => Le A B A C => Le B C A C => Bet A B C.
+#le_transitivity
+assert[name "Labelle_transitivity"] forall (A B C D E F : point). Le A B C D => Le C D E F => Le A B E F.
+#per_perp_in
+assert[name "Labelper_perp_in"] forall (A B C : point). A!=B => B!=C => Per A B C => Perp_at B A B B C.
+rewrite[name "LabelLt"] forall (A B C D : point). Lt A B C D <=> Le A B C D && ~ Cong A B C D.
+rewrite[name "LabelPerp_at"] forall (X A B C D : point). Perp_at X A B C D <=> A != B && C != D && Col X A B && Col X C D && (forall (U V : point). Col U A B => Col V C D => Per U X V).
+goal forall (A B C H : point). Per A C B => Perp_at H C H A B => Bet A H B && A!=H && B!=H.

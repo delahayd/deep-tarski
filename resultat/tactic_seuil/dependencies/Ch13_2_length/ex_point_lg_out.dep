@@ -1,0 +1,2 @@
+lemme : cong_reflexivity eq_dec_points cong_symmetry l6_6 segment_construction_3
+rewrite : Q_Cong Q_Cong_Null

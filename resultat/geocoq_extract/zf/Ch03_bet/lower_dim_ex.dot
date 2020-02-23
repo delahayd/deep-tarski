@@ -1,0 +1,25 @@
+digraph "unsat_graph" {
+  vertex_0 [color=red, label="[]", shape=box, style=filled];
+  vertex_0 -> vertex_1 [label="s_sup-\l", dir="back"];
+  vertex_1 [shape=box, label="¬Bet PA PB PC\l", style=filled];
+  vertex_1 -> vertex_2 [label="cnf", dir="back"];
+  vertex_2 [color=yellow, shape=box, label="assert\l  [file \"../resultat/geocoq_extract/zf/Ch03_bet/lower_dim_ex.zf\" \l   \"Labellower_dim\"]\l  ¬ ((Bet PB PC PA) ∨ (Bet PC PA PB) ∨ (Bet PA PB PC)).\l", style=filled];
+  vertex_0 -> vertex_3 [label="s_sup-\l", dir="back"];
+  vertex_3 [shape=box, label="Bet PA PB PC\l", style=filled];
+  vertex_3 -> vertex_4 [label="clc", dir="back"];
+  vertex_4 [shape=box, label="¬Bet PB PC PA\l", style=filled];
+  vertex_4 -> vertex_2 [label="cnf", dir="back"];
+  vertex_3 -> vertex_5 [label="clc", dir="back"];
+  vertex_5 [shape=box, label="[Bet PB PC PA ∨ Bet PA PB PC]\l", style=filled];
+  vertex_5 -> vertex_6 [label="s_sup-\l\{X0[0] → PC[1], X1[0] → PA[1], X2[0] → PB[1]\}[1]\l", dir="back"];
+  vertex_6 [shape=box, label="¬Bet PC PA PB\l", style=filled];
+  vertex_6 -> vertex_2 [label="cnf", dir="back"];
+  vertex_5 -> vertex_7 [label="s_sup-\l\{X0[0] → PC[1], X1[0] → PA[1], X2[0] → PB[1]\}[0]\l", dir="back"];
+  vertex_7 [shape=box, label="forall (X0:point) (X1:point) (X2:point).\l[Bet X0 X1 X2 ∨ Bet X1 X2 X0 ∨ Bet X2 X0 X1]\l", style=filled];
+  vertex_7 -> vertex_8 [label="cnf", dir="back"];
+  vertex_8 [shape=box, label="negated_goal\l  ¬ (∃ A/133:point B/134:point C/135:point.\l        (¬ ((Bet B/134 C/135 A/133)\l             ∨ (Bet C/135 A/133 B/134)\l             ∨ (Bet A/133 B/134 C/135))))\l  # skolems: [].\l", style=filled];
+  vertex_8 -> vertex_9 [label="cnf.neg", dir="back"];
+  vertex_9 [color=green, shape=box, label="goal\l  [file \"../resultat/geocoq_extract/zf/Ch03_bet/lower_dim_ex.zf\" \l   \"zf_stmt_128\"]\l  ∃ A/133:point B/134:point C/135:point.\l    (¬ ((Bet B/134 C/135 A/133)\l         ∨ (Bet C/135 A/133 B/134)\l         ∨ (Bet A/133 B/134 C/135))).\l", style=filled];
+  }
+
+

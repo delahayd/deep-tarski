@@ -1,0 +1,4 @@
+include "../tarski_term_def.zf".
+#col_preserves_two_sides
+assert[name "Labelcol_preserves_two_sides"] forall (A B C D X Y : point). C!=D => Col A B C => Col A B D => TS A B X Y => TS C D X Y.
+goal forall (A B C D X Y : point). C!=D => Col A B C => Col A B D => OS A B X Y => OS C D X Y.

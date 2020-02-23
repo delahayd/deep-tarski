@@ -1,0 +1,5 @@
+include "../tarski_term_def.zf".
+#invert_two_sides
+assert[name "Labelinvert_two_sides"] forall (A B P Q : point). TS A B P Q => TS B A P Q.
+rewrite[name "LabelOS"] forall (A B P Q : point). OS A B P Q <=> (exists (R : point). TS A B P R && TS A B Q R).
+goal forall (A B P Q : point). OS A B P Q => OS B A P Q.

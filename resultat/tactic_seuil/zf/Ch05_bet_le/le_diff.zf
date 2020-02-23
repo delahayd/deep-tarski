@@ -1,0 +1,4 @@
+include "../rew_type.zf".
+#le_zero
+assert[name "Labelle_zero"] forall (A B C : point). Le A B C C => A=B.
+goal forall (A B C D : point). A!=B => Le A B C D => C!=D.

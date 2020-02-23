@@ -1,0 +1,6 @@
+include "../tarski_term_def.zf".
+#between_symmetry
+assert[name "Labelbetween_symmetry"] forall (A B C : point). Bet A B C => Bet C B A.
+#between_trivial
+assert[name "Labelbetween_trivial"] forall (A B : point). Bet A B B.
+goal forall (A B C D : point). Cong A B C D => Le A B C D.

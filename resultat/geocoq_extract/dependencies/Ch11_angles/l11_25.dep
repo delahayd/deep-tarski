@@ -1,0 +1,3 @@
+lemme : l11_25_aux bet_dec l6_6 l11_24 out_trivial l6_7 bet_out_out_bet between_symmetry
+rewrite : InAngle Out
+destruct : 

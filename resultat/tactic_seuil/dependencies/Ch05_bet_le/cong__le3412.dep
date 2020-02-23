@@ -1,0 +1,2 @@
+lemme : cong__le cong_symmetry cong_inner_transitivity
+rewrite : Par_strict

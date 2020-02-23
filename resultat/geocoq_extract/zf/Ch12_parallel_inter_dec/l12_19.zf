@@ -1,0 +1,62 @@
+include "../tarski_term_def.zf".
+#col_permutation_4
+assert[name "Labelcol_permutation_4"] forall (A B C : point). Col A B C => Col B A C.
+#par_neq2
+assert[name "Labelpar_neq2"] forall (A B C D : point). Par A B C D => C!=D.
+#l12_18_d
+assert[name "Labell12_18_d"] forall (A B C D P : point). Cong A B C D => Cong B C D A => ~Col A B C => B!=D => Col A P C => Col B P D => TS A C B D.
+#col3
+assert[name "Labelcol3"] forall (X Y A B C : point). X!=Y => Col X Y A => Col X Y B => Col X Y C => Col A B C.
+#midpoint_existence
+assert[name "Labelmidpoint_existence"] forall (A B : point). (exists (X : point). Midpoint X A B).
+#cong_diff
+assert[name "Labelcong_diff"] forall (A B C D : point). A!=B => Cong A B C D => C!=D.
+#l6_21
+assert[name "Labell6_21"] forall (A B C D P Q : point). ~Col A B C => C!=D => Col A B P => Col A B Q => Col C D P => Col C D Q => P=Q.
+#symmetric_point_construction
+assert[name "Labelsymmetric_point_construction"] forall (P A : point). exists (P1 : point). Midpoint A P P1.
+#par_right_comm
+assert[name "Labelpar_right_comm"] forall (A B C D : point). Par A B C D => Par A B D C.
+#midpoint_distinct_1
+assert[name "Labelmidpoint_distinct_1"] forall (I A B : point). A!=B => Midpoint I A B => I!=A && I!=B.
+#l7_2
+assert[name "Labell7_2"] forall (M A B : point). Midpoint M A B => Midpoint M B A.
+#par_left_comm
+assert[name "Labelpar_left_comm"] forall (A B C D : point). Par A B C D => Par B A C D.
+#col_permutation_2
+assert[name "Labelcol_permutation_2"] forall (A B C : point). Col A B C => Col C A B.
+#par_neq1
+assert[name "Labelpar_neq1"] forall (A B C D : point). Par A B C D => A!=B.
+#l7_3
+assert[name "Labell7_3"] forall (M A : point). Midpoint M A A => M=A.
+#midpoint_col
+assert[name "Labelmidpoint_col"] forall (A M B : point). Midpoint M A B => Col M A B.
+#par_trans
+assert[name "Labelpar_trans"] forall (A1 A2 B1 B2 C1 C2 : point). Par A1 A2 B1 B2 => Par B1 B2 C1 C2 => Par A1 A2 C1 C2.
+#l12_18_c
+assert[name "Labell12_18_c"] forall (A B C D P : point). Cong A B C D => Cong B C D A => ~Col A B C => B!=D => Col A P C => Col B D P => TS B D A C.
+#cong_diff_3
+assert[name "Labelcong_diff_3"] forall (A B C D : point). C!=D => Cong A B C D => A!=B.
+#par_symmetry
+assert[name "Labelpar_symmetry"] forall (A B C D : point). Par A B C D => Par C D A B.
+#cong_symmetry
+assert[name "Labelcong_symmetry"] forall (A B C D : point). Cong A B C D => Cong C D A B.
+#not_col_distincts
+assert[name "Labelnot_col_distincts"] forall (A B C : point). ~Col A B C => ~Col A B C && A!=B && B!=C && A!=C.
+#is_midpoint_id_2
+assert[name "Labelis_midpoint_id_2"] forall (A B : point). Midpoint A B A => A=B.
+#par_id
+assert[name "Labelpar_id"] forall (A B C : point). Par A B A C => Col A B C.
+#col_permutation_3
+assert[name "Labelcol_permutation_3"] forall (A B C : point). Col A B C => Col C B A.
+#col_permutation_5
+assert[name "Labelcol_permutation_5"] forall (A B C : point). Col A B C => Col A C B.
+#col_transitivity_1
+assert[name "Labelcol_transitivity_1"] forall (P Q A B : point). P!=Q => Col P Q A => Col P Q B => Col P A B.
+#col_trivial_2
+assert[name "Labelcol_trivial_2"] forall (A B : point). Col A B B.
+#l12_17
+assert[name "Labell12_17"] forall (A B C D P : point). A!=B => Midpoint P A C => Midpoint P B D => Par A B C D.
+#l7_13
+assert[name "Labell7_13"] forall (A P Q P1 Q1 : point). Midpoint A P1 P => Midpoint A Q1 Q => Cong P Q P1 Q1.
+goal forall (A B C D : point). ~Col A B C => Par A B C D => Par B C D A => Cong A B C D && Cong B C D A && TS B D A C && TS A C B D.

@@ -1,0 +1,6 @@
+include "../tarski_term_def.zf".
+#image_in_is_image_spec
+assert[name "Labelimage_in_is_image_spec"] forall (M A B P P1 : point). ReflectL_at M P P1 A B => ReflectL P P1 A B.
+rewrite[name "LabelReflect"] forall (P1 P A B : point). Reflect P1 P A B <=> (A != B && ReflectL P1 P A B) || (A = B && Midpoint A P P1).
+rewrite[name "LabelReflect_at"] forall (M P1 P A B : point). Reflect_at M P1 P A B <=> (A != B && ReflectL_at M P1 P A B) || (A = B && A = M && Midpoint M P P1).
+goal forall (M A B P P1 : point). ReflectL_at M P P1 A B => Reflect P P1 A B.

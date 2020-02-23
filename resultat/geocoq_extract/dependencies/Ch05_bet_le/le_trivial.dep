@@ -1,0 +1,3 @@
+lemme : cong_trivial_identity between_symmetry between_trivial2
+rewrite : Le
+destruct : 

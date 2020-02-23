@@ -1,0 +1,3 @@
+lemme : conga__or_out_ts bet_in_angle_bet l11_25 out_conga_out bet_conga_bet or_bet_out conga_sym conga_trans in_angle_out out_col out_trivial l9_9 l11_21_b l11_29_a in_angle_asym one_side_transitivity in_angle_one_side col_permutation_4 conga_line
+rewrite : Col InAngle CongA LeA
+destruct : 

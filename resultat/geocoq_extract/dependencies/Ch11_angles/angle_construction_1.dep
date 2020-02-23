@@ -1,0 +1,3 @@
+lemme : eq_dec_points perp_distinct ex_per_cong perp_sym l10_12 invert_one_side perp_left_comm cong3_conga l8_18_existence cong_commutativity col_trivial_1 not_out_bet col_transitivity_1 perp_in_sym col_permutation_4 segment_construction l8_8 l8_2 perp_col perp_right_comm l11_13 perp_in_comm out_trivial l11_10 col_trivial_2 segment_construction_3 perp_in_per perp_perp_in cong_symmetry l6_6 l11_16 col_permutation_2 out_col col_one_side between_symmetry out_dec cong_identity
+rewrite : Perp Out Perp_at Col Cong_3
+destruct : 

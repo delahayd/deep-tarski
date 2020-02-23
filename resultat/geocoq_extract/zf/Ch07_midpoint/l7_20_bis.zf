@@ -1,0 +1,4 @@
+include "../tarski_term_def.zf".
+#l7_20
+assert[name "Labell7_20"] forall (M A B : point). Col A M B => Cong M A M B => A=B || Midpoint M A B.
+goal forall (M A B : point). A!=B => Col A M B => Cong M A M B => Midpoint M A B.

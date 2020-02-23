@@ -1,0 +1,2 @@
+lemme : le_cases l7_2 l7_17 cong_symmetry le_anti_symmetry between_symmetry eq_dec_points l4_5 le_mid2__le13 cong_commutativity cong_cong_half_1 cong__le cong_transitivity
+rewrite : Midpoint Out Cong_3

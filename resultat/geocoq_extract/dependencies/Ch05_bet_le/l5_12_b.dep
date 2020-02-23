@@ -1,0 +1,3 @@
+lemme : cong_symmetry l5_12_a cong_commutativity between_trivial between_cong le_anti_symmetry between_symmetry le_comm
+rewrite : Col
+destruct : 

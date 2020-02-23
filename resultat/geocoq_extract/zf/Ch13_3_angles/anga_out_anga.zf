@@ -1,0 +1,13 @@
+include "../tarski_term_def.zf".
+#conga_trans
+assert[name "Labelconga_trans"] forall (A B C A1 B1 C1 A2 B2 C2 : point). CongA A B C A1 B1 C1 => CongA A1 B1 C1 A2 B2 C2 => CongA A B C A2 B2 C2.
+#out_conga
+assert[name "Labelout_conga"] forall (A B C A1 B1 C1 A0 C0 A2 C2 : point). CongA A B C A1 B1 C1 => Out B A A0 => Out B C C0 => Out B1 A1 A2 => Out B1 C1 C2 => CongA A0 B C0 A2 B1 C2.
+#out_trivial
+assert[name "Labelout_trivial"] forall (P A : point). A!=P => Out P A A.
+#conga_refl
+assert[name "Labelconga_refl"] forall (A B C : point). A!=B => C!=B => CongA A B C A B C.
+#anga_distincts
+assert[name "Labelanga_distincts"] forall (A B C : point) ( a : point->point->point->prop). Q_CongA_Acute a => a A B C => A!=B && C!=B.
+rewrite[name "LabelQ_CongA_Acute"] forall (a : point->point->point->prop). Q_CongA_Acute a <=> (exists (A B C : point). Acute A B C && (forall (X Y Z : point). CongA A B C X Y Z <=> a X Y Z)).
+goal forall (A B C A1 C1 : point) (a : point->point->point->prop). Q_CongA_Acute a => a A B C => Out B A A1 => Out B C C1 => a A1 B C1.

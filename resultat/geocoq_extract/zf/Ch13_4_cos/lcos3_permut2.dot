@@ -1,0 +1,29 @@
+digraph "unsat_graph" {
+  vertex_0 [color=red, label="[]", shape=box, style=filled];
+  vertex_0 -> vertex_1 [label="s_sup-\l", dir="back"];
+  vertex_1 [shape=box, label="¬Lcos3 sk_lp sk_l sk_c sk_b sk_a\l", style=filled];
+  vertex_1 -> vertex_2 [label="cnf", dir="back"];
+  vertex_2 [shape=box, label="negated_goal\l  ¬ (∀ lp/143:(point → point → prop) l/144:(point → point → prop) \l        a/145:(point → point → point → prop) \l        b/146:(point → point → point → prop) \l        c/147:(point → point → point → prop).\l        ((Lcos3 lp/143 l/144 a/145 b/146 c/147) ⇒\l         (Lcos3 lp/143 l/144 c/147 b/146 a/145)))\l  # skolems: [].\l", style=filled];
+  vertex_2 -> vertex_3 [label="cnf.neg", dir="back"];
+  vertex_3 [color=green, shape=box, label="goal\l  [file \"../resultat/geocoq_extract/zf/Ch13_4_cos/lcos3_permut2.zf\" \l   \"zf_stmt_128\"]\l  ∀ lp/143:(point → point → prop) l/144:(point → point → prop) \l    a/145:(point → point → point → prop) \l    b/146:(point → point → point → prop) \l    c/147:(point → point → point → prop).\l    ((Lcos3 lp/143 l/144 a/145 b/146 c/147) ⇒\l     (Lcos3 lp/143 l/144 c/147 b/146 a/145)).\l", style=filled];
+  vertex_0 -> vertex_4 [label="s_sup-\l", dir="back"];
+  vertex_4 [shape=box, label="Lcos3 sk_lp sk_l sk_c sk_b sk_a\l", style=filled];
+  vertex_4 -> vertex_5 [label="s_sup-\l\{F0[1] → sk_lp[0], \l F1[1] → sk_l[0], \l F2[1] → sk_c[0], \l F3[1] → sk_b[0], \l F4[1] → sk_a[0]\}[1]\l", dir="back"];
+  vertex_5 [shape=box, label="forall (F0:point → point → prop) (F1:point → point → prop) \l       (F2:point → point → point → prop) \l       (F3:point → point → point → prop) \l       (F4:point → point → point → prop).\l[Lcos3 F0 F1 F2 F3 F4 ∨ ¬Lcos3 F0 F1 F2 F4 F3]\l", style=filled];
+  vertex_5 -> vertex_6 [label="cnf", dir="back"];
+  vertex_6 [color=yellow, shape=box, label="assert\l  [file \"../resultat/geocoq_extract/zf/Ch13_4_cos/lcos3_permut2.zf\" \l   \"Labellcos3_permut1\"]\l  ∀ lp/133:(point → point → prop) l/134:(point → point → prop) \l    a/135:(point → point → point → prop) \l    b/136:(point → point → point → prop) \l    c/137:(point → point → point → prop).\l    ((Lcos3 lp/133 l/134 a/135 b/136 c/137) ⇒\l     (Lcos3 lp/133 l/134 a/135 c/137 b/136)).\l", style=filled];
+  vertex_4 -> vertex_7 [label="s_sup-\l\{F0[1] → sk_lp[0], \l F1[1] → sk_l[0], \l F2[1] → sk_c[0], \l F3[1] → sk_b[0], \l F4[1] → sk_a[0]\}[0]\l", dir="back"];
+  vertex_7 [shape=box, label="Lcos3 sk_lp sk_l sk_c sk_a sk_b\l", style=filled];
+  vertex_7 -> vertex_8 [label="s_sup-\l\{F5[0] → sk_lp[1], \l F6[0] → sk_l[1], \l F7[0] → sk_c[1], \l F8[0] → sk_a[1], \l F9[0] → sk_b[1]\}[0]\l", dir="back"];
+  vertex_8 [shape=box, label="forall (F5:point → point → prop) (F6:point → point → prop) \l       (F7:point → point → point → prop) \l       (F8:point → point → point → prop) \l       (F9:point → point → point → prop).\l[Lcos3 F5 F6 F7 F8 F9 ∨ ¬Lcos3 F5 F6 F8 F7 F9]\l", style=filled];
+  vertex_8 -> vertex_9 [label="cnf", dir="back"];
+  vertex_9 [color=yellow, shape=box, label="assert\l  [file \"../resultat/geocoq_extract/zf/Ch13_4_cos/lcos3_permut2.zf\" \l   \"Labellcos3_permut3\"]\l  ∀ lp/138:(point → point → prop) l/139:(point → point → prop) \l    a/140:(point → point → point → prop) \l    b/141:(point → point → point → prop) \l    c/142:(point → point → point → prop).\l    ((Lcos3 lp/138 l/139 a/140 b/141 c/142) ⇒\l     (Lcos3 lp/138 l/139 b/141 a/140 c/142)).\l", style=filled];
+  vertex_7 -> vertex_10 [label="s_sup-\l\{F5[0] → sk_lp[1], \l F6[0] → sk_l[1], \l F7[0] → sk_c[1], \l F8[0] → sk_a[1], \l F9[0] → sk_b[1]\}[1]\l", dir="back"];
+  vertex_10 [shape=box, label="Lcos3 sk_lp sk_l sk_a sk_c sk_b\l", style=filled];
+  vertex_10 -> vertex_5 [label="s_sup-\l\{F0[0] → sk_lp[1], \l F1[0] → sk_l[1], \l F2[0] → sk_a[1], \l F3[0] → sk_c[1], \l F4[0] → sk_b[1]\}[0]\l", dir="back"];
+  vertex_10 -> vertex_11 [label="s_sup-\l\{F0[0] → sk_lp[1], \l F1[0] → sk_l[1], \l F2[0] → sk_a[1], \l F3[0] → sk_c[1], \l F4[0] → sk_b[1]\}[1]\l", dir="back"];
+  vertex_11 [shape=box, label="Lcos3 sk_lp sk_l sk_a sk_b sk_c\l", style=filled];
+  vertex_11 -> vertex_2 [label="cnf", dir="back"];
+  }
+
+

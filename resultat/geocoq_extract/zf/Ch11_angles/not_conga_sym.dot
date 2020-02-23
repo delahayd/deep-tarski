@@ -1,0 +1,20 @@
+digraph "unsat_graph" {
+  vertex_0 [color=red, label="[]", shape=box, style=filled];
+  vertex_0 -> vertex_1 [label="s_sup-\l", dir="back"];
+  vertex_1 [shape=box, label="¬CongA sk_A sk_B sk_C sk_D sk_E sk_F\l", style=filled];
+  vertex_1 -> vertex_2 [label="cnf", dir="back"];
+  vertex_2 [shape=box, label="negated_goal\l  ¬ (∀ A/139:point B/140:point C/141:point D/142:point E/143:point \l        F/144:point.\l        ((¬ (CongA A/139 B/140 C/141 D/142 E/143 F/144)) ⇒\l         (¬ (CongA D/142 E/143 F/144 A/139 B/140 C/141))))\l  # skolems: [].\l", style=filled];
+  vertex_2 -> vertex_3 [label="cnf.neg", dir="back"];
+  vertex_3 [color=green, shape=box, label="goal\l  [file \"../resultat/geocoq_extract/zf/Ch11_angles/not_conga_sym.zf\" \l   \"zf_stmt_128\"]\l  ∀ A/139:point B/140:point C/141:point D/142:point E/143:point \l    F/144:point.\l    ((¬ (CongA A/139 B/140 C/141 D/142 E/143 F/144)) ⇒\l     (¬ (CongA D/142 E/143 F/144 A/139 B/140 C/141))).\l", style=filled];
+  vertex_0 -> vertex_4 [label="s_sup-\l", dir="back"];
+  vertex_4 [shape=box, label="CongA sk_A sk_B sk_C sk_D sk_E sk_F\l", style=filled];
+  vertex_4 -> vertex_5 [label="s_sup-\l\{X0[0] → sk_A[1], \l X1[0] → sk_B[1], \l X2[0] → sk_C[1], \l X3[0] → sk_D[1], \l X4[0] → sk_E[1], \l X5[0] → sk_F[1]\}[0]\l", dir="back"];
+  vertex_5 [shape=box, label="forall (X0:point) (X1:point) (X2:point) (X3:point) (X4:point) (X5:point).\l[CongA X0 X1 X2 X3 X4 X5 ∨ ¬CongA X3 X4 X5 X0 X1 X2]\l", style=filled];
+  vertex_5 -> vertex_6 [label="cnf", dir="back"];
+  vertex_6 [color=yellow, shape=box, label="assert\l  [file \"../resultat/geocoq_extract/zf/Ch11_angles/not_conga_sym.zf\" \l   \"Labelconga_sym\"]\l  ∀ A/133:point B/134:point C/135:point A1/136:point B1/137:point \l    C1/138:point.\l    ((CongA A/133 B/134 C/135 A1/136 B1/137 C1/138) ⇒\l     (CongA A1/136 B1/137 C1/138 A/133 B/134 C/135)).\l", style=filled];
+  vertex_4 -> vertex_7 [label="s_sup-\l\{X0[0] → sk_A[1], \l X1[0] → sk_B[1], \l X2[0] → sk_C[1], \l X3[0] → sk_D[1], \l X4[0] → sk_E[1], \l X5[0] → sk_F[1]\}[1]\l", dir="back"];
+  vertex_7 [shape=box, label="CongA sk_D sk_E sk_F sk_A sk_B sk_C\l", style=filled];
+  vertex_7 -> vertex_2 [label="cnf", dir="back"];
+  }
+
+

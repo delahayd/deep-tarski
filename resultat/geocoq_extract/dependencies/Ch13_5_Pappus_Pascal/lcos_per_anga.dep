@@ -1,0 +1,3 @@
+lemme : l11_52 per_not_col eq_dec_points anga_sym cong_transitivity conga_comm conga_sym l11_16 cong_symmetry out_trivial cong_4321 lg_cong lcos_lg_not_null l8_9 is_null_all cong_identity anga_conga_anga cong_left_commutativity cong_commutativity l11_46 out_null_anga anga_distincts
+rewrite : Lcos Q_Cong_Null Lt
+destruct : 

@@ -1,0 +1,11 @@
+include "../tarski_term_def.zf".
+#eq_dec_points
+assert[name "Labeleq_dec_points"] forall (A B : point). A=B || A!=B.
+#is_image_is_image_spec
+assert[name "Labelis_image_is_image_spec"] forall (P P1 A B : point). A!=B => (Reflect P1 P A B <=> ReflectL P1 P A B ).
+#l10_4_spec
+assert[name "Labell10_4_spec"] forall (A B P P1 : point). ReflectL P P1 A B => ReflectL P1 P A B.
+#l7_2
+assert[name "Labell7_2"] forall (M A B : point). Midpoint M A B => Midpoint M B A.
+rewrite[name "LabelReflect"] forall (P1 P A B : point). Reflect P1 P A B <=> (A != B && ReflectL P1 P A B) || (A = B && Midpoint A P P1).
+goal forall (A B P P1 : point). Reflect P P1 A B => Reflect P1 P A B.

@@ -1,0 +1,15 @@
+include "../rew_type.zf".
+rewrite[name "LabelReflect"] forall (P1 P A B : point). Reflect P1 P A B <=> (A != B && ReflectL P1 P A B) || (A = B && Midpoint A P P1).
+#eq_dec_points
+assert[name "Labeleq_dec_points"] forall (A B : point). A=B || A!=B.
+#is_image_is_image_spec
+assert[name "Labelis_image_is_image_spec"] forall (P P1 A B : point). A!=B => (Reflect P1 P A B <=> ReflectL P1 P A B ).
+#l10_2_uniqueness
+assert[name "Labell10_2_uniqueness"] forall (A B P P2 P1 : point). Reflect P1 P A B => Reflect P2 P A B => P1=P2.
+#l10_4
+assert[name "Labell10_4"] forall (A B P P1 : point). Reflect P P1 A B => Reflect P1 P A B.
+#l7_2
+assert[name "Labell7_2"] forall (M A B : point). Midpoint M A B => Midpoint M B A.
+#symmetric_point_uniqueness
+assert[name "Labelsymmetric_point_uniqueness"] forall (A P P1 P2 : point). Midpoint P A P1 => Midpoint P A P2 => P1=P2.
+goal forall (A B P P1 P2 : point). Reflect P1 P A B => Reflect P2 P1 A B => P=P2.

@@ -1,0 +1,4 @@
+include "../tarski_term_def.zf".
+#par_col2_par
+assert[name "Labelpar_col2_par"] forall (A B C D E F : point). E!=F => Par A B C D => Col C D E => Col C D F => Par A B E F.
+goal forall (A B C D E F : point). E!=F => Par A B C D => Col E F C => Col E F D => Par A B E F.

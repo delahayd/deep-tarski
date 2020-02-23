@@ -1,0 +1,2 @@
+lemme : cong_left_commutativity cong_identity cong_transitivity cong_symmetry anga_distinct
+rewrite : Lcos Q_Cong Q_Cong_Null

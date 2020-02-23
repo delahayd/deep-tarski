@@ -1,0 +1,14 @@
+digraph "unsat_graph" {
+  vertex_0 [color=red, label="[]", shape=box, style=filled];
+  vertex_0 -> vertex_1 [label="s_sup-\l", dir="back"];
+  vertex_1 [shape=box, label="¬Cong sk_A1 sk_B1 sk_C1 sk_D\l", style=filled];
+  vertex_1 -> vertex_2 [label="cnf", dir="back"];
+  vertex_2 [shape=box, label="negated_goal\l  ¬ (∀ A/272:point B/273:point C/274:point D/275:point.\l        ((¬ (Cong A/272 B/273 C/274 D/275))\l         ∨ (Cong A/272 B/273 C/274 D/275)))\l  # skolems: [].\l", style=filled];
+  vertex_2 -> vertex_3 [label="cnf.neg", dir="back"];
+  vertex_3 [color=green, shape=box, label="goal\l  [file \"../resultat/geocoq_extract/zf/Ch05_bet_le/Cong_dec.zf\" \"zf_stmt_128\"]\l  ∀ A/272:point B/273:point C/274:point D/275:point.\l    ((¬ (Cong A/272 B/273 C/274 D/275)) ∨ (Cong A/272 B/273 C/274 D/275)).\l", style=filled];
+  vertex_0 -> vertex_4 [label="s_sup-\l", dir="back"];
+  vertex_4 [shape=box, label="Cong sk_A1 sk_B1 sk_C1 sk_D\l", style=filled];
+  vertex_4 -> vertex_2 [label="cnf", dir="back"];
+  }
+
+

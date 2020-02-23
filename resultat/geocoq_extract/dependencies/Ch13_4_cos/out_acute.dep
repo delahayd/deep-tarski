@@ -1,0 +1,3 @@
+lemme : perp_not_col out_col out_conga_out perp_sym not_col_exists perp_left_comm col_in_angle perp_not_eq_2 col_trivial_2 conga_refl perp_perp_in l10_15 perp_in_comm perp_in_per l8_2 perp_comm
+rewrite : Out LtA LeA Acute
+destruct : 

@@ -1,0 +1,3 @@
+lemme : col_trivial_1 col_permutation_5 project_col_project par_symmetry sum_to_sump par_trans col_permutation_1 par_left_comm l6_21 col_permutation_4 col_permutation_5 col_trivial_1 par_distincts parallel_uniqueness par_symmetry eq_dec_points col_trivial_2 par_col_par_2
+rewrite : Sump Proj Proj
+destruct : 

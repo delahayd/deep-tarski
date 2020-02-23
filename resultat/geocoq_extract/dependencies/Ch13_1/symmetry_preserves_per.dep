@@ -1,0 +1,3 @@
+lemme : symmetry_preserves_midpoint cong_symmetry cong_left_commutativity symmetric_point_uniqueness cong_transitivity cong_3421 symmetric_point_construction
+rewrite : Midpoint Per
+destruct : 

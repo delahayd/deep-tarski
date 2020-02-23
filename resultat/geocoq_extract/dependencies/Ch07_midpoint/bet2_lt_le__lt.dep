@@ -1,0 +1,3 @@
+lemme : cong_symmetry bet2_le2__le l4_3_1 cong_commutativity between_trivial between_symmetry segment_construction
+rewrite : Lt Le
+destruct : 

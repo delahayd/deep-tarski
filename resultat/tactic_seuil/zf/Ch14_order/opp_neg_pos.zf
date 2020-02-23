@@ -1,0 +1,14 @@
+include "../rew_type.zf".
+rewrite[name "LabelMidpoint"] forall (M A B : point). Midpoint M A B <=> Bet A M B && Cong A M M B.
+rewrite[name "LabelNg"] forall (O E A : point). Ng O E A <=> A != O && E != O && Bet A O E .
+rewrite[name "LabelOut"] forall (P A B : point). Out P A B <=> A != P && B != P && (Bet P A B || Bet P B A).
+rewrite[name "LabelPs"] forall (O E A : point). Ps O E A <=> Out O A E.
+#between_symmetry
+assert[name "Labelbetween_symmetry"] forall (A B C : point). Bet A B C => Bet C B A.
+#cong_identity
+assert[name "Labelcong_identity"] forall (A B C : point). Cong A B C C => A = B.
+#l5_2
+assert[name "Labell5_2"] forall (A B C D : point). A!=B => Bet A B C => Bet A B D => Bet B C D || Bet B D C.
+#opp_midpoint
+assert[name "Labelopp_midpoint"] forall (O E E1 A MA : point). Opp O E E1 A MA => Midpoint O A MA.
+goal forall (O E E1 A MA : point). Ng O E A => Opp O E E1 A MA => Ps O E MA.

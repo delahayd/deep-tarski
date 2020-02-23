@@ -1,0 +1,3 @@
+lemme : eq_dec_points midpoint_col symmetric_point_construction out_distinct swap_diff invert_two_sides out2_bet_out two_sides_dec not_bet_out between_trivial col_trivial_1 l6_7 not_col_distincts not_col_permutation_5 col_permutation_5 midpoint_bet bet_col midpoint_distinct_2 col_trivial_2 in_angle_two_sides bet_dec l6_6 col_trivial_3 out_col between_trivial2 two_sides_in_angle l6_21 l6_4_1 between_symmetry out_dec
+rewrite : InAngle
+destruct : HInAngle HP' Habs HInter HUn

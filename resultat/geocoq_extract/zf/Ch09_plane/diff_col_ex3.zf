@@ -1,0 +1,19 @@
+include "../tarski_term_def.zf".
+#diff_bet_ex3
+assert[name "Labeldiff_bet_ex3"] forall (A B C : point). Bet A B C =>(exists (D : point). A!=D && B!=D && C!=D && Col A B D).
+#eq_dec_points
+assert[name "Labeleq_dec_points"] forall (A B : point). A=B || A!=B.
+#diff_col_ex
+assert[name "Labeldiff_col_ex"] forall (A B : point). exists (C : point). A!=C && B!=C && Col A B C.
+#col_permutation_2
+assert[name "Labelcol_permutation_2"] forall (A B C : point). Col A B C => Col C A B.
+#col_transitivity_1
+assert[name "Labelcol_transitivity_1"] forall (P Q A B : point). P!=Q => Col P Q A => Col P Q B => Col P A B.
+#between_symmetry
+assert[name "Labelbetween_symmetry"] forall (A B C : point). Bet A B C => Bet C B A.
+#col_permutation_4
+assert[name "Labelcol_permutation_4"] forall (A B C : point). Col A B C => Col B A C.
+#col_permutation_5
+assert[name "Labelcol_permutation_5"] forall (A B C : point). Col A B C => Col A C B.
+rewrite[name "LabelCol"] forall (A B C : point). Col A B C <=> Bet A B C || Bet B C A || Bet C A B.
+goal forall (A B C : point). Col A B C => (exists (D : point). A!=D && B!=D && C!=D && Col A B D).

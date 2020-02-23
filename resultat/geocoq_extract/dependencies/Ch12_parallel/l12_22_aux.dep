@@ -1,0 +1,3 @@
+lemme : col_permutation_3 conga_sym conga_trans invert_one_side l9_2 l12_21_b invert_two_sides between_identity col_permutation_1 conga_refl col_transitivity_1 col_two_sides conga_comm segment_construction col_permutation_5 bet_out par_symmetry out_trivial par_col_par bet_col l11_10 cong_symmetry l11_14 col_trivial_3 col_one_side l9_8_2 between_symmetry cong_identity
+rewrite : OS CongA TS
+destruct : 

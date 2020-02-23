@@ -1,0 +1,4 @@
+include "../tarski_term_def.zf".
+#obtuse_not_acute
+assert[name "Labelobtuse_not_acute"] forall (A B C : point). Obtuse A B C => ~Acute A B C.
+goal forall (A B C : point). Acute A B C => ~Obtuse A B C.

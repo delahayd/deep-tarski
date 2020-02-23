@@ -1,0 +1,10 @@
+include "../tarski_term_def.zf".
+#cong_reverse_identity
+assert[name "Labelcong_reverse_identity"] forall (A C D : point). Cong A A C D => C=D.
+#cong_4321
+assert[name "Labelcong_4321"] forall (A B C D : point). Cong A B C D => Cong D C B A.
+#cong_symmetry
+assert[name "Labelcong_symmetry"] forall (A B C D : point). Cong A B C D => Cong C D A B.
+#segment_construction
+assert[name "Labelsegment_construction"] forall (A B C D : point). exists (E :point). Bet A B E && Cong B E C D.
+goal forall (A B : point). Bet A B B.

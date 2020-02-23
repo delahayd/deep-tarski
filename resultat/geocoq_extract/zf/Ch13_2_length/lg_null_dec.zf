@@ -1,0 +1,10 @@
+include "../tarski_term_def.zf".
+#cong_identity
+assert[name "Labelcong_identity"] forall (A B C : point). Cong A B C C => A = B.
+#cong_reflexivity
+assert[name "Labelcong_reflexivity"] forall (A B : point). Cong A B A B.
+#eq_dec_points
+assert[name "Labeleq_dec_points"] forall (A B : point). A=B || A!=B.
+rewrite[name "LabelQ_Cong"] forall (A B C D E F : point) (l : point->point->prop). Q_Cong l <=> (exists (A B : point). forall X Y. Cong A B X Y <=> l X Y).
+rewrite[name "LabelQ_Cong_Null"] forall (l : point->point->prop). Q_Cong_Null l <=> Q_Cong l && (exists (A : point). l A A).
+goal forall (l : point->point->prop). Q_Cong l => Q_Cong_Null l || ~Q_Cong_Null l.

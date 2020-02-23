@@ -1,0 +1,3 @@
+lemme : perp_not_col l11_16 col_permutation_5 perp_out_acute perp_right_comm between_symmetry obtuse_not_acute perp_perp_in perp_in_comm perp_in_per col_permutation_1 perp_comm
+rewrite : LeA Out GtA LtA Obtuse CongA
+destruct : 

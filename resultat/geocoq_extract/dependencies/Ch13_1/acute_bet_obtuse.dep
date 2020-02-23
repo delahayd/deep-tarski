@@ -1,0 +1,3 @@
+lemme : l11_17 col_one_side_out lea_asym outer_transitivity_between col_permutation_4 perp_sym per_not_col out_one_side between_symmetry perp_col perp_distinct out_col perp_in_sym out_conga conga_refl perp_perp_in l6_6 perp_comm conga_distinct conga_sym perp_not_col l11_16 conga_preserves_lta between_identity flat_all_lea perp_in_right_comm conga_trans not_col_distincts col_trivial_3 col_one_side out_trivial perp_left_comm between_inner_transitivity l11_13 perp_exists col_permutation_1 between_trivial2 col_permutation_3 col_permutation_5 invert_one_side col_trivial_1 l8_8 col_in_angle_out conga_preserves_in_angle perp_in_left_comm bet_col perp_right_comm l9_8_2 l10_15 perp_in_per one_side_transitivity
+rewrite : LeA Acute Out GtA TS LtA Obtuse InAngle
+destruct : 

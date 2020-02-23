@@ -1,0 +1,3 @@
+lemme : angle_construction_3 in_angle_line
+rewrite : CongA
+destruct : 

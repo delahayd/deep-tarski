@@ -1,0 +1,2 @@
+lemme : col_permutation_5 col_permutation_1 between_identity between_symmetry eq_dec_points l7_2 cong_symmetry
+rewrite : LeA Out InAngle

@@ -1,0 +1,73 @@
+include "../tarski_term_def.zf".
+#angle_construction_3
+assert[name "Labelangle_construction_3"] forall (A B C A1 B1 C1 : point). A!=B => C!=B => A1!=B1 => (exists (C1 : point). CongA A B C A1 B1 C1).
+#bet_conga_bet
+assert[name "Labelbet_conga_bet"] forall (A B C A1 B1 C1 : point). Bet A B C => CongA A B C A1 B1 C1 => Bet A1 B1 C1.
+#conga_sym
+assert[name "Labelconga_sym"] forall (A B C A1 B1 C1 : point). CongA A B C A1 B1 C1 => CongA A1 B1 C1 A B C.
+#conga_trans
+assert[name "Labelconga_trans"] forall (A B C A1 B1 C1 A2 B2 C2 : point). CongA A B C A1 B1 C1 => CongA A1 B1 C1 A2 B2 C2 => CongA A B C A2 B2 C2.
+#invert_one_side
+assert[name "Labelinvert_one_side"] forall (A B P Q : point). OS A B P Q => OS B A P Q.
+#in_angle_one_side
+assert[name "Labelin_angle_one_side"] forall (A B C P : point). ~Col A B C => ~Col B A P => InAngle P A B C => OS A B P C.
+#or_bet_out
+assert[name "Labelor_bet_out"] forall (A B C : point). Bet A B C || Out B A C || ~Col A B C.
+#l4_6
+assert[name "Labell4_6"] forall (A B C A1 B1 C1 : point). Bet A B C => Cong_3 A B C A1 B1 C1 => Bet A1 B1 C1.
+#cong_commutativity
+assert[name "Labelcong_commutativity"] forall (A B C D : point). Cong A B C D => Cong B A D C.
+#conga_trivial_1
+assert[name "Labelconga_trivial_1"] forall (A B C D : point). A!=B => C!=D => CongA A B A C D C.
+#conga_refl
+assert[name "Labelconga_refl"] forall (A B C : point). A!=B => C!=B => CongA A B C A B C.
+#in_angle_line
+assert[name "Labelin_angle_line"] forall (A B C P : point). P!=B => A!=B => C!=B => Bet A B C => InAngle P A B C.
+#ncol_conga_ncol
+assert[name "Labelncol_conga_ncol"] forall (A B C D E F : point). ~Col A B C => CongA A B C D E F => ~Col D E F.
+#col_permutation_4
+assert[name "Labelcol_permutation_4"] forall (A B C : point). Col A B C => Col B A C.
+#conga_comm
+assert[name "Labelconga_comm"] forall (A B C D E F : point). CongA A B C D E F => CongA C B A F E D.
+#out_in_angle_out
+assert[name "Labelout_in_angle_out"] forall (A B C P : point). Out B A C => InAngle P A B C => Out B A P.
+#cong2_conga_cong
+assert[name "Labelcong2_conga_cong"] forall (A B C A1 B1 C1 : point). CongA A B C A1 B1 C1 => Cong A B A1 B1 => Cong B C B1 C1 => Cong A C A1 C1.
+#in_angle_trivial_1
+assert[name "Labelin_angle_trivial_1"] forall (A B C : point). A!=B => C!=B => InAngle A A B C.
+#l11_25
+assert[name "Labell11_25"] forall (P A B C A1 C1 P1 : point). InAngle P A B C => Out B A1 A => Out B C1 C => Out B P P1 => InAngle P1 A1 B C1.
+#out_trivial
+assert[name "Labelout_trivial"] forall (P A : point). A!=P => Out P A A.
+#outer_transitivity_between
+assert[name "Labelouter_transitivity_between"] forall (A B C D : point). Bet A B C=> Bet B C D => B!=C => Bet A B D.
+#l5_1
+assert[name "Labell5_1"] forall (A B C D : point). A!=B => Bet A B C => Bet A B D => Bet A C D || Bet A D C.
+#between_inner_transitivity
+assert[name "Labelbetween_inner_transitivity"] forall (A B C D : point). Bet A B D => Bet B C D => Bet A B C.
+#l11_10
+assert[name "Labell11_10"] forall (A B C D E F A1 C1 D1 F1 : point). CongA A B C D E F => Out B A1 A => Out B C1 C => Out E D1 D => Out E F1 F => CongA A1 B C1 D1 E F1.
+#segment_construction_3
+assert[name "Labelsegment_construction_3"] forall (A B X Y : point). A!=B => X!=Y => (exists (C : point). Out A B C && Cong A C X Y).
+#between_exchange4
+assert[name "Labelbetween_exchange4"] forall (A B C D : point). Bet A B C => Bet A C D => Bet A B D.
+#cong_symmetry
+assert[name "Labelcong_symmetry"] forall (A B C D : point). Cong A B C D => Cong C D A B.
+#l11_22b
+assert[name "Labell11_22b"] forall (A B C P A1 B1 C1 P1 : point). OS B P A C && OS B1 P1 A1 C1 && CongA A B P A1 B1 P1 && CongA P B C P1 B1 C1 => CongA A B C A1 B1 C1.
+#l6_6
+assert[name "Labell6_6"] forall (P A B : point). Out P A B => Out P B A.
+#between_exchange3
+assert[name "Labelbetween_exchange3"] forall (A B C D : point). Bet A B C => Bet A C D => Bet B C D.
+#in_angle_trivial_2
+assert[name "Labelin_angle_trivial_2"] forall (A B C : point). A!=B => C!=B => InAngle C A B C.
+#angle_construction_1
+assert[name "Labelangle_construction_1"] forall (A B C A1 B1 P : point). ~Col A B C => ~Col A1 B1 P => (exists (C1 : point). CongA A B C A1 B1 C1 && OS A1 B1 C1 P).
+#between_symmetry
+assert[name "Labelbetween_symmetry"] forall (A B C : point). Bet A B C => Bet C B A.
+rewrite[name "LabelCongA"] forall (A B C D E F : point). CongA A B C D E F <=> A != B && C != B && D != E && F != E && (exists (A1 C1 D1 F1 : point).  Bet B A A1 && Cong A A1 E D && Bet B C C1 && Cong C C1 E F && Bet E D D1 && Cong D D1 B A && Bet E F F1 && Cong F F1 B C && Cong A1 C1 D1 F1).
+rewrite[name "LabelInAngle"] forall (P A B C : point). InAngle P A B C <=> A != B && C != B && P != B && (exists (X : point). Bet A X C && (X = B || Out B X P)).
+rewrite[name "LabelOut"] forall (P A B : point). Out P A B <=> A != P && B != P && (Bet P A B || Bet P B A).
+rewrite[name "LabelLeA"] forall (A B C D E F : point). LeA A B C D E F <=> (exists (P : point). InAngle P D E F && CongA A B C D E P).
+rewrite[name "LabelCol"] forall (A B C : point). Col A B C <=> Bet A B C || Bet B C A || Bet C A B.
+goal forall (A B C D E F : point). (exists (Q : point). InAngle C A B Q && CongA A B Q D E F) => LeA A B C D E F.

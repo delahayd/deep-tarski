@@ -1,0 +1,2 @@
+lemme : col_permutation_5 bet_col col_permutation_1 one_side_reflexivity one_side_symmetry out_out_one_side cong_symmetry l6_6
+rewrite :

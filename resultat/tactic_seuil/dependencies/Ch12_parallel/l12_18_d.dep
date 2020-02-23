@@ -1,0 +1,2 @@
+lemme : perp_in_left_comm perp_comm col_permutation_3 col_permutation_1 col_trivial_3 l7_2 l12_18_a col_transitivity_1 col_permutation_2 is_midpoint_id eq_dec_points cong_identity cong_commutativity cong_symmetry l6_6 cong_4321 col_permutation_5 col_trivial_1 cong_reflexivity col_trivial_2 l12_18_c cong_left_commutativity outer_transitivity_between2 between_trivial2 bet_col euclid col_permutation_4 l8_2 between_symmetry cong_transitivity l7_21
+rewrite : Par_strict Out Perp_at Perp

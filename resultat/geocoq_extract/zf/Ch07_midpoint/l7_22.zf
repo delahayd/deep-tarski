@@ -1,0 +1,8 @@
+include "../tarski_term_def.zf".
+#l7_22_aux
+assert[name "Labell7_22_aux"] forall (A1 A2 B1 B2 C M1 M2 : point). Bet A1 C A2 => Bet B1 C B2 => Cong C A1 C B1 => Cong C A2 C B2 => Midpoint M1 A1 B1 => Midpoint M2 A2 B2 => Le C A1 C A2 => Bet M1 C M2.
+#between_symmetry
+assert[name "Labelbetween_symmetry"] forall (A B C : point). Bet A B C => Bet C B A.
+#le_cases
+assert[name "Labelle_cases"] forall (A B C D : point). Le A B C D || Le C D A B.
+goal forall (A1 A2 B1 B2 C M1 M2 : point). Bet A1 C A2 => Bet B1 C B2 => Cong C A1 C B1 => Cong C A2 C B2 => Midpoint M1 A1 B1 => Midpoint M2 A2 B2 => Bet M1 C M2.

@@ -1,0 +1,2 @@
+lemme : cong_symmetry l7_13 cong_transitivity
+rewrite :

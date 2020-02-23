@@ -1,0 +1,33 @@
+include "../tarski_term_def.zf".
+#conga__or_out_ts
+assert[name "Labelconga__or_out_ts"] forall (A B C C1 : point). CongA A B C A B C1 => Out B C C1 || TS A B C C1.
+#eq_dec_points
+assert[name "Labeleq_dec_points"] forall (A B : point). A=B || A!=B.
+#par_symmetry
+assert[name "Labelpar_symmetry"] forall (A B C D : point). Par A B C D => Par C D A B.
+#col_permutation_1
+assert[name "Labelcol_permutation_1"] forall (A B C : point). Col A B C => Col B C A.
+#conga_sym
+assert[name "Labelconga_sym"] forall (A B C A1 B1 C1 : point). CongA A B C A1 B1 C1 => CongA A1 B1 C1 A B C.
+#col_trivial_1
+assert[name "Labelcol_trivial_1"] forall (A B : point). Col A A B.
+#out_col
+assert[name "Labelout_col"] forall (A B C : point). Out A B C => Col A B C.
+#col_one_side
+assert[name "Labelcol_one_side"] forall (A B C P Q : point). Col A B C => A!=C => OS A B P Q => OS A C P Q.
+#l12_22_aux
+assert[name "Labell12_22_aux"] forall (A B C D P : point). P!=A => A!=C => Bet P A C => OS P A B D => CongA B A P D C P => Par A B C D.
+#l9_9
+assert[name "Labell9_9"] forall (P Q A B : point). TS P Q A B => ~OS P Q A B.
+#one_side_symmetry
+assert[name "Labelone_side_symmetry"] forall (P Q A B : point). OS P Q A B => OS P Q B A.
+#bet_col
+assert[name "Labelbet_col"] forall (A B C : point). Bet A B C => Col A B C.
+#conga_comm
+assert[name "Labelconga_comm"] forall (A B C D E F : point). CongA A B C D E F => CongA C B A F E D.
+#col_permutation_5
+assert[name "Labelcol_permutation_5"] forall (A B C : point). Col A B C => Col A C B.
+rewrite[name "LabelCongA"] forall (A B C D E F : point). CongA A B C D E F <=> A != B && C != B && D != E && F != E && (exists (A1 C1 D1 F1 : point).  Bet B A A1 && Cong A A1 E D && Bet B C C1 && Cong C C1 E F && Bet E D D1 && Cong D D1 B A && Bet E F F1 && Cong F F1 B C && Cong A1 C1 D1 F1).
+rewrite[name "LabelOut"] forall (P A B : point). Out P A B <=> A != P && B != P && (Bet P A B || Bet P B A).
+rewrite[name "LabelPar"] forall (A B C D : point). Par A B C D <=> Par_strict A B C D || (A != B && C != D && Col A C D && Col B C D).
+goal forall (A B C D P : point). Out P A C => OS P A B D => CongA B A P D C P => Par A B C D.

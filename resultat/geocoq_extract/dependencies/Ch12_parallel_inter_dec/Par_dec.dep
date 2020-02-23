@@ -1,0 +1,3 @@
+lemme : par_trans par_left_comm parallel_existence1 col_permutation_5 par_col_par par_neq2 par_symmetry eq_dec_points par_id_3 par_neq1
+rewrite : 
+destruct : 

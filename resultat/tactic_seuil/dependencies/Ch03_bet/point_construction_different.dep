@@ -1,0 +1,2 @@
+lemme : cong_symmetry two_distinct_points segment_construction cong_identity
+rewrite :

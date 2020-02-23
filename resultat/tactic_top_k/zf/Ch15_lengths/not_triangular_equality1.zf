@@ -1,0 +1,10 @@
+include "../rew_type.zf".
+rewrite[name "LabelAr2"] forall (O E E1 A B C : point). Ar2 O E E1 A B C <=> ~ Col O E E1 && Col O E A && Col O E B && Col O E C.
+rewrite[name "LabelSum"] forall (O E E1 A B C : point). Sum O E E1 A B C <=> Ar2 O E E1 A B C && (exists (A1 C1 : point). Pj E E1 A  A1 && Col O E1 A1 && Pj O E  A1 C1 && Pj O E1 B  C1 && Pj E1 E C1 C).
+#between_symmetry
+assert[name "Labelbetween_symmetry"] forall (A B C : point). Bet A B C => Bet C B A.
+#between_trivial2
+assert[name "Labelbetween_trivial2"] forall (A B : point). Bet A A B.
+#length_id_2
+assert[name "Labellength_id_2"] forall (O E E1 A : point). O!=E => Length O E E1 A A O.
+goal forall (O E A : point). O!=E => ~(forall (E1 B C AB BC AC : point). Bet A B C => Length O E E1 A B AB => Length O E E1 B C BC => Length O E E1 A C AC => Sum O E E1 AB BC AC).

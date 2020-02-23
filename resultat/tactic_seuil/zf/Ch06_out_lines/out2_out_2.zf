@@ -1,0 +1,6 @@
+include "../rew_type.zf".
+#l6_6
+assert[name "Labell6_6"] forall (P A B : point). Out P A B => Out P B A.
+#out2_out_1
+assert[name "Labelout2_out_1"] forall (B C D X : point). Out B X C => Out B X D => Out B C D.
+goal forall (B C D X : point). Out B C X => Out B D X => Out B C D.

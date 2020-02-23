@@ -1,0 +1,9 @@
+include "../tarski_term_def.zf".
+#perp_comm
+assert[name "Labelperp_comm"] forall (A B C D : point). Perp A B C D => Perp B A D C.
+#l12_9
+assert[name "Labell12_9"] forall (A1 A2 B1 B2 C1 C2 : point). Perp A1 A2 C1 C2 => Perp B1 B2 C1 C2 =>Par A1 A2 B1 B2.
+#perp_sym
+assert[name "Labelperp_sym"] forall (A B C D : point). Perp A B C D => Perp C D A B.
+rewrite[name "LabelPerp2"] forall (A B C D P : point). Perp2 A B C D P <=> (exists (X Y : point). Col P X Y && Perp X Y A B && Perp X Y C D).
+goal forall (A B C D O : point). Perp2 A B C D O => Par A B C D.

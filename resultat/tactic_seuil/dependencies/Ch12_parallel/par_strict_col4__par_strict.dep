@@ -1,0 +1,2 @@
+lemme : par_strict_symmetry par_strict_col2_par_strict
+rewrite :

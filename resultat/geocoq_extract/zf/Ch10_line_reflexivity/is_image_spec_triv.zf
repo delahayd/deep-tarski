@@ -1,0 +1,6 @@
+include "../tarski_term_def.zf".
+#image_col
+assert[name "Labelimage_col"] forall (A B X : point). Col A B X => ReflectL X X A B.
+#col_trivial_1
+assert[name "Labelcol_trivial_1"] forall (A B : point). Col A A B.
+goal forall (A B : point). ReflectL A A B B.

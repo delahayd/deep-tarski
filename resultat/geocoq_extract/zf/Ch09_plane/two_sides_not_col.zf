@@ -1,0 +1,5 @@
+include "../tarski_term_def.zf".
+#col_permutation_2
+assert[name "Labelcol_permutation_2"] forall (A B C : point). Col A B C => Col C A B.
+rewrite[name "LabelTS"] forall (A B P Q : point). TS A B P Q <=> ~(Col P A B) && ~(Col Q A B) && (exists (T : point). Col T A B && Bet P T Q).
+goal forall (A B X Y : point). TS A B X Y => ~Col A B X.

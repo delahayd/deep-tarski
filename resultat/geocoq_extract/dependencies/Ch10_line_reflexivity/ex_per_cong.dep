@@ -1,0 +1,3 @@
+lemme : eq_dec_points perp_distinct cong_symmetry perp_comm perp_sym l8_5 cong_diff_3 out_col perp_col1 one_side_symmetry os_out_os not_col_distincts perp_left_comm segment_construction_3 cong_left_commutativity perp_per_1 l10_15
+rewrite : 
+destruct : 

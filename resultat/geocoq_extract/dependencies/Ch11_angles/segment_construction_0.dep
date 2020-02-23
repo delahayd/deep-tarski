@@ -1,0 +1,3 @@
+lemme : eq_dec_points another_point cong_trivial_identity segment_construction_3
+rewrite : 
+destruct : 

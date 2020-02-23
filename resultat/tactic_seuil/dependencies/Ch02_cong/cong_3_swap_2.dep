@@ -1,0 +1,2 @@
+lemme : conga_sym cong_symmetry cong_4321
+rewrite : CongA Cong_3

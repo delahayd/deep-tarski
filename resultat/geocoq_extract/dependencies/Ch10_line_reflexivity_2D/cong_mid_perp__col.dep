@@ -1,0 +1,3 @@
+lemme : eq_dec_points perp_distinct cong_symmetry perp_col midpoint_col perp_comm col_trivial_3 perp_perp_col perp_sym perp_in_comm cong_commutativity perp_in_perp perp_left_comm per_perp_in col_permutation_4 midpoint_distinct_1
+rewrite : Per
+destruct : 

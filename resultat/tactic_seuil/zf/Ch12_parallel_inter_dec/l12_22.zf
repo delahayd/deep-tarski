@@ -1,0 +1,6 @@
+include "../rew_type.zf".
+#l12_22_a
+assert[name "Labell12_22_a"] forall (A B C D P : point). Out P A C => OS P A B D => Par A B C D => CongA B A P D C P.
+#l12_22_b
+assert[name "Labell12_22_b"] forall (A B C D P : point). Out P A C => OS P A B D => CongA B A P D C P => Par A B C D.
+goal forall (A B C D P : point). Out P A C => OS P A B D => (CongA B A P D C P <=> Par A B C D).

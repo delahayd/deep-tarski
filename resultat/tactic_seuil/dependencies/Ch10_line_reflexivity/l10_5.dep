@@ -1,0 +1,2 @@
+lemme : symmetric_point_uniqueness is_image_is_image_spec eq_dec_points l7_2 l10_4 l10_2_uniqueness
+rewrite : Reflect

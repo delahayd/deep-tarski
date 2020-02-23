@@ -1,0 +1,12 @@
+include "../tarski_term_def.zf".
+#one_side_symmetry
+assert[name "Labelone_side_symmetry"] forall (P Q A B : point). OS P Q A B => OS P Q B A.
+#l6_6
+assert[name "Labell6_6"] forall (P A B : point). Out P A B => Out P B A.
+#out_out_one_side
+assert[name "Labelout_out_one_side"] forall (A B X Y Z : point). OS A B X Y => Out A Y Z => OS A B X Z.
+#one_side_reflexivity
+assert[name "Labelone_side_reflexivity"] forall (P Q A : point). ~Col A P Q => OS P Q A A.
+#col_permutation_1
+assert[name "Labelcol_permutation_1"] forall (A B C : point). Col A B C => Col B C A.
+goal forall (A B X Y : point). (~Col A B X || ~Col A B Y) => Out A X Y => OS A B X Y.

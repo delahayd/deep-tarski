@@ -1,0 +1,4 @@
+include "../tarski_term_def.zf".
+#point_equality_decidability
+assert[name "Labelpoint_equality_decidability"] forall (A B : point). A=B || A!=B.
+goal forall (A B : point). A=B || A!=B.

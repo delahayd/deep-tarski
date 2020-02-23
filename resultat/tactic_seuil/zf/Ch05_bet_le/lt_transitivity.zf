@@ -1,0 +1,6 @@
+include "../rew_type.zf".
+#le1234_lt__lt
+assert[name "Labelle1234_lt__lt"] forall (A B C D E F : point). Le A B C D => Lt C D E F => Lt A B E F.
+#lt__le
+assert[name "Labellt__le"] forall (A B C D : point). Lt A B C D => Le A B C D.
+goal forall (A B C D E F : point). Lt A B C D => Lt C D E F => Lt A B E F.

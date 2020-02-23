@@ -1,0 +1,3 @@
+lemme : grid_not_par l13_19 col_permutation_4 pj_trivial eq_dec_points prod_0_r pj_uniqueness prod_uniqueness par_right_comm par_left_comm prod_0_l pj_comm par_trans par_comm prod_null par_symmetry not_col_distincts col_trivial_3 col_permutation_1 col_permutation_5 col_trivial_1 not_col_permutation_5
+rewrite : Prod Ar2 Ar1
+destruct : H4

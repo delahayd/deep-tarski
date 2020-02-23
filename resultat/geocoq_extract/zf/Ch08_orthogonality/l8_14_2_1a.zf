@@ -1,0 +1,3 @@
+include "../tarski_term_def.zf".
+rewrite[name "LabelPerp"] forall (A B C D : point). Perp A B C D <=> (exists (X : point). Perp_at X A B C D).
+goal forall (X A B C D : point). Perp_at X A B C D => Perp A B C D.

@@ -1,0 +1,14 @@
+include "../tarski_term_def.zf".
+#bet_neq21__neq
+assert[name "Labelbet_neq21__neq"] forall (A B C : point). Bet A B C => B!=A=>A!=C.
+#conga_right_comm
+assert[name "Labelconga_right_comm"] forall (A B C D E F : point). CongA A B C D E F => CongA A B C F E D.
+#l11_13
+assert[name "Labell11_13"] forall (A B C D E F A1 D1 : point). CongA A B C D E F => Bet A B A1 => A1!=B => Bet D E D1 => D1!=E => CongA A1 B C D1 E F.
+#bet_neq12__neq
+assert[name "Labelbet_neq12__neq"] forall (A B C : point). Bet A B C => A!=B=>A!=C.
+#conga_pseudo_refl
+assert[name "Labelconga_pseudo_refl"] forall (A B C : point). A!=B => C!=B => CongA A B C C B A.
+#between_symmetry
+assert[name "Labelbetween_symmetry"] forall (A B C : point). Bet A B C => Bet C B A.
+goal forall (A B C A1 C1 : point). Bet A B A1 => A!=B => A1!=B => Bet C B C1 => B!=C => B!=C1 => CongA A B C A1 B C1.

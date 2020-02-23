@@ -1,0 +1,3 @@
+lemme : cong_reverse_identity cong_4321 cong_symmetry segment_construction
+rewrite : 
+destruct : 

@@ -1,0 +1,4 @@
+include "../tarski_term_def.zf".
+#le_anti_symmetry
+assert[name "Labelle_anti_symmetry"] forall (A B C D : point). Le A B C D => Le C D A B => Cong A B C D.
+goal forall (A B C D : point). ~(Lt A B C D && Lt C D A B).

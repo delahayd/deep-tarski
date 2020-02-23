@@ -1,0 +1,2 @@
+lemme : le_left_comm le_transitivity col_permutation_5 col_permutation_2 col_trivial_1 le_right_comm perp_sym par_left_comm col_permutation_1 between_symmetry par_strict_one_side col_trivial_3 not_and_lt cong_symmetry le1221 perp_not_eq_1 not_two_sides_one_side
+rewrite : TS Perp_at Le Perp Ge Par_strict Lt Gt Par Pj

@@ -1,0 +1,8 @@
+include "../tarski_term_def.zf".
+#eq_dec_points
+assert[name "Labeleq_dec_points"] forall (A B : point). A=B || A!=B.
+#lower_dim_ex
+assert[name "Labellower_dim_ex"] exists (A B C : point). ~(Bet A B C || Bet B C A || Bet C A B).
+#between_trivial
+assert[name "Labelbetween_trivial"] forall (A B : point). Bet A B B.
+goal exists (X Y : point). X!=Y.

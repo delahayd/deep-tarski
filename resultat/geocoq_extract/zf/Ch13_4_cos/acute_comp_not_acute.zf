@@ -1,0 +1,54 @@
+include "../tarski_term_def.zf".
+#lea_asym
+assert[name "Labellea_asym"] forall (A B C D E F : point). LeA A B C D E F => LeA D E F A B C => CongA A B C D E F.
+#between_exchange3
+assert[name "Labelbetween_exchange3"] forall (A B C D : point). Bet A B C => Bet A C D => Bet B C D.
+#between_symmetry
+assert[name "Labelbetween_symmetry"] forall (A B C : point). Bet A B C => Bet C B A.
+#perp_col
+assert[name "Labelperp_col"] forall (A B C D E : point). A!=E => Perp A B C D => Col A B E => Perp A E C D.
+#l5_3
+assert[name "Labell5_3"] forall (A B C D : point). Bet A B D => Bet A C D => Bet A B C || Bet A C B.
+#l11_36
+assert[name "Labell11_36"] forall (A B C D E F A1 D1 : point). A!=B => A1!=B => D!=E => D1!=E => Bet A B A1 => Bet D E D1 => (LeA A B C D E F <=> LeA D1 E F A1 B C).
+#conga_refl
+assert[name "Labelconga_refl"] forall (A B C : point). A!=B => C!=B => CongA A B C A B C.
+#perp_perp_in
+assert[name "Labelperp_perp_in"] forall (A B C : point). Perp A B C A => Perp_at A A B C A.
+#perp_in_comm
+assert[name "Labelperp_in_comm"] forall (A B C D X : point). Perp_at X A B C D => Perp_at X B A D C.
+#conga_sym
+assert[name "Labelconga_sym"] forall (A B C A1 B1 C1 : point). CongA A B C A1 B1 C1 => CongA A1 B1 C1 A B C.
+#l11_16
+assert[name "Labell11_16"] forall (A B C A1 B1 C1 : point). Per A B C => A!=B => C!=B => Per A1 B1 C1 => A1!=B1 => C1!=B1 => CongA A B C A1 B1 C1.
+#conga_preserves_lta
+assert[name "Labelconga_preserves_lta"] forall (A B C D E F A1 B1 C1 D1 E1 F1 : point). CongA A B C A1 B1 C1 => CongA D E F D1 E1 F1 => LtA A B C D E F => LtA A1 B1 C1 D1 E1 F1.
+#between_identity
+assert[name "Labelbetween_identity"] forall (A B : point). Bet A B A => A=B.
+#between_exchange2
+assert[name "Labelbetween_exchange2"] forall (A B C D : point). Bet A B D => Bet B C D => Bet A C D.
+#perp_left_comm
+assert[name "Labelperp_left_comm"] forall (A B C D : point). Perp A B C D => Perp B A C D.
+#col_permutation_3
+assert[name "Labelcol_permutation_3"] forall (A B C : point). Col A B C => Col C B A.
+#col_permutation_5
+assert[name "Labelcol_permutation_5"] forall (A B C : point). Col A B C => Col A C B.
+#lta_diff
+assert[name "Labellta_diff"] forall (A B C D E F : point). LtA A B C D E F => LtA A B C D E F && A!=B && C!=B && D!=E && F!=E.
+#flat_not_acute
+assert[name "Labelflat_not_acute"] forall (A B C : point). Bet A B C => ~Acute A B C.
+#bet_col
+assert[name "Labelbet_col"] forall (A B C : point). Bet A B C => Col A B C.
+#between_exchange4
+assert[name "Labelbetween_exchange4"] forall (A B C D : point). Bet A B C => Bet A C D => Bet A B D.
+#perp_not_eq_2
+assert[name "Labelperp_not_eq_2"] forall (A B C D : point). Perp A B C D => C!=D.
+#l10_15
+assert[name "Labell10_15"] forall (A B C P : point). Col A B C => ~Col A B P => (exists (Q : point). Perp A B Q C && OS A B P Q).
+#l11_30
+assert[name "Labell11_30"] forall (A B C D E F A1 B1 C1 D1 E1 F1 : point). LeA A B C D E F => CongA A B C A1 B1 C1 => CongA D E F D1 E1 F1 => LeA A1 B1 C1 D1 E1 F1.
+#perp_in_per
+assert[name "Labelperp_in_per"] forall (A B C : point). Perp_at B A B B C => Per A B C.
+rewrite[name "LabelLtA"] forall (A B C D E F : point). LtA A B C D E F <=> LeA A B C D E F && ~ CongA A B C D E F.
+rewrite[name "LabelAcute"] forall (A B C : point). Acute A B C <=> (exists (A1 B1 C1 : point). Per A1 B1 C1 && LtA A B C A1 B1 C1).
+goal forall (A B C D : point). Bet A B C => Acute A B D => ~Acute C B D.

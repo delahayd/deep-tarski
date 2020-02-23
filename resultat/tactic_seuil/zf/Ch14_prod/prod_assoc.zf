@@ -1,0 +1,6 @@
+include "../rew_type.zf".
+#prod_assoc1
+assert[name "Labelprod_assoc1"] forall (O E E1 A B C AB BC ABC : point). Prod O E E1 A B AB => Prod O E E1 B C BC => (Prod O E E1 A BC ABC => Prod O E E1 AB C ABC).
+#prod_assoc2
+assert[name "Labelprod_assoc2"] forall (O E E1 A B C AB BC ABC : point). Prod O E E1 A B AB => Prod O E E1 B C BC => (Prod O E E1 AB C ABC => Prod O E E1 A BC ABC).
+goal forall (O E E1 A B C AB BC ABC : point). Prod O E E1 A B AB => Prod O E E1 B C BC => (Prod O E E1 A BC ABC <=> Prod O E E1 AB C ABC).

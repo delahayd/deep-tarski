@@ -1,0 +1,2 @@
+lemme : cong_symmetry cong_4321
+rewrite : Par_strict

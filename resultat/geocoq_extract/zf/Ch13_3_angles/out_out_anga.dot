@@ -1,0 +1,43 @@
+digraph "unsat_graph" {
+  vertex_0 [color=red, label="[]", shape=box, style=filled];
+  vertex_0 -> vertex_1 [label="s_sup-\l", dir="back"];
+  vertex_1 [shape=box, label="¬sk_a sk_A1 sk_B1 sk_C1\l", style=filled];
+  vertex_1 -> vertex_2 [label="cnf", dir="back"];
+  vertex_2 [shape=box, label="negated_goal\l  ¬ (∀ A/146:point B/147:point C/148:point A1/149:point B1/150:point \l        C1/151:point a/152:(point → point → point → prop).\l        ((Q_CongA_Acute a/152) ⇒\l         ((Out B/147 A/146 C/148) ⇒\l          ((Out B1/150 A1/149 C1/151) ⇒\l           ((a/152 A/146 B/147 C/148) ⇒ (a/152 A1/149 B1/150 C1/151))))))\l  # skolems: [].\l", style=filled];
+  vertex_2 -> vertex_3 [label="cnf.neg", dir="back"];
+  vertex_3 [color=green, shape=box, label="goal\l  [file \"../resultat/geocoq_extract/zf/Ch13_3_angles/out_out_anga.zf\" \l   \"zf_stmt_128\"]\l  ∀ A/146:point B/147:point C/148:point A1/149:point B1/150:point \l    C1/151:point a/152:(point → point → point → prop).\l    ((Q_CongA_Acute a/152) ⇒\l     ((Out B/147 A/146 C/148) ⇒\l      ((Out B1/150 A1/149 C1/151) ⇒\l       ((a/152 A/146 B/147 C/148) ⇒ (a/152 A1/149 B1/150 C1/151))))).\l", style=filled];
+  vertex_0 -> vertex_4 [label="s_sup-\l", dir="back"];
+  vertex_4 [shape=box, label="sk_a sk_A1 sk_B1 sk_C1\l", style=filled];
+  vertex_4 -> vertex_5 [label="simplify", dir="back"];
+  vertex_5 [shape=box, label="[sk_a sk_A1 sk_B1 sk_C1 ∨ ¬true]\l", style=filled];
+  vertex_5 -> vertex_6 [label="demod", dir="back"];
+  vertex_6 [shape=box, label="sk_a sk_A sk_B sk_C\l", style=filled];
+  vertex_6 -> vertex_2 [label="cnf", dir="back"];
+  vertex_5 -> vertex_7 [label="demod", dir="back"];
+  vertex_7 [shape=box, label="[sk_a sk_A1 sk_B1 sk_C1 ∨ ¬sk_a sk_A sk_B sk_C]\l", style=filled];
+  vertex_7 -> vertex_8 [label="s_sup-\l\{F0[0] → sk_a[1]\}[0]\l", dir="back"];
+  vertex_8 [shape=box, label="forall (F0:point → point → point → prop).\l[¬Q_CongA_Acute F0 ∨ F0 sk_A1 sk_B1 sk_C1 ∨ ¬F0 sk_A sk_B sk_C]\l", style=filled];
+  vertex_8 -> vertex_9 [label="s_sup-\l\{X0[0] → sk_C[1], X1[0] → sk_A[1], X2[0] → sk_B[1]\}[0]\l", dir="back"];
+  vertex_9 [shape=box, label="forall (X0:point) (X1:point) (X2:point) \l       (F3:point → point → point → prop).\l[¬Out X2 X1 X0\l ∨ ¬Q_CongA_Acute F3\l ∨ F3 sk_A1 sk_B1 sk_C1\l ∨ ¬F3 X1 X2 X0]\l", style=filled];
+  vertex_9 -> vertex_10 [label="s_sup-\l\{X0[0] → sk_C1[1], X1[0] → sk_B1[1], X2[0] → sk_A1[1]\}[0]\l", dir="back"];
+  vertex_10 [shape=box, label="forall (X0:point) (X1:point) (X2:point) (X3:point) (X4:point) (X5:point) \l       (F6:point → point → point → prop).\l[¬Out X1 X2 X0\l ∨ ¬Out X4 X5 X3\l ∨ ¬Q_CongA_Acute F6\l ∨ F6 X2 X1 X0\l ∨ ¬F6 X5 X4 X3]\l", style=filled];
+  vertex_10 -> vertex_11 [label="s_sup-\l\{X7[1] → X1[0], \l X8[1] → X0[0], \l X9[1] → X2[0], \l X10[1] → X3[0], \l X11[1] → X4[0], \l X12[1] → X5[0]\}[0]\l", dir="back"];
+  vertex_11 [shape=box, label="forall (X0:point) (X1:point) (X2:point) (X3:point) (X4:point) (X5:point) \l       (F6:point → point → point → prop).\l[¬CongA X0 X1 X2 X3 X4 X5\l ∨ ¬Q_CongA_Acute F6\l ∨ F6 X3 X4 X5\l ∨ ¬F6 X0 X1 X2]\l", style=filled];
+  vertex_11 -> vertex_12 [label="cnf", dir="back"];
+  vertex_12 [color=yellow, shape=box, label="assert\l  [file \"../resultat/geocoq_extract/zf/Ch13_3_angles/out_out_anga.zf\" \l   \"Labelanga_conga_anga\"]\l  ∀ A/133:point B/134:point C/135:point A1/136:point B1/137:point \l    C1/138:point a/139:(point → point → point → prop).\l    ((Q_CongA_Acute a/139) ⇒\l     ((a/139 A/133 B/134 C/135) ⇒\l      ((CongA A/133 B/134 C/135 A1/136 B1/137 C1/138) ⇒\l       (a/139 A1/136 B1/137 C1/138)))).\l", style=filled];
+  vertex_10 -> vertex_13 [label="s_sup-\l\{X7[1] → X1[0], \l X8[1] → X0[0], \l X9[1] → X2[0], \l X10[1] → X3[0], \l X11[1] → X4[0], \l X12[1] → X5[0]\}[1]\l", dir="back"];
+  vertex_13 [shape=box, label="forall (X7:point) (X8:point) (X9:point) (X10:point) (X11:point) (X12:point).\l[¬Out X7 X8 X9 ∨ CongA X8 X7 X9 X10 X11 X12 ∨ ¬Out X11 X10 X12]\l", style=filled];
+  vertex_13 -> vertex_14 [label="cnf", dir="back"];
+  vertex_14 [color=yellow, shape=box, label="assert\l  [file \"../resultat/geocoq_extract/zf/Ch13_3_angles/out_out_anga.zf\" \l   \"Labell11_21_b\"]\l  ∀ A/140:point B/141:point C/142:point A1/143:point B1/144:point \l    C1/145:point.\l    ((Out B/141 A/140 C/142) ⇒\l     ((Out B1/144 A1/143 C1/145) ⇒\l      (CongA A/140 B/141 C/142 A1/143 B1/144 C1/145))).\l", style=filled];
+  vertex_9 -> vertex_15 [label="s_sup-\l\{X0[0] → sk_C1[1], X1[0] → sk_B1[1], X2[0] → sk_A1[1]\}[1]\l", dir="back"];
+  vertex_15 [shape=box, label="Out sk_B1 sk_A1 sk_C1\l", style=filled];
+  vertex_15 -> vertex_2 [label="cnf", dir="back"];
+  vertex_8 -> vertex_16 [label="s_sup-\l\{X0[0] → sk_C[1], X1[0] → sk_A[1], X2[0] → sk_B[1]\}[1]\l", dir="back"];
+  vertex_16 [shape=box, label="Out sk_B sk_A sk_C\l", style=filled];
+  vertex_16 -> vertex_2 [label="cnf", dir="back"];
+  vertex_7 -> vertex_17 [label="s_sup-\l\{F0[0] → sk_a[1]\}[1]\l", dir="back"];
+  vertex_17 [shape=box, label="Q_CongA_Acute sk_a\l", style=filled];
+  vertex_17 -> vertex_2 [label="cnf", dir="back"];
+  }
+
+

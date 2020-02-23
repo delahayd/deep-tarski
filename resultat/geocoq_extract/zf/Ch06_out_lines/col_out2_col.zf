@@ -1,0 +1,18 @@
+include "../tarski_term_def.zf".
+#l6_6
+assert[name "Labell6_6"] forall (P A B : point). Out P A B => Out P B A.
+#bet_out
+assert[name "Labelbet_out"] forall (A B C : point). B!=A => Bet A B C => Out A B C.
+#out_col
+assert[name "Labelout_col"] forall (A B C : point). Out A B C => Col A B C.
+#l6_7
+assert[name "Labell6_7"] forall (P A B C : point). Out P A B => Out P B C => Out P A C.
+#bet_out_out_bet
+assert[name "Labelbet_out_out_bet"] forall (A B C A1 C1 : point). Bet A B C => Out B A A1 => Out B C C1 => Bet A1 B C1.
+#between_symmetry
+assert[name "Labelbetween_symmetry"] forall (A B C : point). Bet A B C => Bet C B A.
+#col_permutation_4
+assert[name "Labelcol_permutation_4"] forall (A B C : point). Col A B C => Col B A C.
+rewrite[name "LabelCol"] forall (A B C : point). Col A B C <=> Bet A B C || Bet B C A || Bet C A B.
+rewrite[name "LabelOut"] forall (P A B : point). Out P A B <=> A != P && B != P && (Bet P A B || Bet P B A).
+goal forall (A B C AA CC : point). Col A B C => Out B A AA => Out B C CC => Col AA B CC.

@@ -1,0 +1,12 @@
+include "../tarski_term_def.zf".
+#par_symmetry
+assert[name "Labelpar_symmetry"] forall (A B C D : point). Par A B C D => Par C D A B.
+#par_left_comm
+assert[name "Labelpar_left_comm"] forall (A B C D : point). Par A B C D => Par B A C D.
+#Par_dec
+assert[name "LabelPar_dec"] forall (A B C D : point). Par A B C D || ~Par A B C D.
+#not_par_inter
+assert[name "Labelnot_par_inter"] forall (A B A1 B1 X Y : point). ~Par A B A1 B1 => (exists (P : point). Col P X Y && (Col P A B || Col P A1 B1 )).
+#par_trans
+assert[name "Labelpar_trans"] forall (A1 A2 B1 B2 C1 C2 : point). Par A1 A2 B1 B2 => Par B1 B2 C1 C2 => Par A1 A2 C1 C2.
+goal forall (A B A1 B1 X Y : point). ~Par A B A1 B1 => ~Par A B X Y || ~Par A1 B1 X Y.

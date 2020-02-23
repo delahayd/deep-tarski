@@ -1,0 +1,18 @@
+include "../tarski_term_def.zf".
+#cong_symmetry
+assert[name "Labelcong_symmetry"] forall (A B C D : point). Cong A B C D => Cong C D A B.
+#bet2_le2__le
+assert[name "Labelbet2_le2__le"] forall (O o A B a b : point). Bet a o b => Bet A O B => Le o a O A => Le o b O B => Le a b A B.
+#l4_3_1
+assert[name "Labell4_3_1"] forall (A B C A1 B1 C1 : point). Bet A B C => Bet A1 B1 C1 => Cong A B A1 B1 => Cong A C A1 C1 => Cong B C B1 C1.
+#cong_commutativity
+assert[name "Labelcong_commutativity"] forall (A B C D : point). Cong A B C D => Cong B A D C.
+#between_trivial
+assert[name "Labelbetween_trivial"] forall (A B : point). Bet A B B.
+#between_symmetry
+assert[name "Labelbetween_symmetry"] forall (A B C : point). Bet A B C => Bet C B A.
+#segment_construction
+assert[name "Labelsegment_construction"] forall (A B C D : point). exists (E :point). Bet A B E && Cong B E C D.
+rewrite[name "LabelLt"] forall (A B C D : point). Lt A B C D <=> Le A B C D && ~ Cong A B C D.
+rewrite[name "LabelLe"] forall (A B C D : point). Le A B C D <=> (exists (E : point). (Bet C E D && Cong A B C E)).
+goal forall (O o A B a b : point). Bet a o b => Bet A O B => Cong o a O A => Lt o b O B => Lt a b A B.

@@ -1,0 +1,8 @@
+include "../tarski_term_def.zf".
+val O : point.
+val E : point.
+val E1 : point.
+assert ~Col O E E1.
+#l15_7
+assert[name "Labell15_7"] forall (O E E1 A B C H AB AC AH AC2 : point). O!=E => Per A C B => Perp_at H C H A B => Length O E E1 A B AB => Length O E E1 A C AC => Length O E E1 A H AH => (Prod O E E1 AC AC AC2 <=> Prod O E E1 AB AH AC2).
+goal forall (O E E1 A B C H AB AC AH AC2 : point). O!=E => Per A C B => Perp_at H C H A B => Length O E E1 A B AB => Length O E E1 A C AC => Length O E E1 A H AH => Prod O E E1 AC AC AC2 => Prod O E E1 AB AH AC2.

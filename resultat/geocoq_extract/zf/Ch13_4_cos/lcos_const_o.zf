@@ -1,0 +1,26 @@
+include "../tarski_term_def.zf".
+#invert_one_side
+assert[name "Labelinvert_one_side"] forall (A B P Q : point). OS A B P Q => OS B A P Q.
+#anga_const_o
+assert[name "Labelanga_const_o"] forall (A B P : point) (a : point->point->point->prop). ~Col A B P => ~Q_CongA_Null_Acute a => Q_CongA_Acute a => (exists (C : point). a A B C && OS A B C P).
+#out_out_one_side
+assert[name "Labelout_out_one_side"] forall (A B X Y Z : point). OS A B X Y => Out A Y Z => OS A B X Z.
+#ex_point_lg_out
+assert[name "Labelex_point_lg_out"] forall (A P : point) (l : point->point->prop). A!=P => Q_Cong l => ~Q_Cong_Null l => (exists (B : point). l A B && Out A B P).
+#out_trivial
+assert[name "Labelout_trivial"] forall (P A : point). A!=P => Out P A A.
+#lg_exists
+assert[name "Labellg_exists"] forall (A B : point). (exists (l : point->point->prop). Q_Cong l && l A B).
+#anga_not_lg_null
+assert[name "Labelanga_not_lg_null"] forall (A B C : point) (la lc : point->point->prop) (a : point->point->point->prop). Q_Cong la => Q_Cong lc => Q_CongA_Acute a => la A B => lc C B => a A B C => ~Q_Cong_Null la && ~Q_Cong_Null lc.
+#anga_out_anga
+assert[name "Labelanga_out_anga"] forall (A B C A1 C1 : point) (a : point->point->point->prop). Q_CongA_Acute a => a A B C => Out B A A1 => Out B C C1 => a A1 B C1.
+#one_side_symmetry
+assert[name "Labelone_side_symmetry"] forall (P Q A B : point). OS P Q A B => OS P Q B A.
+#l6_6
+assert[name "Labell6_6"] forall (P A B : point). Out P A B => Out P B A.
+#anga_distincts
+assert[name "Labelanga_distincts"] forall (A B C : point) ( a : point->point->point->prop). Q_CongA_Acute a => a A B C => A!=B && C!=B.
+#lcos_not_lg_null
+assert[name "Labellcos_not_lg_null"] forall (lp l : point->point->prop) (a : point->point->point->prop). Lcos lp l a => ~Q_Cong_Null lp.
+goal forall (A B P : point) (lp l : point->point->prop) (a : point->point->point->prop). ~Col A B P => ~Q_CongA_Null_Acute a => Q_Cong l => Q_Cong lp =>Q_CongA_Acute a => l A B => Lcos lp l a => (exists (C : point). OS A B C P && a A B C && lp B C).

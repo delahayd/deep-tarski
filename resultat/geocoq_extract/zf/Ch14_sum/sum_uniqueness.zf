@@ -1,0 +1,41 @@
+include "../tarski_term_def.zf".
+#col_trivial_1
+assert[name "Labelcol_trivial_1"] forall (A B : point). Col A A B.
+#col_permutation_5
+assert[name "Labelcol_permutation_5"] forall (A B C : point). Col A B C => Col A C B.
+#project_col_project
+assert[name "Labelproject_col_project"] forall (A B C P P1 X Y : point). A!=C => Col A B C => Proj P P1 A B X Y => Proj P P1 A C X Y.
+#par_symmetry
+assert[name "Labelpar_symmetry"] forall (A B C D : point). Par A B C D => Par C D A B.
+#sum_to_sump
+assert[name "Labelsum_to_sump"] forall (O E E1 A B C : point). Sum O E E1 A B C => Sump O E E1 A B C.
+#par_trans
+assert[name "Labelpar_trans"] forall (A1 A2 B1 B2 C1 C2 : point). Par A1 A2 B1 B2 => Par B1 B2 C1 C2 => Par A1 A2 C1 C2.
+#col_permutation_1
+assert[name "Labelcol_permutation_1"] forall (A B C : point). Col A B C => Col B C A.
+#par_left_comm
+assert[name "Labelpar_left_comm"] forall (A B C D : point). Par A B C D => Par B A C D.
+#l6_21
+assert[name "Labell6_21"] forall (A B C D P Q : point). ~Col A B C => C!=D => Col A B P => Col A B Q => Col C D P => Col C D Q => P=Q.
+#col_permutation_4
+assert[name "Labelcol_permutation_4"] forall (A B C : point). Col A B C => Col B A C.
+#col_permutation_5
+assert[name "Labelcol_permutation_5"] forall (A B C : point). Col A B C => Col A C B.
+#col_trivial_1
+assert[name "Labelcol_trivial_1"] forall (A B : point). Col A A B.
+#par_distincts
+assert[name "Labelpar_distincts"] forall (A B C D : point). Par A B C D => (Par A B C D && A!=B && C!=D).
+#parallel_uniqueness
+assert[name "Labelparallel_uniqueness"] forall (A1 A2 B1 B2 C1 C2 P : point). Par A1 A2 B1 B2 => Col P B1 B2 => Par A1 A2 C1 C2 => Col P C1 C2 => Col C1 B1 B2 && Col C2 B1 B2.
+#par_symmetry
+assert[name "Labelpar_symmetry"] forall (A B C D : point). Par A B C D => Par C D A B.
+#eq_dec_points
+assert[name "Labeleq_dec_points"] forall (A B : point). A=B || A!=B.
+#col_trivial_2
+assert[name "Labelcol_trivial_2"] forall (A B : point). Col A B B.
+#par_col_par_2
+assert[name "Labelpar_col_par_2"] forall (A B C D P : point). A!=P => Col A B P => Par A B C D => Par A P C D.
+rewrite[name "LabelSump"] forall (O E E1 A B C : point). Sump O E E1 A B C <=> Col O E A && Col O E B && (exists (A1 C1 P1 : point). Proj A A1 O E1 E E1 &&  Par O E A1 P1 &&  Proj B C1 A1 P1 O E1 &&  Proj C1 C O E E E1).
+rewrite[name "LabelProj"] forall (P Q A B X Y : point). Proj P Q A B X Y <=> A != B && X != Y && ~Par A B X Y  && Col A B Q && (Par P Q X Y || P = Q).
+rewrite[name "LabelProj"] forall (P Q A B X Y : point). Proj P Q A B X Y <=> A != B && X != Y && ~Par A B X Y  && Col A B Q && (Par P Q X Y || P = Q).
+goal forall (A B C1 C2 : point). Sum O E E1 A B C1 => Sum O E E1 A B C2 => C1=C2.

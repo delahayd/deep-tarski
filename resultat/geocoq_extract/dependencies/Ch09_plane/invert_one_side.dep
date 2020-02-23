@@ -1,0 +1,3 @@
+lemme : invert_two_sides
+rewrite : OS
+destruct : 

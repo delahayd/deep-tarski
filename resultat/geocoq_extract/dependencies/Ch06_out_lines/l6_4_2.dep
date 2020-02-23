@@ -1,0 +1,3 @@
+lemme : eq_dec_points between_trivial between_trivial2 between_symmetry
+rewrite : Col Out
+destruct : 

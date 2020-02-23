@@ -1,0 +1,2 @@
+lemme : l10_2_uniqueness eq_dec_points image_preserves_bet1
+rewrite : Out

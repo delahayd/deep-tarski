@@ -1,0 +1,12 @@
+include "../tarski_term_def.zf".
+#l4_5
+assert[name "Labell4_5"] forall (A B C A1 C1 : point). Bet A B C => Cong A C A1 C1 => (exists (B1 : point). Bet A1 B1 C1 && Cong_3 A B C A1 B1 C1).
+#cong_symmetry
+assert[name "Labelcong_symmetry"] forall (A B C D : point). Cong A B C D => Cong C D A B.
+#cong_transitivity
+assert[name "Labelcong_transitivity"] forall (A B C D E F : point). Cong A B C D => Cong C D E F => Cong A B E F.
+#l7_17
+assert[name "Labell7_17"] forall (P P1 A B : point). Midpoint A P P1 => Midpoint B P P1 => A=B.
+rewrite[name "LabelMidpoint"] forall (M A B : point). Midpoint M A B <=> Bet A M B && Cong A M M B.
+rewrite[name "LabelCong_3"] forall (A B C A1 B1 C1 : point). Cong_3 A B C A1 B1 C1 <=> Cong A B A1 B1 && Cong A C A1 C1 && Cong B C B1 C1.
+goal forall (A M B A1 M1 B1 : point). Midpoint M A B => Midpoint M1 A1 B1 => Cong A B A1 B1 => Cong A M A1 M1.

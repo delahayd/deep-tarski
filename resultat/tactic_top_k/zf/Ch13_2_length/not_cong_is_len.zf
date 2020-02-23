@@ -1,0 +1,5 @@
+include "../rew_type.zf".
+rewrite[name "LabelLen"] forall (A B : point) (l : point->point->prop). Len A B l <=> Q_Cong l && l A B.
+#lg_cong
+assert[name "Labellg_cong"] forall (A B C D : point) (l : point->point->prop). Q_Cong l => l A B => l C D => Cong A B C D.
+goal forall (A B C D : point) (l : point->point->prop). ~(Cong A B C D ) => Len A B l => ~(l C D).

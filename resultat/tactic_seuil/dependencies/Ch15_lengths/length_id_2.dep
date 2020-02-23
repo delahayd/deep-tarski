@@ -1,0 +1,2 @@
+lemme : cong_trivial_identity col_trivial_3
+rewrite : Ps Length LeP

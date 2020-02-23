@@ -1,0 +1,3 @@
+lemme : diff_null diff_uniquenessB diff_ar2
+rewrite : Ar2
+destruct : 

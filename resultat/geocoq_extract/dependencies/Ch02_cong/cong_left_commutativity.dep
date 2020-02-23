@@ -1,0 +1,3 @@
+lemme : cong_symmetry cong_pseudo_reflexivity cong_inner_transitivity
+rewrite : 
+destruct : 

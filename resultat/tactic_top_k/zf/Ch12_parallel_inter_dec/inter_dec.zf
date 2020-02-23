@@ -1,0 +1,2 @@
+include "../rew_type.zf".
+goal (forall (A B C D : point). (exists (I : point). Col I A B && Col I C D) || ~(exists (I : point). Col I A B && Col I C D)).

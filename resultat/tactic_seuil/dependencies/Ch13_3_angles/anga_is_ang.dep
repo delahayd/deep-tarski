@@ -1,0 +1,2 @@
+lemme : acute_not_bet anga_acute acute_distincts
+rewrite : Q_CongA_nFlat Ang Q_CongA Q_CongA_nNull Q_CongA_Acute

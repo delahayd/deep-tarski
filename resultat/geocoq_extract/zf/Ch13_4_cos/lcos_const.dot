@@ -1,0 +1,46 @@
+digraph "unsat_graph" {
+  vertex_0 [color=red, label="[]", shape=box, style=filled];
+  vertex_0 -> vertex_1 [label="simplify", dir="back"];
+  vertex_1 [color=red, label="[]", shape=box, style=filled];
+  vertex_1 -> vertex_2 [label="demod", dir="back"];
+  vertex_2 [shape=box, label="sk_l (sk_A sk_a sk_l sk_lp) (sk_C sk_a sk_l sk_lp)\l", style=filled];
+  vertex_2 -> vertex_3 [label="rw_clause\l\{F3[1] → sk_lp[0], F4[1] → sk_l[0], F5[1] → sk_a[0]\}[1]\l", dir="back"];
+  vertex_3 [color=navajowhite, shape=box, label="(Lcos F3 F4 F5 :=\l   [Q_Cong F4∧\l    F3 (sk_A F5 F4 F3) (sk_B F5 F4 F3)∧\l    F5 (sk_B F5 F4 F3) (sk_A F5 F4 F3) (sk_C F5 F4 F3)∧\l    F4 (sk_A F5 F4 F3) (sk_C F5 F4 F3)∧\l    Per (sk_C F5 F4 F3) (sk_B F5 F4 F3) (sk_A F5 F4 F3)∧\l    Q_CongA_Acute F5∧\l    Q_Cong F3] [B])\l", style=filled];
+  vertex_3 -> vertex_4 [label="rw.lit", dir="back"];
+  vertex_4 [color=yellow, shape=box, label="rewrite\l  [file \"../resultat/geocoq_extract/zf/Ch13_4_cos/lcos_const.zf\" \"LabelLcos\"]\l  Lcos F3 F4 F5\l  =\> Q_Cong F4 && F3 (sk_A F5 F4 F3) (sk_B F5 F4 F3) && \l     F5 (sk_B F5 F4 F3) (sk_A F5 F4 F3) (sk_C F5 F4 F3) && \l     F4 (sk_A F5 F4 F3) (sk_C F5 F4 F3) && \l     Per (sk_C F5 F4 F3) (sk_B F5 F4 F3) (sk_A F5 F4 F3) && \l     Q_CongA_Acute F5 && Q_Cong F3.\l", style=filled];
+  vertex_2 -> vertex_5 [label="rw_clause\l\{F3[1] → sk_lp[0], F4[1] → sk_l[0], F5[1] → sk_a[0]\}[0]\l", dir="back"];
+  vertex_5 [shape=box, label="Lcos sk_lp sk_l sk_a\l", style=filled];
+  vertex_5 -> vertex_6 [label="cnf", dir="back"];
+  vertex_6 [shape=box, label="negated_goal\l  ¬ (∀ lp/142:(point → point → prop) l/143:(point → point → prop) \l        a/144:(point → point → point → prop).\l        ((Lcos lp/142 l/143 a/144) ⇒\l         (∃ A/145:point B/146:point C/147:point.\l            ((l/143 B/146 C/147)\l             ∧ (a/144 A/145 B/146 C/147)\l             ∧ (lp/142 A/145 B/146)))))\l  # skolems: [].\l", style=filled];
+  vertex_6 -> vertex_7 [label="cnf.neg", dir="back"];
+  vertex_7 [color=green, shape=box, label="goal\l  [file \"../resultat/geocoq_extract/zf/Ch13_4_cos/lcos_const.zf\" \l   \"zf_stmt_128\"]\l  ∀ lp/142:(point → point → prop) l/143:(point → point → prop) \l    a/144:(point → point → point → prop).\l    ((Lcos lp/142 l/143 a/144) ⇒\l     (∃ A/145:point B/146:point C/147:point.\l        ((l/143 B/146 C/147)\l         ∧ (a/144 A/145 B/146 C/147)\l         ∧ (lp/142 A/145 B/146)))).\l", style=filled];
+  vertex_1 -> vertex_8 [label="demod", dir="back"];
+  vertex_8 [shape=box, label="sk_lp (sk_B sk_a sk_l sk_lp) (sk_A sk_a sk_l sk_lp)\l", style=filled];
+  vertex_8 -> vertex_9 [label="simplify", dir="back"];
+  vertex_9 [shape=box, label="[sk_lp (sk_B sk_a sk_l sk_lp) (sk_A sk_a sk_l sk_lp) ∨ ¬true]\l", style=filled];
+  vertex_9 -> vertex_10 [label="demod", dir="back"];
+  vertex_10 [shape=box, label="Q_Cong sk_lp\l", style=filled];
+  vertex_10 -> vertex_3 [label="rw_clause\l\{F3[1] → sk_lp[0], F4[1] → sk_l[0], F5[1] → sk_a[0]\}[1]\l", dir="back"];
+  vertex_10 -> vertex_5 [label="rw_clause\l\{F3[1] → sk_lp[0], F4[1] → sk_l[0], F5[1] → sk_a[0]\}[0]\l", dir="back"];
+  vertex_9 -> vertex_11 [label="demod", dir="back"];
+  vertex_11 [shape=box, label="[sk_lp (sk_B sk_a sk_l sk_lp) (sk_A sk_a sk_l sk_lp) ∨ ¬Q_Cong sk_lp]\l", style=filled];
+  vertex_11 -> vertex_12 [label="s_sup-\l\{F0[0] → sk_lp[0], \l X1[0] → sk_A sk_a sk_l sk_lp[0], \l X2[0] → sk_B sk_a sk_l sk_lp[0]\}[0]\l", dir="back"];
+  vertex_12 [shape=box, label="forall (F0:point → point → prop) (X1:point) (X2:point).\l[¬F0 X1 X2 ∨ F0 X2 X1 ∨ ¬Q_Cong F0]\l", style=filled];
+  vertex_12 -> vertex_13 [label="cnf", dir="back"];
+  vertex_13 [color=yellow, shape=box, label="assert\l  [file \"../resultat/geocoq_extract/zf/Ch13_4_cos/lcos_const.zf\" \l   \"Labellg_sym\"]\l  ∀ A/133:point B/134:point l/135:(point → point → prop).\l    ((Q_Cong l/135) ⇒ ((l/135 A/133 B/134) ⇒ (l/135 B/134 A/133))).\l", style=filled];
+  vertex_11 -> vertex_14 [label="s_sup-\l\{F0[0] → sk_lp[0], \l X1[0] → sk_A sk_a sk_l sk_lp[0], \l X2[0] → sk_B sk_a sk_l sk_lp[0]\}[1]\l", dir="back"];
+  vertex_14 [shape=box, label="sk_lp (sk_A sk_a sk_l sk_lp) (sk_B sk_a sk_l sk_lp)\l", style=filled];
+  vertex_14 -> vertex_3 [label="rw_clause\l\{F3[1] → sk_lp[0], F4[1] → sk_l[0], F5[1] → sk_a[0]\}[1]\l", dir="back"];
+  vertex_14 -> vertex_5 [label="rw_clause\l\{F3[1] → sk_lp[0], F4[1] → sk_l[0], F5[1] → sk_a[0]\}[0]\l", dir="back"];
+  vertex_1 -> vertex_15 [label="demod", dir="back"];
+  vertex_15 [shape=box, label="[¬sk_lp (sk_B sk_a sk_l sk_lp) (sk_A sk_a sk_l sk_lp)\l ∨ ¬sk_l (sk_A sk_a sk_l sk_lp) (sk_C sk_a sk_l sk_lp)]\l", style=filled];
+  vertex_15 -> vertex_16 [label="s_sup-\l\{X9[0] → sk_B sk_a sk_l sk_lp[1], \l X10[0] → sk_A sk_a sk_l sk_lp[1], \l X11[0] → sk_C sk_a sk_l sk_lp[1]\}[0]\l", dir="back"];
+  vertex_16 [shape=box, label="forall (X9:point) (X10:point) (X11:point).\l[¬sk_lp X9 X10 ∨ ¬sk_a X9 X10 X11 ∨ ¬sk_l X10 X11]\l", style=filled];
+  vertex_16 -> vertex_6 [label="cnf", dir="back"];
+  vertex_15 -> vertex_17 [label="s_sup-\l\{X9[0] → sk_B sk_a sk_l sk_lp[1], \l X10[0] → sk_A sk_a sk_l sk_lp[1], \l X11[0] → sk_C sk_a sk_l sk_lp[1]\}[1]\l", dir="back"];
+  vertex_17 [shape=box, label="sk_a (sk_B sk_a sk_l sk_lp) (sk_A sk_a sk_l sk_lp) (sk_C sk_a sk_l sk_lp)\l", style=filled];
+  vertex_17 -> vertex_3 [label="rw_clause\l\{F3[1] → sk_lp[0], F4[1] → sk_l[0], F5[1] → sk_a[0]\}[1]\l", dir="back"];
+  vertex_17 -> vertex_5 [label="rw_clause\l\{F3[1] → sk_lp[0], F4[1] → sk_l[0], F5[1] → sk_a[0]\}[0]\l", dir="back"];
+  }
+
+

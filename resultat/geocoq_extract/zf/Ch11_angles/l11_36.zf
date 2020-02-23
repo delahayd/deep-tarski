@@ -1,0 +1,15 @@
+include "../tarski_term_def.zf".
+#conga_sym
+assert[name "Labelconga_sym"] forall (A B C A1 B1 C1 : point). CongA A B C A1 B1 C1 => CongA A1 B1 C1 A B C.
+#l11_13
+assert[name "Labell11_13"] forall (A B C D E F A1 D1 : point). CongA A B C D E F => Bet A B A1 => A1!=B => Bet D E D1 => D1!=E => CongA A1 B C D1 E F.
+#in_angle_reverse
+assert[name "Labelin_angle_reverse"] forall (A B A1 C D : point). A1!=B => Bet A B A1 => InAngle C A B D => InAngle D A1 B C.
+#l11_29_a
+assert[name "Labell11_29_a"] forall (A B C D E F : point). LeA A B C D E F => (exists (Q : point). InAngle C A B Q && CongA A B Q D E F).
+#between_symmetry
+assert[name "Labelbetween_symmetry"] forall (A B C : point). Bet A B C => Bet C B A.
+#l11_29_b
+assert[name "Labell11_29_b"] forall (A B C D E F : point). (exists (Q : point). InAngle C A B Q && CongA A B Q D E F) => LeA A B C D E F.
+rewrite[name "LabelLeA"] forall (A B C D E F : point). LeA A B C D E F <=> (exists (P : point). InAngle P D E F && CongA A B C D E P).
+goal forall (A B C D E F A1 D1 : point). A!=B => A1!=B => D!=E => D1!=E => Bet A B A1 => Bet D E D1 => (LeA A B C D E F <=> LeA D1 E F A1 B C).

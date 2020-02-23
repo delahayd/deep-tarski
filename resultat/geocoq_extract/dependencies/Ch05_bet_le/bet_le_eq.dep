@@ -1,0 +1,3 @@
+lemme : cong_symmetry l5_5_2 cong_commutativity between_cong cong_reflexivity le_anti_symmetry between_symmetry le_comm
+rewrite : 
+destruct : 

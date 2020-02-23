@@ -1,0 +1,2 @@
+include "../rew_type.zf".
+goal forall (lp l : point->point->prop) (a b : point->point->point->prop). lcos2 lp l a b => lcos2 lp l a b.

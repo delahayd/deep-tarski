@@ -1,0 +1,3 @@
+lemme : not_col_distincts eq_dec_points length_id_2 length_existence
+rewrite : 
+destruct : 

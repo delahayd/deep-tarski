@@ -1,0 +1,7 @@
+include "../rew_type.zf".
+rewrite[name "LabelOut"] forall (P A B : point). Out P A B <=> A != P && B != P && (Bet P A B || Bet P B A).
+#between_symmetry
+assert[name "Labelbetween_symmetry"] forall (A B C : point). Bet A B C => Bet C B A.
+#l5_2
+assert[name "Labell5_2"] forall (A B C D : point). A!=B => Bet A B C => Bet A B D => Bet B C D || Bet B D C.
+goal forall (A B P : point). (A!=P && B!=P && (exists (C: point). C!=P && Bet A P C && Bet B P C)) => Out P A B.

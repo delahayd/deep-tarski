@@ -1,0 +1,94 @@
+include "../tarski_term_def.zf".
+#lcos_lg_anga
+assert[name "Labellcos_lg_anga"] forall (lp l : point->point->prop) (a : point->point->point->prop).Lcos lp l a => Lcos lp l a && Q_Cong l && Q_Cong lp && Q_CongA_Acute a.
+#out_conga_out
+assert[name "Labelout_conga_out"] forall (A B C D E F : point). Out B A C => CongA A B C D E F => Out E D F.
+#col_permutation_4
+assert[name "Labelcol_permutation_4"] forall (A B C : point). Col A B C => Col B A C.
+#perp_sym
+assert[name "Labelperp_sym"] forall (A B C D : point). Perp A B C D => Perp C D A B.
+#anga_conga
+assert[name "Labelanga_conga"] forall (A B C A1 B1 C1 : point) (a : point->point->point->prop). Q_CongA_Acute a => a A B C => a A1 B1 C1 => CongA A B C A1 B1 C1.
+#lcos_const_o
+assert[name "Labellcos_const_o"] forall (A B P : point) (lp l : point->point->prop) (a : point->point->point->prop). ~Col A B P => ~Q_CongA_Null_Acute a => Q_Cong l => Q_Cong lp =>Q_CongA_Acute a => l A B => Lcos lp l a => (exists (C : point). OS A B C P && a A B C && lp B C).
+#lg_sym
+assert[name "Labellg_sym"] forall (A B : point) (l : point->point->prop). Q_Cong l => l A B => l B A.
+#null_lcos_eql
+assert[name "Labelnull_lcos_eql"] forall (lp l : point->point->prop) (a : point->point->point->prop). Lcos lp l a => Q_CongA_Null_Acute a => EqL l lp.
+#anga_sym
+assert[name "Labelanga_sym"] forall (A B C : point) (a : point->point->point->prop). Q_CongA_Acute a => a A B C => a C B A.
+#l9_2
+assert[name "Labell9_2"] forall (A B P Q : point). TS A B P Q => TS A B Q P.
+#l13_6
+assert[name "Labell13_6"] forall (lc ld l : point->point->prop) (a : point->point->point->prop). Lcos lc l a => Lcos ld l a => EqL lc ld.
+#perp_col
+assert[name "Labelperp_col"] forall (A B C D E : point). A!=E => Perp A B C D => Col A B E => Perp A E C D.
+#is_null_anga_dec
+assert[name "Labelis_null_anga_dec"] forall (a : point->point->point->prop). Q_CongA_Acute a => Q_CongA_Null_Acute a || ~Q_CongA_Null_Acute a.
+#lcos_per
+assert[name "Labellcos_per"] forall (A B C : point) (lp l : point->point->prop) (a : point->point->point->prop). Q_CongA_Acute a =>Q_Cong l => Q_Cong lp => Lcos lp l a => l A C => lp A B => a A B C => Per A B C.
+#l10_2_existence
+assert[name "Labell10_2_existence"] forall (A B P : point). (exists (P1 : point). Reflect P1 P1 A B).
+#l8_18_existence
+assert[name "Labell8_18_existence"] forall (A B C : point). ~Col A B C => (exists (X : point). Col A B X && Perp A B C X).
+#l10_14
+assert[name "Labell10_14"] forall (P P1 A B : point). P!=P1 => A!=B => Reflect P P1 A B => TS A B P P1.
+#invert_two_sides
+assert[name "Labelinvert_two_sides"] forall (A B P Q : point). TS A B P Q => TS B A P Q.
+#l10_8
+assert[name "Labell10_8"] forall (A B P : point). Reflect P P A B => Col P A B.
+#perp_comm
+assert[name "Labelperp_comm"] forall (A B C D : point). Perp A B C D => Perp B A D C.
+#conga_sym
+assert[name "Labelconga_sym"] forall (A B C A1 B1 C1 : point). CongA A B C A1 B1 C1 => CongA A1 B1 C1 A B C.
+#between_identity
+assert[name "Labelbetween_identity"] forall (A B : point). Bet A B A => A=B.
+#l13_2
+assert[name "Labell13_2"] forall (A B C D E : point). TS A B C D => Per B C A => Per B D A => Col C D E => Perp A E C D => CongA B A C D A E && CongA B A D C A E && Bet C E D.
+#l8_7
+assert[name "Labell8_7"] forall (A B C : point). Per A B C => Per A C B => B=C.
+#col_trivial_3
+assert[name "Labelcol_trivial_3"] forall (A B : point). Col A B A.
+#out_trivial
+assert[name "Labelout_trivial"] forall (P A : point). A!=P => Out P A A.
+#per_col
+assert[name "Labelper_col"] forall (A B C D : point). B!=C => Per A B C => Col B C D => Per A B D.
+#l10_4
+assert[name "Labell10_4"] forall (A B P P1 : point). Reflect P P1 A B => Reflect P1 P A B.
+#ex_eql
+assert[name "Labelex_eql"] forall (l1 l2 : point->point->prop). (exists (A B : point). Len A B l1 && Len A B l2) => EqL l1 l2.
+#anga_col_null
+assert[name "Labelanga_col_null"] forall (A B C : point) (a : point->point->point->prop). Q_CongA_Acute a => a A B C => Col A B C => Out B A C && Q_CongA_Null_Acute a.
+#one_side_symmetry
+assert[name "Labelone_side_symmetry"] forall (P Q A B : point). OS P Q A B => OS P Q B A.
+#col_permutation_1
+assert[name "Labelcol_permutation_1"] forall (A B C : point). Col A B C => Col B C A.
+#col_permutation_3
+assert[name "Labelcol_permutation_3"] forall (A B C : point). Col A B C => Col C B A.
+#col_permutation_5
+assert[name "Labelcol_permutation_5"] forall (A B C : point). Col A B C => Col A C B.
+#osym_not_col
+assert[name "Labelosym_not_col"] forall (A B P P1 : point). Reflect P P1 A B => ~Col A B P => ~Col A B P1.
+#anga_conga_anga
+assert[name "Labelanga_conga_anga"] forall (A B C A1 B1 C1 : point) (a : point->point->point->prop). Q_CongA_Acute a => a A B C => CongA A B C A1 B1 C1 => a A1 B1 C1.
+#lcos_const
+assert[name "Labellcos_const"] forall (lp l : point->point->prop) (a : point->point->point->prop). Lcos lp l a => (exists (A B C : point). lp A B && l B C && a A B C).
+#perp_right_comm
+assert[name "Labelperp_right_comm"] forall (A B C D : point). Perp A B C D => Perp A B D C.
+#l9_8_2
+assert[name "Labell9_8_2"] forall (P Q A B C : point). TS P Q A C => OS P Q A B => TS P Q B C.
+#perp_not_eq_2
+assert[name "Labelperp_not_eq_2"] forall (A B C D : point). Perp A B C D => C!=D.
+#lcos_lg
+assert[name "Labellcos_lg"] forall (A B C : point) (lp l : point->point->prop) (a : point->point->point->prop). Lcos lp l a => Perp A B B C => a A B C => l A C => lp A B.
+#anga_distincts
+assert[name "Labelanga_distincts"] forall (A B C : point) ( a : point->point->point->prop). Q_CongA_Acute a => a A B C => A!=B && C!=B.
+#l8_2
+assert[name "Labell8_2"] forall (A B C : point). Per A B C => Per C B A.
+#lcos_eql_lcos
+assert[name "Labellcos_eql_lcos"] forall (lp1 l1 lp2 l2 : point->point->prop) (a : point->point->point->prop). EqL lp1 lp2 => EqL l1 l2 => Lcos lp1 l1 a => Lcos lp2 l2 a.
+rewrite[name "LabelTS"] forall (A B P Q : point). TS A B P Q <=> ~(Col P A B) && ~(Col Q A B) && (exists (T : point). Col T A B && Bet P T Q).
+rewrite[name "LabelOS"] forall (A B P Q : point). OS A B P Q <=> (exists (R : point). TS A B P R && TS A B Q R).
+rewrite[name "LabelLen"] forall (A B : point) (l : point->point->prop). Len A B l <=> Q_Cong l && l A B.
+rewrite[name "LabelQ_CongA_Null_Acute"] forall (a : point->point->point->prop). Q_CongA_Null_Acute a <=> Q_CongA_Acute a && (forall (A B C : point). a A B C => Out B A C).
+goal forall (l la lb lab lba : point->point->prop) (a b : point->point->point->prop). Lcos la l a => Lcos lb l b => Lcos lab la b => Lcos lba lb a => EqL lab lba.

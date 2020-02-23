@@ -1,0 +1,21 @@
+include "../tarski_term_def.zf".
+#cong_identity
+assert[name "Labelcong_identity"] forall (A B C : point). Cong A B C C => A = B.
+#l11_17
+assert[name "Labell11_17"] forall (A B C A1 B1 C1 : point). Per A B C => CongA A B C A1 B1 C1 => Per A1 B1 C1.
+#cong_symmetry
+assert[name "Labelcong_symmetry"] forall (A B C D : point). Cong A B C D => Cong C D A B.
+#anga_conga
+assert[name "Labelanga_conga"] forall (A B C A1 B1 C1 : point) (a : point->point->point->prop). Q_CongA_Acute a => a A B C => a A1 B1 C1 => CongA A B C A1 B1 C1.
+#eq_dec_points
+assert[name "Labeleq_dec_points"] forall (A B : point). A=B || A!=B.
+#l11_49
+assert[name "Labell11_49"] forall (A B C A1 B1 C1 : point). CongA A B C A1 B1 C1 => Cong B A B1 A1 => Cong B C B1 C1 => Cong A C A1 C1 && (A!=C => CongA B A C B1 A1 C1 && CongA B C A B1 C1 A1).
+#lg_cong
+assert[name "Labellg_cong"] forall (A B C D : point) (l : point->point->prop). Q_Cong l => l A B => l C D => Cong A B C D.
+#l8_5
+assert[name "Labell8_5"] forall (A B : point). Per A B B.
+#l8_2
+assert[name "Labell8_2"] forall (A B C : point). Per A B C => Per C B A.
+rewrite[name "LabelLcos"] forall (lb lc : point->point->prop) (a : point->point->point->prop). Lcos lb lc a <=> Q_Cong lb && Q_Cong lc && Q_CongA_Acute a && (exists (A B C : point). (Per C B A && lb A B && lc A C && a B A C)).
+goal forall (A B C : point) (lp l : point->point->prop) (a : point->point->point->prop). Q_CongA_Acute a =>Q_Cong l => Q_Cong lp => Lcos lp l a => l A C => lp A B => a A B C => Per A B C.

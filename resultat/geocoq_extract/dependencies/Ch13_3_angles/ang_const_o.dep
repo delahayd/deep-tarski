@@ -1,0 +1,3 @@
+lemme : swap_diff angle_construction_2 col_trivial_1 or_bet_out ang_distincts out_trivial conga_refl
+rewrite : Q_CongA_nNull Q_CongA Q_CongA_nFlat
+destruct : HH

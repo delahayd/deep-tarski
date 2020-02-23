@@ -1,0 +1,6 @@
+include "../rew_type.zf".
+#diff_opp
+assert[name "Labeldiff_opp"] forall (O E E1 A B AmB BmA : point). Diff O E E1 A B AmB => Diff O E E1 B A BmA => Opp O E E1 AmB BmA.
+#pos_opp_neg
+assert[name "Labelpos_opp_neg"] forall (O E E1 A mA : point). Ps O E A => Opp O E E1 A mA => Ng O E mA.
+goal forall (O E E1 A B AmB BmA : point). Diff O E E1 A B AmB => Diff O E E1 B A BmA => Ps O E AmB => Ng O E BmA.

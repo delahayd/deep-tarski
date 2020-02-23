@@ -1,0 +1,3 @@
+lemme : eq_dec_points parallel_existence par_col_par par_right_comm col_permutation_4 col_permutation_5
+rewrite : 
+destruct : 

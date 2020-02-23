@@ -1,0 +1,20 @@
+include "../tarski_term_def.zf".
+#le_reflexivity
+assert[name "Labelle_reflexivity"] forall (A B : point). Le A B A B.
+#cong_symmetry
+assert[name "Labelcong_symmetry"] forall (A B C D : point). Cong A B C D => Cong C D A B.
+#l6_6
+assert[name "Labell6_6"] forall (P A B : point). Out P A B => Out P B A.
+#cong_diff_2
+assert[name "Labelcong_diff_2"] forall (A B C D : point). B!=A => Cong A B C D => C!=D.
+#l6_11_uniqueness
+assert[name "Labell6_11_uniqueness"] forall (A B C R X Y : point). R!=A => B!=C => Out A X R => Cong A X B C => Out A Y R => Cong A Y B C => X=Y.
+#cong_reflexivity
+assert[name "Labelcong_reflexivity"] forall (A B : point). Cong A B A B.
+#out_distinct
+assert[name "Labelout_distinct"] forall (A B C : point). Out A B C => B!=A && C!=A.
+#out_dec
+assert[name "Labelout_dec"] forall (P A B : point). Out P A B || ~Out P A B.
+#triangle_strict_reverse_inequality
+assert[name "Labeltriangle_strict_reverse_inequality"] forall (A B C D : point). Out A B D => Cong A C A D => ~Out A B C => Lt B C B D.
+goal forall (A B C D : point). Out A B D => Cong A C A D => Le B D B C.

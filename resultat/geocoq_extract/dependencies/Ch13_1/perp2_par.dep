@@ -1,0 +1,3 @@
+lemme : perp_comm l12_9 perp_sym
+rewrite : Perp2
+destruct : 

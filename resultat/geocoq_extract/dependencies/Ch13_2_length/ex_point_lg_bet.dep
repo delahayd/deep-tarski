@@ -1,0 +1,3 @@
+lemme : cong_reflexivity cong_symmetry segment_construction lg_cong_lg
+rewrite : Q_Cong
+destruct : HP

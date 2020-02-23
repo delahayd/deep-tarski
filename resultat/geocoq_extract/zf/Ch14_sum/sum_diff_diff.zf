@@ -1,0 +1,22 @@
+include "../tarski_term_def.zf".
+val O : point.
+val E : point.
+val E1 : point.
+assert ~Col O E E1.
+#diff_sum
+assert[name "Labeldiff_sum"] forall (O E E1 A B S : point). Diff O E E1 S A B => Sum O E E1 A B S.
+#sum_assoc_1
+assert[name "Labelsum_assoc_1"] forall (O E E1 A B C AB BC ABC : point). Sum O E E1 A B AB => Sum O E E1 B C BC => Sum O E E1 A BC ABC => Sum O E E1 AB C ABC.
+#opp_exists
+assert[name "Labelopp_exists"] forall (A : point). Col O E A => (exists (MA : point). Opp O E E1 A MA).
+#sum_comm
+assert[name "Labelsum_comm"] forall (A B C : point). Sum O E E1 A B C => Sum O E E1 B A C.
+#sum_assoc_2
+assert[name "Labelsum_assoc_2"] forall (O E E1 A B C AB BC ABC : point). Sum O E E1 A B AB => Sum O E E1 B C BC => Sum O E E1 AB C ABC => Sum O E E1 A BC ABC.
+#sum_O_B
+assert[name "Labelsum_O_B"] forall (B : point). Col O E B => Sum O E E1 O B B.
+rewrite[name "LabelOpp"] forall (O E E1 A B : point). Opp O E E1 A B <=> Sum O E E1 B A O.
+rewrite[name "LabelSum"] forall (O E E1 A B C : point). Sum O E E1 A B C <=> Ar2 O E E1 A B C && (exists (A1 C1 : point). Pj E E1 A  A1 && Col O E1 A1 && Pj O E  A1 C1 && Pj O E1 B  C1 && Pj E1 E C1 C).
+rewrite[name "LabelAr2"] forall (O E E1 A B C : point). Ar2 O E E1 A B C <=> ~ Col O E E1 && Col O E A && Col O E B && Col O E C.
+rewrite[name "LabelDiff"] forall (O E E1 A B C : point). Diff O E E1 A B C <=> (exists (B1 : point). Opp O E E1 B B1 && Sum O E E1 A B1 C).
+goal forall (O E E1 AX BX CX AXMBX AXMCX BXMCX : point). Diff O E E1 AX BX AXMBX => Diff O E E1 AX CX AXMCX => Diff O E E1 BX CX BXMCX => Sum O E E1 AXMBX BXMCX AXMCX.

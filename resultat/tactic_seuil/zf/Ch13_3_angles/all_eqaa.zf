@@ -1,0 +1,4 @@
+include "../rew_type.zf".
+#ex_eqaa
+assert[name "Labelex_eqaa"] forall (a1 a2 : point->point->point->prop). (exists (A B C : point). Ang_Acute A B C a1 && Ang_Acute A B C a2) => EqA a1 a2.
+goal forall (A B C : point) (a1 a2 : point->point->point->prop). Ang_Acute A B C a1 => Ang_Acute A B C a2 => EqA a1 a2.

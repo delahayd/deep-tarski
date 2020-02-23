@@ -1,0 +1,2 @@
+lemme : conga_refl between_trivial acute_distincts between_symmetry cong_symmetry
+rewrite : Col Q_CongA_Acute

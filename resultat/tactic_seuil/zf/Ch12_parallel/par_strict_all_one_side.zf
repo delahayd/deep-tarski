@@ -1,0 +1,4 @@
+include "../rew_type.zf".
+#par_strict_one_side
+assert[name "Labelpar_strict_one_side"] forall (A B C D P : point). Par_strict A B C D => Col C D P => OS A B C P.
+goal forall (A B C D : point). Par_strict A B C D => (forall (P : point). Col C D P => OS A B C P).

@@ -1,0 +1,2 @@
+lemme : col_permutation_5 l9_8_1 col_permutation_4 between_symmetry l9_9 one_side_symmetry eq_dec_points perp_left_comm cong_identity l7_2 cong_symmetry
+rewrite : TS Reflect Out ReflectL OS

@@ -1,0 +1,2 @@
+lemme : le_left_comm le_right_comm
+rewrite : Ge Par_strict Lt

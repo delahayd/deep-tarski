@@ -1,0 +1,2 @@
+lemme : col_trivial_1 between_trivial2 between_trivial segment_construction between_identity between_symmetry cong_reflexivity cong_identity cong_symmetry not_and_lt
+rewrite : Midpoint Le

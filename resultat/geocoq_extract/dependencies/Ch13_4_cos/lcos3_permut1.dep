@@ -1,0 +1,3 @@
+lemme : lcos2_comm lcos3_lcos_1_2
+rewrite : 
+destruct : HH

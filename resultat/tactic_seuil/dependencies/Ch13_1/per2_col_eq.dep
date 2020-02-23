@@ -1,0 +1,2 @@
+lemme : perp_comm col_permutation_1 col_trivial_3 l7_2 perp_col eq_dec_points l8_18_uniqueness cong_identity per_perp_in cong_symmetry perp_right_comm col_permutation_5 l8_9 perp_in_comm perp_left_comm perp_not_col col_permutation_4 perp_distinct between_identity between_symmetry perp_in_perp_bis
+rewrite : Reflect Midpoint Out

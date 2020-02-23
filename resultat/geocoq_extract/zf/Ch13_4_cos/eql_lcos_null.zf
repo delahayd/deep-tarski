@@ -1,0 +1,32 @@
+include "../tarski_term_def.zf".
+#col_permutation_5
+assert[name "Labelcol_permutation_5"] forall (A B C : point). Col A B C => Col A C B.
+#cong_symmetry
+assert[name "Labelcong_symmetry"] forall (A B C D : point). Cong A B C D => Cong C D A B.
+#anga_conga
+assert[name "Labelanga_conga"] forall (A B C A1 B1 C1 : point) (a : point->point->point->prop). Q_CongA_Acute a => a A B C => a A1 B1 C1 => CongA A B C A1 B1 C1.
+#eq_conga_out
+assert[name "Labeleq_conga_out"] forall (A B D E F : point). CongA A B A D E F => Out E D F.
+#bet_col
+assert[name "Labelbet_col"] forall (A B C : point). Bet A B C => Col A B C.
+#l7_3
+assert[name "Labell7_3"] forall (M A : point). Midpoint M A A => M=A.
+#cong_commutativity
+assert[name "Labelcong_commutativity"] forall (A B C D : point). Cong A B C D => Cong B A D C.
+#lg_cong
+assert[name "Labellg_cong"] forall (A B C D : point) (l : point->point->prop). Q_Cong l => l A B => l C D => Cong A B C D.
+#midpoint_col
+assert[name "Labelmidpoint_col"] forall (A M B : point). Midpoint M A B => Col M A B.
+#l4_18
+assert[name "Labell4_18"] forall (A B C C1 : point). A!=B => Col A B C => Cong A C A C1 => Cong B C B C1 => C=C1.
+#cong_transitivity
+assert[name "Labelcong_transitivity"] forall (A B C D E F : point). Cong A B C D => Cong C D E F => Cong A B E F.
+#anga_distinct
+assert[name "Labelanga_distinct"] forall (A B C : point) (a : point->point->point->prop). Q_CongA_Acute a => a A B C => A!=B && C!=B.
+#cong_right_commutativity
+assert[name "Labelcong_right_commutativity"] forall (A B C D : point). Cong A B C D => Cong A B D C.
+rewrite[name "LabelQ_CongA_Null_Acute"] forall (a : point->point->point->prop). Q_CongA_Null_Acute a <=> Q_CongA_Acute a && (forall (A B C : point). a A B C => Out B A C).
+rewrite[name "LabelMidpoint"] forall (M A B : point). Midpoint M A B <=> Bet A M B && Cong A M M B.
+rewrite[name "LabelLcos"] forall (lb lc : point->point->prop) (a : point->point->point->prop). Lcos lb lc a <=> Q_Cong lb && Q_Cong lc && Q_CongA_Acute a && (exists (A B C : point). (Per C B A && lb A B && lc A C && a B A C)).
+rewrite[name "LabelPer"] forall (A B C : point). Per A B C <=> (exists (C1 : point). Midpoint B C C1 && Cong A C A C1).
+goal forall (lp l : point->point->prop) (a : point->point->point->prop). Lcos l lp a => EqL l lp => Q_CongA_Null_Acute a.

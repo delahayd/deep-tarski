@@ -1,0 +1,2 @@
+lemme : is_ang_distinct conga_distinct conga_refl col_trivial_3 out_trivial eq_dec_points cong_identity cong_symmetry l6_6 col_permutation_5 col_trivial_1 anga_is_ang cong_reflexivity col_trivial_2 ang_conga between_trivial2 between_trivial l8_2 between_symmetry cong_transitivity
+rewrite : Col Q_Cong Out InAngle Q_Cong_Null Q_CongA

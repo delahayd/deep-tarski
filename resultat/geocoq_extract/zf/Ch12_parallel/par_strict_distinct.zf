@@ -1,0 +1,6 @@
+include "../tarski_term_def.zf".
+#par_distincts
+assert[name "Labelpar_distincts"] forall (A B C D : point). Par A B C D => (Par A B C D && A!=B && C!=D).
+#par_strict_par
+assert[name "Labelpar_strict_par"] forall (A B C D : point). Par_strict A B C D => Par A B C D.
+goal forall (A B C D : point). Par_strict A B C D => A!=B && C!=D.

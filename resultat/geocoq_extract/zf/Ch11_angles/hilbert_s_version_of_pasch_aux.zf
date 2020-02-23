@@ -1,0 +1,23 @@
+include "../tarski_term_def.zf".
+#l9_2
+assert[name "Labell9_2"] forall (A B P Q : point). TS A B P Q => TS A B Q P.
+#between_identity
+assert[name "Labelbetween_identity"] forall (A B : point). Bet A B A => A=B.
+#two_sides_dec
+assert[name "Labeltwo_sides_dec"] forall (A B C D : point). TS A B C D || ~TS A B C D.
+#col_trivial_1
+assert[name "Labelcol_trivial_1"] forall (A B : point). Col A A B.
+#not_two_sides_one_side
+assert[name "Labelnot_two_sides_one_side"] forall (A B X Y : point). A!=B => ~Col X A B => ~ Col Y A B => ~TS A B X Y => OS A B X Y.
+#not_col_distincts
+assert[name "Labelnot_col_distincts"] forall (A B C : point). ~Col A B C => ~Col A B C && A!=B && B!=C && A!=C.
+#col_permutation_4
+assert[name "Labelcol_permutation_4"] forall (A B C : point). Col A B C => Col B A C.
+#col_permutation_5
+assert[name "Labelcol_permutation_5"] forall (A B C : point). Col A B C => Col A C B.
+#bet_col
+assert[name "Labelbet_col"] forall (A B C : point). Bet A B C => Col A B C.
+#l9_8_2
+assert[name "Labell9_8_2"] forall (P Q A B C : point). TS P Q A C => OS P Q A B => TS P Q B C.
+rewrite[name "LabelTS"] forall (A B P Q : point). TS A B P Q <=> ~(Col P A B) && ~(Col Q A B) && (exists (T : point). Col T A B && Bet P T Q).
+goal forall (A B C I P : point). ~Col A I P => ~Col B C P => Bet B I C => B!=I => I!=C => B!=C => (exists (X : point). Col I P X && ((Bet A X B && A!=X && X!=B && A!=B) || (Bet A X C && A!=X && X!=C && A!=C))).

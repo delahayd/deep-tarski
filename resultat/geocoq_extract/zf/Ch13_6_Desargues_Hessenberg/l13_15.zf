@@ -1,0 +1,8 @@
+include "../tarski_term_def.zf".
+#l13_15_1
+assert[name "Labell13_15_1"] forall (A B C A1 B1 C1 O : point). ~Col A B C => ~Par O B A C => Par_strict A B A1 B1 => Par_strict A C A1 C1 => Col O A A1 => Col O B B1 => Col O C C1 => Par B C B1 C1.
+#l13_15_2
+assert[name "Labell13_15_2"] forall (A B C A1 B1 C1 O : point). ~Col A B C => Par O B A C => Par_strict A B A1 B1 => Par_strict A C A1 C1 => Col O A A1 => Col O B B1 => Col O C C1 => Par B C B1 C1.
+#Par_dec
+assert[name "LabelPar_dec"] forall (A B C D : point). Par A B C D || ~Par A B C D.
+goal forall (A B C A1 B1 C1 O : point). ~Col A B C => ~Par O A B C => Par_strict A B A1 B1 => Par_strict A C A1 C1 => Col O A A1 => Col O B B1 => Col O C C1 => Par B C B1 C1.

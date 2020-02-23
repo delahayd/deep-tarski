@@ -1,0 +1,10 @@
+include "../rew_type.zf".
+#l11_46
+assert[name "Labell11_46"] forall (A B C : point). ~Col A B C => (Per A B C || Obtuse A B C) => Lt B A A C && Lt B C A C.
+#l8_14_2_1a
+assert[name "Labell8_14_2_1a"] forall (X A B C D : point). Perp_at X A B C D => Perp A B C D.
+#lt_left_comm
+assert[name "Labellt_left_comm"] forall (A B C D : point). Lt A B C D => Lt B A C D.
+#per_not_col
+assert[name "Labelper_not_col"] forall (A B C : point). A!=B => B!=C => Per A B C => ~Col A B C.
+goal forall (A B C : point). A!=B => C!=B => Per A B C => Lt A B A C && Lt C B A C.

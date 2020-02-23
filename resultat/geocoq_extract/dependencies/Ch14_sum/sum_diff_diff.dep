@@ -1,0 +1,3 @@
+lemme : diff_sum sum_assoc_1 opp_exists sum_comm sum_assoc_2 sum_O_B
+rewrite : Opp Sum Ar2 Diff
+destruct : HBXMCX HAXMBX HAXMCX

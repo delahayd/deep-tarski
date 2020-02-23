@@ -1,0 +1,3 @@
+lemme : col_permutation_3 invert_one_side one_side_transitivity l9_2 between_identity col_permutation_1 col_trivial_1 l9_9 col_transitivity_1 col_permutation_4 segment_construction col_permutation_5 bet_out one_side_symmetry bet_col col_trivial_2 out_one_side cong_symmetry l6_6 col_permutation_2 col_one_side l9_8_2 between_symmetry cong_identity
+rewrite : Col OS TS
+destruct : 

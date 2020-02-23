@@ -1,0 +1,10 @@
+include "../tarski_term_def.zf".
+val O : point.
+val E : point.
+val E1 : point.
+assert ~Col O E E1.
+#prod_uniquenessA
+assert[name "Labelprod_uniquenessA"] forall (O E E1 A A1 B C : point). B!=O => Prod O E E1 A B C => Prod O E E1 A1 B C => A=A1.
+#prod_comm
+assert[name "Labelprod_comm"] forall (O E E1 A B C : point). Prod O E E1 A B C => Prod O E E1 B A C.
+goal forall (O E E1 A B1 B C : point). A!=O => Prod O E E1 A B C => Prod O E E1 A B1 C => B=B1.

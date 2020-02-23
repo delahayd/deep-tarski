@@ -1,0 +1,3 @@
+lemme : conga_trans
+rewrite : Q_CongA Ang
+destruct : HH HH1

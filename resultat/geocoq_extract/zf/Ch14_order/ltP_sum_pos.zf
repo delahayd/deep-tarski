@@ -1,0 +1,9 @@
+include "../tarski_term_def.zf".
+val O : point.
+val E : point.
+val E1 : point.
+assert ~Col O E E1.
+#sum_diff
+assert[name "Labelsum_diff"] forall (O E E1 A B S : point). Sum O E E1 A B S => Diff O E E1 S A B.
+rewrite[name "LabelLtP"] forall (O E E1 A B : point). LtP O E E1 A B <=> (exists (D : point). Diff O E E1 B A D && Ps O E D).
+goal forall (O E E1 A B C : point). Ps O E B => Sum O E E1 A B C => LtP O E E1 A C.

@@ -1,0 +1,16 @@
+include "../tarski_term_def.zf".
+#project_pj
+assert[name "Labelproject_pj"] forall (P P1 A B X Y : point). Proj P P1 A B X Y => Pj X Y P P1.
+#col_permutation_3
+assert[name "Labelcol_permutation_3"] forall (A B C : point). Col A B C => Col C B A.
+#col_permutation_5
+assert[name "Labelcol_permutation_5"] forall (A B C : point). Col A B C => Col A C B.
+#col_trivial_3
+assert[name "Labelcol_trivial_3"] forall (A B : point). Col A B A.
+#par_right_comm
+assert[name "Labelpar_right_comm"] forall (A B C D : point). Par A B C D => Par A B D C.
+rewrite[name "LabelProd"] forall (O E E1 A B C : point). Prod O E E1 A B C <=> Ar2 O E E1 A B C && (exists (B1 : point). Pj E E1 B B1 && Col O E1 B1 && Pj E1 A B1 C).
+rewrite[name "LabelProdp"] forall (O E E1 A B C : point). Prodp O E E1 A B C <=> Col O E A && Col O E B && (exists (B1 : point). Proj B B1 O E1 E E1 && Proj B1 C O E A E1).
+rewrite[name "LabelAr2"] forall (O E E1 A B C : point). Ar2 O E E1 A B C <=> ~ Col O E E1 && Col O E A && Col O E B && Col O E C.
+rewrite[name "LabelProj"] forall (P Q A B X Y : point). Proj P Q A B X Y <=> A != B && X != Y && ~Par A B X Y  && Col A B Q && (Par P Q X Y || P = Q).
+goal forall (O E E1 A B C : point). Prodp O E E1 A B C => Prod O E E1 A B C.

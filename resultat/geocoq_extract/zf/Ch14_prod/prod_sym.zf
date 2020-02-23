@@ -1,0 +1,8 @@
+include "../tarski_term_def.zf".
+val O : point.
+val E : point.
+val E1 : point.
+assert ~Col O E E1.
+#prod_comm
+assert[name "Labelprod_comm"] forall (O E E1 A B C : point). Prod O E E1 A B C => Prod O E E1 B A C.
+goal forall (O E E1 A B C : point). Prod O E E1 A B C => Prod O E E1 B A C.

@@ -1,0 +1,41 @@
+digraph "unsat_graph" {
+  vertex_0 [color=red, label="[]", shape=box, style=filled];
+  vertex_0 -> vertex_1 [label="s_sup-\l", dir="back"];
+  vertex_1 [shape=box, label="¬Par sk_A sk_B sk_C sk_D\l", style=filled];
+  vertex_1 -> vertex_2 [label="cnf", dir="back"];
+  vertex_2 [shape=box, label="negated_goal\l  ¬ (∀ A/154:point B/155:point C/156:point D/157:point O/158:point.\l        ((Perp2 A/154 B/155 C/156 D/157 O/158) ⇒\l         (Par A/154 B/155 C/156 D/157)))\l  # skolems: [].\l", style=filled];
+  vertex_2 -> vertex_3 [label="cnf.neg", dir="back"];
+  vertex_3 [color=green, shape=box, label="goal [file \"../resultat/geocoq_extract/zf/Ch13_1/perp2_par.zf\" \"zf_stmt_128\"]\l  ∀ A/154:point B/155:point C/156:point D/157:point O/158:point.\l    ((Perp2 A/154 B/155 C/156 D/157 O/158) ⇒ (Par A/154 B/155 C/156 D/157)).\l", style=filled];
+  vertex_0 -> vertex_4 [label="s_sup-\l", dir="back"];
+  vertex_4 [shape=box, label="Par sk_A sk_B sk_C sk_D\l", style=filled];
+  vertex_4 -> vertex_5 [label="s_sup-\l\{X0[0] → sk_D[1], X1[0] → sk_C[1]\}[0]\l", dir="back"];
+  vertex_5 [shape=box, label="forall (X0:point) (X1:point).\l[Par sk_A sk_B X1 X0\l ∨ ¬Perp X1 X0 (sk_X sk_O sk_D sk_C sk_B sk_A) \l        (sk_Y sk_O sk_D sk_C sk_B sk_A)]\l", style=filled];
+  vertex_5 -> vertex_6 [label="s_sup-\l\{X4[0] → sk_A[1], \l X5[0] → sk_B[1], \l X8[0] → sk_X sk_O sk_D sk_C sk_B sk_A[1], \l X9[0] → sk_Y sk_O sk_D sk_C sk_B sk_A[1]\}[0]\l", dir="back"];
+  vertex_6 [shape=box, label="forall (X4:point) (X5:point) (X6:point) (X7:point) (X8:point) (X9:point).\l[Par X4 X5 X6 X7 ∨ ¬Perp X4 X5 X8 X9 ∨ ¬Perp X6 X7 X8 X9]\l", style=filled];
+  vertex_6 -> vertex_7 [label="cnf", dir="back"];
+  vertex_7 [color=yellow, shape=box, label="assert\l  [file \"../resultat/geocoq_extract/zf/Ch13_1/perp2_par.zf\" \"Labell12_9\"]\l  ∀ A1/137:point A2/138:point B1/139:point B2/140:point C1/141:point \l    C2/142:point.\l    ((Perp A1/137 A2/138 C1/141 C2/142) ⇒\l     ((Perp B1/139 B2/140 C1/141 C2/142) ⇒\l      (Par A1/137 A2/138 B1/139 B2/140))).\l", style=filled];
+  vertex_5 -> vertex_8 [label="s_sup-\l\{X4[0] → sk_A[1], \l X5[0] → sk_B[1], \l X8[0] → sk_X sk_O sk_D sk_C sk_B sk_A[1], \l X9[0] → sk_Y sk_O sk_D sk_C sk_B sk_A[1]\}[1]\l", dir="back"];
+  vertex_8 [shape=box, label="Perp sk_A sk_B (sk_X sk_O sk_D sk_C sk_B sk_A) \l (sk_Y sk_O sk_D sk_C sk_B sk_A)\l", style=filled];
+  vertex_8 -> vertex_9 [label="s_sup-\l\{X10[0] → sk_A[1], \l X11[0] → sk_B[1], \l X12[0] → sk_X sk_O sk_D sk_C sk_B sk_A[1], \l X13[0] → sk_Y sk_O sk_D sk_C sk_B sk_A[1]\}[0]\l", dir="back"];
+  vertex_9 [shape=box, label="forall (X10:point) (X11:point) (X12:point) (X13:point).\l[Perp X10 X11 X12 X13 ∨ ¬Perp X12 X13 X10 X11]\l", style=filled];
+  vertex_9 -> vertex_10 [label="cnf", dir="back"];
+  vertex_10 [color=yellow, shape=box, label="assert\l  [file \"../resultat/geocoq_extract/zf/Ch13_1/perp2_par.zf\" \"Labelperp_sym\"]\l  ∀ A/143:point B/144:point C/145:point D/146:point.\l    ((Perp A/143 B/144 C/145 D/146) ⇒ (Perp C/145 D/146 A/143 B/144)).\l", style=filled];
+  vertex_8 -> vertex_11 [label="s_sup-\l\{X10[0] → sk_A[1], \l X11[0] → sk_B[1], \l X12[0] → sk_X sk_O sk_D sk_C sk_B sk_A[1], \l X13[0] → sk_Y sk_O sk_D sk_C sk_B sk_A[1]\}[1]\l", dir="back"];
+  vertex_11 [shape=box, label="Perp (sk_X sk_O sk_D sk_C sk_B sk_A) (sk_Y sk_O sk_D sk_C sk_B sk_A) sk_A \l sk_B\l", style=filled];
+  vertex_11 -> vertex_12 [label="rw_clause\l\{X14[1] → sk_A[0], \l X15[1] → sk_B[0], \l X16[1] → sk_C[0], \l X17[1] → sk_D[0], \l X18[1] → sk_O[0]\}[1]\l", dir="back"];
+  vertex_12 [color=navajowhite, shape=box, label="(Perp2 X14 X15 X16 X17 X18 :=\l   [Perp (sk_X X18 X17 X16 X15 X14) (sk_Y X18 X17 X16 X15 X14) X14 X15∧\l    Perp (sk_X X18 X17 X16 X15 X14) (sk_Y X18 X17 X16 X15 X14) X16 X17∧\l    Col X18 (sk_X X18 X17 X16 X15 X14) (sk_Y X18 X17 X16 X15 X14)] [B])\l", style=filled];
+  vertex_12 -> vertex_13 [label="rw.lit", dir="back"];
+  vertex_13 [color=yellow, shape=box, label="rewrite\l  [file \"../resultat/geocoq_extract/zf/Ch13_1/perp2_par.zf\" \"LabelPerp2\"]\l  Perp2 X14 X15 X16 X17 X18\l  =\> Perp (sk_X X18 X17 X16 X15 X14) (sk_Y X18 X17 X16 X15 X14) X14 X15 && \l     Perp (sk_X X18 X17 X16 X15 X14) (sk_Y X18 X17 X16 X15 X14) X16 X17 && \l     Col X18 (sk_X X18 X17 X16 X15 X14) (sk_Y X18 X17 X16 X15 X14).\l", style=filled];
+  vertex_11 -> vertex_14 [label="rw_clause\l\{X14[1] → sk_A[0], \l X15[1] → sk_B[0], \l X16[1] → sk_C[0], \l X17[1] → sk_D[0], \l X18[1] → sk_O[0]\}[0]\l", dir="back"];
+  vertex_14 [shape=box, label="Perp2 sk_A sk_B sk_C sk_D sk_O\l", style=filled];
+  vertex_14 -> vertex_2 [label="cnf", dir="back"];
+  vertex_4 -> vertex_15 [label="s_sup-\l\{X0[0] → sk_D[1], X1[0] → sk_C[1]\}[1]\l", dir="back"];
+  vertex_15 [shape=box, label="Perp sk_C sk_D (sk_X sk_O sk_D sk_C sk_B sk_A) \l (sk_Y sk_O sk_D sk_C sk_B sk_A)\l", style=filled];
+  vertex_15 -> vertex_9 [label="s_sup-\l\{X10[0] → sk_C[1], \l X11[0] → sk_D[1], \l X12[0] → sk_X sk_O sk_D sk_C sk_B sk_A[1], \l X13[0] → sk_Y sk_O sk_D sk_C sk_B sk_A[1]\}[0]\l", dir="back"];
+  vertex_15 -> vertex_16 [label="s_sup-\l\{X10[0] → sk_C[1], \l X11[0] → sk_D[1], \l X12[0] → sk_X sk_O sk_D sk_C sk_B sk_A[1], \l X13[0] → sk_Y sk_O sk_D sk_C sk_B sk_A[1]\}[1]\l", dir="back"];
+  vertex_16 [shape=box, label="Perp (sk_X sk_O sk_D sk_C sk_B sk_A) (sk_Y sk_O sk_D sk_C sk_B sk_A) sk_C \l sk_D\l", style=filled];
+  vertex_16 -> vertex_12 [label="rw_clause\l\{X14[1] → sk_A[0], \l X15[1] → sk_B[0], \l X16[1] → sk_C[0], \l X17[1] → sk_D[0], \l X18[1] → sk_O[0]\}[1]\l", dir="back"];
+  vertex_16 -> vertex_14 [label="rw_clause\l\{X14[1] → sk_A[0], \l X15[1] → sk_B[0], \l X16[1] → sk_C[0], \l X17[1] → sk_D[0], \l X18[1] → sk_O[0]\}[0]\l", dir="back"];
+  }
+
+

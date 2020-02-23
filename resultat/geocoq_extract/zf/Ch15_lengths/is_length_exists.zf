@@ -1,0 +1,10 @@
+include "../tarski_term_def.zf".
+#not_col_distincts
+assert[name "Labelnot_col_distincts"] forall (A B C : point). ~Col A B C => ~Col A B C && A!=B && B!=C && A!=C.
+#eq_dec_points
+assert[name "Labeleq_dec_points"] forall (A B : point). A=B || A!=B.
+#length_id_2
+assert[name "Labellength_id_2"] forall (O E E1 A : point). O!=E => Length O E E1 A A O.
+#length_existence
+assert[name "Labellength_existence"] forall (O E E1 A B : point). ~Col O E E1 => (exists (AB : point). Length O E E1 A B AB).
+goal forall (O E E1 X Y : point). ~Col O E E1 => (exists (XY : point). Is_length O E E1 X Y XY).

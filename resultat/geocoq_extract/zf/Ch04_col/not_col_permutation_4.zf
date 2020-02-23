@@ -1,0 +1,6 @@
+include "../tarski_term_def.zf".
+#col_permutation_5
+assert[name "Labelcol_permutation_5"] forall (A B C : point). Col A B C => Col A C B.
+#col_permutation_1
+assert[name "Labelcol_permutation_1"] forall (A B C : point). Col A B C => Col B C A.
+goal forall (A B C : point). ~Col A B C => ~Col B A C.

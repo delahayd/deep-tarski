@@ -1,0 +1,33 @@
+include "../tarski_term_def.zf".
+#col_permutation_3
+assert[name "Labelcol_permutation_3"] forall (A B C : point). Col A B C => Col C B A.
+#col_permutation_5
+assert[name "Labelcol_permutation_5"] forall (A B C : point). Col A B C => Col A C B.
+#anga_const_o
+assert[name "Labelanga_const_o"] forall (A B P : point) (a : point->point->point->prop). ~Col A B P => ~Q_CongA_Null_Acute a => Q_CongA_Acute a => (exists (C : point). a A B C && OS A B C P).
+#out_one_side_1
+assert[name "Labelout_one_side_1"] forall (A B C D X : point). ~Col A B C => Col A B X => Out X C D => OS A B C D.
+#ex_point_lg_out
+assert[name "Labelex_point_lg_out"] forall (A P : point) (l : point->point->prop). A!=P => Q_Cong l => ~Q_Cong_Null l => (exists (B : point). l A B && Out A B P).
+#out_trivial
+assert[name "Labelout_trivial"] forall (P A : point). A!=P => Out P A A.
+#anga_out_anga
+assert[name "Labelanga_out_anga"] forall (A B C A1 C1 : point) (a : point->point->point->prop). Q_CongA_Acute a => a A B C => Out B A A1 => Out B C C1 => a A1 B C1.
+#lcos_lg_not_null
+assert[name "Labellcos_lg_not_null"] forall (lp l : point->point->prop) (a : point->point->point->prop). Lcos l lp a => ~Q_Cong_Null l && ~Q_Cong_Null lp.
+#ex_points_lg_not_col
+assert[name "Labelex_points_lg_not_col"] forall (P : point) (l : point->point->prop). Q_Cong l => ~Q_Cong_Null l => (exists (A B : point). l A B && ~Col A B P).
+#one_side_symmetry
+assert[name "Labelone_side_symmetry"] forall (P Q A B : point). OS P Q A B => OS P Q B A.
+#col_trivial_2
+assert[name "Labelcol_trivial_2"] forall (A B : point). Col A B B.
+#l6_6
+assert[name "Labell6_6"] forall (P A B : point). Out P A B => Out P B A.
+#anga_distinct
+assert[name "Labelanga_distinct"] forall (A B C : point) (a : point->point->point->prop). Q_CongA_Acute a => a A B C => A!=B && C!=B.
+#one_side_transitivity
+assert[name "Labelone_side_transitivity"] forall (P Q A B C : point). OS P Q A B => OS P Q B C => OS P Q A C.
+rewrite[name "LabelTS"] forall (A B P Q : point). TS A B P Q <=> ~(Col P A B) && ~(Col Q A B) && (exists (T : point). Col T A B && Bet P T Q).
+rewrite[name "LabelOS"] forall (A B P Q : point). OS A B P Q <=> (exists (R : point). TS A B P R && TS A B Q R).
+rewrite[name "LabelLcos"] forall (lb lc : point->point->prop) (a : point->point->point->prop). Lcos lb lc a <=> Q_Cong lb && Q_Cong lc && Q_CongA_Acute a && (exists (A B C : point). (Per C B A && lb A B && lc A C && a B A C)).
+goal forall (P : point) (l lp : point->point->prop) (a : point->point->point->prop). Lcos lp l a => ~Q_CongA_Null_Acute a => (exists (A B C : point). ~Col A B P && OS A B C P && l A B && lp B C && a A B C).

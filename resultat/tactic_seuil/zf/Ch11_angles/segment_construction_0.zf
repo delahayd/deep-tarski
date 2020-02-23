@@ -1,0 +1,8 @@
+include "../rew_type.zf".
+#another_point
+assert[name "Labelanother_point"] forall (A : point). exists (B : point). A!=B.
+#cong_trivial_identity
+assert[name "Labelcong_trivial_identity"] forall (A B : point). Cong A A B B.
+#segment_construction_3
+assert[name "Labelsegment_construction_3"] forall (A B X Y : point). A!=B => X!=Y => (exists (C : point). Out A B C && Cong A C X Y).
+goal forall (A B A1 : point). (exists (B1 : point). Cong A1 B1 A B).

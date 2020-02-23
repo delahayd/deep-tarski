@@ -1,0 +1,5 @@
+include "../tarski_term_def.zf".
+#lcos3_exists
+assert[name "Labellcos3_exists"] forall (l : point->point->prop) (a b c : point->point->point->prop). Q_Cong l => ~Q_Cong_Null l => Q_CongA_Acute a => Q_CongA_Acute b => Q_CongA_Acute c => (exists (lp : point->point->prop). Lcos3 lp l a b c).
+rewrite[name "LabelEq_Lcos3"] forall (l1 l2 : point->point->prop) (a b c d e f : point->point->point->prop). Eq_Lcos3 l1 a b c l2 d e f <=> (exists (lp : point->point->prop). Lcos3 lp l1 a b c && Lcos3 lp l2 d e f).
+goal forall (l : point->point->prop) (a b c : point->point->point->prop). Q_Cong l => ~Q_Cong_Null l => Q_CongA_Acute a => Q_CongA_Acute b => Q_CongA_Acute c => Eq_Lcos3 l a b c l a b c.

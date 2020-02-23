@@ -1,0 +1,6 @@
+include "../tarski_term_def.zf".
+#not_out_bet
+assert[name "Labelnot_out_bet"] forall (A B C : point). Col A B C => ~Out B A C => Bet A B C.
+#out_dec
+assert[name "Labelout_dec"] forall (P A B : point). Out P A B || ~Out P A B.
+goal forall (A B C : point). Bet A B C || Out B A C || ~Col A B C.

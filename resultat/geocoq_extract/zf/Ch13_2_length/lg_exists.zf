@@ -1,0 +1,5 @@
+include "../tarski_term_def.zf".
+#cong_reflexivity
+assert[name "Labelcong_reflexivity"] forall (A B : point). Cong A B A B.
+rewrite[name "LabelQ_Cong"] forall (A B C D E F : point) (l : point->point->prop). Q_Cong l <=> (exists (A B : point). forall X Y. Cong A B X Y <=> l X Y).
+goal forall (A B : point). (exists (l : point->point->prop). Q_Cong l && l A B).

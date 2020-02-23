@@ -1,0 +1,3 @@
+lemme : opp_comm opp_exists col_trivial_2 opp_prod prod_assoc prod_comm
+rewrite : Prod Ar2
+destruct : HP

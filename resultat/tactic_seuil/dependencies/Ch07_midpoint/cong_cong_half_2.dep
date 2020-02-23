@@ -1,0 +1,2 @@
+lemme : cong_commutativity l7_2 l7_17 l4_5 cong_transitivity cong_cong_half_1 cong_symmetry
+rewrite : Midpoint

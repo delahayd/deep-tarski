@@ -1,0 +1,6 @@
+include "../tarski_term_def.zf".
+#le_right_comm
+assert[name "Labelle_right_comm"] forall (A B C D : point). Le A B C D => Le A B D C.
+#le_left_comm
+assert[name "Labelle_left_comm"] forall (A B C D : point). Le A B C D => Le B A C D.
+goal forall (A B C D : point). Le A B C D => Le B A D C.

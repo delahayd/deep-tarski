@@ -1,0 +1,3 @@
+lemme : l11_16 col_trivial_3 invert_one_side between_trivial col_trivial_1 between_trivial2 l11_15 conga_refl bet_col between_symmetry col_trivial_2 not_col_permutation_5 not_col_permutation_2 l8_9 one_side_reflexivity
+rewrite : OS TS
+destruct : 

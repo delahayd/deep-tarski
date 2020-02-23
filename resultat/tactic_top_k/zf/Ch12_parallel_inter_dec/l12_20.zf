@@ -1,0 +1,8 @@
+include "../rew_type.zf".
+#l12_20_bis
+assert[name "Labell12_20_bis"] forall (A B C D : point). Par A B C D => Cong A B C D => TS B D A C => Par B C D A && Cong B C D A && TS A C B D.
+#par_comm
+assert[name "Labelpar_comm"] forall (A B C D : point). Par A B C D => Par B A D C.
+#par_two_sides_two_sides
+assert[name "Labelpar_two_sides_two_sides"] forall (A B C D : point). Par A B C D => TS B D A C => TS A C B D.
+goal forall (A B C D : point). Par A B C D => Cong A B C D => TS A C B D => Par B C D A && Cong B C D A && TS A C B D.

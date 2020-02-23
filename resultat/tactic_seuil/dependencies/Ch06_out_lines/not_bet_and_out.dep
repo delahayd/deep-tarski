@@ -1,0 +1,2 @@
+lemme : perp_comm col_permutation_1 col_trivial_3 not_and_lt symmetric_point_construction not_col_distincts col_permutation_2 out_trivial eq_dec_points cong_symmetry col_permutation_5 col_trivial_1 col_trivial_2 bet_dec out_col between_equality between_trivial2 between_trivial col_permutation_4 l8_2 between_symmetry not_col_permutation_5 lower_dim
+rewrite : Perp_at Perp Par_strict Out InAngle Perp2 Inter Par

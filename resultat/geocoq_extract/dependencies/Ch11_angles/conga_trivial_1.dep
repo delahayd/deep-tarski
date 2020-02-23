@@ -1,0 +1,3 @@
+lemme : cong_trivial_identity segment_construction
+rewrite : CongA
+destruct : 

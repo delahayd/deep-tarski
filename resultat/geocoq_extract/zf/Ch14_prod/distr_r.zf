@@ -1,0 +1,10 @@
+include "../tarski_term_def.zf".
+val O : point.
+val E : point.
+val E1 : point.
+assert ~Col O E E1.
+#distr_l
+assert[name "Labeldistr_l"] forall (O E E1 A : point). ~Col O E E1 => Col O E A => Prod O E E1 A O O.
+#prod_comm
+assert[name "Labelprod_comm"] forall (O E E1 A B C : point). Prod O E E1 A B C => Prod O E E1 B A C.
+goal forall (O E E1 A B C D AC BC DC : point). Sum O E E1 A B D => Prod O E E1 A C AC => Prod O E E1 B C BC => (Prod O E E1 D C DC => Sum O E E1 AC BC DC).

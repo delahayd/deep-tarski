@@ -1,0 +1,14 @@
+include "../rew_type.zf".
+#between_symmetry
+assert[name "Labelbetween_symmetry"] forall (A B C : point). Bet A B C => Bet C B A.
+#cong_identity
+assert[name "Labelcong_identity"] forall (A B C : point). Cong A B C C => A = B.
+#cong_reflexivity
+assert[name "Labelcong_reflexivity"] forall (A B : point). Cong A B A B.
+#cong_symmetry
+assert[name "Labelcong_symmetry"] forall (A B C D : point). Cong A B C D => Cong C D A B.
+#construction_uniqueness
+assert[name "Labelconstruction_uniqueness"] forall (Q A B C X Y : point). Q!=A => Bet Q A X => Cong A X B C => Bet Q A Y => Cong A Y B C => X=Y.
+#outer_transitivity_between2
+assert[name "Labelouter_transitivity_between2"] forall (A B C D : point). Bet A B C => Bet B C D => B!=C => Bet A C D.
+goal forall (A B C D : point). Bet A B C=> Bet B C D => B!=C => Bet A B D.

@@ -1,0 +1,3 @@
+lemme : conga_distinct cong_identity cong_symmetry
+rewrite : Q_Cong Q_Cong_Null Q_CongA
+destruct : HH

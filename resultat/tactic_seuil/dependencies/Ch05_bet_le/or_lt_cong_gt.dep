@@ -1,0 +1,2 @@
+lemme : le_cases col_permutation_5 col_trivial_1 bet_col col_permutation_1 col_trivial_3 cong_symmetry
+rewrite : Par_strict Lt Gt Le

@@ -1,0 +1,14 @@
+digraph "unsat_graph" {
+  vertex_0 [color=red, label="[]", shape=box, style=filled];
+  vertex_0 -> vertex_1 [label="s_sup-\l", dir="back"];
+  vertex_1 [shape=box, label="¬Par sk_A sk_B sk_C sk_D\l", style=filled];
+  vertex_1 -> vertex_2 [label="cnf", dir="back"];
+  vertex_2 [shape=box, label="negated_goal\l  ¬ (∀ A/172:point B/173:point C/174:point D/175:point.\l        ((¬ (Par A/172 B/173 C/174 D/175)) ∨ (Par A/172 B/173 C/174 D/175)))\l  # skolems: [].\l", style=filled];
+  vertex_2 -> vertex_3 [label="cnf.neg", dir="back"];
+  vertex_3 [color=green, shape=box, label="goal\l  [file \"../resultat/geocoq_extract/zf/Ch12_parallel_inter_dec/Par_dec.zf\" \l   \"zf_stmt_128\"]\l  ∀ A/172:point B/173:point C/174:point D/175:point.\l    ((¬ (Par A/172 B/173 C/174 D/175)) ∨ (Par A/172 B/173 C/174 D/175)).\l", style=filled];
+  vertex_0 -> vertex_4 [label="s_sup-\l", dir="back"];
+  vertex_4 [shape=box, label="Par sk_A sk_B sk_C sk_D\l", style=filled];
+  vertex_4 -> vertex_2 [label="cnf", dir="back"];
+  }
+
+

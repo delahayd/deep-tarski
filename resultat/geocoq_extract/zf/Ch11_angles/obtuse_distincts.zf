@@ -1,0 +1,4 @@
+include "../tarski_term_def.zf".
+#gta_distincts
+assert[name "Labelgta_distincts"] forall (A B C D E F : point). GtA A B C D E F => A!=B && C!=B && D!=E && F!=E.
+goal forall (A B C : point). Obtuse A B C => A!=B && C!=B.

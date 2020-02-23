@@ -1,0 +1,48 @@
+include "../tarski_term_def.zf".
+#one_side_not_col123
+assert[name "Labelone_side_not_col123"] forall (A B X Y : point). OS A B X Y => ~Col A B X.
+#out_conga
+assert[name "Labelout_conga"] forall (A B C A1 B1 C1 A0 C0 A2 C2 : point). CongA A B C A1 B1 C1 => Out B A A0 => Out B C C0 => Out B1 A1 A2 => Out B1 C1 C2 => CongA A0 B C0 A2 B1 C2.
+#out2__bet
+assert[name "Labelout2__bet"] forall (A B C : point). Out A B C => Out C B A => Bet A B C.
+#conga_preserves_lta
+assert[name "Labelconga_preserves_lta"] forall (A B C D E F A1 B1 C1 D1 E1 F1 : point). CongA A B C A1 B1 C1 => CongA D E F D1 E1 F1 => LtA A B C D E F => LtA A1 B1 C1 D1 E1 F1.
+#lta_trans
+assert[name "Labellta_trans"] forall (A B C A1 B1 C1 A2 B2 C2 : point). LtA A B C A1 B1 C1 => LtA A1 B1 C1 A2 B2 C2 => LtA A B C A2 B2 C2.
+#invert_one_side
+assert[name "Labelinvert_one_side"] forall (A B P Q : point). OS A B P Q => OS B A P Q.
+#one_side_not_col124
+assert[name "Labelone_side_not_col124"] forall (A B X Y : point). OS A B X Y => ~Col A B Y.
+#out_distinct
+assert[name "Labelout_distinct"] forall (A B C : point). Out A B C => B!=A && C!=A.
+#os2__inangle
+assert[name "Labelos2__inangle"] forall (A B C P : point). OS B A C P => OS B C A P => InAngle P A B C.
+#col_permutation_1
+assert[name "Labelcol_permutation_1"] forall (A B C : point). Col A B C => Col B C A.
+#conga_refl
+assert[name "Labelconga_refl"] forall (A B C : point). A!=B => C!=B => CongA A B C A B C.
+#not_col_distincts
+assert[name "Labelnot_col_distincts"] forall (A B C : point). ~Col A B C => ~Col A B C && A!=B && B!=C && A!=C.
+#col_permutation_4
+assert[name "Labelcol_permutation_4"] forall (A B C : point). Col A B C => Col B A C.
+#col_permutation_5
+assert[name "Labelcol_permutation_5"] forall (A B C : point). Col A B C => Col A C B.
+#col_one_side_out
+assert[name "Labelcol_one_side_out"] forall (A B X Y : point). Col A X Y => OS A B X Y => Out A X Y.
+#bet_out
+assert[name "Labelbet_out"] forall (A B C : point). B!=A => Bet A B C => Out A B C.
+#out_trivial
+assert[name "Labelout_trivial"] forall (P A : point). A!=P => Out P A A.
+#one_side_symmetry
+assert[name "Labelone_side_symmetry"] forall (P Q A B : point). OS P Q A B => OS P Q B A.
+#bet_col
+assert[name "Labelbet_col"] forall (A B C : point). Bet A B C => Col A B C.
+#l11_41
+assert[name "Labell11_41"] forall (A B C D : point). ~Col A B C => Bet A B D => A!=D => LtA A C B C A D && LtA A B C C A D.
+#out_col
+assert[name "Labelout_col"] forall (A B C : point). Out A B C => Col A B C.
+#col_one_side
+assert[name "Labelcol_one_side"] forall (A B C P Q : point). Col A B C => A!=C => OS A B P Q => OS A C P Q.
+#conga_pseudo_refl
+assert[name "Labelconga_pseudo_refl"] forall (A B C : point). A!=B => C!=B => CongA A B C C B A.
+goal forall (A B C D : point). OS A B C D => OS B C A D => OS A C B D => LtA B A C B D C.

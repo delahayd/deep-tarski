@@ -1,0 +1,30 @@
+digraph "unsat_graph" {
+  vertex_0 [color=red, label="[]", shape=box, style=filled];
+  vertex_0 -> vertex_1 [label="simplify_reflect-", dir="back"];
+  vertex_1 [shape=box, label="sk_C ≠ sk_D\l", style=filled];
+  vertex_1 -> vertex_2 [label="rw_clause\l\{X5[1] → sk_X sk_D sk_C sk_B sk_A[0], \l X6[1] → sk_A[0], \l X7[1] → sk_B[0], \l X8[1] → sk_C[0], \l X9[1] → sk_D[0]\}[1]\l", dir="back"];
+  vertex_2 [color=navajowhite, shape=box, label="(Perp_at X5 X6 X7 X8 X9 :=\l   [X8 ≠ X9∧\l    Col X5 X8 X9∧\l    ¬Col X10 X6 X7 ∨ Per X10 X5 X11 ∨ ¬Col X11 X8 X9∧\l    Col X5 X6 X7∧\l    X6 ≠ X7] [B])\l", style=filled];
+  vertex_2 -> vertex_3 [label="rw.lit", dir="back"];
+  vertex_3 [color=yellow, shape=box, label="rewrite\l  [file \"../resultat/geocoq_extract/zf/Ch08_orthogonality/perp_distinct.zf\" \l   \"LabelPerp_at\"]\l  Perp_at X5 X6 X7 X8 X9\l  =\> X8 ≠ X9 && Col X5 X8 X9 && ¬ Col X10 X6 X7 ∨ Per X10 X5 X11 ∨ \l     ¬ Col X11 X8 X9 && Col X5 X6 X7 && X6 ≠ X7.\l", style=filled];
+  vertex_1 -> vertex_4 [label="rw_clause\l\{X5[1] → sk_X sk_D sk_C sk_B sk_A[0], \l X6[1] → sk_A[0], \l X7[1] → sk_B[0], \l X8[1] → sk_C[0], \l X9[1] → sk_D[0]\}[0]\l", dir="back"];
+  vertex_4 [shape=box, label="Perp_at (sk_X sk_D sk_C sk_B sk_A) sk_A sk_B sk_C sk_D\l", style=filled];
+  vertex_4 -> vertex_5 [label="rw_clause\l\{X0[1] → sk_A[0], X1[1] → sk_B[0], X2[1] → sk_C[0], X3[1] → sk_D[0]\}[1]\l", dir="back"];
+  vertex_5 [color=navajowhite, shape=box, label="(Perp X0 X1 X2 X3 := [Perp_at (sk_X X3 X2 X1 X0) X0 X1 X2 X3] [B])\l", style=filled];
+  vertex_5 -> vertex_6 [label="rw.lit", dir="back"];
+  vertex_6 [color=yellow, shape=box, label="rewrite\l  [file \"../resultat/geocoq_extract/zf/Ch08_orthogonality/perp_distinct.zf\" \l   \"LabelPerp\"]\l  Perp X0 X1 X2 X3 =\> Perp_at (sk_X X3 X2 X1 X0) X0 X1 X2 X3.\l", style=filled];
+  vertex_4 -> vertex_7 [label="rw_clause\l\{X0[1] → sk_A[0], X1[1] → sk_B[0], X2[1] → sk_C[0], X3[1] → sk_D[0]\}[0]\l", dir="back"];
+  vertex_7 [shape=box, label="Perp sk_A sk_B sk_C sk_D\l", style=filled];
+  vertex_7 -> vertex_8 [label="cnf", dir="back"];
+  vertex_8 [shape=box, label="negated_goal\l  ¬ (∀ A/145:point B/146:point C/147:point D/148:point.\l        ((Perp A/145 B/146 C/147 D/148) ⇒\l         ((C/147 ≠ D/148) ∧ (A/145 ≠ B/146))))\l  # skolems: [].\l", style=filled];
+  vertex_8 -> vertex_9 [label="cnf.neg", dir="back"];
+  vertex_9 [color=green, shape=box, label="goal\l  [file \"../resultat/geocoq_extract/zf/Ch08_orthogonality/perp_distinct.zf\" \l   \"zf_stmt_128\"]\l  ∀ A/145:point B/146:point C/147:point D/148:point.\l    ((Perp A/145 B/146 C/147 D/148) ⇒\l     ((C/147 ≠ D/148) ∧ (A/145 ≠ B/146))).\l", style=filled];
+  vertex_0 -> vertex_10 [label="simplify_reflect-", dir="back"];
+  vertex_10 [shape=box, label="sk_A ≠ sk_B\l", style=filled];
+  vertex_10 -> vertex_2 [label="rw_clause\l\{X5[1] → sk_X sk_D sk_C sk_B sk_A[0], \l X6[1] → sk_A[0], \l X7[1] → sk_B[0], \l X8[1] → sk_C[0], \l X9[1] → sk_D[0]\}[1]\l", dir="back"];
+  vertex_10 -> vertex_4 [label="rw_clause\l\{X5[1] → sk_X sk_D sk_C sk_B sk_A[0], \l X6[1] → sk_A[0], \l X7[1] → sk_B[0], \l X8[1] → sk_C[0], \l X9[1] → sk_D[0]\}[0]\l", dir="back"];
+  vertex_0 -> vertex_11 [label="simplify_reflect-", dir="back"];
+  vertex_11 [shape=box, label="[sk_C = sk_D ∨ sk_A = sk_B]\l", style=filled];
+  vertex_11 -> vertex_8 [label="cnf", dir="back"];
+  }
+
+

@@ -1,0 +1,3 @@
+lemme : eq_dec_points perp_distinct midpoint_col symmetric_point_construction l10_4 symmetry_preserves_midpoint l10_4_spec cong_commutativity midpoint_preserves_image l4_3 midpoint_distinct_1 l4_16 is_image_is_image_spec l2_11 l7_3 midpoint_bet image_image_in bet_col image_in_col cong_symmetry l7_9 col_permutation_2 midpoint_existence cong_right_commutativity l7_15 is_image_spec_col_cong l7_3_2 between_symmetry cong_transitivity cong_identity
+rewrite : Col Midpoint ReflectL
+destruct : 

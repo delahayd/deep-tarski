@@ -1,0 +1,3 @@
+lemme : prod_assoc1 diff_ar2 length_eq_or_opp not_col_distincts opp_exists opp_prod prod_comm col_trivial_2 opp_comm prod_uniqueness
+rewrite : Ar2
+destruct : 

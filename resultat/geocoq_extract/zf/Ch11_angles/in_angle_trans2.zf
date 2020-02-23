@@ -1,0 +1,18 @@
+include "../tarski_term_def.zf".
+#cong_diff_3
+assert[name "Labelcong_diff_3"] forall (A B C D : point). C!=D => Cong A B C D => A!=B.
+#bet_neq12__neq
+assert[name "Labelbet_neq12__neq"] forall (A B C : point). Bet A B C => A!=B=>A!=C.
+#in_angle_reverse
+assert[name "Labelin_angle_reverse"] forall (A B A1 C D : point). A1!=B => Bet A B A1 => InAngle C A B D => InAngle D A1 B C.
+#between_symmetry
+assert[name "Labelbetween_symmetry"] forall (A B C : point). Bet A B C => Bet C B A.
+#in_angle_trans
+assert[name "Labelin_angle_trans"] forall (A B C D E : point). InAngle C A B D => InAngle D A B E => InAngle C A B E.
+#segment_construction
+assert[name "Labelsegment_construction"] forall (A B C D : point). exists (E :point). Bet A B E && Cong B E C D.
+#inangle_distincts
+assert[name "Labelinangle_distincts"] forall (A B C P : point). InAngle P A B C => A!=B && C!=B && P!=B.
+#l11_24
+assert[name "Labell11_24"] forall (P A B C : point). InAngle P A B C => InAngle P C B A.
+goal forall (A B C D E : point). InAngle C A B D => InAngle D A B E => InAngle D C B E.

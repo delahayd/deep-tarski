@@ -1,0 +1,5 @@
+include "../tarski_term_def.zf".
+#col_two_sides
+assert[name "Labelcol_two_sides"] forall (A B C P Q : point). Col A B C => A!=C => TS A B P Q => TS A C P Q.
+rewrite[name "LabelOS"] forall (A B P Q : point). OS A B P Q <=> (exists (R : point). TS A B P R && TS A B Q R).
+goal forall (A B C P Q : point). Col A B C => A!=C => OS A B P Q => OS A C P Q.

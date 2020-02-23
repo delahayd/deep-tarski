@@ -1,0 +1,9 @@
+include "../tarski_term_def.zf".
+#acute_not_bet
+assert[name "Labelacute_not_bet"] forall (A B C : point). Acute A B C => ~Bet A B C.
+#between_symmetry
+assert[name "Labelbetween_symmetry"] forall (A B C : point). Bet A B C => Bet C B A.
+#acute_distincts
+assert[name "Labelacute_distincts"] forall (A B C : point). Acute A B C => A!=B && C!=B.
+rewrite[name "LabelOut"] forall (P A B : point). Out P A B <=> A != P && B != P && (Bet P A B || Bet P B A).
+goal forall (A B C : point). Acute A B C => Col A B C => Out B A C.

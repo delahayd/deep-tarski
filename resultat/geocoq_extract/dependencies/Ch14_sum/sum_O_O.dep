@@ -1,0 +1,3 @@
+lemme : col_trivial_3 pj_trivial col_trivial_2
+rewrite : Sum Ar2
+destruct : 

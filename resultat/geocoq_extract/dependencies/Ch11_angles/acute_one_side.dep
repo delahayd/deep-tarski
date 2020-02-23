@@ -1,0 +1,3 @@
+lemme : perp_sym symmetric_point_construction cong_diff_2 not_col_permutation_1 one_or_two_sides col_permutation_1 bet_neq21__neq between_trivial not_col_distincts col_permutation_4 not_col_permutation_5 perp_col bet_col col_trivial_2 not_col_permutation_2 cong_symmetry perp_comm l9_8_1 acute_one_side_aux0 col_one_side between_symmetry perp_not_col acute_one_side_aux cong_identity
+rewrite : Midpoint
+destruct : 

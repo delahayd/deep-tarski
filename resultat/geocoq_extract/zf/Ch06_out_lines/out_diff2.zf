@@ -1,0 +1,3 @@
+include "../tarski_term_def.zf".
+rewrite[name "LabelOut"] forall (P A B : point). Out P A B <=> A != P && B != P && (Bet P A B || Bet P B A).
+goal forall (A B C : point). Out A B C => C!=A.

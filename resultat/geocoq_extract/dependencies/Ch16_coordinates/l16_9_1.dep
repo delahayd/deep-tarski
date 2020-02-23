@@ -1,0 +1,3 @@
+lemme : lt_diff_ps diff_ar2 diff_sum is_midpoint_id cong_transitivity l7_20 pos_opp_neg cong_symmetry not_col_distincts col_trivial_3 l15_3 ltP_pos not_pos_and_neg cong_identity cong_4312 midpoint_opp
+rewrite : Opp Sum Diff Ar2
+destruct : HXY HXMY

@@ -1,0 +1,11 @@
+include "../tarski_term_def.zf".
+#l7_2
+assert[name "Labell7_2"] forall (M A B : point). Midpoint M A B => Midpoint M B A.
+#l7_15
+assert[name "Labell7_15"] forall (P Q R P1 Q1 R1 A : point). Midpoint A P P1 => Midpoint A Q Q1 => Midpoint A R R1 => Bet P Q R => Bet P1 Q1 R1.
+#eq_dec_points
+assert[name "Labeleq_dec_points"] forall (A B : point). A=B || A!=B.
+#image_preserves_bet
+assert[name "Labelimage_preserves_bet"] forall (A B C A1 B1 C1 X Y : point). X!=Y => ReflectL A A1 X Y => ReflectL B B1 X Y => ReflectL C C1 X Y => Bet A B C => Bet A1 B1 C1.
+rewrite[name "LabelReflect"] forall (P1 P A B : point). Reflect P1 P A B <=> (A != B && ReflectL P1 P A B) || (A = B && Midpoint A P P1).
+goal forall (X Y A B C A1 B1 C1 : point). Bet A B C => Reflect A A1 X Y => Reflect B B1 X Y => Reflect C C1 X Y => Bet A1 B1 C1.

@@ -1,0 +1,3 @@
+lemme : prod_assoc1 prod_assoc2
+rewrite : 
+destruct : 

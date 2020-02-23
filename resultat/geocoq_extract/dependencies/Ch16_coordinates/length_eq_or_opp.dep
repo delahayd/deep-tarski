@@ -1,0 +1,3 @@
+lemme : diff_ar2 l16_9_1 length_sym diff_exists col_2_le_or_ge diff_opp
+rewrite : Ar2
+destruct : 

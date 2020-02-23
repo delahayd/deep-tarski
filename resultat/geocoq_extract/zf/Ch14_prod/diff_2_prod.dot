@@ -1,0 +1,36 @@
+digraph "unsat_graph" {
+  vertex_0 [color=red, label="[]", shape=box, style=filled];
+  vertex_0 -> vertex_1 [label="s_sup-\l", dir="back"];
+  vertex_1 [shape=box, label="¬Opp sk_O sk_E sk_E1 sk_AMB sk_BMA\l", style=filled];
+  vertex_1 -> vertex_2 [label="s_sup-\l\{X0[0] → sk_BMA[1], X1[0] → sk_AMB[1]\}[1]\l", dir="back"];
+  vertex_2 [shape=box, label="¬Prod sk_O sk_E sk_E1 sk_AMB sk_ME sk_BMA\l", style=filled];
+  vertex_2 -> vertex_3 [label="cnf", dir="back"];
+  vertex_3 [shape=box, label="negated_goal\l  ¬ (∀ O/149:point E/150:point E1/151:point A/152:point B/153:point \l        AMB/154:point BMA/155:point ME/156:point.\l        ((Opp O/149 E/150 E1/151 E/150 ME/156) ⇒\l         ((Diff O/149 E/150 E1/151 A/152 B/153 AMB/154) ⇒\l          ((Diff O/149 E/150 E1/151 B/153 A/152 BMA/155) ⇒\l           (Prod O/149 E/150 E1/151 AMB/154 ME/156 BMA/155)))))\l  # skolems: [].\l", style=filled];
+  vertex_3 -> vertex_4 [label="cnf.neg", dir="back"];
+  vertex_4 [color=green, shape=box, label="goal\l  [file \"../resultat/geocoq_extract/zf/Ch14_prod/diff_2_prod.zf\" \l   \"zf_stmt_132\"]\l  ∀ O/149:point E/150:point E1/151:point A/152:point B/153:point \l    AMB/154:point BMA/155:point ME/156:point.\l    ((Opp O/149 E/150 E1/151 E/150 ME/156) ⇒\l     ((Diff O/149 E/150 E1/151 A/152 B/153 AMB/154) ⇒\l      ((Diff O/149 E/150 E1/151 B/153 A/152 BMA/155) ⇒\l       (Prod O/149 E/150 E1/151 AMB/154 ME/156 BMA/155)))).\l", style=filled];
+  vertex_1 -> vertex_5 [label="s_sup-\l\{X0[0] → sk_BMA[1], X1[0] → sk_AMB[1]\}[0]\l", dir="back"];
+  vertex_5 [shape=box, label="forall (X0:point) (X1:point).\l[Prod sk_O sk_E sk_E1 X1 sk_ME X0 ∨ ¬Opp sk_O sk_E sk_E1 X1 X0]\l", style=filled];
+  vertex_5 -> vertex_6 [label="s_sup-\l\{X0[0] → sk_O[1], X1[0] → sk_E[1], X2[0] → sk_E1[1], X3[0] → sk_ME[1]\}[0]\l", dir="back"];
+  vertex_6 [shape=box, label="forall (X0:point) (X1:point) (X2:point) (X3:point) (X4:point) (X5:point).\l[¬Opp X0 X1 X2 X1 X3 ∨ Prod X0 X1 X2 X4 X3 X5 ∨ ¬Opp X0 X1 X2 X4 X5]\l", style=filled];
+  vertex_6 -> vertex_7 [label="cnf", dir="back"];
+  vertex_7 [color=yellow, shape=box, label="assert\l  [file \"../resultat/geocoq_extract/zf/Ch14_prod/diff_2_prod.zf\" \l   \"Labelopp_prod\"]\l  ∀ O/136:point E/137:point E1/138:point ME/139:point X/140:point \l    MX/141:point.\l    ((Opp O/136 E/137 E1/138 E/137 ME/139) ⇒\l     ((Opp O/136 E/137 E1/138 X/140 MX/141) ⇒\l      (Prod O/136 E/137 E1/138 X/140 ME/139 MX/141))).\l", style=filled];
+  vertex_5 -> vertex_8 [label="s_sup-\l\{X0[0] → sk_O[1], X1[0] → sk_E[1], X2[0] → sk_E1[1], X3[0] → sk_ME[1]\}[1]\l", dir="back"];
+  vertex_8 [shape=box, label="Opp sk_O sk_E sk_E1 sk_E sk_ME\l", style=filled];
+  vertex_8 -> vertex_3 [label="cnf", dir="back"];
+  vertex_0 -> vertex_9 [label="s_sup-\l", dir="back"];
+  vertex_9 [shape=box, label="Opp sk_O sk_E sk_E1 sk_AMB sk_BMA\l", style=filled];
+  vertex_9 -> vertex_10 [label="s_sup-\l\{X0[0] → sk_BMA[1]\}[0]\l", dir="back"];
+  vertex_10 [shape=box, label="forall (X0:point).\l[Opp sk_O sk_E sk_E1 sk_AMB X0 ∨ ¬Diff sk_O sk_E sk_E1 sk_B sk_A X0]\l", style=filled];
+  vertex_10 -> vertex_11 [label="s_sup-\l\{X6[0] → sk_O[1], \l X7[0] → sk_E[1], \l X8[0] → sk_E1[1], \l X9[0] → sk_A[1], \l X10[0] → sk_B[1], \l X11[0] → sk_AMB[1]\}[0]\l", dir="back"];
+  vertex_11 [shape=box, label="forall (X6:point) (X7:point) (X8:point) (X9:point) (X10:point) (X11:point) \l       (X12:point).\l[¬Diff X6 X7 X8 X9 X10 X11\l ∨ Opp X6 X7 X8 X11 X12\l ∨ ¬Diff X6 X7 X8 X10 X9 X12]\l", style=filled];
+  vertex_11 -> vertex_12 [label="cnf", dir="back"];
+  vertex_12 [color=yellow, shape=box, label="assert\l  [file \"../resultat/geocoq_extract/zf/Ch14_prod/diff_2_prod.zf\" \l   \"Labeldiff_opp\"]\l  ∀ O/142:point E/143:point E1/144:point A/145:point B/146:point \l    AmB/147:point BmA/148:point.\l    ((Diff O/142 E/143 E1/144 A/145 B/146 AmB/147) ⇒\l     ((Diff O/142 E/143 E1/144 B/146 A/145 BmA/148) ⇒\l      (Opp O/142 E/143 E1/144 AmB/147 BmA/148))).\l", style=filled];
+  vertex_10 -> vertex_13 [label="s_sup-\l\{X6[0] → sk_O[1], \l X7[0] → sk_E[1], \l X8[0] → sk_E1[1], \l X9[0] → sk_A[1], \l X10[0] → sk_B[1], \l X11[0] → sk_AMB[1]\}[1]\l", dir="back"];
+  vertex_13 [shape=box, label="Diff sk_O sk_E sk_E1 sk_A sk_B sk_AMB\l", style=filled];
+  vertex_13 -> vertex_3 [label="cnf", dir="back"];
+  vertex_9 -> vertex_14 [label="s_sup-\l\{X0[0] → sk_BMA[1]\}[1]\l", dir="back"];
+  vertex_14 [shape=box, label="Diff sk_O sk_E sk_E1 sk_B sk_A sk_BMA\l", style=filled];
+  vertex_14 -> vertex_3 [label="cnf", dir="back"];
+  }
+
+

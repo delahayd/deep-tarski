@@ -1,0 +1,3 @@
+lemme : between_symmetry cong__le3412 cong_4321 cong_symmetry le_anti_symmetry cong_commutativity
+rewrite : Midpoint
+destruct : 

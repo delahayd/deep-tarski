@@ -1,0 +1,8 @@
+include "../tarski_term_def.zf".
+val O : point.
+val E : point.
+val E1 : point.
+assert ~Col O E E1.
+#diff_uniqueness
+assert[name "Labeldiff_uniqueness"] forall (O E E1 A B D1 D2 : point). Diff O E E1 A B D1 => Diff O E E1 A B D2 => D1=D2.
+goal forall (O E E1 X Y XMY : point). Col O E X => Col O E Y => LtP O E E1 Y X => Diff O E E1 X Y XMY => Ps O E XMY.

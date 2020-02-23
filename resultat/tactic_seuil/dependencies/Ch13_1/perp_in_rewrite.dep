@@ -1,0 +1,2 @@
+lemme : perp_in_left_comm perp_in_col_perp_in perp_in_col perp_in_right_comm eq_dec_points perp_in_sym
+rewrite :

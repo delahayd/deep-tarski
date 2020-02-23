@@ -1,0 +1,19 @@
+digraph "unsat_graph" {
+  vertex_0 [color=red, label="[]", shape=box, style=filled];
+  vertex_0 -> vertex_1 [label="simplify", dir="back"];
+  vertex_1 [color=red, label="[]", shape=box, style=filled];
+  vertex_1 -> vertex_2 [label="demod", dir="back"];
+  vertex_2 [shape=box, label="Col sk_C1 sk_B1 sk_B2\l", style=filled];
+  vertex_2 -> vertex_3 [label="cnf", dir="back"];
+  vertex_3 [shape=box, label="negated_goal\l  ¬ (∀ B1/133:point B2/134:point C1/135:point C2/136:point.\l        ((¬ ((Col C2/136 B1/133 B2/134) ∧ (Col C1/135 B1/133 B2/134)))\l         ∨ ((Col C2/136 B1/133 B2/134) ∧ (Col C1/135 B1/133 B2/134))))\l  # skolems: [].\l", style=filled];
+  vertex_3 -> vertex_4 [label="cnf.neg", dir="back"];
+  vertex_4 [color=green, shape=box, label="goal\l  [file \"../resultat/geocoq_extract/zf/Ch12_parallel/line_dec.zf\" \l   \"zf_stmt_128\"]\l  ∀ B1/133:point B2/134:point C1/135:point C2/136:point.\l    ((¬ ((Col C2/136 B1/133 B2/134) ∧ (Col C1/135 B1/133 B2/134)))\l     ∨ ((Col C2/136 B1/133 B2/134) ∧ (Col C1/135 B1/133 B2/134))).\l", style=filled];
+  vertex_1 -> vertex_5 [label="demod", dir="back"];
+  vertex_5 [shape=box, label="Col sk_C2 sk_B1 sk_B2\l", style=filled];
+  vertex_5 -> vertex_3 [label="cnf", dir="back"];
+  vertex_1 -> vertex_6 [label="demod", dir="back"];
+  vertex_6 [shape=box, label="[¬Col sk_C2 sk_B1 sk_B2 ∨ ¬Col sk_C1 sk_B1 sk_B2]\l", style=filled];
+  vertex_6 -> vertex_3 [label="cnf", dir="back"];
+  }
+
+

@@ -1,0 +1,32 @@
+digraph "unsat_graph" {
+  vertex_0 [color=red, label="[]", shape=box, style=filled];
+  vertex_0 -> vertex_1 [label="s_sup-\l", dir="back"];
+  vertex_1 [shape=box, label="¬Midpoint sk_M sk_A sk_B\l", style=filled];
+  vertex_1 -> vertex_2 [label="cnf", dir="back"];
+  vertex_2 [shape=box, label="negated_goal\l  ¬ (∀ M/136:point A/137:point B/138:point.\l        ((A/137 ≠ B/138) ⇒\l         ((Col A/137 M/136 B/138) ⇒\l          ((Cong M/136 A/137 M/136 B/138) ⇒ (Midpoint M/136 A/137 B/138)))))\l  # skolems: [].\l", style=filled];
+  vertex_2 -> vertex_3 [label="cnf.neg", dir="back"];
+  vertex_3 [color=green, shape=box, label="goal\l  [file \"../resultat/geocoq_extract/zf/Ch07_midpoint/l7_20_bis.zf\" \l   \"zf_stmt_128\"]\l  ∀ M/136:point A/137:point B/138:point.\l    ((A/137 ≠ B/138) ⇒\l     ((Col A/137 M/136 B/138) ⇒\l      ((Cong M/136 A/137 M/136 B/138) ⇒ (Midpoint M/136 A/137 B/138)))).\l", style=filled];
+  vertex_0 -> vertex_4 [label="s_sup-\l", dir="back"];
+  vertex_4 [shape=box, label="Midpoint sk_M sk_A sk_B\l", style=filled];
+  vertex_4 -> vertex_5 [label="simplify_reflect-", dir="back"];
+  vertex_5 [shape=box, label="sk_A ≠ sk_B\l", style=filled];
+  vertex_5 -> vertex_2 [label="cnf", dir="back"];
+  vertex_4 -> vertex_6 [label="simplify_reflect-", dir="back"];
+  vertex_6 [shape=box, label="[sk_A = sk_B ∨ Midpoint sk_M sk_A sk_B]\l", style=filled];
+  vertex_6 -> vertex_7 [label="simplify", dir="back"];
+  vertex_7 [shape=box, label="[Midpoint sk_M sk_A sk_B ∨ sk_A = sk_B ∨ ¬true]\l", style=filled];
+  vertex_7 -> vertex_8 [label="demod", dir="back"];
+  vertex_8 [shape=box, label="Col sk_A sk_M sk_B\l", style=filled];
+  vertex_8 -> vertex_2 [label="cnf", dir="back"];
+  vertex_7 -> vertex_9 [label="demod", dir="back"];
+  vertex_9 [shape=box, label="[Midpoint sk_M sk_A sk_B ∨ sk_A = sk_B ∨ ¬Col sk_A sk_M sk_B]\l", style=filled];
+  vertex_9 -> vertex_10 [label="s_sup-\l\{X0[0] → sk_M[1], X1[0] → sk_A[1], X2[0] → sk_B[1]\}[0]\l", dir="back"];
+  vertex_10 [shape=box, label="forall (X0:point) (X1:point) (X2:point).\l[¬Cong X0 X1 X0 X2 ∨ Midpoint X0 X1 X2 ∨ X1 = X2 ∨ ¬Col X1 X0 X2]\l", style=filled];
+  vertex_10 -> vertex_11 [label="cnf", dir="back"];
+  vertex_11 [color=yellow, shape=box, label="assert\l  [file \"../resultat/geocoq_extract/zf/Ch07_midpoint/l7_20_bis.zf\" \l   \"Labell7_20\"]\l  ∀ M/133:point A/134:point B/135:point.\l    ((Col A/134 M/133 B/135) ⇒\l     ((Cong M/133 A/134 M/133 B/135) ⇒\l      ((Midpoint M/133 A/134 B/135) ∨ (A/134 = B/135)))).\l", style=filled];
+  vertex_9 -> vertex_12 [label="s_sup-\l\{X0[0] → sk_M[1], X1[0] → sk_A[1], X2[0] → sk_B[1]\}[1]\l", dir="back"];
+  vertex_12 [shape=box, label="Cong sk_M sk_A sk_M sk_B\l", style=filled];
+  vertex_12 -> vertex_2 [label="cnf", dir="back"];
+  }
+
+

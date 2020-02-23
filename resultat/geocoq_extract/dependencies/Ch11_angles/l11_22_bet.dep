@@ -1,0 +1,3 @@
+lemme : conga__or_out_ts cong_symmetry conga_sym l9_8_1 conga_trans l11_13 col_trivial_1 outer_transitivity_between between_inner_transitivity l9_9_bis l9_2 col_trivial_2 conga_comm segment_construction invert_two_sides col_permutation_5 cong_identity
+rewrite : TS CongA Out
+destruct : 

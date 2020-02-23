@@ -1,0 +1,2 @@
+lemme : col_trivial_1 out_trivial conga_refl between_symmetry cong_reflexivity eq_dec_points cong_identity cong_symmetry
+rewrite : Col Q_CongA

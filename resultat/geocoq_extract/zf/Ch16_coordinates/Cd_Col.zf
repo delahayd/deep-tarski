@@ -1,0 +1,8 @@
+include "../tarski_term_def.zf".
+#l4_13
+assert[name "Labell4_13"] forall (A B C A1 B1 C1 : point). Col A B C => Cong_3 A B C A1 B1 C1 => Col A1 B1 C1.
+#cong_3_sym
+assert[name "Labelcong_3_sym"] forall (A B C A1 B1 C1 : point). Cong_3 A B C A1 B1 C1 => Cong_3 A1 B1 C1 A B C.
+rewrite[name "LabelProjp"] forall (P Q A B : point). Projp P Q A B <=> A != B && ((Col A B Q && Perp A B P Q) || (Col A B P && P = Q)).
+rewrite[name "LabelCd"] forall (O E S U1 U2 P X Y : point). Cd O E S U1 U2 P X Y <=> Cs O E S U1 U2 && Coplanar P S U1 U2 && (exists PX. Projp P PX S U1 && Cong_3 O E X S U1 PX) && (exists (PY : point). Projp P PY S U2 && Cong_3 O E Y S U2 PY).
+goal forall (O E S U1 U2 P X Y : point). Cd O E S U1 U2 P X Y => Col O E X && Col O E Y.

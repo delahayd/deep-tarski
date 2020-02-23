@@ -1,0 +1,18 @@
+include "../rew_type.zf".
+rewrite[name "LabelAng_Flat"] forall (a : point->point->point->prop). Ang_Flat a <=> Q_CongA a && (forall (A B C : point). a A B C => Bet A B C).
+rewrite[name "LabelInAngle"] forall (P A B C : point). InAngle P A B C <=> A != B && C != B && P != B && (exists (X : point). Bet A X C && (X = B || Out B X P)).
+rewrite[name "LabelLeA"] forall (A B C D E F : point). LeA A B C D E F <=> (exists (P : point). InAngle P D E F && CongA A B C D E P).
+rewrite[name "LabelQ_CongA_Acute"] forall (a : point->point->point->prop). Q_CongA_Acute a <=> (exists (A B C : point). Acute A B C && (forall (X Y Z : point). CongA A B C X Y Z <=> a X Y Z)).
+#acute_distincts
+assert[name "Labelacute_distincts"] forall (A B C : point). Acute A B C => A!=B && C!=B.
+#acute_lea_acute
+assert[name "Labelacute_lea_acute"] forall (A B C D E F : point). Acute D E F => LeA A B C D E F => Acute A B C.
+#ang_conga
+assert[name "Labelang_conga"] forall (A B C A1 B1 C1 : point) (a : point->point->point->prop). Q_CongA a => a A1 B1 C1 => a A B C => CongA A B C A1 B1 C1.
+#bet_conga_bet
+assert[name "Labelbet_conga_bet"] forall (A B C A1 B1 C1 : point). Bet A B C => CongA A B C A1 B1 C1 => Bet A1 B1 C1.
+#conga_sym
+assert[name "Labelconga_sym"] forall (A B C A1 B1 C1 : point). CongA A B C A1 B1 C1 => CongA A1 B1 C1 A B C.
+#out_trivial
+assert[name "Labelout_trivial"] forall (P A : point). A!=P => Out P A A.
+goal forall (A B C : point) (a : point->point->point->prop). Q_CongA a => a A B C => Bet A B C => Ang_Flat a.

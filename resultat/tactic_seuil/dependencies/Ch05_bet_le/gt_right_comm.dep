@@ -1,0 +1,2 @@
+lemme : lt_left_comm
+rewrite : Par_strict Gt Lt

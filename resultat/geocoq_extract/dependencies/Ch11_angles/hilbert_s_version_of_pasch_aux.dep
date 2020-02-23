@@ -1,0 +1,3 @@
+lemme : l9_2 between_identity two_sides_dec col_trivial_1 not_two_sides_one_side not_col_distincts col_permutation_4 col_permutation_5 bet_col l9_8_2
+rewrite : TS
+destruct : HTS'

@@ -1,0 +1,30 @@
+include "../tarski_term_def.zf".
+#col_permutation_5
+assert[name "Labelcol_permutation_5"] forall (A B C : point). Col A B C => Col A C B.
+#cong_identity
+assert[name "Labelcong_identity"] forall (A B C : point). Cong A B C C => A = B.
+#segment_construction_2
+assert[name "Labelsegment_construction_2"] forall (A Q B C : point). A!=Q => (exists (X : point). (Bet Q A X || Bet Q X A) && Cong Q X B C).
+#perp_exists
+assert[name "Labelperp_exists"] forall (O A B : point). A!=B => (exists (X : point). Perp O X A B).
+#perp_left_comm
+assert[name "Labelperp_left_comm"] forall (A B C D : point). Perp A B C D => Perp B A C D.
+#perp_sym
+assert[name "Labelperp_sym"] forall (A B C D : point). Perp A B C D => Perp C D A B.
+#eq_dec_points
+assert[name "Labeleq_dec_points"] forall (A B : point). A=B || A!=B.
+#perp_col1
+assert[name "Labelperp_col1"] forall (A B C D X : point). C!=X => Perp A B C D => Col C D X => Perp A B C X.
+#perp_comm
+assert[name "Labelperp_comm"] forall (A B C D : point). Perp A B C D => Perp B A D C.
+#bet_col
+assert[name "Labelbet_col"] forall (A B C : point). Bet A B C => Col A B C.
+#perp_distinct
+assert[name "Labelperp_distinct"] forall (A B C D : point). Perp A B C D => A!=B && C!=D.
+#cong_symmetry
+assert[name "Labelcong_symmetry"] forall (A B C D : point). Cong A B C D => Cong C D A B.
+#not_col_distincts
+assert[name "Labelnot_col_distincts"] forall (A B C : point). ~Col A B C => ~Col A B C && A!=B && B!=C && A!=C.
+rewrite[name "LabelPythRel"] forall (O E E1 A B C : point). PythRel O E E1 A B C <=> Ar2 O E E1 A B C && ((O = B && (A = C || Opp O E E1 A C)) || (exists (B1 : point). Perp O B1 O B && Cong O B1 O B && Cong O C A B1)).
+rewrite[name "LabelAr2"] forall (O E E1 A B C : point). Ar2 O E E1 A B C <=> ~ Col O E E1 && Col O E A && Col O E B && Col O E C.
+goal forall (O E E1 : point). ~ Col O E  E1 => (forall (A B : point). Col O E A => Col O E B => (exists (C : point). PythRel O E E1 A B C)).

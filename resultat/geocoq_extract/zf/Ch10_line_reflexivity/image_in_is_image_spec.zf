@@ -1,0 +1,4 @@
+include "../tarski_term_def.zf".
+rewrite[name "LabelReflectL"] forall (P1 P A B : point). ReflectL P1 P A B <=> (exists (X : point). Midpoint X P P1 && Col A B X) && (Perp A B P P1 || P = P1).
+rewrite[name "LabelReflectL_at"] forall (M P1 P A B : point). ReflectL_at M P1 P A B <=> (Midpoint M P P1 && Col A B M) && (Perp A B P P1 || P = P1).
+goal forall (M A B P P1 : point). ReflectL_at M P P1 A B => ReflectL P P1 A B.

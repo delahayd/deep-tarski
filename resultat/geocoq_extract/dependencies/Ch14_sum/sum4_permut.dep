@@ -1,0 +1,3 @@
+lemme : sum4_col sum_uniqueness sum_exists sum_comm sum_assoc sum4_equiv sum_ar2 sum3_permut
+rewrite : Sum4 sum22 Ar2 sum3
+destruct : HH HP H16

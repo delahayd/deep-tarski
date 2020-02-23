@@ -1,0 +1,26 @@
+include "../tarski_term_def.zf".
+#invert_one_side
+assert[name "Labelinvert_one_side"] forall (A B P Q : point). OS A B P Q => OS B A P Q.
+#col_in_angle_out
+assert[name "Labelcol_in_angle_out"] forall (A B C P : point). Col B A P => ~Bet A B C => InAngle P A B C => Out B A P.
+#one_side_transitivity
+assert[name "Labelone_side_transitivity"] forall (P Q A B C : point). OS P Q A B => OS P Q B C => OS P Q A C.
+#in_angle_one_side
+assert[name "Labelin_angle_one_side"] forall (A B C P : point). ~Col A B C => ~Col B A P => InAngle P A B C => OS A B P C.
+#not_bet_out
+assert[name "Labelnot_bet_out"] forall (A B C : point). Col A B C => ~Bet A B C => Out B A C.
+#l6_7
+assert[name "Labell6_7"] forall (P A B C : point). Out P A B => Out P B C => Out P A C.
+#not_col_distincts
+assert[name "Labelnot_col_distincts"] forall (A B C : point). ~Col A B C => ~Col A B C && A!=B && B!=C && A!=C.
+#out_in_angle_out
+assert[name "Labelout_in_angle_out"] forall (A B C P : point). Out B A C => InAngle P A B C => Out B A P.
+#col_one_side_out
+assert[name "Labelcol_one_side_out"] forall (A B X Y : point). Col A X Y => OS A B X Y => Out A X Y.
+#one_side_symmetry
+assert[name "Labelone_side_symmetry"] forall (P Q A B : point). OS P Q A B => OS P Q B A.
+#inangle_distincts
+assert[name "Labelinangle_distincts"] forall (A B C P : point). InAngle P A B C => A!=B && C!=B && P!=B.
+#l6_6
+assert[name "Labell6_6"] forall (P A B : point). Out P A B => Out P B A.
+goal forall (A B C P Q : point). ~Bet A B C => InAngle P A B C => InAngle Q A B C =>Col B P Q => Out B P Q.

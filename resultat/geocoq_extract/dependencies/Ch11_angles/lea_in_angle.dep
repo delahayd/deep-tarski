@@ -1,0 +1,3 @@
+lemme : one_side_not_col123 col_trivial_3 conga_sym conga_trans one_side_symmetry conga_refl not_col_distincts conga_preserves_in_angle
+rewrite : OS CongA TS LeA
+destruct : 

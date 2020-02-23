@@ -1,0 +1,2 @@
+lemme : is_ang_conga_is_ang is_ang_conga
+rewrite : EqA Ang

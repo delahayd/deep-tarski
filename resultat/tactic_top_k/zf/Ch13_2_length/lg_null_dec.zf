@@ -1,0 +1,2 @@
+include "../rew_type.zf".
+goal forall (l : point->point->prop). Q_Cong l => Q_Cong_Null l || ~Q_Cong_Null l.

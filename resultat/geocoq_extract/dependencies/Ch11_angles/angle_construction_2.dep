@@ -1,0 +1,3 @@
+lemme : cong_symmetry col_trivial_3 conga_sym conga_trans out_trivial conga_trivial_1 not_out_bet angle_construction_1 conga_refl l11_10 segment_construction out_dec conga_line cong_identity
+rewrite : Col
+destruct : 

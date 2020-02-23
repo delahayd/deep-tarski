@@ -1,0 +1,6 @@
+include "../rew_type.zf".
+#cong_identity
+assert[name "Labelcong_identity"] forall (A B C : point). Cong A B C C => A = B.
+#cong_symmetry
+assert[name "Labelcong_symmetry"] forall (A B C D : point). Cong A B C D => Cong C D A B.
+goal forall (A B C D : point). C!=D => Cong A B C D => A!=B.

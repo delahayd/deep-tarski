@@ -1,0 +1,2 @@
+lemme : not_and_lt perp_not_eq_1
+rewrite : Par_strict Par

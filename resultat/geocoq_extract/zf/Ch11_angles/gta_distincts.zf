@@ -1,0 +1,4 @@
+include "../tarski_term_def.zf".
+#lta_distincts
+assert[name "Labellta_distincts"] forall (A B C D E F : point). LtA A B C D E F => A!=B && C!=B && D!=E && F!=E.
+goal forall (A B C D E F : point). GtA A B C D E F => A!=B && C!=B && D!=E && F!=E.

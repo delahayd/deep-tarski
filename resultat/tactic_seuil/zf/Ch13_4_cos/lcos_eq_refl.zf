@@ -1,0 +1,5 @@
+include "../rew_type.zf".
+rewrite[name "LabelEq_Lcos"] forall (la lb : point->point->prop) (a b : point->point->point->prop). Eq_Lcos la a lb b <=> (exists (lp : point->point->prop). Lcos lp la a && Lcos lp lb b).
+#lcos_exists
+assert[name "Labellcos_exists"] forall (l : point->point->prop) (a : point->point->point->prop). Q_CongA_Acute a => Q_Cong l => ~Q_Cong_Null l => (exists (lp : point->point->prop). Lcos lp l a).
+goal forall (la : point->point->prop) (a : point->point->point->prop). Q_Cong la => ~Q_Cong_Null la => Q_CongA_Acute a => Eq_Lcos la a la a.

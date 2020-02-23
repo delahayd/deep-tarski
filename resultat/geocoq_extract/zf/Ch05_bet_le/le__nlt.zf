@@ -1,0 +1,7 @@
+include "../tarski_term_def.zf".
+#cong_symmetry
+assert[name "Labelcong_symmetry"] forall (A B C D : point). Cong A B C D => Cong C D A B.
+#not_and_lt
+assert[name "Labelnot_and_lt"] forall (A B C D : point). ~(Lt A B C D && Lt C D A B).
+rewrite[name "LabelLt"] forall (A B C D : point). Lt A B C D <=> Le A B C D && ~ Cong A B C D.
+goal forall (A B C D : point). Le A B C D => ~Lt C D A B.

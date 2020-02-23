@@ -1,0 +1,9 @@
+include "../tarski_term_def.zf".
+#col_permutation_5
+assert[name "Labelcol_permutation_5"] forall (A B C : point). Col A B C => Col A C B.
+#par_symmetry
+assert[name "Labelpar_symmetry"] forall (A B C D : point). Par A B C D => Par C D A B.
+#par_col_par
+assert[name "Labelpar_col_par"] forall (A B C D D1 : point). C!=D1 => Par A B C D => Col C D D1 => Par A B C D1.
+rewrite[name "LabelProj"] forall (P Q A B X Y : point). Proj P Q A B X Y <=> A != B && X != Y && ~Par A B X Y  && Col A B Q && (Par P Q X Y || P = Q).
+goal forall (A A1 C1 : point). A=O => Col O E A => Par O E A1 C1 => Proj A A1 O E1 E E1 => A1=O.

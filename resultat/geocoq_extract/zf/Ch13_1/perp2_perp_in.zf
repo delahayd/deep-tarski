@@ -1,0 +1,25 @@
+include "../tarski_term_def.zf".
+#perp_not_eq_1
+assert[name "Labelperp_not_eq_1"] forall (A B C D : point). Perp A B C D => A!=B.
+#perp_in_col_perp_in
+assert[name "Labelperp_in_col_perp_in"] forall (A B C D E P : point). C!=E => Col C D E => Perp_at P A B C D => Perp_at P A B C E.
+#col_permutation_4
+assert[name "Labelcol_permutation_4"] forall (A B C : point). Col A B C => Col B A C.
+#eq_dec_points
+assert[name "Labeleq_dec_points"] forall (A B : point). A=B || A!=B.
+#col3
+assert[name "Labelcol3"] forall (X Y A B C : point). X!=Y => Col X Y A => Col X Y B => Col X Y C => Col A B C.
+#perp_in_sym
+assert[name "Labelperp_in_sym"] forall (A B C D X : point). Perp_at X A B C D => Perp_at X C D A B.
+#perp_in_right_comm
+assert[name "Labelperp_in_right_comm"] forall (A B C D X : point). Perp_at X A B C D => Perp_at X A B D C.
+#not_col_distincts
+assert[name "Labelnot_col_distincts"] forall (A B C : point). ~Col A B C => ~Col A B C && A!=B && B!=C && A!=C.
+#col_permutation_3
+assert[name "Labelcol_permutation_3"] forall (A B C : point). Col A B C => Col C B A.
+#col_permutation_5
+assert[name "Labelcol_permutation_5"] forall (A B C : point). Col A B C => Col A C B.
+#perp_inter_perp_in_n
+assert[name "Labelperp_inter_perp_in_n"] forall (A B C D : point). Perp A B C D => (exists (P : point). Col A B P && Col C D P && Perp_at P A B C D).
+rewrite[name "LabelPerp2"] forall (A B C D P : point). Perp2 A B C D P <=> (exists (X Y : point). Col P X Y && Perp X Y A B && Perp X Y C D).
+goal forall (A B C D O : point). Perp2 A B C D O => ~Col O A B && ~Col O C D => (exists (P Q : point). Col A B P && Col C D Q && Col O P Q && Perp_at P O P A B && Perp_at Q O Q C D).

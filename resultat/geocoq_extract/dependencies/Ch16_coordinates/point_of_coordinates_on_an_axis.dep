@@ -1,0 +1,3 @@
+lemme : per_perp l4_13 cong_symmetry col_trivial_3 cong_trivial_identity perp_col0 all_coplanar perp_right_comm perp_comm cong_4321 l4_14 cong_diff
+rewrite : Cong_3
+destruct : H HCs

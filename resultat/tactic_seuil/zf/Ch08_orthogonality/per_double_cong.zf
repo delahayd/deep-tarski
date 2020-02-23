@@ -1,0 +1,7 @@
+include "../rew_type.zf".
+rewrite[name "LabelPer"] forall (A B C : point). Per A B C <=> (exists (C1 : point). Midpoint B C C1 && Cong A C A C1).
+#l7_2
+assert[name "Labell7_2"] forall (M A B : point). Midpoint M A B => Midpoint M B A.
+#l7_9
+assert[name "Labell7_9"] forall (P Q A X : point). Midpoint A P X => Midpoint A Q X => P=Q.
+goal forall (A B C C1 : point). Per A B C => Midpoint B C C1 => Cong A C A C1.

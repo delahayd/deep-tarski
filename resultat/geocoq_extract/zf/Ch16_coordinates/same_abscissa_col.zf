@@ -1,0 +1,23 @@
+include "../tarski_term_def.zf".
+#l4_13
+assert[name "Labell4_13"] forall (A B C A1 B1 C1 : point). Col A B C => Cong_3 A B C A1 B1 C1 => Col A1 B1 C1.
+#eq_dec_points
+assert[name "Labeleq_dec_points"] forall (A B : point). A=B || A!=B.
+#col_cong_3_cong_3_eq
+assert[name "Labelcol_cong_3_cong_3_eq"] forall (A B C A1 B1 C1 C2 : point). A!=B => Col A B C => Cong_3 A B C A1 B1 C1 => Cong_3 A B C A1 B1 C2 => C1=C2.
+#cong_3_sym
+assert[name "Labelcong_3_sym"] forall (A B C A1 B1 C1 : point). Cong_3 A B C A1 B1 C1 => Cong_3 A1 B1 C1 A B C.
+#perp_left_comm
+assert[name "Labelperp_left_comm"] forall (A B C D : point). Perp A B C D => Perp B A C D.
+#perp_sym
+assert[name "Labelperp_sym"] forall (A B C D : point). Perp A B C D => Perp C D A B.
+#col_trivial_1
+assert[name "Labelcol_trivial_1"] forall (A B : point). Col A A B.
+#col_trivial_3
+assert[name "Labelcol_trivial_3"] forall (A B : point). Col A B A.
+#perp_perp_col
+assert[name "Labelperp_perp_col"] forall (X Y Z A B : point). Perp X Y A B => Perp X Z A B => Col X Y Z.
+#perp_comm
+assert[name "Labelperp_comm"] forall (A B C D : point). Perp A B C D => Perp B A D C.
+rewrite[name "LabelCs"] forall (O E S U1 U2 : point). Cs O E S U1 U2 <=> O != E && Cong O E S U1 && Cong O E S U2 && Per U1 S U2.
+goal forall (O E E1 S U1 U2 A AX AY B BX BY C CX CY : point). Cd O E S U1 U2 A AX AY => Cd O E S U1 U2 B BX BY => Cd O E S U1 U2 C CX CY => Col A B C.

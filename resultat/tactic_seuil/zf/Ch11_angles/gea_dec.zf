@@ -1,0 +1,5 @@
+include "../rew_type.zf".
+rewrite[name "LabelGtA"] forall (A B C D E F : point). GtA A B C D E F <=> LtA D E F A B C.
+#eq_dec_points
+assert[name "Labeleq_dec_points"] forall (A B : point). A=B || A!=B.
+goal forall (A B C D E F : point). GeA A B C D E F || ~GeA A B C D E F.

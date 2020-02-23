@@ -1,0 +1,3 @@
+lemme : eq_dec_points between_exchange4 l5_3 between_exchange3 midpoint_existence midpoint_bet l7_2 between_exchange2 outer_transitivity_between l5_1 between_equality between_inner_transitivity between_symmetry
+rewrite : InAngle Out
+destruct : 

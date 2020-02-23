@@ -1,0 +1,14 @@
+digraph "unsat_graph" {
+  vertex_0 [color=red, label="[]", shape=box, style=filled];
+  vertex_0 -> vertex_1 [label="s_sup-\l", dir="back"];
+  vertex_1 [shape=box, label="¬LeA sk_A sk_B sk_C sk_D sk_E sk_F\l", style=filled];
+  vertex_1 -> vertex_2 [label="cnf", dir="back"];
+  vertex_2 [shape=box, label="negated_goal\l  ¬ (∀ A/217:point B/218:point C/219:point D/220:point E/221:point \l        F/222:point.\l        ((¬ (LeA A/217 B/218 C/219 D/220 E/221 F/222))\l         ∨ (LeA A/217 B/218 C/219 D/220 E/221 F/222)))\l  # skolems: [].\l", style=filled];
+  vertex_2 -> vertex_3 [label="cnf.neg", dir="back"];
+  vertex_3 [color=green, shape=box, label="goal\l  [file \"../resultat/geocoq_extract/zf/Ch11_angles/lea_dec.zf\" \"zf_stmt_128\"]\l  ∀ A/217:point B/218:point C/219:point D/220:point E/221:point \l    F/222:point.\l    ((¬ (LeA A/217 B/218 C/219 D/220 E/221 F/222))\l     ∨ (LeA A/217 B/218 C/219 D/220 E/221 F/222)).\l", style=filled];
+  vertex_0 -> vertex_4 [label="s_sup-\l", dir="back"];
+  vertex_4 [shape=box, label="LeA sk_A sk_B sk_C sk_D sk_E sk_F\l", style=filled];
+  vertex_4 -> vertex_2 [label="cnf", dir="back"];
+  }
+
+

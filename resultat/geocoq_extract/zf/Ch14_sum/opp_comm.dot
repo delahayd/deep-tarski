@@ -1,0 +1,29 @@
+digraph "unsat_graph" {
+  vertex_0 [color=red, label="[]", shape=box, style=filled];
+  vertex_0 -> vertex_1 [label="s_sup-\l", dir="back"];
+  vertex_1 [shape=box, label="¬Sum O E E1 sk_X sk_Y O\l", style=filled];
+  vertex_1 -> vertex_2 [label="rw\l\{X3[1] → O[0], X4[1] → E[0], X5[1] → E1[0], X6[1] → sk_X[0], X7[1] → sk_Y[0]\}[1]\l", dir="back"];
+  vertex_2 [color=navajowhite, shape=box, label="(Opp X3 X4 X5 X7 X6 := Sum X3 X4 X5 X6 X7 X3 [T])\l", style=filled];
+  vertex_2 -> vertex_3 [label="", dir="back"];
+  vertex_3 [color=yellow, shape=box, label="rewrite\l  [file \"../resultat/geocoq_extract/zf/Ch14_sum/opp_comm.zf\" \"LabelOpp\"]\l  Opp X3 X4 X5 X7 X6 = Sum X3 X4 X5 X6 X7 X3.\l", style=filled];
+  vertex_1 -> vertex_4 [label="rw", dir="back"];
+  vertex_4 [shape=box, label="¬Opp O E E1 sk_Y sk_X\l", style=filled];
+  vertex_4 -> vertex_5 [label="cnf", dir="back"];
+  vertex_5 [shape=box, label="negated_goal\l  ¬ (∀ X/144:point Y/145:point.\l        ((Opp O E E1 X/144 Y/145) ⇒ (Opp O E E1 Y/145 X/144)))\l  # skolems: [].\l", style=filled];
+  vertex_5 -> vertex_6 [label="cnf.neg", dir="back"];
+  vertex_6 [color=green, shape=box, label="goal\l  [file \"../resultat/geocoq_extract/zf/Ch14_sum/opp_comm.zf\" \"zf_stmt_132\"]\l  ∀ X/144:point Y/145:point.\l    ((Opp O E E1 X/144 Y/145) ⇒ (Opp O E E1 Y/145 X/144)).\l", style=filled];
+  vertex_0 -> vertex_7 [label="s_sup-\l", dir="back"];
+  vertex_7 [shape=box, label="Sum O E E1 sk_X sk_Y O\l", style=filled];
+  vertex_7 -> vertex_8 [label="s_sup-\l\{X0[0] → sk_X[1], X1[0] → sk_Y[1], X2[0] → O[1]\}[0]\l", dir="back"];
+  vertex_8 [shape=box, label="forall (X0:point) (X1:point) (X2:point).\l[Sum O E E1 X0 X1 X2 ∨ ¬Sum O E E1 X1 X0 X2]\l", style=filled];
+  vertex_8 -> vertex_9 [label="cnf", dir="back"];
+  vertex_9 [color=yellow, shape=box, label="assert\l  [file \"../resultat/geocoq_extract/zf/Ch14_sum/opp_comm.zf\" \"Labelsum_comm\"]\l  ∀ A/136:point B/137:point C/138:point.\l    ((Sum O E E1 A/136 B/137 C/138) ⇒ (Sum O E E1 B/137 A/136 C/138)).\l", style=filled];
+  vertex_7 -> vertex_10 [label="s_sup-\l\{X0[0] → sk_X[1], X1[0] → sk_Y[1], X2[0] → O[1]\}[1]\l", dir="back"];
+  vertex_10 [shape=box, label="Sum O E E1 sk_Y sk_X O\l", style=filled];
+  vertex_10 -> vertex_2 [label="rw\l\{X3[1] → O[0], X4[1] → E[0], X5[1] → E1[0], X6[1] → sk_Y[0], X7[1] → sk_X[0]\}[1]\l", dir="back"];
+  vertex_10 -> vertex_11 [label="rw", dir="back"];
+  vertex_11 [shape=box, label="Opp O E E1 sk_X sk_Y\l", style=filled];
+  vertex_11 -> vertex_5 [label="cnf", dir="back"];
+  }
+
+

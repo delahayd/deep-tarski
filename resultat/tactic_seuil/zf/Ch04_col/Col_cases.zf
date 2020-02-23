@@ -1,0 +1,4 @@
+include "../rew_type.zf".
+#col_permutation_1
+assert[name "Labelcol_permutation_1"] forall (A B C : point). Col A B C => Col B C A.
+goal forall (A B C : point). Col A B C || Col A C B || Col B A C || Col B C A || Col C A B || Col C B A => Col A B C.

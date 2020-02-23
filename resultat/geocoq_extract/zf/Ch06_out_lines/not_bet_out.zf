@@ -1,0 +1,4 @@
+include "../tarski_term_def.zf".
+#or_bet_out
+assert[name "Labelor_bet_out"] forall (A B C : point). Bet A B C || Out B A C || ~Col A B C.
+goal forall (A B C : point). Col A B C => ~Bet A B C => Out B A C.

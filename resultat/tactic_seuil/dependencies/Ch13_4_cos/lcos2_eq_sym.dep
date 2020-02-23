@@ -1,0 +1,2 @@
+lemme : col_trivial_1 lcos_lg_anga lcos_exists lcos_lg_not_null lcos3_permut1 lcos_eql_lcos eq_dec_points cong_identity col_trivial_3 cong_symmetry lcos3_permut3
+rewrite : Eq_Lcos Q_Cong Lcos3 Eq_Lcos2 Q_Cong_Null Eq_Lcos3 lcos2

@@ -1,0 +1,3 @@
+lemme : tarski_s_euclid not_par_other_side cong_identity col_permutation_5 col_trivial_1 l12_6 between_identity bet_neq12__neq not_col_permutation_4 col_permutation_2 par_strict_col2_par_strict col_permutation_4 not_col_distincts line_dec par_distincts inner_pasch bet_col col3 par_col2_par par_not_col between_symmetry par_not_col_strict par_distinct col_trivial_2 l9_9 symmetric_point_construction one_side_transitivity not_col_permutation_5
+rewrite : TS Midpoint OS
+destruct : 

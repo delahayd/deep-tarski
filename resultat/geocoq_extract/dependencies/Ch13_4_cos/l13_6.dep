@@ -1,0 +1,3 @@
+lemme : per_perp_in col_permutation_4 eq_dec_points is_len_cong_is_len is_len_cong out_col col_permutation_2 perp_in_sym eq_conga_out is_anga_conga conga_comm perp_in_comm conga_distinct conga_sym l11_16 cong_symmetry l11_50_2 l8_9 ex_eql col_permutation_5 cong_commutativity perp_in_per
+rewrite : Out Lcos
+destruct : 

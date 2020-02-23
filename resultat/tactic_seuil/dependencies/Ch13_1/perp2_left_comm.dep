@@ -1,0 +1,2 @@
+lemme : perp_comm perp_left_comm
+rewrite : Perp2

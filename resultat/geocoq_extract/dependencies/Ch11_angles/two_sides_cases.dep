@@ -1,0 +1,3 @@
+lemme : one_or_two_sides not_col_permutation_3 l9_31 l9_9 not_col_permutation_5 not_col_permutation_2 not_col_permutation_1
+rewrite : OS TS
+destruct : 

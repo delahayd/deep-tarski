@@ -1,0 +1,10 @@
+include "../tarski_term_def.zf".
+val O : point.
+val E : point.
+val E1 : point.
+assert ~Col O E E1.
+#bet_lt21_le32
+assert[name "Labelbet_lt21_le32"] forall (O E E1 A B C : point). Bet A B C => LtP O E E1 B A => LeP O E E1 C B.
+#leP_trans
+assert[name "LabelleP_trans"] forall (O E E1 A B C : point). LeP O E E1 A B => LeP O E E1 B C => LeP O E E1 A C.
+goal forall (O E E1 A B C : point). Bet A B C => LtP O E E1 B A => LeP O E E1 C A.

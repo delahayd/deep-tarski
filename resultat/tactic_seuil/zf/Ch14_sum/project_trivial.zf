@@ -1,0 +1,3 @@
+include "../rew_type.zf".
+rewrite[name "LabelProj"] forall (P Q A B X Y : point). Proj P Q A B X Y <=> A != B && X != Y && ~Par A B X Y  && Col A B Q && (Par P Q X Y || P = Q).
+goal forall (P A B X Y : point). A!=B => X!=Y => Col A B P => ~Par A B X Y => Proj P P A B X Y.

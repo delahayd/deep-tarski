@@ -1,0 +1,3 @@
+lemme : out_distinct not_col_permutation_4 between_identity not_col_distincts col_permutation_4 not_col_permutation_5 col_permutation_5 outer_transitivity_between between_inner_transitivity bet_col out_col l6_21 between_symmetry
+rewrite : TS Out
+destruct : 

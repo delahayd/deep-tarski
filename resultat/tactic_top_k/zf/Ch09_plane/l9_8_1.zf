@@ -1,0 +1,3 @@
+include "../rew_type.zf".
+rewrite[name "LabelOS"] forall (A B P Q : point). OS A B P Q <=> (exists (R : point). TS A B P R && TS A B Q R).
+goal forall (P Q A B C : point). TS P Q A C => TS P Q B C => OS P Q A B.

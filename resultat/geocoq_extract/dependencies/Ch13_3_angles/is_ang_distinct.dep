@@ -1,0 +1,3 @@
+lemme : 
+rewrite : CongA Q_CongA Ang
+destruct : HH

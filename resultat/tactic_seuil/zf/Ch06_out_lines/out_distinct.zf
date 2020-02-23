@@ -1,0 +1,9 @@
+include "../rew_type.zf".
+rewrite[name "LabelCol"] forall (A B C : point). Col A B C <=> Bet A B C || Bet B C A || Bet C A B.
+#between_identity
+assert[name "Labelbetween_identity"] forall (A B : point). Bet A B A => A=B.
+#out_diff1
+assert[name "Labelout_diff1"] forall (A B C : point). Out A B C => B!=A.
+#out_diff2
+assert[name "Labelout_diff2"] forall (A B C : point). Out A B C => C!=A.
+goal forall (A B C : point). Out A B C => B!=A && C!=A.

@@ -1,0 +1,2 @@
+lemme : diff_ar2 diff_uniqueness
+rewrite : Ar2 LeP LtP

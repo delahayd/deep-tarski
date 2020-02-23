@@ -1,0 +1,3 @@
+lemme : conga_preserves_lta l11_16 l11_43 lta_right_comm col_permutation_1 lta_trans lta_diff lta_left_comm lt_right_comm col_permutation_5 conga_refl l11_44_2_b lt_left_comm not_col_distincts l8_2
+rewrite : Acute Obtuse GtA
+destruct : 

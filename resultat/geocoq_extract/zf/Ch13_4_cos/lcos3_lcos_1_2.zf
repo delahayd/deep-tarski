@@ -1,0 +1,6 @@
+include "../tarski_term_def.zf".
+#lcos_lg_anga
+assert[name "Labellcos_lg_anga"] forall (lp l : point->point->prop) (a : point->point->point->prop).Lcos lp l a => Lcos lp l a && Q_Cong l && Q_Cong lp && Q_CongA_Acute a.
+rewrite[name "LabelLcos3"] forall (lp l : point->point->prop) (a b c : point->point->point->prop). Lcos3 lp l a b c <=> (exists (la lab : point->point->prop). Lcos la l a && Lcos lab la b && Lcos lp lab c).
+rewrite[name "Labellcos2"] forall (lp l : point->point->prop) (a b : point->point->point->prop). lcos2 lp l a b <=> (exists (la : point->point->prop). Lcos la l a && Lcos lp la b).
+goal forall (lp l : point->point->prop) (a b c : point->point->point->prop). Lcos3 lp l a b c <=> (exists (la : point->point->prop). Lcos la l a && lcos2 lp la b c).

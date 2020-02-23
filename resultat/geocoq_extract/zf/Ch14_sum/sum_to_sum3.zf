@@ -1,0 +1,3 @@
+include "../tarski_term_def.zf".
+rewrite[name "Labelsum3"] forall (O E E1 A B C S : point). sum3 O E E1 A B C S <=> (exists (AB : point). Sum O E E1 A B AB && Sum O E E1 AB C S).
+goal forall (O E E1 A B AB X S : point). Sum O E E1 A B AB => Sum O E E1 AB X S => sum3 O E E1 A B X S.

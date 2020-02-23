@@ -1,0 +1,18 @@
+include "../tarski_term_def.zf".
+#l11_17
+assert[name "Labell11_17"] forall (A B C A1 B1 C1 : point). Per A B C => CongA A B C A1 B1 C1 => Per A1 B1 C1.
+#inangle__lea
+assert[name "Labelinangle__lea"] forall (A B C P : point). InAngle P A B C => LeA A B P A B C.
+#col_permutation_1
+assert[name "Labelcol_permutation_1"] forall (A B C : point). Col A B C => Col B C A.
+#conga_sym
+assert[name "Labelconga_sym"] forall (A B C A1 B1 C1 : point). CongA A B C A1 B1 C1 => CongA A1 B1 C1 A B C.
+#per_not_col
+assert[name "Labelper_not_col"] forall (A B C : point). A!=B => B!=C => Per A B C => ~Col A B C.
+#per_per_col
+assert[name "Labelper_per_col"] forall (A B C X : point). Per A X C => X!=C => Per B X C => Col A B X.
+#conga_comm
+assert[name "Labelconga_comm"] forall (A B C D E F : point). CongA A B C D E F => CongA C B A F E D.
+#inangle_distincts
+assert[name "Labelinangle_distincts"] forall (A B C P : point). InAngle P A B C => A!=B && C!=B && P!=B.
+goal forall (A B C P : point). Per A B C => InAngle P A B C => CongA P B A P B C => Acute A B P.

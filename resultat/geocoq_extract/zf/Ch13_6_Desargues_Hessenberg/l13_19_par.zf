@@ -1,0 +1,51 @@
+include "../tarski_term_def.zf".
+#col_permutation_4
+assert[name "Labelcol_permutation_4"] forall (A B C : point). Col A B C => Col B A C.
+#par_distincts
+assert[name "Labelpar_distincts"] forall (A B C D : point). Par A B C D => (Par A B C D && A!=B && C!=D).
+#eq_dec_points
+assert[name "Labeleq_dec_points"] forall (A B : point). A=B || A!=B.
+#between_symmetry
+assert[name "Labelbetween_symmetry"] forall (A B C : point). Bet A B C => Bet C B A.
+#l6_21
+assert[name "Labell6_21"] forall (A B C D P Q : point). ~Col A B C => C!=D => Col A B P => Col A B Q => Col C D P => Col C D Q => P=Q.
+#par_right_comm
+assert[name "Labelpar_right_comm"] forall (A B C D : point). Par A B C D => Par A B D C.
+#swap_diff
+assert[name "Labelswap_diff"] forall (A B : point). A!=B => B!=A.
+#par_left_comm
+assert[name "Labelpar_left_comm"] forall (A B C D : point). Par A B C D => Par B A C D.
+#all_coplanar
+assert[name "Labelall_coplanar"] forall (A B C D : point). Coplanar A B C D.
+#l13_19_par_aux
+assert[name "Labell13_19_par_aux"] forall (A B C D A1 B1 C1 D1 X Y : point). X!=A => X!=A1 => X!=C => X!=C1 => Y!=B => Y!=B1 => Y!=D => Y!=D1 => Col X A C => Col X A A1 => Col X A1 C1 => Col Y B D => Col Y B B1 => Col Y B1 D1 => A!=C => B!=D => A!=A1 => Par_strict X A Y B => ~Par A B C D => Par A B A1 B1 => Par A D A1 D1 => Par B C B1 C1 => Par C D C1 D1.
+#par_trans
+assert[name "Labelpar_trans"] forall (A1 A2 B1 B2 C1 C2 : point). Par A1 A2 B1 B2 => Par B1 B2 C1 C2 => Par A1 A2 C1 C2.
+#par_comm
+assert[name "Labelpar_comm"] forall (A B C D : point). Par A B C D => Par B A D C.
+#not_par_one_not_par
+assert[name "Labelnot_par_one_not_par"] forall (A B A1 B1 X Y : point). ~Par A B A1 B1 => ~Par A B X Y || ~Par A1 B1 X Y.
+#par_symmetry
+assert[name "Labelpar_symmetry"] forall (A B C D : point). Par A B C D => Par C D A B.
+#col_trivial_3
+assert[name "Labelcol_trivial_3"] forall (A B : point). Col A B A.
+#col_permutation_1
+assert[name "Labelcol_permutation_1"] forall (A B C : point). Col A B C => Col B C A.
+#between_trivial2
+assert[name "Labelbetween_trivial2"] forall (A B : point). Bet A A B.
+#col_permutation_3
+assert[name "Labelcol_permutation_3"] forall (A B C : point). Col A B C => Col C B A.
+#col_trivial_1
+assert[name "Labelcol_trivial_1"] forall (A B : point). Col A A B.
+#col_permutation_5
+assert[name "Labelcol_permutation_5"] forall (A B C : point). Col A B C => Col A C B.
+#bet_col
+assert[name "Labelbet_col"] forall (A B C : point). Bet A B C => Col A B C.
+#Par_dec
+assert[name "LabelPar_dec"] forall (A B C D : point). Par A B C D || ~Par A B C D.
+#par_reflexivity
+assert[name "Labelpar_reflexivity"] forall (A B : point). A!=B => Par A B A B.
+#col_trivial_2
+assert[name "Labelcol_trivial_2"] forall (A B : point). Col A B B.
+rewrite[name "LabelPar_strict"] forall (A B C D : point). Par_strict A B C D <=> A != B && C != D && Coplanar A B C D && ~(exists (X : point). Col X A B && Col X C D).
+goal forall (A B C D A1 B1 C1 D1 X Y : point). X!=A => X!=A1 => X!=C => X!=C1 => Y!=B => Y!=B1 => Y!=D => Y!=D1 => Col X A C => Col X A A1 => Col X A1 C1 => Col Y B D => Col Y B B1 => Col Y B1 D1 => A!=C => B!=D => A!=A1 => Par_strict X A Y B => Par A B A1 B1 => Par A D A1 D1 => Par B C B1 C1 => Par C D C1 D1.

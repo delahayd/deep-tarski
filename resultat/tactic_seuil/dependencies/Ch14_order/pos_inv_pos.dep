@@ -1,0 +1,2 @@
+lemme : prod_uniqueness not_col_distincts col_trivial_1 prod_assoc1 prod_1_l opp_exists diff_A_O col_trivial_2 opp_comm prod_pos_pos prod_0_l opp_pos_neg pos_null_neg neg_not_pos diff_uniqueness
+rewrite : Ar2 Opp Sum Prod

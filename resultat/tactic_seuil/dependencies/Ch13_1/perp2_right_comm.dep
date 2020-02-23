@@ -1,0 +1,2 @@
+lemme : col_permutation_1 col_permutation_5 perp_comm perp_left_comm
+rewrite : Perp2 Perp

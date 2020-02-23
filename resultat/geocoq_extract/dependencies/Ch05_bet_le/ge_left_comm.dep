@@ -1,0 +1,3 @@
+lemme : le_right_comm
+rewrite : Ge
+destruct : 

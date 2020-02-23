@@ -1,0 +1,3 @@
+lemme : sum_O_B
+rewrite : Opp Sum Diff Ar2
+destruct : 

@@ -1,0 +1,3 @@
+lemme : conga_right_comm
+rewrite : Q_CongA
+destruct : HH

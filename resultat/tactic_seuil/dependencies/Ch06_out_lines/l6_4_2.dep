@@ -1,0 +1,2 @@
+lemme : col_permutation_5 between_trivial2 between_trivial between_symmetry eq_dec_points
+rewrite : Col Out

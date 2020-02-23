@@ -1,0 +1,2 @@
+lemme : out_trivial cong_transitivity
+rewrite : Q_Cong

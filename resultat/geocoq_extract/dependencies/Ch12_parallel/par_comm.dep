@@ -1,0 +1,3 @@
+lemme : par_left_comm par_right_comm
+rewrite : 
+destruct : 

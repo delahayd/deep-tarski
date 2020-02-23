@@ -1,0 +1,6 @@
+include "../tarski_term_def.zf".
+#cong_pseudo_reflexivity
+assert[name "Labelcong_pseudo_reflexivity"] forall (A B : point). Cong A B B A.
+#cong_identity
+assert[name "Labelcong_identity"] forall (A B C : point). Cong A B C C => A = B.
+goal forall (A B : point). ~(A!=B) => A=B.

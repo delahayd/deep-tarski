@@ -1,0 +1,6 @@
+include "../rew_type.zf".
+#diff_O_A_opp
+assert[name "Labeldiff_O_A_opp"] forall (O E E1 A mA : point). Diff O E E1 O A mA => Opp O E E1 A mA.
+#sum_diff
+assert[name "Labelsum_diff"] forall (O E E1 A B S : point). Sum O E E1 A B S => Diff O E E1 S A B.
+goal forall (O E E1 X MX : point). Sum O E E1 X MX O => Opp O E E1 X MX.

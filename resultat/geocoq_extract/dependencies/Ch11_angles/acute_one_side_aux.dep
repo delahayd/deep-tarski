@@ -1,0 +1,3 @@
+lemme : perp_distinct conga_preserves_lta invert_one_side lea__nlta one_side_transitivity not_col_permutation_1 conga_diff1 l9_19 one_or_two_sides col_permutation_1 col_trivial_1 l11_31_2 conga_refl not_col_distincts per_col col_permutation_4 not_col_permutation_5 col_permutation_5 l11_25 conga_diff2 perp_in_comm os_distincts out_trivial not_col_permutation_2 perp_in_per out_one_side perp_perp_in inangle__lea lta_distincts l6_6 l11_16 col_trivial_3 perp_not_col
+rewrite : Acute TS LtA InAngle OS
+destruct : 

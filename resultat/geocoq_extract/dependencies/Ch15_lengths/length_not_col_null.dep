@@ -1,0 +1,3 @@
+lemme : diff_sum
+rewrite : Sum Length LtP Ar2 LeP
+destruct : 

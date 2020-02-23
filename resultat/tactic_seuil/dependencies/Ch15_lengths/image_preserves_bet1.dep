@@ -1,0 +1,2 @@
+lemme : l7_15 image_preserves_bet l7_2 eq_dec_points
+rewrite : Reflect Out

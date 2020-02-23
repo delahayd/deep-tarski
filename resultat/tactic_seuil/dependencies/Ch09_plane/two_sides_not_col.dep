@@ -1,0 +1,2 @@
+lemme : col_trivial_1 col_permutation_2 one_side_not_col123 between_symmetry one_side_symmetry cong_identity col_trivial_3 cong_symmetry cong_pseudo_reflexivity
+rewrite : TS Par_strict Midpoint

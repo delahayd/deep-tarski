@@ -1,0 +1,7 @@
+include "../tarski_term_def.zf".
+#conga_refl
+assert[name "Labelconga_refl"] forall (A B C : point). A!=B => C!=B => CongA A B C A B C.
+#in_angle_trivial_2
+assert[name "Labelin_angle_trivial_2"] forall (A B C : point). A!=B => C!=B => InAngle C A B C.
+rewrite[name "LabelLeA"] forall (A B C D E F : point). LeA A B C D E F <=> (exists (P : point). InAngle P D E F && CongA A B C D E P).
+goal forall (A B C : point). A!=B => C!=B => LeA A B C A B C.

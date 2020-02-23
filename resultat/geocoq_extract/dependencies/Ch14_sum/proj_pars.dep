@@ -1,0 +1,3 @@
+lemme : col_trivial_1 col_permutation_5 col_transitivity_1 col_permutation_4 par_distincts eq_dec_points all_coplanar col_permutation_1
+rewrite : Proj Par_strict
+destruct : 

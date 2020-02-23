@@ -1,0 +1,3 @@
+include "../tarski_term_def.zf".
+rewrite[name "LabelPerp_at"] forall (X A B C D : point). Perp_at X A B C D <=> A != B && C != D && Col X A B && Col X C D && (forall (U V : point). Col U A B => Col V C D => Per U X V).
+goal forall (A B C D E P : point). C!=E => Col C D E => Perp_at P A B C D => Perp_at P A B C E.

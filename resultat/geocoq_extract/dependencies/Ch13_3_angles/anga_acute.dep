@@ -1,0 +1,3 @@
+lemme : conga_sym between_trivial out_trivial acute_lea_acute between_symmetry acute_distincts
+rewrite : LeA Q_CongA_Acute InAngle
+destruct : HP

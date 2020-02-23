@@ -1,0 +1,80 @@
+include "../tarski_term_def.zf".
+val O : point.
+val E : point.
+val E1 : point.
+assert ~Col O E E1.
+#not_col_permutation_4
+assert[name "Labelnot_col_permutation_4"] forall (A B C : point). ~Col A B C => ~Col B A C.
+#par_right_comm
+assert[name "Labelpar_right_comm"] forall (A B C D : point). Par A B C D => Par A B D C.
+#par_left_comm
+assert[name "Labelpar_left_comm"] forall (A B C D : point). Par A B C D => Par B A C D.
+#cong_diff_3
+assert[name "Labelcong_diff_3"] forall (A B C D : point). C!=D => Cong A B C D => A!=B.
+#prod_null
+assert[name "Labelprod_null"] forall (O E E1 A B : point). Prod O E E1 A B O => A=O || B=O.
+#between_identity
+assert[name "Labelbetween_identity"] forall (A B : point). Bet A B A => A=B.
+#par_symmetry
+assert[name "Labelpar_symmetry"] forall (A B C D : point). Par A B C D => Par C D A B.
+#change_grid_prod_l_O
+assert[name "Labelchange_grid_prod_l_O"] forall (O E E1 A B : point). Prod O E E1 A B O => A=O || B=O.
+#prod_y_axis_change
+assert[name "Labelprod_y_axis_change"] forall (O E E1 E2 A B C : point). Prod O E E1 A B C => ~Col O E E2 => Prod O E E2 A B C.
+#col_permutation_5
+assert[name "Labelcol_permutation_5"] forall (A B C : point). Col A B C => Col A C B.
+#bet_col
+assert[name "Labelbet_col"] forall (A B C : point). Bet A B C => Col A B C.
+#par_strict_par
+assert[name "Labelpar_strict_par"] forall (A B C D : point). Par_strict A B C D => Par A B C D.
+#par_distincts
+assert[name "Labelpar_distincts"] forall (A B C D : point). Par A B C D => (Par A B C D && A!=B && C!=D).
+#l6_21
+assert[name "Labell6_21"] forall (A B C D P Q : point). ~Col A B C => C!=D => Col A B P => Col A B Q => Col C D P => Col C D Q => P=Q.
+#col_permutation_2
+assert[name "Labelcol_permutation_2"] forall (A B C : point). Col A B C => Col C A B.
+#par_comm
+assert[name "Labelpar_comm"] forall (A B C D : point). Par A B C D => Par B A D C.
+#col_permutation_3
+assert[name "Labelcol_permutation_3"] forall (A B C : point). Col A B C => Col C B A.
+#col_trivial_1
+assert[name "Labelcol_trivial_1"] forall (A B : point). Col A A B.
+#segment_construction
+assert[name "Labelsegment_construction"] forall (A B C D : point). exists (E :point). Bet A B E && Cong B E C D.
+#not_col_permutation_5
+assert[name "Labelnot_col_permutation_5"] forall (A B C : point). ~Col A B C => ~Col A C B.
+#sum_y_axis_change
+assert[name "Labelsum_y_axis_change"] forall (O E E1 E2 A B C : point). Sum O E E1 A B C => ~Col O E E2 => Sum O E E2 A B C.
+#change_grid_prod1
+assert[name "Labelchange_grid_prod1"] forall (O E E1 B C O1 A1 B1 C1 : point). Par_strict O E O1 E1 => Ar1 O E E B C => Ar1 O1 E1 A1 B1 C1 => Pj O O1 E E1 => Pj O O1 E A1 => Pj O O1 B B1 => Pj O O1 C C1 => Prod O E E1 E B C => Prod O1 E1 E A1 B1 C1.
+#par_strict_symmetry
+assert[name "Labelpar_strict_symmetry"] forall (A B C D : point). Par_strict A B C D => Par_strict C D A B.
+#par_trans
+assert[name "Labelpar_trans"] forall (A1 A2 B1 B2 C1 C2 : point). Par A1 A2 B1 B2 => Par B1 B2 C1 C2 => Par A1 A2 C1 C2.
+#col_trivial_3
+assert[name "Labelcol_trivial_3"] forall (A B : point). Col A B A.
+#col_permutation_4
+assert[name "Labelcol_permutation_4"] forall (A B C : point). Col A B C => Col B A C.
+#eq_dec_points
+assert[name "Labeleq_dec_points"] forall (A B : point). A=B || A!=B.
+#par_distinct
+assert[name "Labelpar_distinct"] forall (A B C D : point). Par A B C D => A!=B && C!=D.
+#par_strict_left_comm
+assert[name "Labelpar_strict_left_comm"] forall (A B C D : point). Par_strict A B C D => Par_strict B A C D.
+#sum_exists
+assert[name "Labelsum_exists"] forall (A B : point). Col O E A => Col O E B => (exists (C : point). Sum O E E1 A B C).
+#not_col_distincts
+assert[name "Labelnot_col_distincts"] forall (A B C : point). ~Col A B C => ~Col A B C && A!=B && B!=C && A!=C.
+#par_col_par
+assert[name "Labelpar_col_par"] forall (A B C D D1 : point). C!=D1 => Par A B C D => Col C D D1 => Par A B C D1.
+#col_permutation_1
+assert[name "Labelcol_permutation_1"] forall (A B C : point). Col A B C => Col B C A.
+#prod_comm
+assert[name "Labelprod_comm"] forall (O E E1 A B C : point). Prod O E E1 A B C => Prod O E E1 B A C.
+#col_trivial_2
+assert[name "Labelcol_trivial_2"] forall (A B : point). Col A B B.
+rewrite[name "LabelSum"] forall (O E E1 A B C : point). Sum O E E1 A B C <=> Ar2 O E E1 A B C && (exists (A1 C1 : point). Pj E E1 A  A1 && Col O E1 A1 && Pj O E  A1 C1 && Pj O E1 B  C1 && Pj E1 E C1 C).
+rewrite[name "LabelProd"] forall (O E E1 A B C : point). Prod O E E1 A B C <=> Ar2 O E E1 A B C && (exists (B1 : point). Pj E E1 B B1 && Col O E1 B1 && Pj E1 A B1 C).
+rewrite[name "LabelAr2"] forall (O E E1 A B C : point). Ar2 O E E1 A B C <=> ~ Col O E E1 && Col O E A && Col O E B && Col O E C.
+rewrite[name "LabelAr1"] forall (O E A B C : point). Ar1 O E A B C <=> O != E && Col O E A && Col O E B && Col O E C.
+goal forall (O E E1 A B C O1 A1 B1 C1 : point). Par_strict O E O1 E1 => Ar1 O E A B C => Ar1 O1 E1 A1 B1 C1 => Pj O O1 E E1 => Pj O O1 A A1 => Pj O O1 B B1 => Pj O O1 C C1 => Prod O E E1 A B C => Prod O1 E1 E A1 B1 C1.

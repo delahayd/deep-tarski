@@ -1,0 +1,12 @@
+include "../tarski_term_def.zf".
+#l10_8
+assert[name "Labell10_8"] forall (A B P : point). Reflect P P A B => Col P A B.
+#l10_4
+assert[name "Labell10_4"] forall (A B P P1 : point). Reflect P P1 A B => Reflect P1 P A B.
+#image_gen_preserves_ncol
+assert[name "Labelimage_gen_preserves_ncol"] forall (A B C A1 B1 C1 X Y : point). X!=Y => Reflect A A1 X Y => Reflect B B1 X Y => Reflect C C1 X Y => ~Col A B C => ~Col A1 B1 C1.
+#not_col_distincts
+assert[name "Labelnot_col_distincts"] forall (A B C : point). ~Col A B C => ~Col A B C && A!=B && B!=C && A!=C.
+#image_gen_preserves_inter
+assert[name "Labelimage_gen_preserves_inter"] forall (A B C D I A1 B1 C1 D1 I1 X Y : point). X!=Y => Reflect A A1 X Y => Reflect B B1 X Y => Reflect C C1 X Y => ~Col A B C => C!=D => Col A B I => Col C D I => Col A1 B1 I1 => Col C1 D1 I1 => Reflect I I1 X Y.
+goal forall (A B C A1 B1 X Y : point). X!=Y => Reflect A A1 X Y => Reflect B B1 X Y => ~Col A B A1 => Col A B C => Col A1 B1 C => Col C X Y.

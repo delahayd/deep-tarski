@@ -1,0 +1,3 @@
+lemme : diff_O_A prod_exists sum_exists diff_sum col_trivial_3 distr_l prod_1_r opp_uniqueness prod_0_r col_trivial_2 sum_opp prod_uniqueness sum_uniqueness
+rewrite : Opp Sum Ar2
+destruct : 

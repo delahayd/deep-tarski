@@ -1,0 +1,7 @@
+include "../tarski_term_def.zf".
+#le_right_comm
+assert[name "Labelle_right_comm"] forall (A B C D : point). Le A B C D => Le A B D C.
+#cong_right_commutativity
+assert[name "Labelcong_right_commutativity"] forall (A B C D : point). Cong A B C D => Cong A B D C.
+rewrite[name "LabelLt"] forall (A B C D : point). Lt A B C D <=> Le A B C D && ~ Cong A B C D.
+goal forall (A B C D : point). Lt A B C D => Lt A B D C.

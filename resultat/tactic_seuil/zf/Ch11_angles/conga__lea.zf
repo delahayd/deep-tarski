@@ -1,0 +1,9 @@
+include "../rew_type.zf".
+rewrite[name "LabelLeA"] forall (A B C D E F : point). LeA A B C D E F <=> (exists (P : point). InAngle P D E F && CongA A B C D E P).
+#conga_diff45
+assert[name "Labelconga_diff45"] forall (A B C A1 B1 C1 : point). CongA A B C A1 B1 C1 => A1!=B1.
+#conga_right_comm
+assert[name "Labelconga_right_comm"] forall (A B C D E F : point). CongA A B C D E F => CongA A B C F E D.
+#in_angle_trivial_2
+assert[name "Labelin_angle_trivial_2"] forall (A B C : point). A!=B => C!=B => InAngle C A B C.
+goal forall (A B C D E F : point). CongA A B C D E F => LeA A B C D E F.

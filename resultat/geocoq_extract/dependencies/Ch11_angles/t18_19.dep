@@ -1,0 +1,3 @@
+lemme : t18_18 lt_diff cong_symmetry not_and_lt cong_4321 conga_dec nlea__lta l11_49 cong_diff
+rewrite : 
+destruct : HSAS Hlt

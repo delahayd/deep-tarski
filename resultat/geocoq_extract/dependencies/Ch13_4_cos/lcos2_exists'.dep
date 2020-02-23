@@ -1,0 +1,3 @@
+lemme : lcos_lg_anga lcos_exists lcos_not_lg_null
+rewrite : 
+destruct : 

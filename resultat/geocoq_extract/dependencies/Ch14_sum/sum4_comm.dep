@@ -1,0 +1,3 @@
+lemme : sum_comm sum4_equiv sum4_col
+rewrite : sum22
+destruct : HH

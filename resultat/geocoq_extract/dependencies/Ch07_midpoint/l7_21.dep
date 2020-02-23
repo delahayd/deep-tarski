@@ -1,0 +1,3 @@
+lemme : col_permutation_3 l4_16 cong_symmetry col_permutation_1 cong_4321 cong_right_commutativity cong_commutativity l4_13 l7_20_bis l4_14 cong_reflexivity l6_21 not_col_distincts not_col_permutation_5 col_permutation_5 cong_diff
+rewrite : FSC Cong_3
+destruct : 

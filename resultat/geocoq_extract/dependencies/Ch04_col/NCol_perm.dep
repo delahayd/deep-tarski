@@ -1,0 +1,3 @@
+lemme : not_col_permutation_3 not_col_permutation_5 not_col_permutation_4 not_col_permutation_2 not_col_permutation_1
+rewrite : 
+destruct : 

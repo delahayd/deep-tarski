@@ -1,0 +1,3 @@
+lemme : project_pj col_permutation_3 col_permutation_5 col_trivial_1 col_permutation_4 col_trivial_3 col_trivial_2 col_permutation_1 par_left_comm l6_21 par_col2_par col_permutation_4 col_permutation_5 par_trans parallel_existence col_trivial_1 par_distincts parallel_uniqueness par_symmetry eq_dec_points col_trivial_2 par_col_par_2 not_par_inter_exists
+rewrite : Prod Proj Proj
+destruct : 

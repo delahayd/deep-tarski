@@ -1,0 +1,3 @@
+lemme : cong_left_commutativity cong_symmetry
+rewrite : 
+destruct : 

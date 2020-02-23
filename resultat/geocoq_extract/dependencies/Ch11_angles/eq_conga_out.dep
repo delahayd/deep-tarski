@@ -1,0 +1,3 @@
+lemme : cong_symmetry l2_11 cong_right_commutativity cong3_preserves_out l5_1 between_symmetry bet2_out_out between_identity
+rewrite : CongA Out
+destruct : 

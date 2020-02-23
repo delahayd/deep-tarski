@@ -1,0 +1,3 @@
+lemme : eq_dec_points col_trivial_3 col3 col_trivial_1 not_col_distincts col_trivial_2 col_permutation_4 col_permutation_5
+rewrite : Inter
+destruct : 

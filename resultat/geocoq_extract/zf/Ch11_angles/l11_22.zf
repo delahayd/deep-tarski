@@ -1,0 +1,6 @@
+include "../tarski_term_def.zf".
+#l11_22b
+assert[name "Labell11_22b"] forall (A B C P A1 B1 C1 P1 : point). OS B P A C && OS B1 P1 A1 C1 && CongA A B P A1 B1 P1 && CongA P B C P1 B1 C1 => CongA A B C A1 B1 C1.
+#l11_22a
+assert[name "Labell11_22a"] forall (A B C P A1 B1 C1 P1 : point). TS B P A C && TS B1 P1 A1 C1 && CongA A B P A1 B1 P1 && CongA P B C P1 B1 C1 => CongA A B C A1 B1 C1.
+goal forall (A B C P A1 B1 C1 P1 : point). ((TS B P A C && TS B1 P1 A1 C1) || (OS B P A C && OS B1 P1 A1 C1)) && CongA A B P A1 B1 P1 && CongA P B C P1 B1 C1 => CongA A B C A1 B1 C1.

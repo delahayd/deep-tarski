@@ -1,0 +1,3 @@
+lemme : l11_52 perp_not_eq_1 perp_sym between_symmetry perp_in_col perp_col le_comm perp_in_sym out_conga midpoint_col l7_20 conga_comm perp_perp_in perp_in_comm bet_dec perp_comm perp_not_col l11_16 cong_reflexivity cong_symmetry not_col_distincts per_lt out_trivial perp_left_comm cong_4321 midpoint_bet l11_13 col_permutation_1 col_permutation_3 cong_identity col_permutation_5 between_trivial bet_col perp_right_comm cong_commutativity perp_not_eq_2 perp_in_perp_bis perp_in_per l8_2
+rewrite : Out Perp TS Midpoint Lt
+destruct : 

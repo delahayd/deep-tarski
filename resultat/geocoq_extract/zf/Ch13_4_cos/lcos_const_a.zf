@@ -1,0 +1,22 @@
+include "../tarski_term_def.zf".
+#anga_const
+assert[name "Labelanga_const"] forall (A B : point) (a : point->point->point->prop). Q_CongA_Acute a => A!=B => (exists (C : point). a A B C).
+#ex_point_lg_out
+assert[name "Labelex_point_lg_out"] forall (A P : point) (l : point->point->prop). A!=P => Q_Cong l => ~Q_Cong_Null l => (exists (B : point). l A B && Out A B P).
+#lg_sym
+assert[name "Labellg_sym"] forall (A B : point) (l : point->point->prop). Q_Cong l => l A B => l B A.
+#out_trivial
+assert[name "Labelout_trivial"] forall (P A : point). A!=P => Out P A A.
+#anga_out_anga
+assert[name "Labelanga_out_anga"] forall (A B C A1 C1 : point) (a : point->point->point->prop). Q_CongA_Acute a => a A B C => Out B A A1 => Out B C C1 => a A1 B C1.
+#lcos_lg_not_null
+assert[name "Labellcos_lg_not_null"] forall (lp l : point->point->prop) (a : point->point->point->prop). Lcos l lp a => ~Q_Cong_Null l && ~Q_Cong_Null lp.
+#l6_6
+assert[name "Labell6_6"] forall (P A B : point). Out P A B => Out P B A.
+#anga_distincts
+assert[name "Labelanga_distincts"] forall (A B C : point) ( a : point->point->point->prop). Q_CongA_Acute a => a A B C => A!=B && C!=B.
+#ex_point_lg
+assert[name "Labelex_point_lg"] forall (A : point) (l : point->point->prop). Q_Cong l => (exists (B : point). l A B).
+rewrite[name "LabelLcos"] forall (lb lc : point->point->prop) (a : point->point->point->prop). Lcos lb lc a <=> Q_Cong lb && Q_Cong lc && Q_CongA_Acute a && (exists (A B C : point). (Per C B A && lb A B && lc A C && a B A C)).
+rewrite[name "LabelQ_Cong_Null"] forall (l : point->point->prop). Q_Cong_Null l <=> Q_Cong l && (exists (A : point). l A A).
+goal forall (B : point) (lp l : point->point->prop) (a : point->point->point->prop). Lcos lp l a => (exists (A C : point). l A B && lp B C && a A B C).

@@ -1,0 +1,3 @@
+lemme : diff_A_O leP_refl prod_pos_pos prod_O_l_eq prod_O_r_eq diff_uniqueness
+rewrite : Prod Ar2
+destruct : HLeA HLeB

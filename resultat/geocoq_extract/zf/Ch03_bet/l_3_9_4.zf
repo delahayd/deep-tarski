@@ -1,0 +1,5 @@
+include "../tarski_term_def.zf".
+#between_symmetry
+assert[name "Labelbetween_symmetry"] forall (A B C : point). Bet A B C => Bet C B A.
+rewrite[name "LabelBet_4"] forall (A1 A2 A3 A4 : point). Bet_4 A1 A2 A3 A4 <=> Bet A1 A2 A3 && Bet A2 A3 A4 && Bet A1 A3 A4 && Bet A1 A2 A4.
+goal forall (A1 A2 A3 A4 : point). Bet_4 A1 A2 A3 A4 => Bet_4 A4 A3 A2 A1.

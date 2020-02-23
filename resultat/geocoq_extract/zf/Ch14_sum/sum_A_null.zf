@@ -1,0 +1,12 @@
+include "../tarski_term_def.zf".
+val O : point.
+val E : point.
+val E1 : point.
+assert ~Col O E E1.
+#sum_O_B
+assert[name "Labelsum_O_B"] forall (B : point). Col O E B => Sum O E E1 O B B.
+#sum_uniquenessA
+assert[name "Labelsum_uniquenessA"] forall (B X Y C : point). Sum O E E1 X B C => Sum O E E1 Y B C => X=Y.
+rewrite[name "LabelSum"] forall (O E E1 A B C : point). Sum O E E1 A B C <=> Ar2 O E E1 A B C && (exists (A1 C1 : point). Pj E E1 A  A1 && Col O E1 A1 && Pj O E  A1 C1 && Pj O E1 B  C1 && Pj E1 E C1 C).
+rewrite[name "LabelAr2"] forall (O E E1 A B C : point). Ar2 O E E1 A B C <=> ~ Col O E E1 && Col O E A && Col O E B && Col O E C.
+goal forall (A B : point). Sum O E E1 A B B => A=O.

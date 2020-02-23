@@ -1,0 +1,6 @@
+include "../rew_type.zf".
+#not_col_permutation_3
+assert[name "Labelnot_col_permutation_3"] forall (A B C : point). ~Col A B C => ~Col C B A.
+#not_col_permutation_4
+assert[name "Labelnot_col_permutation_4"] forall (A B C : point). ~Col A B C => ~Col B A C.
+goal forall (A B C : point). ~Col A B C || ~Col A C B || ~ Col B A C || ~Col B C A || ~Col C A B || ~Col C B A => ~Col A B C.

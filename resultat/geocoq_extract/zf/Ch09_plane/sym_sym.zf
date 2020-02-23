@@ -1,0 +1,5 @@
+include "../tarski_term_def.zf".
+#l7_2
+assert[name "Labell7_2"] forall (M A B : point). Midpoint M A B => Midpoint M B A.
+rewrite[name "LabelReflectP"] forall (A A1 C : point). ReflectP A A1 C <=> Midpoint C A A1.
+goal forall (A C A1 : point). ReflectP A A1 C => ReflectP A1 A C.

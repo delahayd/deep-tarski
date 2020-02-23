@@ -1,0 +1,3 @@
+lemme : exists_coord all_coplanar cong_diff
+rewrite : 
+destruct : H

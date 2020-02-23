@@ -1,0 +1,15 @@
+include "../tarski_term_def.zf".
+#cong_symmetry
+assert[name "Labelcong_symmetry"] forall (A B C D : point). Cong A B C D => Cong C D A B.
+#l6_6
+assert[name "Labell6_6"] forall (P A B : point). Out P A B => Out P B A.
+#cong_preserves_bet
+assert[name "Labelcong_preserves_bet"] forall (B A1 A0 E D1 D0 : point). Bet B A1 A0 => Cong B A1 E D1 => Cong B A0 E D0 => Out E D1 D0 => Bet E D1 D0.
+#cong_commutativity
+assert[name "Labelcong_commutativity"] forall (A B C D : point). Cong A B C D => Cong B A D C.
+#between_symmetry
+assert[name "Labelbetween_symmetry"] forall (A B C : point). Bet A B C => Bet C B A.
+#l4_3
+assert[name "Labell4_3"] forall (A B C A1 B1 C1 : point). Bet A B C => Bet A1 B1 C1 => Cong A C A1 C1 => Cong B C B1 C1 => Cong A B A1 B1.
+rewrite[name "LabelOut"] forall (P A B : point). Out P A B <=> A != P && B != P && (Bet P A B || Bet P B A).
+goal forall (B A A0 E D D0 : point). Out B A A0 => Out E D D0 => Cong B A E D => Cong B A0 E D0 => Cong A A0 D D0.

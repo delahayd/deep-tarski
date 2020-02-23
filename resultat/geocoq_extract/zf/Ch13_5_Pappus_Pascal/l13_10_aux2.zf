@@ -1,0 +1,23 @@
+include "../tarski_term_def.zf".
+#acute_trivial
+assert[name "Labelacute_trivial"] forall (A B : point). A!=B => Acute A B A.
+#cong_identity
+assert[name "Labelcong_identity"] forall (A B C : point). Cong A B C C => A = B.
+#null_anga
+assert[name "Labelnull_anga"] forall (A B C D : point) (a1 a2 : point->point->point->prop). Ang_Acute A B A a1 => Ang_Acute C D C a2 => EqA a1 a2.
+#null_lcos
+assert[name "Labelnull_lcos"] forall (l : point->point->prop) (a : point->point->point->prop). Q_Cong l => ~Q_CongA_Null_Acute a => Lcos l l a.
+#anga_exists
+assert[name "Labelanga_exists"] forall (A B C : point). A!=B => C!=B => Acute A B C => (exists (a : point->point->point->prop). Q_CongA_Acute a && a A B C).
+#col_trivial_3
+assert[name "Labelcol_trivial_3"] forall (A B : point). Col A B A.
+#lg_cong
+assert[name "Labellg_cong"] forall (A B C D : point) (l : point->point->prop). Q_Cong l => l A B => l C D => Cong A B C D.
+#ex_eql
+assert[name "Labelex_eql"] forall (l1 l2 : point->point->prop). (exists (A B : point). Len A B l1 && Len A B l2) => EqL l1 l2.
+#anga_col_null
+assert[name "Labelanga_col_null"] forall (A B C : point) (a : point->point->point->prop). Q_CongA_Acute a => a A B C => Col A B C => Out B A C && Q_CongA_Null_Acute a.
+#lcos_eql_lcos
+assert[name "Labellcos_eql_lcos"] forall (lp1 l1 lp2 l2 : point->point->prop) (a : point->point->point->prop). EqL lp1 lp2 => EqL l1 l2 => Lcos lp1 l1 a => Lcos lp2 l2 a.
+rewrite[name "LabelQ_Cong_Null"] forall (l : point->point->prop). Q_Cong_Null l <=> Q_Cong l && (exists (A : point). l A A).
+goal forall (O A B : point) (la lb lla llb : point->point->prop). Col O A B => Q_Cong la => Q_Cong lb => Q_Cong lla => Q_Cong llb => la O A => lla O A => lb O B => llb O B => A!=O => B!=O => (exists (a : point->point->point->prop). Q_CongA_Acute a && Lcos lla la a && Lcos llb lb a).

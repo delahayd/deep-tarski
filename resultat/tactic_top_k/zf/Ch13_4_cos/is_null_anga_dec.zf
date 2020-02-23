@@ -1,0 +1,2 @@
+include "../rew_type.zf".
+goal forall (a : point->point->point->prop). Q_CongA_Acute a => Q_CongA_Null_Acute a || ~Q_CongA_Null_Acute a.

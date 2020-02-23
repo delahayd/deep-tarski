@@ -1,0 +1,3 @@
+lemme : cong_diff per_not_col
+rewrite : Cs
+destruct : 

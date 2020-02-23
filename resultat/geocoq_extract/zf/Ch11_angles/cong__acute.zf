@@ -1,0 +1,14 @@
+include "../tarski_term_def.zf".
+#cong_symmetry
+assert[name "Labelcong_symmetry"] forall (A B C D : point). Cong A B C D => Cong C D A B.
+#conga__acute
+assert[name "Labelconga__acute"] forall (A B C : point). CongA A B C A C B => Acute A B C.
+#cong_right_commutativity
+assert[name "Labelcong_right_commutativity"] forall (A B C D : point). Cong A B C D => Cong A B D C.
+#l11_51
+assert[name "Labell11_51"] forall (A B C A1 B1 C1 : point). A!=B => A!=C => B!=C => Cong A B A1 B1 => Cong A C A1 C1 => Cong B C B1 C1 => CongA B A C B1 A1 C1 && CongA A B C A1 B1 C1 && CongA B C A B1 C1 A1.
+#cong_reflexivity
+assert[name "Labelcong_reflexivity"] forall (A B : point). Cong A B A B.
+#cong_diff
+assert[name "Labelcong_diff"] forall (A B C D : point). A!=B => Cong A B C D => C!=D.
+goal forall (A B C : point). A!=B => B!=C => Cong A B A C => Acute A B C.

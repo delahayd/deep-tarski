@@ -1,0 +1,6 @@
+include "../rew_type.zf".
+#par_strict_col2_par_strict
+assert[name "Labelpar_strict_col2_par_strict"] forall (A B C D E F : point). E!=F => Par_strict A B C D => Col C D E => Col C D F => Par_strict A B E F.
+#par_strict_symmetry
+assert[name "Labelpar_strict_symmetry"] forall (A B C D : point). Par_strict A B C D => Par_strict C D A B.
+goal forall (A B C D E F G H : point). E!=F => G!=H => Par_strict A B C D => Col A B E => Col A B F => Col C D G => Col C D H => Par_strict E F G H.

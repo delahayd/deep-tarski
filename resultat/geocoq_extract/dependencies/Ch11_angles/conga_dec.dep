@@ -1,0 +1,3 @@
+lemme : eq_dec_points segment_construction construction_uniqueness
+rewrite : CongA
+destruct : 

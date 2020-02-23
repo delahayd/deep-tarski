@@ -1,0 +1,2 @@
+lemme : perp_comm col_permutation_3 col_permutation_1 l7_2 l4_13 Par_dec not_col_distincts l10_10_spec col_permutation_2 par_trans eq_dec_points cong_identity cong_commutativity cong_symmetry l6_6 perp_in_sym cong_4321 par_symmetry col_permutation_5 col_trivial_1 l10_4_spec cong_reflexivity is_image_is_image_spec l7_15 conga_trans between_trivial2 bet_col cong_trivial_identity conga_sym col_permutation_4 l8_2 between_symmetry l9_2 perp_in_right_comm cong_transitivity image_preserves_bet
+rewrite : Midpoint Ang Out Q_Cong_Null GtA Ar2 Q_CongA Cong_3

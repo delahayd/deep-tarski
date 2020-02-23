@@ -1,0 +1,6 @@
+include "../tarski_term_def.zf".
+#cong_reflexivity
+assert[name "Labelcong_reflexivity"] forall (A B : point). Cong A B A B.
+#cong_inner_transitivity
+assert[name "Labelcong_inner_transitivity"] forall (A B C D E F : point).Cong A B C D => Cong A B E F => Cong C D E F.
+goal forall (A B C D : point). Cong A B C D => Cong C D A B.

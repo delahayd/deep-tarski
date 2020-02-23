@@ -1,0 +1,2 @@
+lemme : col_permutation_1 between_symmetry cong_reflexivity col_permutation_5
+rewrite : Par_strict Par

@@ -1,0 +1,17 @@
+include "../rew_type.zf".
+rewrite[name "LabelMidpoint"] forall (M A B : point). Midpoint M A B <=> Bet A M B && Cong A M M B.
+#cong_commutativity
+assert[name "Labelcong_commutativity"] forall (A B C D : point). Cong A B C D => Cong B A D C.
+#cong_cong_half_1
+assert[name "Labelcong_cong_half_1"] forall (A M B A1 M1 B1 : point). Midpoint M A B => Midpoint M1 A1 B1 => Cong A B A1 B1 => Cong A M A1 M1.
+#cong_symmetry
+assert[name "Labelcong_symmetry"] forall (A B C D : point). Cong A B C D => Cong C D A B.
+#cong_transitivity
+assert[name "Labelcong_transitivity"] forall (A B C D E F : point). Cong A B C D => Cong C D E F => Cong A B E F.
+#l4_5
+assert[name "Labell4_5"] forall (A B C A1 C1 : point). Bet A B C => Cong A C A1 C1 => (exists (B1 : point). Bet A1 B1 C1 && Cong_3 A B C A1 B1 C1).
+#l7_17
+assert[name "Labell7_17"] forall (P P1 A B : point). Midpoint A P P1 => Midpoint B P P1 => A=B.
+#l7_2
+assert[name "Labell7_2"] forall (M A B : point). Midpoint M A B => Midpoint M B A.
+goal forall (A M B A1 M1 B1 : point). Midpoint M A B => Midpoint M1 A1 B1 => Cong A B A1 B1 => Cong B M B1 M1.

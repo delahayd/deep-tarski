@@ -1,0 +1,8 @@
+include "../tarski_term_def.zf".
+#cong_trivial_identity
+assert[name "Labelcong_trivial_identity"] forall (A B : point). Cong A A B B.
+#is_len_cong_is_len
+assert[name "Labelis_len_cong_is_len"] forall (A B C D : point) (l : point->point->prop). Len A B l => Cong A B C D => Len C D l.
+#all_eql
+assert[name "Labelall_eql"] forall (A B : point) (l1 l2 : point->point->prop). Len A B l1 => Len A B l2 => EqL l1 l2.
+goal forall (A B : point) (la lb : point->point->prop). Len A A la => Len B B lb => EqL la lb.

@@ -1,0 +1,2 @@
+lemme : between_symmetry cong_symmetry cong_diff
+rewrite : Cong_3

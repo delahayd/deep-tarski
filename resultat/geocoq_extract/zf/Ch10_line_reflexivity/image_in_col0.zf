@@ -1,0 +1,9 @@
+include "../tarski_term_def.zf".
+#midpoint_col
+assert[name "Labelmidpoint_col"] forall (A M B : point). Midpoint M A B => Col M A B.
+#col_permutation_2
+assert[name "Labelcol_permutation_2"] forall (A B C : point). Col A B C => Col C A B.
+#col_permutation_5
+assert[name "Labelcol_permutation_5"] forall (A B C : point). Col A B C => Col A C B.
+rewrite[name "LabelReflectL_at"] forall (M P1 P A B : point). ReflectL_at M P1 P A B <=> (Midpoint M P P1 && Col A B M) && (Perp A B P P1 || P = P1).
+goal forall (A B P P1 Y : point). ReflectL_at Y P P1 A B => Col P P1 Y.

@@ -1,0 +1,3 @@
+lemme : lt_right_comm lt_left_comm
+rewrite : 
+destruct : 

@@ -1,0 +1,3 @@
+lemme : is_anga_to_is_ang is_ang_distinct
+rewrite : 
+destruct : 

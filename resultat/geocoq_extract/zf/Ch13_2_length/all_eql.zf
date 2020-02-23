@@ -1,0 +1,4 @@
+include "../tarski_term_def.zf".
+#ex_eql
+assert[name "Labelex_eql"] forall (l1 l2 : point->point->prop). (exists (A B : point). Len A B l1 && Len A B l2) => EqL l1 l2.
+goal forall (A B : point) (l1 l2 : point->point->prop). Len A B l1 => Len A B l2 => EqL l1 l2.

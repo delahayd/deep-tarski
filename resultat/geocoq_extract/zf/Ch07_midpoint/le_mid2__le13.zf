@@ -1,0 +1,6 @@
+include "../tarski_term_def.zf".
+#l5_6
+assert[name "Labell5_6"] forall (A B C D A1 B1 C1 D1 : point). Le A B C D => Cong A B A1 B1 => Cong C D C1 D1 => Le A1 B1 C1 D1.
+#bet2_le2__le1346
+assert[name "Labelbet2_le2__le1346"] forall (A B C A1 B1 C1 : point). Bet A B C => Bet A1 B1 C1 => Le A B A1 B1 => Le B C B1 C1 => Le A C A1 C1.
+goal forall (A M B A1 M1 B1 : point). Midpoint M A B => Midpoint M1 A1 B1 => Le A M A1 M1 => Le A B A1 B1.

@@ -1,0 +1,3 @@
+lemme : not_col_permutation_4 par_right_comm par_left_comm cong_diff_3 prod_null between_identity par_symmetry change_grid_prod_l_O prod_y_axis_change col_permutation_5 bet_col par_strict_par par_distincts l6_21 col_permutation_2 par_comm col_permutation_3 col_trivial_1 segment_construction not_col_permutation_5 sum_y_axis_change change_grid_prod1 par_strict_symmetry par_trans col_trivial_3 col_permutation_4 eq_dec_points par_distinct par_strict_left_comm sum_exists not_col_distincts par_col_par col_permutation_1 prod_comm col_trivial_2
+rewrite : Sum Prod Ar2 Ar1
+destruct : 

@@ -1,0 +1,3 @@
+lemme : conga_sym lea_total conga_dec
+rewrite : GtA LtA
+destruct : 

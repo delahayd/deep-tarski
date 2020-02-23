@@ -1,0 +1,5 @@
+include "../tarski_term_def.zf".
+#lt_left_comm
+assert[name "Labellt_left_comm"] forall (A B C D : point). Lt A B C D => Lt B A C D.
+rewrite[name "LabelGt"] forall (A B C D : point). Gt A B C D <=> Lt C D A B.
+goal forall (A B C D : point). Gt A B C D => Gt A B D C.

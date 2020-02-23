@@ -1,0 +1,2 @@
+lemme : cong_symmetry segment_construction
+rewrite : Midpoint

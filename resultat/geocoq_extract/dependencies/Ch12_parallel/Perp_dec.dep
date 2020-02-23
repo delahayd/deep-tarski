@@ -1,0 +1,3 @@
+lemme : eq_dec_points perp_distinct col_permutation_2 perp_right_comm perp_perp_col col_permutation_1 perp_sym l8_14_2_1a l8_18_existence perp_col1 perp_in_right_comm Perp_in_dec l8_15_1 col_permutation_5
+rewrite : 
+destruct : 

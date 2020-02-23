@@ -1,0 +1,3 @@
+lemme : lt_right_comm
+rewrite : Gt
+destruct : 

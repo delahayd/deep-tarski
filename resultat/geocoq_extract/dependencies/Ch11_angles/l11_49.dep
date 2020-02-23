@@ -1,0 +1,3 @@
+lemme : cong2_conga_cong cong_commutativity out_trivial l11_3_bis cong_identity
+rewrite : CongA
+destruct : 

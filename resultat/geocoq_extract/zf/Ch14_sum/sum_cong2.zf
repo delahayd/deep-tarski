@@ -1,0 +1,13 @@
+include "../tarski_term_def.zf".
+val O : point.
+val E : point.
+val E1 : point.
+assert ~Col O E E1.
+#cong_symmetry
+assert[name "Labelcong_symmetry"] forall (A B C D : point). Cong A B C D => Cong C D A B.
+#sum_cong
+assert[name "Labelsum_cong"] forall (A B C : point). Sum O E E1 A B C => (A!=O || B!=O) => Parallelogram_flat O A B C.
+#cong_right_commutativity
+assert[name "Labelcong_right_commutativity"] forall (A B C D : point). Cong A B C D => Cong A B D C.
+rewrite[name "LabelParallelogram_flat"] forall (A B A1 B1 : point). Parallelogram_flat A B A1 B1 <=> Col A B A1 && Col A B B1 && Cong A B A1 B1 && Cong A B1 A1 B && (A != A1 || B != B1).
+goal forall (A B C : point). Sum O E E1 A B C => (A!=O || B!=O) => (Cong O A B C && Cong O B A C).

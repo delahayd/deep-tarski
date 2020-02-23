@@ -1,0 +1,3 @@
+lemme : lcos_lg_anga lcos_lg_not_null lcos3_lcos_2_1 lcos_exists lcos2_lg_not_null lcos2_lg_anga
+rewrite : Eq_Lcos2 Eq_Lcos3
+destruct : 

@@ -1,0 +1,3 @@
+lemme : parallel_uniqueness par_left_comm col_permutation_3 col_permutation_5 col_trivial_1 par_distincts col_permutation_1 par_symmetry all_coplanar
+rewrite : 
+destruct : 

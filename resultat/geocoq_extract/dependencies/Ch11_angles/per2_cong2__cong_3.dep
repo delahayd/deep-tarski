@@ -1,0 +1,3 @@
+lemme : cong_symmetry per2_cong2__cong_conga2 cong_commutativity
+rewrite : Cong_3
+destruct : 

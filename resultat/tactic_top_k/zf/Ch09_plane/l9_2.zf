@@ -1,0 +1,5 @@
+include "../rew_type.zf".
+rewrite[name "LabelTS"] forall (A B P Q : point). TS A B P Q <=> ~(Col P A B) && ~(Col Q A B) && (exists (T : point). Col T A B && Bet P T Q).
+#between_symmetry
+assert[name "Labelbetween_symmetry"] forall (A B C : point). Bet A B C => Bet C B A.
+goal forall (A B P Q : point). TS A B P Q => TS A B Q P.

@@ -1,0 +1,5 @@
+include "../tarski_term_def.zf".
+#l7_3_2
+assert[name "Labell7_3_2"] forall (A : point). Midpoint A A A.
+rewrite[name "LabelReflectL"] forall (P1 P A B : point). ReflectL P1 P A B <=> (exists (X : point). Midpoint X P P1 && Col A B X) && (Perp A B P P1 || P = P1).
+goal forall (A B X : point). Col A B X => ReflectL X X A B.

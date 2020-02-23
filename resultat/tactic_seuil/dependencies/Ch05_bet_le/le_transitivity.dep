@@ -1,0 +1,2 @@
+lemme : between_exchange4 l4_5 cong_inner_transitivity cong_transitivity cong_symmetry
+rewrite : Perp_at Le Cong_3

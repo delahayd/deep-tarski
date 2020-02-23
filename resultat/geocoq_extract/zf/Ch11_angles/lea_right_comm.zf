@@ -1,0 +1,8 @@
+include "../tarski_term_def.zf".
+#conga_right_comm
+assert[name "Labelconga_right_comm"] forall (A B C D E F : point). CongA A B C D E F => CongA A B C F E D.
+#l11_29_a
+assert[name "Labell11_29_a"] forall (A B C D E F : point). LeA A B C D E F => (exists (Q : point). InAngle C A B Q && CongA A B Q D E F).
+#l11_29_b
+assert[name "Labell11_29_b"] forall (A B C D E F : point). (exists (Q : point). InAngle C A B Q && CongA A B Q D E F) => LeA A B C D E F.
+goal forall (A B C D E F : point). LeA A B C D E F => LeA A B C F E D.

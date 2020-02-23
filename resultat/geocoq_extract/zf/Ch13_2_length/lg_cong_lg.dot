@@ -1,0 +1,44 @@
+digraph "unsat_graph" {
+  vertex_0 [color=red, label="[]", shape=box, style=filled];
+  vertex_0 -> vertex_1 [label="s_sup-\l", dir="back"];
+  vertex_1 [shape=box, label="¬sk_l sk_C sk_D\l", style=filled];
+  vertex_1 -> vertex_2 [label="cnf", dir="back"];
+  vertex_2 [shape=box, label="negated_goal\l  ¬ (∀ A/152:point B/153:point C/154:point D/155:point \l        l/156:(point → point → prop).\l        ((Q_Cong l/156) ⇒\l         ((l/156 A/152 B/153) ⇒\l          ((Cong A/152 B/153 C/154 D/155) ⇒ (l/156 C/154 D/155)))))\l  # skolems: [].\l", style=filled];
+  vertex_2 -> vertex_3 [label="cnf.neg", dir="back"];
+  vertex_3 [color=green, shape=box, label="goal\l  [file \"../resultat/geocoq_extract/zf/Ch13_2_length/lg_cong_lg.zf\" \l   \"zf_stmt_128\"]\l  ∀ A/152:point B/153:point C/154:point D/155:point \l    l/156:(point → point → prop).\l    ((Q_Cong l/156) ⇒\l     ((l/156 A/152 B/153) ⇒\l      ((Cong A/152 B/153 C/154 D/155) ⇒ (l/156 C/154 D/155)))).\l", style=filled];
+  vertex_0 -> vertex_4 [label="s_sup-\l", dir="back"];
+  vertex_4 [shape=box, label="sk_l sk_C sk_D\l", style=filled];
+  vertex_4 -> vertex_5 [label="s_sup-\l\{X0[1] → sk_D[0], X1[1] → sk_C[0]\}[1]\l", dir="back"];
+  vertex_5 [shape=box, label="forall (X0:point) (X1:point).\l[sk_l X1 X0 ∨ ¬Cong (sk_A sk_l) (sk_B sk_l) X1 X0]\l", style=filled];
+  vertex_5 -> vertex_6 [label="rw_clause\l\{F6[1] → sk_l[0]\}[1]\l", dir="back"];
+  vertex_6 [color=navajowhite, shape=box, label="(Q_Cong F6 :=\l   [F6 X7 X8 ∨ ¬Cong (sk_A F6) (sk_B F6) X7 X8∧\l    Cong (sk_A F6) (sk_B F6) X7 X9 ∨ ¬F6 X7 X9] [B])\l", style=filled];
+  vertex_6 -> vertex_7 [label="rw.lit", dir="back"];
+  vertex_7 [color=yellow, shape=box, label="rewrite\l  [file \"../resultat/geocoq_extract/zf/Ch13_2_length/lg_cong_lg.zf\" \l   \"LabelQ_Cong\"]\l  Q_Cong F6\l  =\> F6 X7 X8 ∨ ¬ Cong (sk_A F6) (sk_B F6) X7 X8 && \l     Cong (sk_A F6) (sk_B F6) X7 X9 ∨ ¬ F6 X7 X9.\l", style=filled];
+  vertex_5 -> vertex_8 [label="rw_clause\l\{F6[1] → sk_l[0]\}[0]\l", dir="back"];
+  vertex_8 [shape=box, label="Q_Cong sk_l\l", style=filled];
+  vertex_8 -> vertex_2 [label="cnf", dir="back"];
+  vertex_4 -> vertex_9 [label="s_sup-\l\{X0[1] → sk_D[0], X1[1] → sk_C[0]\}[0]\l", dir="back"];
+  vertex_9 [shape=box, label="Cong (sk_A sk_l) (sk_B sk_l) sk_C sk_D\l", style=filled];
+  vertex_9 -> vertex_10 [label="simplify", dir="back"];
+  vertex_10 [shape=box, label="[¬true ∨ Cong (sk_A sk_l) (sk_B sk_l) sk_C sk_D]\l", style=filled];
+  vertex_10 -> vertex_11 [label="demod", dir="back"];
+  vertex_11 [shape=box, label="sk_l sk_A1 sk_B1\l", style=filled];
+  vertex_11 -> vertex_2 [label="cnf", dir="back"];
+  vertex_10 -> vertex_12 [label="demod", dir="back"];
+  vertex_12 [shape=box, label="[¬sk_l sk_A1 sk_B1 ∨ Cong (sk_A sk_l) (sk_B sk_l) sk_C sk_D]\l", style=filled];
+  vertex_12 -> vertex_13 [label="s_sup-\l\{X0[0] → sk_B1[1], X1[0] → sk_A1[1], X2[0] → sk_D[1], X3[0] → sk_C[1]\}[0]\l", dir="back"];
+  vertex_13 [shape=box, label="forall (X0:point) (X1:point) (X2:point) (X3:point).\l[¬sk_l X1 X0 ∨ Cong (sk_A sk_l) (sk_B sk_l) X3 X2 ∨ ¬Cong X1 X0 X3 X2]\l", style=filled];
+  vertex_13 -> vertex_14 [label="s_sup-\l\{X0[0] → sk_A sk_l[1], X1[0] → sk_B sk_l[1], X1[1] → X2[0], X2[1] → X3[0]\}[0]\l", dir="back"];
+  vertex_14 [shape=box, label="forall (X0:point) (X1:point) (X2:point) (X3:point) (X4:point) (X5:point).\l[¬Cong X0 X1 X2 X3 ∨ Cong X0 X1 X4 X5 ∨ ¬Cong X2 X3 X4 X5]\l", style=filled];
+  vertex_14 -> vertex_15 [label="cnf", dir="back"];
+  vertex_15 [color=yellow, shape=box, label="assert\l  [file \"../resultat/geocoq_extract/zf/Ch13_2_length/lg_cong_lg.zf\" \l   \"Labelcong_transitivity\"]\l  ∀ A/133:point B/134:point C/135:point D/136:point E/137:point \l    F/138:point.\l    ((Cong A/133 B/134 C/135 D/136) ⇒\l     ((Cong C/135 D/136 E/137 F/138) ⇒ (Cong A/133 B/134 E/137 F/138))).\l", style=filled];
+  vertex_13 -> vertex_16 [label="s_sup-\l\{X0[0] → sk_A sk_l[1], X1[0] → sk_B sk_l[1], X1[1] → X2[0], X2[1] → X3[0]\}[1]\l", dir="back"];
+  vertex_16 [shape=box, label="forall (X1:point) (X2:point).\l[Cong (sk_A sk_l) (sk_B sk_l) X1 X2 ∨ ¬sk_l X1 X2]\l", style=filled];
+  vertex_16 -> vertex_6 [label="rw_clause\l\{F6[1] → sk_l[0]\}[1]\l", dir="back"];
+  vertex_16 -> vertex_8 [label="rw_clause\l\{F6[1] → sk_l[0]\}[0]\l", dir="back"];
+  vertex_12 -> vertex_17 [label="s_sup-\l\{X0[0] → sk_B1[1], X1[0] → sk_A1[1], X2[0] → sk_D[1], X3[0] → sk_C[1]\}[1]\l", dir="back"];
+  vertex_17 [shape=box, label="Cong sk_A1 sk_B1 sk_C sk_D\l", style=filled];
+  vertex_17 -> vertex_2 [label="cnf", dir="back"];
+  }
+
+

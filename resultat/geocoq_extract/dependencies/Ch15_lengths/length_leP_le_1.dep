@@ -1,0 +1,3 @@
+lemme : cong_reflexivity cong_symmetry leP_bet le_transitivity segment_construction between_trivial cong_left_commutativity between_symmetry cong_transitivity symmetric_point_construction l5_6
+rewrite : Midpoint Length Le
+destruct : 

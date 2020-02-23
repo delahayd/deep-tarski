@@ -1,0 +1,3 @@
+lemme : col_one_side_out between_equality per_perp_in col_permutation_4 perp_sym per_not_col out_one_side eq_dec_points between_symmetry bet_neq23__neq perp_col perp_distinct col_permutation_2 par_strict_symmetry perp_in_comm perp_comm l12_6 between_identity col_trivial_3 perp_left_comm l8_9 col_permutation_5 col_trivial_1 invert_one_side l8_8 l12_9 bet_col bet_neq21__neq perp_in_perp_bis one_side_transitivity
+rewrite : TS OS Out
+destruct : 

@@ -1,0 +1,27 @@
+include "../tarski_term_def.zf".
+#per23_preserves_bet_inv
+assert[name "Labelper23_preserves_bet_inv"] forall (A B C B1 C1 : point). Bet A B1 C1 => A!=B1 => Col A B C => Per A B1 B => Per A C1 C => Bet A B C.
+#col_permutation_5
+assert[name "Labelcol_permutation_5"] forall (A B C : point). Col A B C => Col A C B.
+#l8_8
+assert[name "Labell8_8"] forall (A B : point). Per A B A => A=B.
+#per_perp_in
+assert[name "Labelper_perp_in"] forall (A B C : point). A!=B => B!=C => Per A B C => Perp_at B A B B C.
+#not_col_distincts
+assert[name "Labelnot_col_distincts"] forall (A B C : point). ~Col A B C => ~Col A B C && A!=B && B!=C && A!=C.
+#perp_in_sym
+assert[name "Labelperp_in_sym"] forall (A B C D X : point). Perp_at X A B C D => Perp_at X C D A B.
+#per_not_col
+assert[name "Labelper_not_col"] forall (A B C : point). A!=B => B!=C => Per A B C => ~Col A B C.
+#eq_dec_points
+assert[name "Labeleq_dec_points"] forall (A B : point). A=B || A!=B.
+#l8_9
+assert[name "Labell8_9"] forall (A B C : point). Per A B C => Col A B C => (A=B || C=B).
+#per23_preserves_bet
+assert[name "Labelper23_preserves_bet"] forall (A B C B1 C1 : point). Bet A B C => A!=B1 => A!=C1 => Col A B1 C1 => Per A B1 B => Per A C1 C => Bet A B1 C1.
+#perp_in_comm
+assert[name "Labelperp_in_comm"] forall (A B C D X : point). Perp_at X A B C D => Perp_at X B A D C.
+#perp_in_per
+assert[name "Labelperp_in_per"] forall (A B C : point). Perp_at B A B B C => Per A B C.
+rewrite[name "LabelOut"] forall (P A B : point). Out P A B <=> A != P && B != P && (Bet P A B || Bet P B A).
+goal forall (O P Q U V : point). U!=O => V!=O => Col O P Q => Col O U V => Per P U O => Per Q V O => (Out O P Q <=> Out O U V).

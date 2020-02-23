@@ -1,0 +1,3 @@
+lemme : out_conga_out ang_conga conga_refl
+rewrite : Q_CongA_nNull Q_CongA
+destruct : HH

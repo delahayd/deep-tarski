@@ -1,0 +1,3 @@
+lemme : l10_4_spec l4_6 l10_10_spec
+rewrite : Cong_3
+destruct : 

@@ -1,0 +1,3 @@
+lemme : cong_symmetry l2_11 segment_construction
+rewrite : Cong_3
+destruct : 

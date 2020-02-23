@@ -1,0 +1,10 @@
+include "../tarski_term_def.zf".
+#not_conga_sym
+assert[name "Labelnot_conga_sym"] forall (A B C D E F : point). ~CongA A B C D E F => ~CongA D E F A B C.
+#conga__lea
+assert[name "Labelconga__lea"] forall (A B C D E F : point). CongA A B C D E F => LeA A B C D E F.
+#lea_total
+assert[name "Labellea_total"] forall (A B C D E F : point). A!=B => B!=C => D!=E => E!=F => LeA A B C D E F || LeA D E F A B C.
+#conga_dec
+assert[name "Labelconga_dec"] forall (A B C D E F : point). CongA A B C D E F || ~CongA A B C D E F.
+goal forall (A B C D E F : point). ~LtA A B C D E F => A!=B => B!=C => D!=E => E!=F => LeA D E F A B C.

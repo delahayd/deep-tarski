@@ -1,0 +1,3 @@
+include "../tarski_term_def.zf".
+rewrite[name "LabelMidpoint"] forall (M A B : point). Midpoint M A B <=> Bet A M B && Cong A M M B.
+goal forall (A B C : point). Bet A B C => Cong A B B C => Midpoint B A C.

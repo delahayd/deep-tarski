@@ -1,0 +1,3 @@
+lemme : sum_O_B cong_reflexivity cong_symmetry eq_dec_points sum_cong cong_right_commutativity sum_uniqueness
+rewrite : Sum Parallelogram_flat Ar2
+destruct : 

@@ -1,0 +1,3 @@
+lemme : l11_30 eq_dec_points bet_dec lea_in_angle not_bet_out out_col l11_31_2 one_side_symmetry angle_construction_1 not_out_bet conga_refl l11_31_1 bet_lea__bet lea_distincts col_permutation_4 out_lea__out out_dec inangle_dec
+rewrite : 
+destruct : HP

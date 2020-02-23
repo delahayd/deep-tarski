@@ -1,0 +1,2 @@
+lemme : is_image_spec_rev
+rewrite : ReflectL Reflect OS

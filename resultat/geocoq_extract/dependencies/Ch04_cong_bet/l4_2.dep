@@ -1,0 +1,3 @@
+lemme : eq_dec_points cong_symmetry between_exchange3 five_segment_with_def cong_4321 cong_commutativity point_construction_different between_symmetry segment_construction cong_identity between_identity
+rewrite : IFSC OFSC
+destruct : 

@@ -1,0 +1,12 @@
+include "../tarski_term_def.zf".
+#all_eqa
+assert[name "Labelall_eqa"] forall (A B C : point) (a1 a2 : point->point->point->prop). Ang A B C a1 => Ang A B C a2 => EqA a1 a2.
+#is_ang_distinct
+assert[name "Labelis_ang_distinct"] forall (A B C : point) (a : point->point->point->prop). Ang A B C a => A!=B && C!=B.
+#out_trivial
+assert[name "Labelout_trivial"] forall (P A : point). A!=P => Out P A A.
+#is_ang_conga_is_ang
+assert[name "Labelis_ang_conga_is_ang"] forall (A B C A1 B1 C1 : point) (a : point->point->point->prop). Ang A B C a => CongA A B C A1 B1 C1 => Ang A1 B1 C1 a.
+#l11_21_b
+assert[name "Labell11_21_b"] forall (A B C A1 B1 C1 : point). Out B A C => Out B1 A1 C1 => CongA A B C A1 B1 C1.
+goal forall (A B C D : point) (a1 a2 : point->point->point->prop). Ang A B A a1 => Ang C D C a2 => EqA a1 a2.

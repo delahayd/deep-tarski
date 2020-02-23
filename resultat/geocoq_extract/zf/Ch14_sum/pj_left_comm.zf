@@ -1,0 +1,5 @@
+include "../tarski_term_def.zf".
+#par_left_comm
+assert[name "Labelpar_left_comm"] forall (A B C D : point). Par A B C D => Par B A C D.
+rewrite[name "LabelPj"] forall (A B C D : point). Pj A B C D <=> Par A B C D || C = D.
+goal forall (A B C D : point). Pj A B C D => Pj B A C D.

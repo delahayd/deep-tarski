@@ -1,0 +1,2 @@
+lemme : out_conga_out bet_conga_bet conga_refl acute_distincts ang_conga
+rewrite : Q_CongA Q_CongA_Acute Q_CongA_nNull Q_CongA_nFlat

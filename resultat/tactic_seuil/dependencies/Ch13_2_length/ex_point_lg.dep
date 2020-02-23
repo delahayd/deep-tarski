@@ -1,0 +1,2 @@
+lemme : perp_comm col_permutation_1 col_trivial_3 l7_2 col_permutation_2 out_trivial eq_dec_points cong_identity cong_symmetry l6_6 col_permutation_5 col_trivial_1 anga_is_ang cong_reflexivity cong_reverse_identity col_trivial_2 cong_left_commutativity per_not_col between_trivial2 bet_col cong_trivial_identity conga_sym cong_diff between_trivial between_identity between_symmetry cong_transitivity segment_construction
+rewrite : Q_Cong Midpoint Ang Q_CongA_nFlat Out Q_Cong_Null ReflectL Ar2 Q_CongA Q_CongA_Acute

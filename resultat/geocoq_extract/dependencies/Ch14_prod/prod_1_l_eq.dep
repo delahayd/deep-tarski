@@ -1,0 +1,3 @@
+lemme : prod_1_l eq_dec_points prod_uniquenessA
+rewrite : Prod Ar2
+destruct : 

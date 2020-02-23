@@ -1,0 +1,2 @@
+lemme : perp_comm col_permutation_3 col_permutation_1 col_trivial_3 l7_2 outer_transitivity_between not_col_distincts col_permutation_2 eq_dec_points cong_identity cong_commutativity cong_symmetry cong_4321 perp_right_comm perp_sym symmetric_point_uniqueness col_permutation_5 col_trivial_1 cong_reflexivity col_trivial_2 perp_left_comm l7_3 between_trivial2 bet_col cong_diff between_trivial l8_2 between_symmetry between_inner_transitivity
+rewrite : Col TS Midpoint Out Per Cong_3

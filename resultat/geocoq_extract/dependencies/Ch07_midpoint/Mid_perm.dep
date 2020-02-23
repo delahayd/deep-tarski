@@ -1,0 +1,3 @@
+lemme : between_symmetry cong_4321 cong_symmetry
+rewrite : Midpoint
+destruct : 

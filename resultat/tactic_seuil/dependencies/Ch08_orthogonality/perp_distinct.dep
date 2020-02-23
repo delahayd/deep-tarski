@@ -1,0 +1,2 @@
+lemme : cong_right_commutativity col_permutation_5 col_trivial_1 par_distincts col_permutation_1 par_strict_par col_trivial_3 cong_symmetry perp_sym
+rewrite : TS Perp_at Perp Le Par_strict Par

@@ -1,0 +1,3 @@
+lemme : l9_8_1 par_neq2 par_two_sides_two_sides midpoint_existence par_not_col_strict cong_diff cong_transitivity l9_9 symmetric_point_construction l12_19 midpoint_distinct_1 not_strict_par1 l7_2 par_left_comm midpoint_col l7_20 par_trans not_col_permutation_3 par_comm ts_distincts par_symmetry cong_symmetry not_col_distincts col_trivial_3 par_id midpoint_bet midpoint_distinct_2 col_permutation_1 col_permutation_5 col_trivial_1 not_col_permutation_1 par_not_col col_trivial_2 l12_17 l7_13 not_col_permutation_5
+rewrite : TS
+destruct : 

@@ -1,0 +1,16 @@
+digraph "unsat_graph" {
+  vertex_0 [color=red, label="[]", shape=box, style=filled];
+  vertex_0 -> vertex_1 [label="simplify", dir="back"];
+  vertex_1 [color=red, label="[]", shape=box, style=filled];
+  vertex_1 -> vertex_2 [label="demod", dir="back"];
+  vertex_2 [shape=box, label="sk_A = sk_B\l", style=filled];
+  vertex_2 -> vertex_3 [label="cnf", dir="back"];
+  vertex_3 [shape=box, label="negated_goal\l  ¬ (∀ A/138:point B/139:point. ((A/138 = B/139) ⇒ (A/138 = B/139)))\l  # skolems: [].\l", style=filled];
+  vertex_3 -> vertex_4 [label="cnf.neg", dir="back"];
+  vertex_4 [color=green, shape=box, label="goal\l  [file \"../resultat/geocoq_extract/zf/Ch03_bet/cong_dec_eq_dec_b.zf\" \l   \"zf_stmt_128\"]\l  ∀ A/138:point B/139:point. ((A/138 = B/139) ⇒ (A/138 = B/139)).\l", style=filled];
+  vertex_1 -> vertex_5 [label="demod", dir="back"];
+  vertex_5 [shape=box, label="sk_A ≠ sk_B\l", style=filled];
+  vertex_5 -> vertex_3 [label="cnf", dir="back"];
+  }
+
+

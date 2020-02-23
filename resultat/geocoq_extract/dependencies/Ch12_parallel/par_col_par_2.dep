@@ -1,0 +1,3 @@
+lemme : col3 all_coplanar
+rewrite : Par_strict Par
+destruct : 

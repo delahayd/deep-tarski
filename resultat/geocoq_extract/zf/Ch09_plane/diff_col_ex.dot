@@ -1,0 +1,41 @@
+digraph "unsat_graph" {
+  vertex_0 [color=red, label="[]", shape=box, style=filled];
+  vertex_0 -> vertex_1 [label="simplify_reflect-", dir="back"];
+  vertex_1 [shape=box, label="sk_B ≠ sk_A\l", style=filled];
+  vertex_1 -> vertex_2 [label="s_sup-\l\{X5[1] → sk_A[0], X6[1] → sk_B[0]\}[1]\l", dir="back"];
+  vertex_2 [shape=box, label="forall (X5:point) (X6:point). X6 ≠ sk_C X6 X5\l", style=filled];
+  vertex_2 -> vertex_3 [label="cnf", dir="back"];
+  vertex_3 [color=yellow, shape=box, label="assert\l  [file \"../resultat/geocoq_extract/zf/Ch09_plane/diff_col_ex.zf\" \l   \"Labelpoint_construction_different\"]\l  ∀ A/138:point B/139:point.\l    (∃ C/140:point. ((B/139 ≠ C/140) ∧ (Bet A/138 B/139 C/140))).\l", style=filled];
+  vertex_1 -> vertex_4 [label="s_sup-\l\{X5[1] → sk_A[0], X6[1] → sk_B[0]\}[0]\l", dir="back"];
+  vertex_4 [shape=box, label="sk_A = sk_C sk_B sk_A\l", style=filled];
+  vertex_4 -> vertex_2 [label="clc\l\{X5[1] → sk_A[0], X6[1] → sk_B[0]\}[1]\l", dir="back"];
+  vertex_4 -> vertex_5 [label="clc", dir="back"];
+  vertex_5 [shape=box, label="[sk_B = sk_C sk_B sk_A ∨ sk_A = sk_C sk_B sk_A]\l", style=filled];
+  vertex_5 -> vertex_6 [label="s_sup-\l\{X0[0] → sk_C X6 X5[1], X5[1] → sk_A[0], X6[1] → sk_B[0]\}[0]\l", dir="back"];
+  vertex_6 [shape=box, label="forall (X0:point). [¬Bet sk_A sk_B X0 ∨ sk_B = X0 ∨ sk_A = X0]\l", style=filled];
+  vertex_6 -> vertex_7 [label="s_sup-\l\{X2[1] → sk_A[0], X3[1] → sk_B[0], X4[1] → X9[0]\}[0]\l", dir="back"];
+  vertex_7 [shape=box, label="forall (X9:point). [sk_B = X9 ∨ ¬Col sk_A sk_B X9 ∨ sk_A = X9]\l", style=filled];
+  vertex_7 -> vertex_8 [label="cnf", dir="back"];
+  vertex_8 [shape=box, label="negated_goal\l  ¬ (∀ A/143:point B/144:point.\l        (∃ C/145:point.\l           ((B/144 ≠ C/145)\l            ∧ (Col A/143 B/144 C/145)\l            ∧ (A/143 ≠ C/145))))\l  # skolems: [].\l", style=filled];
+  vertex_8 -> vertex_9 [label="cnf.neg", dir="back"];
+  vertex_9 [color=green, shape=box, label="goal\l  [file \"../resultat/geocoq_extract/zf/Ch09_plane/diff_col_ex.zf\" \l   \"zf_stmt_128\"]\l  ∀ A/143:point B/144:point.\l    (∃ C/145:point.\l       ((B/144 ≠ C/145) ∧ (Col A/143 B/144 C/145) ∧ (A/143 ≠ C/145))).\l", style=filled];
+  vertex_6 -> vertex_10 [label="s_sup-\l\{X2[1] → sk_A[0], X3[1] → sk_B[0], X4[1] → X9[0]\}[1]\l", dir="back"];
+  vertex_10 [shape=box, label="forall (X2:point) (X3:point) (X4:point). [Col X2 X3 X4 ∨ ¬Bet X2 X3 X4]\l", style=filled];
+  vertex_10 -> vertex_11 [label="cnf", dir="back"];
+  vertex_11 [color=yellow, shape=box, label="assert\l  [file \"../resultat/geocoq_extract/zf/Ch09_plane/diff_col_ex.zf\" \l   \"Labelbet_col\"]\l  ∀ A/135:point B/136:point C/137:point.\l    ((Bet A/135 B/136 C/137) ⇒ (Col A/135 B/136 C/137)).\l", style=filled];
+  vertex_5 -> vertex_12 [label="s_sup-\l\{X0[0] → sk_C X6 X5[1], X5[1] → sk_A[0], X6[1] → sk_B[0]\}[1]\l", dir="back"];
+  vertex_12 [shape=box, label="forall (X5:point) (X6:point). Bet X5 X6 (sk_C X6 X5)\l", style=filled];
+  vertex_12 -> vertex_3 [label="cnf", dir="back"];
+  vertex_0 -> vertex_13 [label="simplify_reflect-", dir="back"];
+  vertex_13 [shape=box, label="sk_A = sk_B\l", style=filled];
+  vertex_13 -> vertex_14 [label="s_sup-\l\{X7[1] → sk_B[0], X8[1] → sk_A[0]\}[1]\l", dir="back"];
+  vertex_14 [shape=box, label="forall (X7:point) (X8:point). [X8 = X7 ∨ ¬Bet X8 X7 X8]\l", style=filled];
+  vertex_14 -> vertex_15 [label="cnf", dir="back"];
+  vertex_15 [color=yellow, shape=box, label="assert\l  [file \"../resultat/geocoq_extract/zf/Ch09_plane/diff_col_ex.zf\" \l   \"Labelbetween_identity\"]\l  ∀ A/141:point B/142:point. ((Bet A/141 B/142 A/141) ⇒ (A/141 = B/142)).\l", style=filled];
+  vertex_13 -> vertex_16 [label="s_sup-\l\{X7[1] → sk_B[0], X8[1] → sk_A[0]\}[0]\l", dir="back"];
+  vertex_16 [shape=box, label="Bet sk_A sk_B sk_A\l", style=filled];
+  vertex_16 -> vertex_12 [label="s_sup+\l\{X5[1] → sk_A[0], X6[1] → sk_B[0]\}[1]\l", dir="back"];
+  vertex_16 -> vertex_4 [label="s_sup+\l\{X5[1] → sk_A[0], X6[1] → sk_B[0]\}[0]\l", dir="back"];
+  }
+
+

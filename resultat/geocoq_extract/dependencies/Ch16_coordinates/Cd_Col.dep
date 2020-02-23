@@ -1,0 +1,3 @@
+lemme : l4_13 cong_3_sym
+rewrite : Projp Cd
+destruct : HPX HPY HCd

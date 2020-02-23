@@ -1,0 +1,6 @@
+include "../tarski_term_def.zf".
+#in_angle_trivial_1
+assert[name "Labelin_angle_trivial_1"] forall (A B C : point). A!=B => C!=B => InAngle A A B C.
+#l11_24
+assert[name "Labell11_24"] forall (P A B C : point). InAngle P A B C => InAngle P C B A.
+goal forall (A B C : point). A!=B => C!=B => InAngle C A B C.

@@ -1,0 +1,33 @@
+digraph "unsat_graph" {
+  vertex_0 [color=red, label="[]", shape=box, style=filled];
+  vertex_0 -> vertex_1 [label="simplify_reflect-", dir="back"];
+  vertex_1 [shape=box, label="sk_B ≠ sk_C\l", style=filled];
+  vertex_1 -> vertex_2 [label="cnf", dir="back"];
+  vertex_2 [shape=box, label="negated_goal\l  ¬ (∀ A/143:point B/144:point C/145:point A1/146:point B1/147:point \l        C1/148:point.\l        ((B/144 ≠ C/145) ⇒\l         ((Cong_3 A/143 B/144 C/145 A1/146 B1/147 C1/148) ⇒\l          (B1/147 ≠ C1/148))))\l  # skolems: [].\l", style=filled];
+  vertex_2 -> vertex_3 [label="cnf.neg", dir="back"];
+  vertex_3 [color=green, shape=box, label="goal\l  [file \"../resultat/geocoq_extract/zf/Ch11_angles/cong3_diff2.zf\" \l   \"zf_stmt_128\"]\l  ∀ A/143:point B/144:point C/145:point A1/146:point B1/147:point \l    C1/148:point.\l    ((B/144 ≠ C/145) ⇒\l     ((Cong_3 A/143 B/144 C/145 A1/146 B1/147 C1/148) ⇒ (B1/147 ≠ C1/148))).\l", style=filled];
+  vertex_0 -> vertex_4 [label="simplify_reflect-", dir="back"];
+  vertex_4 [shape=box, label="sk_B = sk_C\l", style=filled];
+  vertex_4 -> vertex_5 [label="s_sup-\l\{X0[0] → sk_C[1], X1[0] → sk_B[1], X2[0] → sk_B1[1]\}[0]\l", dir="back"];
+  vertex_5 [shape=box, label="forall (X0:point) (X1:point) (X2:point). [¬Cong X1 X0 X2 X2 ∨ X1 = X0]\l", style=filled];
+  vertex_5 -> vertex_6 [label="simplify\l\{X3[0] → X2[0]\}[0]\l", dir="back"];
+  vertex_6 [shape=box, label="forall (X0:point) (X1:point) (X2:point) (X3:point).\l[X1 = X0 ∨ X3 ≠ X2 ∨ ¬Cong X1 X0 X3 X2]\l", style=filled];
+  vertex_6 -> vertex_7 [label="cnf", dir="back"];
+  vertex_7 [color=yellow, shape=box, label="assert\l  [file \"../resultat/geocoq_extract/zf/Ch11_angles/cong3_diff2.zf\" \l   \"Labelcong_diff\"]\l  ∀ A/133:point B/134:point C/135:point D/136:point.\l    ((A/133 ≠ B/134) ⇒\l     ((Cong A/133 B/134 C/135 D/136) ⇒ (C/135 ≠ D/136))).\l", style=filled];
+  vertex_4 -> vertex_8 [label="s_sup-\l\{X0[0] → sk_C[1], X1[0] → sk_B[1], X2[0] → sk_B1[1]\}[1]\l", dir="back"];
+  vertex_8 [shape=box, label="Cong sk_B sk_C sk_B1 sk_B1\l", style=filled];
+  vertex_8 -> vertex_9 [label="rw_clause\l\{X4[1] → sk_A[0], \l X5[1] → sk_B[0], \l X6[1] → sk_C[0], \l X7[1] → sk_A1[0], \l X8[1] → sk_B1[0], \l X9[1] → sk_B1[0]\}[1]\l", dir="back"];
+  vertex_9 [color=navajowhite, shape=box, label="(Cong_3 X4 X5 X6 X7 X8 X9 :=\l   [Cong X4 X5 X7 X8∧\l    Cong X5 X6 X8 X9∧\l    Cong X4 X6 X7 X9] [B])\l", style=filled];
+  vertex_9 -> vertex_10 [label="rw.lit", dir="back"];
+  vertex_10 [color=yellow, shape=box, label="rewrite\l  [file \"../resultat/geocoq_extract/zf/Ch11_angles/cong3_diff2.zf\" \l   \"LabelCong_3\"]\l  Cong_3 X4 X5 X6 X7 X8 X9\l  =\> Cong X4 X5 X7 X8 && Cong X5 X6 X8 X9 && Cong X4 X6 X7 X9.\l", style=filled];
+  vertex_8 -> vertex_11 [label="rw_clause\l\{X4[1] → sk_A[0], \l X5[1] → sk_B[0], \l X6[1] → sk_C[0], \l X7[1] → sk_A1[0], \l X8[1] → sk_B1[0], \l X9[1] → sk_B1[0]\}[0]\l", dir="back"];
+  vertex_11 [shape=box, label="Cong_3 sk_A sk_B sk_C sk_A1 sk_B1 sk_B1\l", style=filled];
+  vertex_11 -> vertex_12 [label="demod", dir="back"];
+  vertex_12 [shape=box, label="sk_B1 = sk_C1\l", style=filled];
+  vertex_12 -> vertex_2 [label="cnf", dir="back"];
+  vertex_11 -> vertex_13 [label="demod", dir="back"];
+  vertex_13 [shape=box, label="Cong_3 sk_A sk_B sk_C sk_A1 sk_B1 sk_C1\l", style=filled];
+  vertex_13 -> vertex_2 [label="cnf", dir="back"];
+  }
+
+

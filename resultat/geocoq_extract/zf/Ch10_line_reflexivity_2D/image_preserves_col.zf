@@ -1,0 +1,10 @@
+include "../tarski_term_def.zf".
+#col_permutation_2
+assert[name "Labelcol_permutation_2"] forall (A B C : point). Col A B C => Col C A B.
+#image_preserves_bet
+assert[name "Labelimage_preserves_bet"] forall (A B C A1 B1 C1 X Y : point). X!=Y => ReflectL A A1 X Y => ReflectL B B1 X Y => ReflectL C C1 X Y => Bet A B C => Bet A1 B1 C1.
+#col_permutation_1
+assert[name "Labelcol_permutation_1"] forall (A B C : point). Col A B C => Col B C A.
+#bet_col
+assert[name "Labelbet_col"] forall (A B C : point). Bet A B C => Col A B C.
+goal forall (A B C A1 B1 C1 X Y : point). X!=Y => ReflectL A A1 X Y => ReflectL B B1 X Y => ReflectL C C1 X Y => Col A B C => Col A1 B1 C1.

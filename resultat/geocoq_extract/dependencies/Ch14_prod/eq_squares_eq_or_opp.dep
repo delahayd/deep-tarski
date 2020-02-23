@@ -1,0 +1,3 @@
+lemme : prod_null prod_exists sum_exists diff_sum diff_exists diff_null diff_null_eq diff_uniqueness diff_of_squares sum_opp
+rewrite : Sum Prod Ar2
+destruct : 

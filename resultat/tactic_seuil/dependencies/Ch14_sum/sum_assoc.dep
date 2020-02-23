@@ -1,0 +1,2 @@
+lemme : sum_assoc_1 sum_assoc_2
+rewrite :

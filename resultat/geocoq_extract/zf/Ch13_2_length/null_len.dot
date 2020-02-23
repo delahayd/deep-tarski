@@ -1,0 +1,37 @@
+digraph "unsat_graph" {
+  vertex_0 [color=red, label="[]", shape=box, style=filled];
+  vertex_0 -> vertex_1 [label="s_sup-\l", dir="back"];
+  vertex_1 [shape=box, label="¬EqL sk_la sk_lb\l", style=filled];
+  vertex_1 -> vertex_2 [label="cnf", dir="back"];
+  vertex_2 [shape=box, label="negated_goal\l  ¬ (∀ A/144:point B/145:point la/146:(point → point → prop) \l        lb/147:(point → point → prop).\l        ((Len A/144 A/144 la/146) ⇒\l         ((Len B/145 B/145 lb/147) ⇒ (EqL la/146 lb/147))))\l  # skolems: [].\l", style=filled];
+  vertex_2 -> vertex_3 [label="cnf.neg", dir="back"];
+  vertex_3 [color=green, shape=box, label="goal\l  [file \"../resultat/geocoq_extract/zf/Ch13_2_length/null_len.zf\" \l   \"zf_stmt_128\"]\l  ∀ A/144:point B/145:point la/146:(point → point → prop) \l    lb/147:(point → point → prop).\l    ((Len A/144 A/144 la/146) ⇒\l     ((Len B/145 B/145 lb/147) ⇒ (EqL la/146 lb/147))).\l", style=filled];
+  vertex_0 -> vertex_4 [label="s_sup-\l", dir="back"];
+  vertex_4 [shape=box, label="EqL sk_la sk_lb\l", style=filled];
+  vertex_4 -> vertex_5 [label="s_sup-\l\{X0[0] → sk_A[1], F0[1] → sk_lb[0]\}[1]\l", dir="back"];
+  vertex_5 [shape=box, label="forall (F0:point → point → prop). [EqL sk_la F0 ∨ ¬Len sk_A sk_A F0]\l", style=filled];
+  vertex_5 -> vertex_6 [label="s_sup-\l\{X7[0] → sk_A[1], X8[0] → sk_A[1], F9[0] → sk_la[1]\}[0]\l", dir="back"];
+  vertex_6 [shape=box, label="forall (X7:point) (X8:point) (F9:point → point → prop) \l       (F10:point → point → prop).\l[¬Len X7 X8 F9 ∨ EqL F9 F10 ∨ ¬Len X7 X8 F10]\l", style=filled];
+  vertex_6 -> vertex_7 [label="cnf", dir="back"];
+  vertex_7 [color=yellow, shape=box, label="assert\l  [file \"../resultat/geocoq_extract/zf/Ch13_2_length/null_len.zf\" \l   \"Labelall_eql\"]\l  ∀ A/140:point B/141:point l1/142:(point → point → prop) \l    l2/143:(point → point → prop).\l    ((Len A/140 B/141 l1/142) ⇒\l     ((Len A/140 B/141 l2/143) ⇒ (EqL l1/142 l2/143))).\l", style=filled];
+  vertex_5 -> vertex_8 [label="s_sup-\l\{X7[0] → sk_A[1], X8[0] → sk_A[1], F9[0] → sk_la[1]\}[1]\l", dir="back"];
+  vertex_8 [shape=box, label="Len sk_A sk_A sk_la\l", style=filled];
+  vertex_8 -> vertex_2 [label="cnf", dir="back"];
+  vertex_4 -> vertex_9 [label="s_sup-\l\{X0[0] → sk_A[1], F0[1] → sk_lb[0]\}[0]\l", dir="back"];
+  vertex_9 [shape=box, label="forall (X0:point). Len X0 X0 sk_lb\l", style=filled];
+  vertex_9 -> vertex_10 [label="s_sup-\l\{X1[0] → sk_B[1], F2[0] → sk_lb[1]\}[0]\l", dir="back"];
+  vertex_10 [shape=box, label="forall (X0:point) (X1:point) (F2:point → point → prop).\l[¬Len X1 X1 F2 ∨ Len X0 X0 F2]\l", style=filled];
+  vertex_10 -> vertex_11 [label="s_sup-\l\{X2[0] → X3[0], X4[0] → X5[0], X0[1] → X2[0], X1[1] → X4[0]\}[0]\l", dir="back"];
+  vertex_11 [shape=box, label="forall (X2:point) (X3:point) (X4:point) (X5:point) \l       (F6:point → point → prop).\l[¬Cong X2 X3 X4 X5 ∨ ¬Len X2 X3 F6 ∨ Len X4 X5 F6]\l", style=filled];
+  vertex_11 -> vertex_12 [label="cnf", dir="back"];
+  vertex_12 [color=yellow, shape=box, label="assert\l  [file \"../resultat/geocoq_extract/zf/Ch13_2_length/null_len.zf\" \l   \"Labelis_len_cong_is_len\"]\l  ∀ A/135:point B/136:point C/137:point D/138:point \l    l/139:(point → point → prop).\l    ((Len A/135 B/136 l/139) ⇒\l     ((Cong A/135 B/136 C/137 D/138) ⇒ (Len C/137 D/138 l/139))).\l", style=filled];
+  vertex_10 -> vertex_13 [label="s_sup-\l\{X2[0] → X3[0], X4[0] → X5[0], X0[1] → X2[0], X1[1] → X4[0]\}[1]\l", dir="back"];
+  vertex_13 [shape=box, label="forall (X0:point) (X1:point). Cong X0 X0 X1 X1\l", style=filled];
+  vertex_13 -> vertex_14 [label="cnf", dir="back"];
+  vertex_14 [color=yellow, shape=box, label="assert\l  [file \"../resultat/geocoq_extract/zf/Ch13_2_length/null_len.zf\" \l   \"Labelcong_trivial_identity\"]\l  ∀ A/133:point B/134:point. (Cong A/133 A/133 B/134 B/134).\l", style=filled];
+  vertex_9 -> vertex_15 [label="s_sup-\l\{X1[0] → sk_B[1], F2[0] → sk_lb[1]\}[1]\l", dir="back"];
+  vertex_15 [shape=box, label="Len sk_B sk_B sk_lb\l", style=filled];
+  vertex_15 -> vertex_2 [label="cnf", dir="back"];
+  }
+
+

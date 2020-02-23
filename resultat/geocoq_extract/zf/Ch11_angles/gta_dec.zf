@@ -1,0 +1,5 @@
+include "../tarski_term_def.zf".
+#lta_dec
+assert[name "Labellta_dec"] forall (A B C D E F : point). LtA A B C D E F || ~LtA A B C D E F.
+rewrite[name "LabelGtA"] forall (A B C D E F : point). GtA A B C D E F <=> LtA D E F A B C.
+goal forall (A B C D E F : point). GtA A B C D E F || ~GtA A B C D E F.

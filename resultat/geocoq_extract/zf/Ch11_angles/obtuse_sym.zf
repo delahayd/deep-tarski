@@ -1,0 +1,6 @@
+include "../tarski_term_def.zf".
+#lta_right_comm
+assert[name "Labellta_right_comm"] forall (A B C D E F : point). LtA A B C D E F => LtA A B C F E D.
+rewrite[name "LabelObtuse"] forall (A B C : point). Obtuse A B C <=> (exists (A1 B1 C1 : point). Per A1 B1 C1 && GtA A B C A1 B1 C1).
+rewrite[name "LabelGtA"] forall (A B C D E F : point). GtA A B C D E F <=> LtA D E F A B C.
+goal forall (A B C : point). Obtuse A B C => Obtuse C B A.

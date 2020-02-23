@@ -1,0 +1,6 @@
+include "../tarski_term_def.zf".
+#not_strict_par1
+assert[name "Labelnot_strict_par1"] forall (A B C D X : point). Par A B C D => Col A B X => Col C D X => Col A B C.
+#not_strict_par2
+assert[name "Labelnot_strict_par2"] forall (A B C D X : point). Par A B C D => Col A B X => Col C D X => Col A B D.
+goal forall (A B C D X : point). Par A B C D => Col A B X => Col C D X => Col A B C && Col A B D.

@@ -1,0 +1,3 @@
+lemme : not_par_two_sides not_one_side_two_sides not_col_permutation_3 one_side_dec not_col_distincts l9_2 not_col_permutation_5 invert_two_sides
+rewrite : TS
+destruct : 

@@ -1,0 +1,6 @@
+include "../tarski_term_def.zf".
+#l9_8_2
+assert[name "Labell9_8_2"] forall (P Q A B C : point). TS P Q A C => OS P Q A B => TS P Q B C.
+#not_two_sides_id
+assert[name "Labelnot_two_sides_id"] forall (A P Q : point). ~TS P Q A A.
+goal forall (P Q A B : point). TS P Q A B => ~OS P Q A B.

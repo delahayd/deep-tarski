@@ -1,0 +1,3 @@
+lemme : le_trivial le_anti_symmetry cong_identity
+rewrite : 
+destruct : 

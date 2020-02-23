@@ -1,0 +1,22 @@
+digraph "unsat_graph" {
+  vertex_0 [color=red, label="[]", shape=box, style=filled];
+  vertex_0 -> vertex_1 [label="simplify", dir="back"];
+  vertex_1 [color=red, label="[]", shape=box, style=filled];
+  vertex_1 -> vertex_2 [label="demod", dir="back"];
+  vertex_2 [shape=box, label="Le sk_C sk_D sk_A sk_B\l", style=filled];
+  vertex_2 -> vertex_3 [label="cnf", dir="back"];
+  vertex_3 [shape=box, label="negated_goal\l  ¬ (∀ A/137:point B/138:point C/139:point D/140:point.\l        ((Lt A/137 B/138 C/139 D/140) ⇒ (¬ (Le C/139 D/140 A/137 B/138))))\l  # skolems: [].\l", style=filled];
+  vertex_3 -> vertex_4 [label="cnf.neg", dir="back"];
+  vertex_4 [color=green, shape=box, label="goal\l  [file \"../resultat/geocoq_extract/zf/Ch05_bet_le/lt__nle.zf\" \"zf_stmt_128\"]\l  ∀ A/137:point B/138:point C/139:point D/140:point.\l    ((Lt A/137 B/138 C/139 D/140) ⇒ (¬ (Le C/139 D/140 A/137 B/138))).\l", style=filled];
+  vertex_1 -> vertex_5 [label="demod", dir="back"];
+  vertex_5 [shape=box, label="¬Le sk_C sk_D sk_A sk_B\l", style=filled];
+  vertex_5 -> vertex_6 [label="s_sup-\l\{X0[0] → sk_A[1], X1[0] → sk_B[1], X2[0] → sk_C[1], X3[0] → sk_D[1]\}[0]\l", dir="back"];
+  vertex_6 [shape=box, label="forall (X0:point) (X1:point) (X2:point) (X3:point).\l[¬Lt X0 X1 X2 X3 ∨ ¬Le X2 X3 X0 X1]\l", style=filled];
+  vertex_6 -> vertex_7 [label="cnf", dir="back"];
+  vertex_7 [color=yellow, shape=box, label="assert\l  [file \"../resultat/geocoq_extract/zf/Ch05_bet_le/lt__nle.zf\" \"Labelle__nlt\"]\l  ∀ A/133:point B/134:point C/135:point D/136:point.\l    ((Le A/133 B/134 C/135 D/136) ⇒ (¬ (Lt C/135 D/136 A/133 B/134))).\l", style=filled];
+  vertex_5 -> vertex_8 [label="s_sup-\l\{X0[0] → sk_A[1], X1[0] → sk_B[1], X2[0] → sk_C[1], X3[0] → sk_D[1]\}[1]\l", dir="back"];
+  vertex_8 [shape=box, label="Lt sk_A sk_B sk_C sk_D\l", style=filled];
+  vertex_8 -> vertex_3 [label="cnf", dir="back"];
+  }
+
+

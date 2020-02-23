@@ -1,0 +1,96 @@
+include "../tarski_term_def.zf".
+val O : point.
+val E : point.
+val E1 : point.
+assert ~Col O E E1.
+#out_dec
+assert[name "Labelout_dec"] forall (P A B : point). Out P A B || ~Out P A B.
+#opp_exists
+assert[name "Labelopp_exists"] forall (A : point). Col O E A => (exists (MA : point). Opp O E E1 A MA).
+#l5_2
+assert[name "Labell5_2"] forall (A B C D : point). A!=B => Bet A B C => Bet A B D => Bet B C D || Bet B D C.
+#prod_O_l_eq
+assert[name "Labelprod_O_l_eq"] forall (O E E1 A B C : point). Prodp O E E1 A B C => Prod O E E1 A B C.
+#opp_same_square
+assert[name "Labelopp_same_square"] forall (O E E1 A B A2 : point). Opp O E E1 A B => Prod O E E1 A A A2 => Prod O E E1 B B A2.
+#perp_in_per
+assert[name "Labelperp_in_per"] forall (A B C : point). Perp_at B A B B C => Per A B C.
+#prod_0_l
+assert[name "Labelprod_0_l"] forall (O E E1 A B C APC BPC : point). LeP O E E1 A B => Sum O E E1 A C APC => Sum O E E1 B C BPC => LeP O E E1 APC BPC.
+#cong_3421
+assert[name "Labelcong_3421"] forall (A B C D : point). Cong A B C D => Cong C D B A.
+#eq_dec_points
+assert[name "Labeleq_dec_points"] forall (A B : point). A=B || A!=B.
+#cong_right_commutativity
+assert[name "Labelcong_right_commutativity"] forall (A B C D : point). Cong A B C D => Cong A B D C.
+#opp_neg_pos
+assert[name "Labelopp_neg_pos"] forall (O E E1 A MA : point). Ng O E A => Opp O E E1 A MA => Ps O E MA.
+#cong_symmetry
+assert[name "Labelcong_symmetry"] forall (A B C D : point). Cong A B C D => Cong C D A B.
+#not_col_distincts
+assert[name "Labelnot_col_distincts"] forall (A B C : point). ~Col A B C => ~Col A B C && A!=B && B!=C && A!=C.
+#perp_perp_in
+assert[name "Labelperp_perp_in"] forall (A B C : point). Perp A B C A => Perp_at A A B C A.
+#col_permutation_5
+assert[name "Labelcol_permutation_5"] forall (A B C : point). Col A B C => Col A C B.
+#cong_transitivity
+assert[name "Labelcong_transitivity"] forall (A B C D E F : point). Cong A B C D => Cong C D E F => Cong A B E F.
+#l7_20
+assert[name "Labell7_20"] forall (M A B : point). Col A M B => Cong M A M B => A=B || Midpoint M A B.
+#midpoint_opp
+assert[name "Labelmidpoint_opp"] forall (O E E1 A B : point). Ar2 O E E1 O A B => Midpoint O A B => Opp O E E1 A B.
+#out_col
+assert[name "Labelout_col"] forall (A B C : point). Out A B C => Col A B C.
+#per_col
+assert[name "Labelper_col"] forall (A B C D : point). B!=C => Per A B C => Col B C D => Per A B D.
+#perp_in_comm
+assert[name "Labelperp_in_comm"] forall (A B C D X : point). Perp_at X A B C D => Perp_at X B A D C.
+#not_out_bet
+assert[name "Labelnot_out_bet"] forall (A B C : point). Col A B C => ~Out B A C => Bet A B C.
+#pythagoras
+assert[name "Labelpythagoras"] forall (O E E1 A B C AC BC AB AC2 BC2 AB2 : point). O!=E => Per A C B => Length O E E1 A B AB => Length O E E1 B C BC => Length O E E1 A C AC => Prod O E E1 AC AC AC2 => Prod O E E1 AB AB AB2 => Prod O E E1 BC BC BC2 => Sum O E E1 AC2 BC2 AB2.
+#perp_not_col
+assert[name "Labelperp_not_col"] forall (A B P : point). Perp A B P A => ~Col A B P.
+#col_trivial_1
+assert[name "Labelcol_trivial_1"] forall (A B : point). Col A A B.
+#cong_identity
+assert[name "Labelcong_identity"] forall (A B C : point). Cong A B C C => A = B.
+#l8_2
+assert[name "Labell8_2"] forall (A B C : point). Per A B C => Per C B A.
+#perp_left_comm
+assert[name "Labelperp_left_comm"] forall (A B C D : point). Perp A B C D => Perp B A C D.
+#col_permutation_3
+assert[name "Labelcol_permutation_3"] forall (A B C : point). Col A B C => Col C B A.
+#prod_uniqueness
+assert[name "Labelprod_uniqueness"] forall (A B C1 C2 : point). Prod O E E1 A B C1 => Prod O E E1 A B C2 => C1=C2.
+#perp_distinct
+assert[name "Labelperp_distinct"] forall (A B C D : point). Perp A B C D => A!=B && C!=D.
+#opp_midpoint
+assert[name "Labelopp_midpoint"] forall (O E E1 A MA : point). Opp O E E1 A MA => Midpoint O A MA.
+#sum_O_B
+assert[name "Labelsum_O_B"] forall (B : point). Col O E B => Sum O E E1 O B B.
+#sum_diff
+assert[name "Labelsum_diff"] forall (O E E1 A B S : point). Sum O E E1 A B S => Diff O E E1 S A B.
+#diff_A_O
+assert[name "Labeldiff_A_O"] forall (O E E1 A : point). ~Col O E E1 => Col O E A => Diff O E E1 A O A.
+#perp_comm
+assert[name "Labelperp_comm"] forall (A B C D : point). Perp A B C D => Perp B A D C.
+#sum_A_O
+assert[name "Labelsum_A_O"] forall (A : point). Col O E A => Sum O E E1 A O A.
+#perp_right_comm
+assert[name "Labelperp_right_comm"] forall (A B C D : point). Perp A B C D => Perp A B D C.
+#cong_reflexivity
+assert[name "Labelcong_reflexivity"] forall (A B : point). Cong A B A B.
+rewrite[name "LabelPs"] forall (O E A : point). Ps O E A <=> Out O A E.
+rewrite[name "LabelOpp"] forall (O E E1 A B : point). Opp O E E1 A B <=> Sum O E E1 B A O.
+rewrite[name "LabelPythRel"] forall (O E E1 A B C : point). PythRel O E E1 A B C <=> Ar2 O E E1 A B C && ((O = B && (A = C || Opp O E E1 A C)) || (exists (B1 : point). Perp O B1 O B && Cong O B1 O B && Cong O C A B1)).
+rewrite[name "LabelOut"] forall (P A B : point). Out P A B <=> A != P && B != P && (Bet P A B || Bet P B A).
+rewrite[name "LabelSum"] forall (O E E1 A B C : point). Sum O E E1 A B C <=> Ar2 O E E1 A B C && (exists (A1 C1 : point). Pj E E1 A  A1 && Col O E1 A1 && Pj O E  A1 C1 && Pj O E1 B  C1 && Pj E1 E C1 C).
+rewrite[name "LabelMidpoint"] forall (M A B : point). Midpoint M A B <=> Bet A M B && Cong A M M B.
+rewrite[name "LabelProd"] forall (O E E1 A B C : point). Prod O E E1 A B C <=> Ar2 O E E1 A B C && (exists (B1 : point). Pj E E1 B B1 && Col O E1 B1 && Pj E1 A B1 C).
+rewrite[name "LabelLength"] forall (O E E1 A B L: point). Length O E E1 A B L <=> O != E && Col O E L && LeP O E E1 O L && Cong O L A B.
+rewrite[name "LabelLeP"] forall (O E E1 A B : point). LeP O E E1 A B <=> LtP O E E1 A B || A = B.
+rewrite[name "LabelNg"] forall (O E A : point). Ng O E A <=> A != O && E != O && Bet A O E .
+rewrite[name "LabelAr2"] forall (O E E1 A B C : point). Ar2 O E E1 A B C <=> ~ Col O E E1 && Col O E A && Col O E B && Col O E C.
+rewrite[name "LabelLtP"] forall (O E E1 A B : point). LtP O E E1 A B <=> (exists (D : point). Diff O E E1 B A D && Ps O E D).
+goal forall (O E E1 A B C A2 B2 C2 : point). PythRel O E E1 A B C => Prod O E E1 A A A2 => Prod O E E1 B B B2 => Prod O E E1 C C C2 => Sum O E E1 A2 B2 C2.

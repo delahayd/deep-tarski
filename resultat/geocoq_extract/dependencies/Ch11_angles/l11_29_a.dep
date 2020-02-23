@@ -1,0 +1,3 @@
+lemme : angle_construction_3 l5_2 bet_conga_bet conga_sym invert_one_side col_out2_col in_angle_one_side col_conga_col or_bet_out col_permutation_1 l4_6 cong_commutativity between_exchange2 conga_comm col_permutation_4 segment_construction out_out_one_side col_permutation_5 cong2_conga_cong l11_25 in_angle_out out_trivial one_side_symmetry between_inner_transitivity l11_10 segment_construction_3 between_exchange4 cong_symmetry l11_22b l6_6 between_exchange3 out_col in_angle_trivial_2 between_trivial2 bet_out_out_bet angle_construction_1 l11_21_a conga_line outer_transitivity_between2 cong_identity
+rewrite : CongA InAngle Out LeA Col
+destruct : 

@@ -1,0 +1,6 @@
+include "../tarski_term_def.zf".
+#par_symmetry
+assert[name "Labelpar_symmetry"] forall (A B C D : point). Par A B C D => Par C D A B.
+#par_col2_par
+assert[name "Labelpar_col2_par"] forall (A B C D E F : point). E!=F => Par A B C D => Col C D E => Col C D F => Par A B E F.
+goal forall (A B C D E F G H : point). E!=F => G!=H => Par A B C D => Col A B E => Col A B F => Col C D G => Col C D H => Par E F G H.

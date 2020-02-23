@@ -1,0 +1,2 @@
+lemme : acute_lea_acute conga_sym conga_right_comm out_trivial between_symmetry
+rewrite : Q_CongA_Null_Acute Q_CongA_Acute Q_Cong_Null

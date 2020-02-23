@@ -1,0 +1,3 @@
+lemme : prod_assoc1 opp_exists prod_pos_pos opp_prod prod_comm col_trivial_2 opp_comm pos_null_neg
+rewrite : Prod Ar2
+destruct : 

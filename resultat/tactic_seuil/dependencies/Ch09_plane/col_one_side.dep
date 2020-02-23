@@ -1,0 +1,2 @@
+lemme : col_permutation_5 col_permutation_2 between_trivial2 col_trivial_1 col_two_sides col_permutation_1 between_symmetry col_trivial_2 cong_symmetry col_transitivity_1
+rewrite : OS Out InAngle

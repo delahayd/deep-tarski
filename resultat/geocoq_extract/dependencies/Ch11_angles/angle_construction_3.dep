@@ -1,0 +1,3 @@
+lemme : eq_dec_points angle_construction_2 conga_trivial_1 not_col_exists
+rewrite : 
+destruct : 

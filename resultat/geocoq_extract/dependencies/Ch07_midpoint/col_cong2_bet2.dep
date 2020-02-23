@@ -1,0 +1,3 @@
+lemme : eq_dec_points cong_symmetry bet_cong_eq between_trivial outer_transitivity_between col_cong_bet between_symmetry cong_3421 cong_identity
+rewrite : 
+destruct : 

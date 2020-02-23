@@ -1,0 +1,3 @@
+lemme : cong_left_commutativity cong_3421 bet_neq21__neq bet_neq12__neq segment_construction l2_11 outer_transitivity_between cong_diff_4 cong_symmetry five_segment_with_def cong_right_commutativity cong_4312 between_symmetry outer_transitivity_between2
+rewrite : CongA OFSC
+destruct : 

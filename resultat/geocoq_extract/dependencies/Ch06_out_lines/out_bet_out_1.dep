@@ -1,0 +1,3 @@
+lemme : not_bet_and_out eq_dec_points between_exchange2 between_inner_transitivity between_symmetry
+rewrite : Out
+destruct : 

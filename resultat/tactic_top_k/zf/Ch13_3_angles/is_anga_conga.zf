@@ -1,0 +1,5 @@
+include "../rew_type.zf".
+rewrite[name "LabelAng_Acute"] forall (A B C : point) (a : point->point->point->prop). Ang_Acute A B C a <=> Q_CongA_Acute a && a A B C.
+#anga_conga
+assert[name "Labelanga_conga"] forall (A B C A1 B1 C1 : point) (a : point->point->point->prop). Q_CongA_Acute a => a A B C => a A1 B1 C1 => CongA A B C A1 B1 C1.
+goal forall (A B C A1 B1 C1 : point) (a : point->point->point->prop). Ang_Acute A B C a => Ang_Acute A1 B1 C1 a => CongA A B C A1 B1 C1.

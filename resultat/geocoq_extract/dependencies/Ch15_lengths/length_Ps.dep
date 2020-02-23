@@ -1,0 +1,3 @@
+lemme : cong_identity diff_sum cong_symmetry sum_cong
+rewrite : Sum Out Length LtP Parallelogram_flat Ar2 Ps LeP
+destruct : 

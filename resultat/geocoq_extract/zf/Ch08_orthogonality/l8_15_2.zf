@@ -1,0 +1,4 @@
+include "../tarski_term_def.zf".
+#l8_14_2_1a
+assert[name "Labell8_14_2_1a"] forall (X A B C D : point). Perp_at X A B C D => Perp A B C D.
+goal forall (A B C X : point). A!=B => Col A B X => Perp_at X A B C X => Perp A B C X.

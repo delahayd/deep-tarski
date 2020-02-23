@@ -1,0 +1,3 @@
+lemme : eq_dec_points perp_comm perp_right_comm col_permutation_1 l7_2 l7_3_2 perp_left_comm between_symmetry midpoint_existence_aux le_cases l8_21 col_permutation_5
+rewrite : 
+destruct : 

@@ -1,0 +1,3 @@
+lemme : sum_exists sum3_col sum_comm sum_assoc
+rewrite : sum3
+destruct : HH

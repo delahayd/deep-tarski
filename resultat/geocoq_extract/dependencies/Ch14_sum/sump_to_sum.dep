@@ -1,0 +1,3 @@
+lemme : par_symmetry col_trivial_3 par_col_par eq_dec_points par_right_comm
+rewrite : Sum Pj Sump Proj
+destruct : 

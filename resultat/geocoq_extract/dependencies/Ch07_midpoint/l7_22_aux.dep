@@ -1,0 +1,3 @@
+lemme : eq_dec_points l4_2 l5_2 le_zero symmetric_point_construction cong_left_commutativity l7_17 between_identity cong_commutativity between_trivial cong_reverse_identity l4_17 l7_3 l7_16 cong_reflexivity cong_symmetry between_exchange3 l3_17 cong_right_commutativity l7_15 between_trivial2 l5_6 between_symmetry cong_transitivity l6_13_1
+rewrite : IFSC Midpoint Col Out
+destruct : 

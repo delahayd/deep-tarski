@@ -1,0 +1,2 @@
+lemme : symmetric_point_uniqueness eq_dec_points l7_2 l10_4 l10_2_uniqueness
+rewrite : Reflect

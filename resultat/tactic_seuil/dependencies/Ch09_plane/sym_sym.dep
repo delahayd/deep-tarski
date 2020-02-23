@@ -1,0 +1,2 @@
+lemme : l7_2 between_symmetry cong_identity between_trivial2
+rewrite : Col ReflectP Midpoint Out

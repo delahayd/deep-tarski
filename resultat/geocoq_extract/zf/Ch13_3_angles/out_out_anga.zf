@@ -1,0 +1,6 @@
+include "../tarski_term_def.zf".
+#anga_conga_anga
+assert[name "Labelanga_conga_anga"] forall (A B C A1 B1 C1 : point) (a : point->point->point->prop). Q_CongA_Acute a => a A B C => CongA A B C A1 B1 C1 => a A1 B1 C1.
+#l11_21_b
+assert[name "Labell11_21_b"] forall (A B C A1 B1 C1 : point). Out B A C => Out B1 A1 C1 => CongA A B C A1 B1 C1.
+goal forall (A B C A1 B1 C1 : point) (a : point->point->point->prop). Q_CongA_Acute a => Out B A C => Out B1 A1 C1 => a A B C => a A1 B1 C1.

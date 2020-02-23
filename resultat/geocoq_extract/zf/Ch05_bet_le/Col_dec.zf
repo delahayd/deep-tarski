@@ -1,0 +1,5 @@
+include "../tarski_term_def.zf".
+#bet_dec
+assert[name "Labelbet_dec"] forall (A B C : point). Bet A B C || ~Bet A B C.
+rewrite[name "LabelCol"] forall (A B C : point). Col A B C <=> Bet A B C || Bet B C A || Bet C A B.
+goal forall (A B C : point). Col A B C || ~Col A B C.

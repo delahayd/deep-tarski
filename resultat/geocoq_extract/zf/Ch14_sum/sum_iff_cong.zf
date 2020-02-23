@@ -1,0 +1,16 @@
+include "../tarski_term_def.zf".
+val O : point.
+val E : point.
+val E1 : point.
+assert ~Col O E E1.
+#sum_cong2
+assert[name "Labelsum_cong2"] forall (A B C : point). Sum O E E1 A B C => (A!=O || B!=O) => (Cong O A B C && Cong O B A C).
+#cong_sum
+assert[name "Labelcong_sum"] forall (A B C : point). O!=C || B!=A => Ar2 O E E1 A B C => Cong O A B C => Cong O B A C => Sum O E E1 A B C.
+#eq_dec_points
+assert[name "Labeleq_dec_points"] forall (A B : point). A=B || A!=B.
+#sum_O_O
+assert[name "Labelsum_O_O"] Sum O E E1 O O O.
+#sum_uniqueness
+assert[name "Labelsum_uniqueness"] forall (A B C1 C2 : point). Sum O E E1 A B C1 => Sum O E E1 A B C2 => C1=C2.
+goal forall (A B C : point). Ar2 O E E1 A B C => (O!=C || B!=A) => ((Cong O A B C && Cong O B A C ) <=> Sum O E E1 A B C).

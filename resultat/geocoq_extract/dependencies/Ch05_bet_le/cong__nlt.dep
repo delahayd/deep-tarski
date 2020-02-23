@@ -1,0 +1,3 @@
+lemme : between_symmetry cong_symmetry between_trivial le__nlt
+rewrite : Le
+destruct : 

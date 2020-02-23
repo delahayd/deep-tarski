@@ -1,0 +1,25 @@
+include "../tarski_term_def.zf".
+val O : point.
+val E : point.
+val E1 : point.
+assert ~Col O E E1.
+#sum_pos_pos
+assert[name "Labelsum_pos_pos"] forall (O E E1 A B AB : point). Ps O E A => Ps O E B => Sum O E E1 A B AB => Ps O E AB.
+#sum_A_O_eq
+assert[name "Labelsum_A_O_eq"] forall (A C : point). Sum O E E1 A O C => A=C.
+#sum_diff2_diff_sum2_b
+assert[name "Labelsum_diff2_diff_sum2_b"] forall (O E E1 A B C X Y Z dXA dYB dZC : point). Sum O E E1 A B C => Sum O E E1 X Y Z => Diff O E E1 X A dXA => Diff O E E1 Y B dYB => Diff O E E1 Z C dZC => Sum O E E1 dXA dYB dZC.
+#diff_exists
+assert[name "Labeldiff_exists"] forall (O E E1 A B : point). ~Col O E E1 => Col O E A => Col O E B => (exists (D : point). Diff O E E1 A B D).
+#sum_O_B_eq
+assert[name "Labelsum_O_B_eq"] forall (B C : point). Sum O E E1 O B C => B=C.
+#diff_null
+assert[name "Labeldiff_null"] forall (O E E1 A : point). ~Col O E E1 => Col O E A => Diff O E E1 A A O.
+#sum_uniqueness
+assert[name "Labelsum_uniqueness"] forall (A B C1 C2 : point). Sum O E E1 A B C1 => Sum O E E1 A B C2 => C1=C2.
+#sum_ar2
+assert[name "Labelsum_ar2"] forall (O E E1 A B C : point). Sum O E E1 A B C => Ar2 O E E1 A B C.
+rewrite[name "LabelAr2"] forall (O E E1 A B C : point). Ar2 O E E1 A B C <=> ~ Col O E E1 && Col O E A && Col O E B && Col O E C.
+rewrite[name "LabelLtP"] forall (O E E1 A B : point). LtP O E E1 A B <=> (exists (D : point). Diff O E E1 B A D && Ps O E D).
+rewrite[name "LabelLeP"] forall (O E E1 A B : point). LeP O E E1 A B <=> LtP O E E1 A B || A = B.
+goal forall (O E E1 A B C X Y Z : point). LeP O E E1 A X => LeP O E E1 B Y => Sum O E E1 A B C => Sum O E E1 X Y Z.

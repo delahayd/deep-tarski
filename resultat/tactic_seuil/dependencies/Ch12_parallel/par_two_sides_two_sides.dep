@@ -1,0 +1,2 @@
+lemme : col_permutation_5 col_permutation_2 col_trivial_1 bet_col l12_6 par_strict_symmetry between_trivial col_permutation_3 col_permutation_4 col_permutation_1 between_symmetry cong_reflexivity col_trivial_2 eq_dec_points outer_pasch par_distincts cong_symmetry col_transitivity_1
+rewrite : Col TS Perp Le Par_strict Par

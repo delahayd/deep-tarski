@@ -1,0 +1,5 @@
+include "../rew_type.zf".
+rewrite[name "LabelLength"] forall (O E E1 A B L: point). Length O E E1 A B L <=> O != E && Col O E L && LeP O E E1 O L && Cong O L A B.
+#prod_comm
+assert[name "Labelprod_comm"] forall (O E E1 A B C : point). Prod O E E1 A B C => Prod O E E1 B A C.
+goal forall (O E E1 A B C : point). Prod O E E1 A B C => Prod O E E1 B A C.

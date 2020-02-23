@@ -1,0 +1,2 @@
+lemme : cong_symmetry lcos_lg_not_null cong_transitivity
+rewrite : Lcos Q_Cong_Null

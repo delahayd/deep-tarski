@@ -1,0 +1,3 @@
+lemme : l14_36_a diff_sum cong_transitivity out_col l6_6 l6_7 sum_O_B sum_uniqueness between_identity sum_exists cong_symmetry l15_3 l2_11 sum_pos_pos cong_identity col_permutation_5 sum_O_O l6_11_uniqueness sum_A_O
+rewrite : Sum Is_length Out Length LtP Ar2 Ps LeP
+destruct : 

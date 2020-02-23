@@ -1,0 +1,3 @@
+lemme : cong_symmetry l7_13 l7_3 cong_right_commutativity l4_19 symmetric_point_construction l7_2 cong_transitivity
+rewrite : Midpoint
+destruct : 

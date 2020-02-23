@@ -1,0 +1,6 @@
+include "../tarski_term_def.zf".
+#bet_betCood_aux
+assert[name "Labelbet_betCood_aux"] forall (O E E1 S U1 U2 A AX AY B BX BY C CX CY : point). Cd O E S U1 U2 A AX AY => Cd O E S U1 U2 B BX BY => Cd O E S U1 U2 C CX CY => Bet A B C => Bet AX BX CX.
+#coord_exchange_axes
+assert[name "Labelcoord_exchange_axes"] forall (O E S U1 U2 P X Y : point). Cd O E S U1 U2 P X Y => Cd O E S U2 U1 P X Y.
+goal forall (O E E1 S U1 U2 A AX AY B BX BY C CX CY : point). Cd O E S U1 U2 A AX AY => Cd O E S U1 U2 B BX BY => Cd O E S U1 U2 C CX CY => Bet A B C => Bet AX BX CX && Bet AY BY CY.

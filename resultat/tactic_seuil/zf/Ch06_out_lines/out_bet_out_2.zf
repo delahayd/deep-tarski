@@ -1,0 +1,17 @@
+include "../rew_type.zf".
+rewrite[name "LabelInAngle"] forall (P A B C : point). InAngle P A B C <=> A != B && C != B && P != B && (exists (X : point). Bet A X C && (X = B || Out B X P)).
+#between_exchange2
+assert[name "Labelbetween_exchange2"] forall (A B C D : point). Bet A B D => Bet B C D => Bet A C D.
+#between_exchange4
+assert[name "Labelbetween_exchange4"] forall (A B C D : point). Bet A B C => Bet A C D => Bet A B D.
+#between_inner_transitivity
+assert[name "Labelbetween_inner_transitivity"] forall (A B C D : point). Bet A B D => Bet B C D => Bet A B C.
+#between_symmetry
+assert[name "Labelbetween_symmetry"] forall (A B C : point). Bet A B C => Bet C B A.
+#l6_6
+assert[name "Labell6_6"] forall (P A B : point). Out P A B => Out P B A.
+#not_bet_and_out
+assert[name "Labelnot_bet_and_out"] forall (A B C : point). ~(Bet A B C && Out B A C).
+#out_bet_out_1
+assert[name "Labelout_bet_out_1"] forall (A B C P : point). Out P A C => Bet A B C => Out P A B.
+goal forall (A B C P : point). Out P A C => Bet A B C=> Out P B C.

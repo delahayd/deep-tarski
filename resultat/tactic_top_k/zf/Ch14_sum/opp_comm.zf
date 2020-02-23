@@ -1,0 +1,5 @@
+include "../rew_type.zf".
+rewrite[name "LabelOpp"] forall (O E E1 A B : point). Opp O E E1 A B <=> Sum O E E1 B A O.
+#sum_comm
+assert[name "Labelsum_comm"] forall (A B C O E E1 : point). ~ Col O E E1 => Sum O E E1 A B C => Sum O E E1 B A C.
+goal forall (X Y O E E1 : point). ~ Col O E E1 => Opp O E E1 X Y => Opp O E E1 Y X.

@@ -1,0 +1,3 @@
+lemme : l4_5 cong_symmetry l2_11 cong_commutativity between_symmetry segment_construction cong_3_swap_2
+rewrite : Col Cong_3
+destruct : 

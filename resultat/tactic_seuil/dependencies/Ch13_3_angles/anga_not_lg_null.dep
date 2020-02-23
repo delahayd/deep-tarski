@@ -1,0 +1,2 @@
+lemme : anga_is_ang lg_cong ang_not_lg_null ang_distincts cong_identity
+rewrite : Q_Cong_Null

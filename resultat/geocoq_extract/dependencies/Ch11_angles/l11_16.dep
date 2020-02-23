@@ -1,0 +1,3 @@
+lemme : cong_symmetry l2_11 l10_12 cong_right_commutativity per_col between_symmetry cong_left_commutativity segment_construction l8_2
+rewrite : Col CongA
+destruct : 

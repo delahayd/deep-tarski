@@ -1,0 +1,3 @@
+lemme : eq_dec_points bet_dec
+rewrite : Out
+destruct : 

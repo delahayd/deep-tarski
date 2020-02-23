@@ -1,0 +1,10 @@
+include "../tarski_term_def.zf".
+#l11_16
+assert[name "Labell11_16"] forall (A B C A1 B1 C1 : point). Per A B C => A!=B => C!=B => Per A1 B1 C1 => A1!=B1 => C1!=B1 => CongA A B C A1 B1 C1.
+#l11_52
+assert[name "Labell11_52"] forall (A B C A1 B1 C1 : point). CongA A B C A1 B1 C1 => Cong A C A1 C1 => Cong B C B1 C1 => Le B C A C => Cong B A B1 A1 && CongA B A C B1 A1 C1 && CongA B C A B1 C1 A1.
+#l11_46
+assert[name "Labell11_46"] forall (A B C : point). ~Col A B C => (Per A B C || Obtuse A B C) => Lt B A A C && Lt B C A C.
+#per_not_col
+assert[name "Labelper_not_col"] forall (A B C : point). A!=B => B!=C => Per A B C => ~Col A B C.
+goal forall (A B C A1 B1 C1 : point). A!=B => B!=C => A1!=B1 => B1!=C1 => Per A B C => Per A1 B1 C1 => Cong A C A1 C1 => Cong B C B1 C1 => Cong B A B1 A1 && CongA B A C B1 A1 C1 && CongA B C A B1 C1 A1.

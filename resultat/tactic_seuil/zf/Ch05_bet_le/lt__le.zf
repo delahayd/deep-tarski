@@ -1,0 +1,3 @@
+include "../rew_type.zf".
+rewrite[name "LabelLt"] forall (A B C D : point). Lt A B C D <=> Le A B C D && ~ Cong A B C D.
+goal forall (A B C D : point). Lt A B C D => Le A B C D.

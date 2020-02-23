@@ -1,0 +1,4 @@
+include "../tarski_term_def.zf".
+#out_is_len_eq
+assert[name "Labelout_is_len_eq"] forall (A B C : point) (l : point->point->prop). Out A B C => Len A B l => Len A C l => B=C.
+goal forall (A B C : point) (l : point->point->prop). Q_Cong l => Out A B C => l A B => l A C => B=C.

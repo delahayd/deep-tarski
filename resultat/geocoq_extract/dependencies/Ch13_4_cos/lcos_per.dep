@@ -1,0 +1,3 @@
+lemme : cong_identity l11_17 cong_symmetry anga_conga eq_dec_points l11_49 lg_cong l8_5 l8_2
+rewrite : Lcos
+destruct : 

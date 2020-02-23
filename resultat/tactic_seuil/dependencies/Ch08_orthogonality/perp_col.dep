@@ -1,0 +1,2 @@
+lemme : eq_dec_points between_inner_transitivity col_trivial_3 perp_col0 perp_sym
+rewrite :

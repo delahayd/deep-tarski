@@ -1,0 +1,3 @@
+lemme : eq_dec_points perp_distinct perp_sym l7_21 perp_left_comm l8_9 between_identity col_permutation_1 perp_cong col_transitivity_1 col_permutation_4 perp_per_1 col_permutation_5 perp_per_2 perp_col inner_pasch col_trivial_2 cong_symmetry col_permutation_2 perp_comm cong_right_commutativity between_symmetry cong_identity
+rewrite : Col Le
+destruct : 

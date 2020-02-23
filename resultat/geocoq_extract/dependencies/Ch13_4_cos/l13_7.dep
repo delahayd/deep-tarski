@@ -1,0 +1,3 @@
+lemme : lcos_lg_anga out_conga_out col_permutation_4 perp_sym anga_conga lcos_const_o lg_sym null_lcos_eql anga_sym l9_2 l13_6 perp_col is_null_anga_dec lcos_per l10_2_existence l8_18_existence l10_14 invert_two_sides l10_8 perp_comm conga_sym between_identity l13_2 l8_7 col_trivial_3 out_trivial per_col l10_4 ex_eql anga_col_null one_side_symmetry col_permutation_1 col_permutation_3 col_permutation_5 osym_not_col anga_conga_anga lcos_const perp_right_comm l9_8_2 perp_not_eq_2 lcos_lg anga_distincts l8_2 lcos_eql_lcos
+rewrite : TS OS Len Q_CongA_Null_Acute
+destruct : 

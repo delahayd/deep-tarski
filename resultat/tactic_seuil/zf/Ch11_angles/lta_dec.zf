@@ -1,0 +1,4 @@
+include "../rew_type.zf".
+#eq_dec_points
+assert[name "Labeleq_dec_points"] forall (A B : point). A=B || A!=B.
+goal forall (A B C D E F : point). LtA A B C D E F || ~LtA A B C D E F.

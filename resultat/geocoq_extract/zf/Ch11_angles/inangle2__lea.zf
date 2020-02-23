@@ -1,0 +1,70 @@
+include "../tarski_term_def.zf".
+#col_permutation_3
+assert[name "Labelcol_permutation_3"] forall (A B C : point). Col A B C => Col C B A.
+#out_conga
+assert[name "Labelout_conga"] forall (A B C A1 B1 C1 A0 C0 A2 C2 : point). CongA A B C A1 B1 C1 => Out B A A0 => Out B C C0 => Out B1 A1 A2 => Out B1 C1 C2 => CongA A0 B C0 A2 B1 C2.
+#invert_one_side
+assert[name "Labelinvert_one_side"] forall (A B P Q : point). OS A B P Q => OS B A P Q.
+#col_in_angle_out
+assert[name "Labelcol_in_angle_out"] forall (A B C P : point). Col B A P => ~Bet A B C => InAngle P A B C => Out B A P.
+#one_side_transitivity
+assert[name "Labelone_side_transitivity"] forall (P Q A B C : point). OS P Q A B => OS P Q B C => OS P Q A C.
+#l9_2
+assert[name "Labell9_2"] forall (A B P Q : point). TS A B P Q => TS A B Q P.
+#in_angle_one_side
+assert[name "Labelin_angle_one_side"] forall (A B C P : point). ~Col A B C => ~Col B A P => InAngle P A B C => OS A B P C.
+#os2__inangle
+assert[name "Labelos2__inangle"] forall (A B C P : point). OS B A C P => OS B C A P => InAngle P A B C.
+#invert_two_sides
+assert[name "Labelinvert_two_sides"] forall (A B P Q : point). TS A B P Q => TS B A P Q.
+#not_col_permutation_1
+assert[name "Labelnot_col_permutation_1"] forall (A B C : point). ~Col A B C => ~Col B C A.
+#one_or_two_sides
+assert[name "Labelone_or_two_sides"] forall (A B X Y : point). ~Col X A B => ~Col Y A B => TS A B X Y || OS A B X Y.
+#not_bet_out
+assert[name "Labelnot_bet_out"] forall (A B C : point). Col A B C => ~Bet A B C => Out B A C.
+#l11_31_2
+assert[name "Labell11_31_2"] forall (A B C D E F : point). A!=B => C!=B => D!=E => F!=E => Bet D E F =>LeA A B C D E F.
+#l6_7
+assert[name "Labell6_7"] forall (P A B C : point). Out P A B => Out P B C => Out P A C.
+#conga_refl
+assert[name "Labelconga_refl"] forall (A B C : point). A!=B => C!=B => CongA A B C A B C.
+#not_col_permutation_5
+assert[name "Labelnot_col_permutation_5"] forall (A B C : point). ~Col A B C => ~Col A C B.
+#out_in_angle_out
+assert[name "Labelout_in_angle_out"] forall (A B C P : point). Out B A C => InAngle P A B C => Out B A P.
+#lea_left_comm
+assert[name "Labellea_left_comm"] forall (A B C D E F : point). LeA A B C D E F => LeA C B A D E F.
+#out_trivial
+assert[name "Labelout_trivial"] forall (P A : point). A!=P => Out P A A.
+#lea_trans
+assert[name "Labellea_trans"] forall (A B C A1 B1 C1 A2 B2 C2 : point). LeA A B C A1 B1 C1 => LeA A1 B1 C1 A2 B2 C2 => LeA A B C A2 B2 C2.
+#one_side_symmetry
+assert[name "Labelone_side_symmetry"] forall (P Q A B : point). OS P Q A B => OS P Q B A.
+#col_inangle2__out
+assert[name "Labelcol_inangle2__out"] forall (A B C P Q : point). ~Bet A B C => InAngle P A B C => InAngle Q A B C =>Col B P Q => Out B P Q.
+#bet_col
+assert[name "Labelbet_col"] forall (A B C : point). Bet A B C => Col A B C.
+#l11_31_1
+assert[name "Labell11_31_1"] forall (A B C D E F : point). Out B A C => D!=E => F!=E => LeA A B C D E F.
+#inangle_distincts
+assert[name "Labelinangle_distincts"] forall (A B C P : point). InAngle P A B C => A!=B && C!=B && P!=B.
+#not_col_permutation_2
+assert[name "Labelnot_col_permutation_2"] forall (A B C : point). ~Col A B C => ~Col C A B.
+#l11_24
+assert[name "Labell11_24"] forall (P A B C : point). InAngle P A B C => InAngle P C B A.
+#in_angle_two_sides
+assert[name "Labelin_angle_two_sides"] forall (A B C P : point). ~Col B A P => ~Col B C P => InAngle P A B C => TS P B A C.
+#lea_comm
+assert[name "Labellea_comm"] forall (A B C D E F : point). LeA A B C D E F => LeA C B A F E D.
+#inangle__lea
+assert[name "Labelinangle__lea"] forall (A B C P : point). InAngle P A B C => LeA A B P A B C.
+#bet_dec
+assert[name "Labelbet_dec"] forall (A B C : point). Bet A B C || ~Bet A B C.
+#l6_6
+assert[name "Labell6_6"] forall (P A B : point). Out P A B => Out P B A.
+#not_col_permutation_3
+assert[name "Labelnot_col_permutation_3"] forall (A B C : point). ~Col A B C => ~Col C B A.
+#lea_right_comm
+assert[name "Labellea_right_comm"] forall (A B C D E F : point). LeA A B C D E F => LeA A B C F E D.
+goal forall (A B C P Q : point). InAngle P A B C => InAngle Q A B C =>LeA P B Q A B C.

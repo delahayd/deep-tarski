@@ -1,0 +1,8 @@
+include "../tarski_term_def.zf".
+#le_trivial
+assert[name "Labelle_trivial"] forall (A C D : point). Le A A C D.
+#le_anti_symmetry
+assert[name "Labelle_anti_symmetry"] forall (A B C D : point). Le A B C D => Le C D A B => Cong A B C D.
+#cong_identity
+assert[name "Labelcong_identity"] forall (A B C : point). Cong A B C C => A = B.
+goal forall (A B C : point). Le A B C C => A=B.

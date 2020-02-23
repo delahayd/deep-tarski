@@ -1,0 +1,3 @@
+lemme : diff_ar2 sum_uniqueness sum_ar2 sum_O_B
+rewrite : Ar2 Diff
+destruct : 

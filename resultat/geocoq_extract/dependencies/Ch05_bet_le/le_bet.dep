@@ -1,0 +1,3 @@
+lemme : cong_symmetry
+rewrite : Le
+destruct : 

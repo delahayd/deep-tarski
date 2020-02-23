@@ -1,0 +1,9 @@
+include "../rew_type.zf".
+rewrite[name "LabelLcos3"] forall (lp l : point->point->prop) (a b c : point->point->point->prop). Lcos3 lp l a b c <=> (exists (la lab : point->point->prop). Lcos la l a && Lcos lab la b && Lcos lp lab c).
+#lcos3_permut1
+assert[name "Labellcos3_permut1"] forall (lp l : point->point->prop) (a b c : point->point->point->prop). Lcos3 lp l a b c => Lcos3 lp l a c b.
+#lcos3_permut3
+assert[name "Labellcos3_permut3"] forall (lp l : point->point->prop) (a b c : point->point->point->prop). Lcos3 lp l a b c => Lcos3 lp l b a c.
+#lcos_lg_not_null
+assert[name "Labellcos_lg_not_null"] forall (lp l : point->point->prop) (a : point->point->point->prop). Lcos l lp a => ~Q_Cong_Null l && ~Q_Cong_Null lp.
+goal forall (lp l : point->point->prop) (a b c : point->point->point->prop). Lcos3 lp l a b c => ~Q_Cong_Null l && ~Q_Cong_Null lp.

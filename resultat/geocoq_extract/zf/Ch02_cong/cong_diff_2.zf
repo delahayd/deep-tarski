@@ -1,0 +1,4 @@
+include "../tarski_term_def.zf".
+#cong_identity
+assert[name "Labelcong_identity"] forall (A B C : point). Cong A B C C => A = B.
+goal forall (A B C D : point). B!=A => Cong A B C D => C!=D.

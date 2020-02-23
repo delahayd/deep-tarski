@@ -1,0 +1,3 @@
+lemme : out_conga conga_sym conga_trans l11_44_1 cong_left_commutativity le_comm l7_17 between_identity conga__or_out_ts col_permutation_1 not_bet_out between_trivial bet_neq12__neq not_col_distincts conga_comm not_col_permutation_5 cong_diff bet_out out_trivial between_cong l11_44_2 outer_transitivity_between cong_reflexivity bet_col out_one_side lea_comm between_exchange4 cong_symmetry l6_6 not_col_permutation_3 cong_4312 cong_right_commutativity out_col le_transitivity between_trivial2 between_equality l5_6 l9_9_bis between_symmetry outer_transitivity_between2 cong_identity
+rewrite : 
+destruct : Habs HNBet

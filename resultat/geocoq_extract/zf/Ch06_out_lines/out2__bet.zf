@@ -1,0 +1,4 @@
+include "../tarski_term_def.zf".
+#l6_4_1
+assert[name "Labell6_4_1"] forall (A B P : point). Out P A B => Col A P B && ~Bet A P B.
+goal forall (A B C : point). Out A B C => Out C B A => Bet A B C.

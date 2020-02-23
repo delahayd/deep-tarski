@@ -1,0 +1,3 @@
+lemme : cong_symmetry between_exchange3 l2_11 l4_6 cong_right_commutativity outer_transitivity_between between_inner_transitivity between_symmetry cong_left_commutativity
+rewrite : CongA
+destruct : 

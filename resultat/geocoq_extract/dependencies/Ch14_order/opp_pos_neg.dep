@@ -1,0 +1,3 @@
+lemme : cong_identity outer_transitivity_between opp_midpoint between_symmetry between_inner_transitivity
+rewrite : Out Midpoint Ng Ps
+destruct : 

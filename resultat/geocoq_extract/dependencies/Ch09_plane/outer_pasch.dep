@@ -1,0 +1,3 @@
+lemme : col_permutation_3 eq_dec_points between_identity col_permutation_1 between_trivial col_trivial_1 bet_neq12__neq col_transitivity_1 not_col_distincts not_col_permutation_5 col_permutation_5 inner_pasch l6_4_2 l9_5 bet_col between_exchange4 bet_dec col_permutation_2 between_exchange3 col_trivial_3 not_col_permutation_3 between_trivial2 l6_21 between_symmetry outer_transitivity_between2
+rewrite : TS Out
+destruct : 

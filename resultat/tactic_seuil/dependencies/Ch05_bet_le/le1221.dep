@@ -1,0 +1,2 @@
+lemme : l7_3_2 cong_right_commutativity col_trivial_1 between_trivial2 cong_symmetry between_trivial between_symmetry cong_reflexivity cong_reverse_identity cong_inner_transitivity cong__le segment_construction cong_pseudo_reflexivity
+rewrite : Col

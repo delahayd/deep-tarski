@@ -1,0 +1,2 @@
+lemme : l10_15 col_trivial_1 l8_18_existence not_col_exists perp_right_comm perp_sym
+rewrite :

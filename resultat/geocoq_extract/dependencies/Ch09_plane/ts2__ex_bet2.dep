@@ -1,0 +1,3 @@
+lemme : bet_col col_two_sides col_two_sides_bet not_col_distincts invert_two_sides col_permutation_5
+rewrite : 
+destruct : HTS

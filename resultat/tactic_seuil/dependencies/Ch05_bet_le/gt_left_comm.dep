@@ -1,0 +1,2 @@
+lemme : lt_right_comm gt_right_comm le_right_comm perp_not_eq_1
+rewrite : Par_strict Gt Lt

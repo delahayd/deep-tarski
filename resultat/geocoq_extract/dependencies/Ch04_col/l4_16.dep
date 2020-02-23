@@ -1,0 +1,3 @@
+lemme : cong_symmetry l4_2 cong_3_swap five_segment_with_def l4_6 cong_commutativity between_symmetry cong_3_swap_2
+rewrite : Col FSC OFSC IFSC Cong_3
+destruct : 

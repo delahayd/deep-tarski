@@ -1,0 +1,3 @@
+lemme : col_trivial_3 col_permutation_1 col_trivial_1 not_two_sides_one_side bet_col col_permutation_5
+rewrite : TS Par_strict
+destruct : 

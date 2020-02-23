@@ -1,0 +1,3 @@
+lemme : eq_dec_points perp_distinct is_image_spec_triv l10_6_existence_spec l10_6_uniqueness
+rewrite : Reflect ReflectL
+destruct : H

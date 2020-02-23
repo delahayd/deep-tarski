@@ -1,0 +1,26 @@
+digraph "unsat_graph" {
+  vertex_0 [color=red, label="[]", shape=box, style=filled];
+  vertex_0 -> vertex_1 [label="s_sup-\l", dir="back"];
+  vertex_1 [shape=box, label="¬Le sk_B sk_A sk_C sk_D\l", style=filled];
+  vertex_1 -> vertex_2 [label="cnf", dir="back"];
+  vertex_2 [shape=box, label="negated_goal\l  ¬ (∀ A/141:point B/142:point C/143:point D/144:point.\l        ((Le A/141 B/142 C/143 D/144) ⇒ (Le B/142 A/141 C/143 D/144)))\l  # skolems: [].\l", style=filled];
+  vertex_2 -> vertex_3 [label="cnf.neg", dir="back"];
+  vertex_3 [color=green, shape=box, label="goal\l  [file \"../resultat/geocoq_extract/zf/Ch05_bet_le/le_left_comm.zf\" \l   \"zf_stmt_128\"]\l  ∀ A/141:point B/142:point C/143:point D/144:point.\l    ((Le A/141 B/142 C/143 D/144) ⇒ (Le B/142 A/141 C/143 D/144)).\l", style=filled];
+  vertex_0 -> vertex_4 [label="s_sup-\l", dir="back"];
+  vertex_4 [shape=box, label="Le sk_B sk_A sk_C sk_D\l", style=filled];
+  vertex_4 -> vertex_5 [label="s_sup-\l\{X0[0] → sk_B[1], X1[0] → sk_A[1], X2[0] → sk_D[1], X3[0] → sk_C[1]\}[0]\l", dir="back"];
+  vertex_5 [shape=box, label="forall (X0:point) (X1:point) (X2:point) (X3:point).\l[Le X0 X1 X3 X2 ∨ ¬Le X1 X0 X3 X2]\l", style=filled];
+  vertex_5 -> vertex_6 [label="s_sup-\l\{X2[0] → X5[0], X3[0] → X4[0], X0[1] → X2[0], X1[1] → X3[0]\}[0]\l", dir="back"];
+  vertex_6 [shape=box, label="forall (X2:point) (X3:point) (X4:point) (X5:point) (X6:point) (X7:point).\l[¬Le X2 X3 X4 X5 ∨ Le X2 X3 X6 X7 ∨ ¬Le X4 X5 X6 X7]\l", style=filled];
+  vertex_6 -> vertex_7 [label="cnf", dir="back"];
+  vertex_7 [color=yellow, shape=box, label="assert\l  [file \"../resultat/geocoq_extract/zf/Ch05_bet_le/le_left_comm.zf\" \l   \"Labelle_transitivity\"]\l  ∀ A/135:point B/136:point C/137:point D/138:point E/139:point \l    F/140:point.\l    ((Le A/135 B/136 C/137 D/138) ⇒\l     ((Le C/137 D/138 E/139 F/140) ⇒ (Le A/135 B/136 E/139 F/140))).\l", style=filled];
+  vertex_5 -> vertex_8 [label="s_sup-\l\{X2[0] → X5[0], X3[0] → X4[0], X0[1] → X2[0], X1[1] → X3[0]\}[1]\l", dir="back"];
+  vertex_8 [shape=box, label="forall (X0:point) (X1:point). Le X0 X1 X1 X0\l", style=filled];
+  vertex_8 -> vertex_9 [label="cnf", dir="back"];
+  vertex_9 [color=yellow, shape=box, label="assert\l  [file \"../resultat/geocoq_extract/zf/Ch05_bet_le/le_left_comm.zf\" \l   \"Labelle1221\"]\l  ∀ A/133:point B/134:point. (Le A/133 B/134 B/134 A/133).\l", style=filled];
+  vertex_4 -> vertex_10 [label="s_sup-\l\{X0[0] → sk_B[1], X1[0] → sk_A[1], X2[0] → sk_D[1], X3[0] → sk_C[1]\}[1]\l", dir="back"];
+  vertex_10 [shape=box, label="Le sk_A sk_B sk_C sk_D\l", style=filled];
+  vertex_10 -> vertex_2 [label="cnf", dir="back"];
+  }
+
+

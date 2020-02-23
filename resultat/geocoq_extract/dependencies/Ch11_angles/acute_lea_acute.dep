@@ -1,0 +1,3 @@
+lemme : lea_comm conga_preserves_lta conga_sym conga_trans lea_trans not_and_lta conga_refl
+rewrite : Acute CongA LeA LtA
+destruct : 

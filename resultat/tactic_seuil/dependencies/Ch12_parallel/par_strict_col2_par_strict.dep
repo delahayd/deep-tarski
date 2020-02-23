@@ -1,0 +1,2 @@
+lemme : col_permutation_5 col_permutation_2 col3 col_permutation_4 par_col_par col_permutation_1 all_coplanar col_transitivity_1
+rewrite : Par_strict

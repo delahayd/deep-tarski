@@ -1,0 +1,3 @@
+lemme : eq_dec_points sum_cong
+rewrite : Sum Parallelogram_flat Ar2
+destruct : 

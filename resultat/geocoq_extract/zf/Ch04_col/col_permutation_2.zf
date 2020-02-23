@@ -1,0 +1,3 @@
+include "../tarski_term_def.zf".
+rewrite[name "LabelCol"] forall (A B C : point). Col A B C <=> Bet A B C || Bet B C A || Bet C A B.
+goal forall (A B C : point). Col A B C => Col C A B.

@@ -1,0 +1,7 @@
+include "../tarski_term_def.zf".
+#cong_diff
+assert[name "Labelcong_diff"] forall (A B C D : point). A!=B => Cong A B C D => C!=D.
+#per_not_col
+assert[name "Labelper_not_col"] forall (A B C : point). A!=B => B!=C => Per A B C => ~Col A B C.
+rewrite[name "LabelCs"] forall (O E S U1 U2 : point). Cs O E S U1 U2 <=> O != E && Cong O E S U1 && Cong O E S U2 && Per U1 S U2.
+goal forall (O E S U1 U2 : point). Cs O E S U1 U2 => ~Col U1 S U2.

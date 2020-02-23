@@ -1,0 +1,3 @@
+lemme : l11_30 lta__lea lea_trans conga_refl lea_distincts lea_asym
+rewrite : 
+destruct : Hlta

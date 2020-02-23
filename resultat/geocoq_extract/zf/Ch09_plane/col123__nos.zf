@@ -1,0 +1,4 @@
+include "../tarski_term_def.zf".
+#one_side_not_col123
+assert[name "Labelone_side_not_col123"] forall (A B X Y : point). OS A B X Y => ~Col A B X.
+goal forall (A B P Q : point). Col P Q A => ~OS P Q A B.

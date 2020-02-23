@@ -1,0 +1,3 @@
+lemme : l4_5 cong_symmetry cong_transitivity l7_17
+rewrite : Midpoint Cong_3
+destruct : 

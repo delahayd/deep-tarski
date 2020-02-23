@@ -1,0 +1,3 @@
+lemme : diff_sum sum_comm diff_exists
+rewrite : Ar2
+destruct : 

@@ -1,0 +1,2 @@
+lemme : bet_col l8_2 eq_dec_points l4_5 cong_symmetry segment_construction
+rewrite : Le Cong_3

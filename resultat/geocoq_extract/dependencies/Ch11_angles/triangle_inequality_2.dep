@@ -1,0 +1,3 @@
+lemme : cong_symmetry l2_11 triangle_inequality cong_reflexivity l5_6 cong_transitivity segment_construction
+rewrite : 
+destruct : 

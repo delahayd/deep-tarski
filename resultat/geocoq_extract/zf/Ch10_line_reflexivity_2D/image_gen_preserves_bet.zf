@@ -1,0 +1,6 @@
+include "../tarski_term_def.zf".
+#is_image_is_image_spec
+assert[name "Labelis_image_is_image_spec"] forall (P P1 A B : point). A!=B => (Reflect P1 P A B <=> ReflectL P1 P A B ).
+#image_preserves_bet
+assert[name "Labelimage_preserves_bet"] forall (A B C A1 B1 C1 X Y : point). X!=Y => ReflectL A A1 X Y => ReflectL B B1 X Y => ReflectL C C1 X Y => Bet A B C => Bet A1 B1 C1.
+goal forall (A B C A1 B1 C1 X Y : point). X!=Y => Reflect A A1 X Y => Reflect B B1 X Y => Reflect C C1 X Y => Bet A B C => Bet A1 B1 C1.

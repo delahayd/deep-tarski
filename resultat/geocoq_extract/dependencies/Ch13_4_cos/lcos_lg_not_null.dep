@@ -1,0 +1,3 @@
+lemme : cong_identity lg_cong anga_distinct
+rewrite : Lcos Q_Cong_Null
+destruct : 

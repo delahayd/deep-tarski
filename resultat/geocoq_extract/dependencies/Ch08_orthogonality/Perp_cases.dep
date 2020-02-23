@@ -1,0 +1,3 @@
+lemme : perp_comm perp_right_comm perp_sym perp_left_comm
+rewrite : 
+destruct : 

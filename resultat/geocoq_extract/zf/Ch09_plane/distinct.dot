@@ -1,0 +1,19 @@
+digraph "unsat_graph" {
+  vertex_0 [color=red, label="[]", shape=box, style=filled];
+  vertex_0 -> vertex_1 [label="simplify_reflect-", dir="back"];
+  vertex_1 [shape=box, label="sk_P ≠ sk_Q\l", style=filled];
+  vertex_1 -> vertex_2 [label="cnf", dir="back"];
+  vertex_2 [shape=box, label="negated_goal\l  ¬ (∀ P/135:point Q/136:point R/137:point.\l        ((P/135 ≠ Q/136) ⇒ ((R/137 ≠ Q/136) ∨ (R/137 ≠ P/135))))\l  # skolems: [].\l", style=filled];
+  vertex_2 -> vertex_3 [label="cnf.neg", dir="back"];
+  vertex_3 [color=green, shape=box, label="goal\l  [file \"../resultat/geocoq_extract/zf/Ch09_plane/distinct.zf\" \"zf_stmt_128\"]\l  ∀ P/135:point Q/136:point R/137:point.\l    ((P/135 ≠ Q/136) ⇒ ((R/137 ≠ Q/136) ∨ (R/137 ≠ P/135))).\l", style=filled];
+  vertex_0 -> vertex_4 [label="simplify_reflect-", dir="back"];
+  vertex_4 [shape=box, label="sk_Q = sk_P\l", style=filled];
+  vertex_4 -> vertex_5 [label="s_sup+\l", dir="back"];
+  vertex_5 [shape=box, label="sk_R = sk_P\l", style=filled];
+  vertex_5 -> vertex_2 [label="cnf", dir="back"];
+  vertex_4 -> vertex_6 [label="s_sup+\l", dir="back"];
+  vertex_6 [shape=box, label="sk_R = sk_Q\l", style=filled];
+  vertex_6 -> vertex_2 [label="cnf", dir="back"];
+  }
+
+

@@ -1,0 +1,17 @@
+include "../tarski_term_def.zf".
+val O : point.
+val E : point.
+val E1 : point.
+assert ~Col O E E1.
+#l14_36_a
+assert[name "Labell14_36_a"] forall (O E E1 A B C : point). Sum O E E1 A B C => Out O A B => Bet O A C.
+#l14_36_b
+assert[name "Labell14_36_b"] forall (O E E1 A B C : point). Sum O E E1 A B C => Out O A B => O!=A && O!=C && A!=C.
+#bet_out
+assert[name "Labelbet_out"] forall (A B C : point). B!=A => Bet A B C => Out A B C.
+#l6_6
+assert[name "Labell6_6"] forall (P A B : point). Out P A B => Out P B A.
+#l6_7
+assert[name "Labell6_7"] forall (P A B C : point). Out P A B => Out P B C => Out P A C.
+rewrite[name "LabelPs"] forall (O E A : point). Ps O E A <=> Out O A E.
+goal forall (O E E1 A B AB : point). Ps O E A => Ps O E B => Sum O E E1 A B AB => Ps O E AB.

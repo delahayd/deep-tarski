@@ -1,0 +1,3 @@
+lemme : one_side_not_col123 cong_symmetry col_trivial_3 col_permutation_1 col_trivial_1 out_col one_side_symmetry outer_transitivity_between between_inner_transitivity one_side_transitivity col_transitivity_1 between_symmetry col_trivial_2 col_permutation_4 segment_construction col_permutation_5 cong_identity
+rewrite : Col OS TS Out
+destruct : 

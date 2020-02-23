@@ -1,0 +1,3 @@
+lemme : eq_dec_points cong_symmetry bet_out l2_11 le_zero le_transitivity l6_2 l6_7 cong_reflexivity between_inner_transitivity l5_6 cong_reverse_identity between_symmetry segment_construction l6_13_1 le_comm outer_transitivity_between2
+rewrite : 
+destruct : HleAB HC0

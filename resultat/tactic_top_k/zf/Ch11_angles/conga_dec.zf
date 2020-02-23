@@ -1,0 +1,2 @@
+include "../rew_type.zf".
+goal forall (A B C D E F : point). CongA A B C D E F || ~CongA A B C D E F.

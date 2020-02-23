@@ -1,0 +1,3 @@
+lemme : cong2_conga_cong out_conga perp_col cong_symmetry bet_dec perp_comm perp_right_comm col_permutation_1 perp_sym l11_13 cong_commutativity col_trivial_1 l7_2 l11_18_2 out_trivial l9_9 is_midpoint_id cong_reflexivity bet_col col_per_perp between_symmetry conga_comm col_trivial_2 cong_left_commutativity col_permutation_5 one_side_reflexivity
+rewrite : TS Per
+destruct : 

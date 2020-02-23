@@ -1,0 +1,3 @@
+lemme : le_cases cong_symmetry
+rewrite : Lt Gt
+destruct : 

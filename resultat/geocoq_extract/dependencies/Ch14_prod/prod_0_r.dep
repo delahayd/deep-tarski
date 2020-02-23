@@ -1,0 +1,3 @@
+lemme : col_trivial_3 pj_trivial
+rewrite : Prod
+destruct : 

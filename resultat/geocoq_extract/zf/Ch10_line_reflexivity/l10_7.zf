@@ -1,0 +1,6 @@
+include "../tarski_term_def.zf".
+#l10_2_uniqueness
+assert[name "Labell10_2_uniqueness"] forall (A B P P2 P1 : point). Reflect P1 P A B => Reflect P2 P A B => P1=P2.
+#l10_4
+assert[name "Labell10_4"] forall (A B P P1 : point). Reflect P P1 A B => Reflect P1 P A B.
+goal forall (A B P P1 Q Q1 : point). Reflect P1 P A B => Reflect Q1 Q A B => P1=Q1 => P=Q.

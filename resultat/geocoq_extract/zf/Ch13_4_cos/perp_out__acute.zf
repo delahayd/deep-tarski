@@ -1,0 +1,6 @@
+include "../tarski_term_def.zf".
+#perp_out_acute
+assert[name "Labelperp_out_acute"] forall (A B C C1 : point). Out B A C1 => Perp A B C C1 => Acute A B C.
+#perp_acute_out
+assert[name "Labelperp_acute_out"] forall (A B C C1 : point). Acute A B C => Perp A B C C1 => Col A B C1 => Out B A C1.
+goal forall (A B C C1 : point). Perp A B C C1 => Col A B C1 => (Acute A B C <=> Out B A C1).

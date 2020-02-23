@@ -1,0 +1,4 @@
+include "../tarski_term_def.zf".
+#is_anga_distinct
+assert[name "Labelis_anga_distinct"] forall (A B C : point) (a : point->point->point->prop). Ang_Acute A B C a => A!=B && C!=B.
+goal forall (A B C : point) (a : point->point->point->prop). Q_CongA_Acute a => a A B C => A!=B && C!=B.

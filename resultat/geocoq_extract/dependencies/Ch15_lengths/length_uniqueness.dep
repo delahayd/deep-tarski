@@ -1,0 +1,3 @@
+lemme : between_equality diff_sum length_Ar2 between_symmetry cong_transitivity l7_20 l6_6 l6_7 cong_symmetry cong_identity sum_O_B_eq
+rewrite : Out Length Midpoint LtP Ps LeP
+destruct : 

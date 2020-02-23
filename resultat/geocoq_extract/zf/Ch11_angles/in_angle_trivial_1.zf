@@ -1,0 +1,6 @@
+include "../tarski_term_def.zf".
+#out_trivial
+assert[name "Labelout_trivial"] forall (P A : point). A!=P => Out P A A.
+#not_and_lta
+assert[name "Labelnot_and_lta"] forall (A B C D E F : point). ~(LtA A B C D E F && LtA D E F A B C).
+goal forall (A B C : point). A!=B => C!=B => InAngle A A B C.

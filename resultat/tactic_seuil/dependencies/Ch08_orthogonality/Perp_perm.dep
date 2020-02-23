@@ -1,0 +1,2 @@
+lemme : cong_right_commutativity col_permutation_5 par_strict_right_comm perp_comm par_strict_left_comm par_strict_comm cong_left_commutativity cong_symmetry perp_right_comm perp_sym
+rewrite :

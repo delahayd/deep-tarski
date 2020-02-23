@@ -1,0 +1,3 @@
+lemme : col_trivial_1 col_permutation_5 par_symmetry par_left_comm col_permutation_4 col_trivial_3 par_distincts col_trivial_2 parallel_existence1 par_trans col_permutation_1
+rewrite : Sum Pj Ar2
+destruct : 

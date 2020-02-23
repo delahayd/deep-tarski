@@ -1,0 +1,16 @@
+include "../tarski_term_def.zf".
+#bet_in_angle_bet
+assert[name "Labelbet_in_angle_bet"] forall (A B C P : point). Bet A B P => InAngle P A B C => Bet A B C.
+#between_exchange4
+assert[name "Labelbetween_exchange4"] forall (A B C D : point). Bet A B C => Bet A C D => Bet A B D.
+#l11_25
+assert[name "Labell11_25"] forall (P A B C A1 C1 P1 : point). InAngle P A B C => Out B A1 A => Out B C1 C => Out B P P1 => InAngle P1 A1 B C1.
+#l6_6
+assert[name "Labell6_6"] forall (P A B : point). Out P A B => Out P B A.
+#out_trivial
+assert[name "Labelout_trivial"] forall (P A : point). A!=P => Out P A A.
+#in_angle_line
+assert[name "Labelin_angle_line"] forall (A B C P : point). P!=B => A!=B => C!=B => Bet A B C => InAngle P A B C.
+rewrite[name "LabelInAngle"] forall (P A B C : point). InAngle P A B C <=> A != B && C != B && P != B && (exists (X : point). Bet A X C && (X = B || Out B X P)).
+rewrite[name "LabelOut"] forall (P A B : point). Out P A B <=> A != P && B != P && (Bet P A B || Bet P B A).
+goal forall (A B C D E : point). InAngle C A B D => InAngle D A B E => InAngle C A B E.

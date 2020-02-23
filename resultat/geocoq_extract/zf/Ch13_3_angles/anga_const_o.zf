@@ -1,0 +1,11 @@
+include "../tarski_term_def.zf".
+#anga_not_flat
+assert[name "Labelanga_not_flat"] forall (a : point->point->point->prop). Q_CongA_Acute a => Q_CongA_nFlat a.
+#ang_const_o
+assert[name "Labelang_const_o"] forall (A B P : point) ( a : point->point->point->prop). ~Col A B P => Q_CongA a => Q_CongA_nNull a =>Q_CongA_nFlat a => (exists (C : point). a A B C && OS A B C P).
+#anga_is_ang
+assert[name "Labelanga_is_ang"] forall (a : point->point->point->prop). Q_CongA_Acute a => Q_CongA a.
+#out_null_anga
+assert[name "Labelout_null_anga"] forall (A B C : point) (a : point->point->point->prop). Q_CongA_Acute a => a A B C => Out B A C => Q_CongA_Null_Acute a.
+rewrite[name "LabelQ_CongA_nNull"] forall (a : point->point->point->prop). Q_CongA_nNull a <=> Q_CongA a && (forall (A B C : point). a A B C => ~ Out B A C).
+goal forall (A B P : point) (a : point->point->point->prop). ~Col A B P => ~Q_CongA_Null_Acute a => Q_CongA_Acute a => (exists (C : point). a A B C && OS A B C P).

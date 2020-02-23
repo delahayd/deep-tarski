@@ -1,0 +1,31 @@
+digraph "unsat_graph" {
+  vertex_0 [color=red, label="[]", shape=box, style=filled];
+  vertex_0 -> vertex_1 [label="s_sup-\l", dir="back"];
+  vertex_1 [shape=box, label="¬Par sk_A sk_B sk_A1 sk_B1\l", style=filled];
+  vertex_1 -> vertex_2 [label="cnf", dir="back"];
+  vertex_2 [shape=box, label="negated_goal\l  ¬ (∀ A/158:point B/159:point A1/160:point B1/161:point X/162:point \l        Y/163:point.\l        ((¬ (Par A/158 B/159 A1/160 B1/161)) ⇒\l         ((¬ (Par A1/160 B1/161 X/162 Y/163))\l          ∨ (¬ (Par A/158 B/159 X/162 Y/163)))))\l  # skolems: [].\l", style=filled];
+  vertex_2 -> vertex_3 [label="cnf.neg", dir="back"];
+  vertex_3 [color=green, shape=box, label="goal\l  [file\l   \"../resultat/geocoq_extract/zf/Ch12_parallel_inter_dec/not_par_one_not_par.zf\" \l   \"zf_stmt_128\"]\l  ∀ A/158:point B/159:point A1/160:point B1/161:point X/162:point \l    Y/163:point.\l    ((¬ (Par A/158 B/159 A1/160 B1/161)) ⇒\l     ((¬ (Par A1/160 B1/161 X/162 Y/163))\l      ∨ (¬ (Par A/158 B/159 X/162 Y/163)))).\l", style=filled];
+  vertex_0 -> vertex_4 [label="s_sup-\l", dir="back"];
+  vertex_4 [shape=box, label="Par sk_A sk_B sk_A1 sk_B1\l", style=filled];
+  vertex_4 -> vertex_5 [label="s_sup-\l\{X0[0] → sk_B1[1], X1[0] → sk_A1[1]\}[0]\l", dir="back"];
+  vertex_5 [shape=box, label="forall (X0:point) (X1:point). [Par sk_A sk_B X1 X0 ∨ ¬Par sk_X sk_Y X1 X0]\l", style=filled];
+  vertex_5 -> vertex_6 [label="s_sup-\l\{X18[0] → sk_A[1], X19[0] → sk_B[1], X20[0] → sk_X[1], X21[0] → sk_Y[1]\}[0]\l", dir="back"];
+  vertex_6 [shape=box, label="forall (X18:point) (X19:point) (X20:point) (X21:point) (X22:point) \l       (X23:point).\l[¬Par X18 X19 X20 X21 ∨ Par X18 X19 X22 X23 ∨ ¬Par X20 X21 X22 X23]\l", style=filled];
+  vertex_6 -> vertex_7 [label="cnf", dir="back"];
+  vertex_7 [color=yellow, shape=box, label="assert\l  [file\l   \"../resultat/geocoq_extract/zf/Ch12_parallel_inter_dec/not_par_one_not_par.zf\" \l   \"Labelpar_trans\"]\l  ∀ A1/152:point A2/153:point B1/154:point B2/155:point C1/156:point \l    C2/157:point.\l    ((Par A1/152 A2/153 B1/154 B2/155) ⇒\l     ((Par B1/154 B2/155 C1/156 C2/157) ⇒ (Par A1/152 A2/153 C1/156 C2/157))).\l", style=filled];
+  vertex_5 -> vertex_8 [label="s_sup-\l\{X18[0] → sk_A[1], X19[0] → sk_B[1], X20[0] → sk_X[1], X21[0] → sk_Y[1]\}[1]\l", dir="back"];
+  vertex_8 [shape=box, label="Par sk_A sk_B sk_X sk_Y\l", style=filled];
+  vertex_8 -> vertex_2 [label="cnf", dir="back"];
+  vertex_4 -> vertex_9 [label="s_sup-\l\{X0[0] → sk_B1[1], X1[0] → sk_A1[1]\}[1]\l", dir="back"];
+  vertex_9 [shape=box, label="Par sk_X sk_Y sk_A1 sk_B1\l", style=filled];
+  vertex_9 -> vertex_10 [label="s_sup-\l\{X0[0] → sk_X[1], X1[0] → sk_Y[1], X2[0] → sk_A1[1], X3[0] → sk_B1[1]\}[0]\l", dir="back"];
+  vertex_10 [shape=box, label="forall (X0:point) (X1:point) (X2:point) (X3:point).\l[Par X0 X1 X2 X3 ∨ ¬Par X2 X3 X0 X1]\l", style=filled];
+  vertex_10 -> vertex_11 [label="cnf", dir="back"];
+  vertex_11 [color=yellow, shape=box, label="assert\l  [file\l   \"../resultat/geocoq_extract/zf/Ch12_parallel_inter_dec/not_par_one_not_par.zf\" \l   \"Labelpar_symmetry\"]\l  ∀ A/133:point B/134:point C/135:point D/136:point.\l    ((Par A/133 B/134 C/135 D/136) ⇒ (Par C/135 D/136 A/133 B/134)).\l", style=filled];
+  vertex_9 -> vertex_12 [label="s_sup-\l\{X0[0] → sk_X[1], X1[0] → sk_Y[1], X2[0] → sk_A1[1], X3[0] → sk_B1[1]\}[1]\l", dir="back"];
+  vertex_12 [shape=box, label="Par sk_A1 sk_B1 sk_X sk_Y\l", style=filled];
+  vertex_12 -> vertex_2 [label="cnf", dir="back"];
+  }
+
+

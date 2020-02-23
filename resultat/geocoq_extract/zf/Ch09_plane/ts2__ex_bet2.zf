@@ -1,0 +1,14 @@
+include "../tarski_term_def.zf".
+#bet_col
+assert[name "Labelbet_col"] forall (A B C : point). Bet A B C => Col A B C.
+#col_two_sides
+assert[name "Labelcol_two_sides"] forall (A B C P Q : point). Col A B C => A!=C => TS A B P Q => TS A C P Q.
+#col_two_sides_bet
+assert[name "Labelcol_two_sides_bet"] forall (A B X Y : point). Col A X Y => TS A B X Y => Bet X A Y.
+#not_col_distincts
+assert[name "Labelnot_col_distincts"] forall (A B C : point). ~Col A B C => ~Col A B C && A!=B && B!=C && A!=C.
+#invert_two_sides
+assert[name "Labelinvert_two_sides"] forall (A B P Q : point). TS A B P Q => TS B A P Q.
+#col_permutation_5
+assert[name "Labelcol_permutation_5"] forall (A B C : point). Col A B C => Col A C B.
+goal forall (A B C D : point). TS A C B D => TS B D A C => (exists (X : point). Bet A X C && Bet B X D).

@@ -1,0 +1,6 @@
+include "../tarski_term_def.zf".
+#grid_exchange_axes
+assert[name "Labelgrid_exchange_axes"] forall (O E S U1 U2 : point). Cs O E S U1 U2 => Cs O E S U2 U1.
+#all_coplanar
+assert[name "Labelall_coplanar"] forall (A B C D : point). Coplanar A B C D.
+goal forall (O E S U1 U2 P X Y : point). Cd O E S U1 U2 P X Y => Cd O E S U2 U1 P X Y.

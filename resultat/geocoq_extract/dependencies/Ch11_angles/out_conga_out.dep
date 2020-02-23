@@ -1,0 +1,3 @@
+lemme : eq_conga_out conga_trans out_trivial conga_refl l11_10
+rewrite : CongA Out
+destruct : 

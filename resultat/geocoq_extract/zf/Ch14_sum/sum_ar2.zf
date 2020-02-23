@@ -1,0 +1,3 @@
+include "../tarski_term_def.zf".
+rewrite[name "LabelSum"] forall (O E E1 A B C : point). Sum O E E1 A B C <=> Ar2 O E E1 A B C && (exists (A1 C1 : point). Pj E E1 A  A1 && Col O E1 A1 && Pj O E  A1 C1 && Pj O E1 B  C1 && Pj E1 E C1 C).
+goal forall (O E E1 A B C : point). Sum O E E1 A B C => Ar2 O E E1 A B C.

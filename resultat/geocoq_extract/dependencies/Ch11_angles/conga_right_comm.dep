@@ -1,0 +1,3 @@
+lemme : conga_trans conga_pseudo_refl
+rewrite : CongA
+destruct : 

@@ -1,0 +1,2 @@
+lemme : l2_11 cong_reflexivity cong_identity cong_transitivity cong_symmetry five_segment_with_def
+rewrite : OFSC

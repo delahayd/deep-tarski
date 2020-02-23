@@ -1,0 +1,7 @@
+include "../rew_type.zf".
+rewrite[name "LabelPerp2"] forall (A B C D P : point). Perp2 A B C D P <=> (exists (X Y : point). Col P X Y && Perp X Y A B && Perp X Y C D).
+#perp_comm
+assert[name "Labelperp_comm"] forall (A B C D : point). Perp A B C D => Perp B A D C.
+#perp_left_comm
+assert[name "Labelperp_left_comm"] forall (A B C D : point). Perp A B C D => Perp B A C D.
+goal forall (A B C D P : point). Perp2 A B C D P => Perp2 B A D C P.

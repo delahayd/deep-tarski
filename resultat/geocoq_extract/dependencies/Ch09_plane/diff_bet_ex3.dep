@@ -1,0 +1,3 @@
+lemme : eq_dec_points diff_col_ex outer_transitivity_between between_equality point_construction_different between_symmetry between_identity
+rewrite : Col
+destruct : 

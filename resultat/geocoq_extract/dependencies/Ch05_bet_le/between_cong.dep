@@ -1,0 +1,3 @@
+lemme : eq_dec_points cong_trivial_identity between_symmetry cong_transitivity five_segment cong_4321 segment_construction cong_symmetry cong_reflexivity between_equality cong_right_commutativity cong_commutativity between_trivial between_exchange3 lower_dim_ex five_segment_with_def cong_identity between_identity
+rewrite : IFSC Cong_3 OFSC
+destruct : 

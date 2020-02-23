@@ -1,0 +1,3 @@
+lemme : cong_identity opp_midpoint l5_2 l6_6
+rewrite : Out Midpoint Ng Ps
+destruct : 

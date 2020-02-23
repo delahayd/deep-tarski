@@ -1,0 +1,2 @@
+lemme : lcos_lg_anga anga_is_ang lcos_lg_not_null eqA_preserves_anga eqA_preserves_ang
+rewrite : Eq_Lcos EqA Lcos

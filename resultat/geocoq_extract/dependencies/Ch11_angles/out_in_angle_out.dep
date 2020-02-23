@@ -1,0 +1,3 @@
+lemme : between_exchange4 l5_3 l6_6 bet_out between_exchange2 l5_1 between_equality between_inner_transitivity between_symmetry
+rewrite : InAngle Out
+destruct : 

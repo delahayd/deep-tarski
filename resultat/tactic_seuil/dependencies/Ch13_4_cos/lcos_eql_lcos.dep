@@ -1,0 +1,2 @@
+lemme : lg_eql_lg
+rewrite : Lcos EqL

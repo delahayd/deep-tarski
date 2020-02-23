@@ -1,0 +1,11 @@
+include "../tarski_term_def.zf".
+#acute_col_out
+assert[name "Labelacute_col_out"] forall (A B C : point). Acute A B C => Col A B C => Out B A C.
+#out_conga_out
+assert[name "Labelout_conga_out"] forall (A B C D E F : point). Out B A C => CongA A B C D E F => Out E D F.
+#anga_conga
+assert[name "Labelanga_conga"] forall (A B C A1 B1 C1 : point) (a : point->point->point->prop). Q_CongA_Acute a => a A B C => a A1 B1 C1 => CongA A B C A1 B1 C1.
+#anga_acute
+assert[name "Labelanga_acute"] forall (A B C : point) (a : point->point->point->prop). Q_CongA_Acute a => a A B C => Acute A B C.
+rewrite[name "LabelQ_CongA_Null_Acute"] forall (a : point->point->point->prop). Q_CongA_Null_Acute a <=> Q_CongA_Acute a && (forall (A B C : point). a A B C => Out B A C).
+goal forall (A B C : point) ( a : point->point->point->prop). Q_CongA_Acute a => ~Q_CongA_Null_Acute a => a A B C => ~Col A B C.

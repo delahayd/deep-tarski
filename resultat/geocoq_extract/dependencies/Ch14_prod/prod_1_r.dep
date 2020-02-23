@@ -1,0 +1,3 @@
+lemme : col_trivial_1 grid_not_par col_trivial_3 col_trivial_2
+rewrite : Prod
+destruct : 

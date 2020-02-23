@@ -1,0 +1,5 @@
+include "../tarski_term_def.zf".
+#l8_12
+assert[name "Labell8_12"] forall (A B C D X : point). Perp_at X A B C D => Perp_at X C D A B.
+rewrite[name "LabelPerp"] forall (A B C D : point). Perp A B C D <=> (exists (X : point). Perp_at X A B C D).
+goal forall (A B C D : point). Perp A B C D => Perp C D A B.

@@ -1,0 +1,5 @@
+include "../tarski_term_def.zf".
+#lea_asym
+assert[name "Labellea_asym"] forall (A B C D E F : point). LeA A B C D E F => LeA D E F A B C => CongA A B C D E F.
+rewrite[name "LabelLtA"] forall (A B C D E F : point). LtA A B C D E F <=> LeA A B C D E F && ~ CongA A B C D E F.
+goal forall (A B C D E F : point). ~(LtA A B C D E F && LtA D E F A B C).

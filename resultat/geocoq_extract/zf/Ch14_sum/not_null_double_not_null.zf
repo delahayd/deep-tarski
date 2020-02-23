@@ -1,0 +1,8 @@
+include "../tarski_term_def.zf".
+val O : point.
+val E : point.
+val E1 : point.
+assert ~Col O E E1.
+#double_null_null
+assert[name "Labeldouble_null_null"] forall (O E E1 A : point). Sum O E E1 A A O => A=O.
+goal forall (O E E1 A C : point). Sum O E E1 A A C => A!=O => C!=O.

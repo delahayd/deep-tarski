@@ -1,0 +1,8 @@
+include "../tarski_term_def.zf".
+#exists_coord
+assert[name "Labelexists_coord"] forall (O E S U P : point). S!=U => Cong O E S U => (exists (PX X : point). Projp P PX S U && Cong_3 O E X S U PX).
+#all_coplanar
+assert[name "Labelall_coplanar"] forall (A B C D : point). Coplanar A B C D.
+#cong_diff
+assert[name "Labelcong_diff"] forall (A B C D : point). A!=B => Cong A B C D => C!=D.
+goal forall (O E S U1 U2 P : point). Cs O E S U1 U2 => (exists (X Y : point). Cd O E S U1 U2 P X Y).

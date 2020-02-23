@@ -1,0 +1,14 @@
+digraph "unsat_graph" {
+  vertex_0 [color=red, label="[]", shape=box, style=filled];
+  vertex_0 -> vertex_1 [label="simplify_reflect-", dir="back"];
+  vertex_1 [shape=box, label="sk_A ≠ sk_B\l", style=filled];
+  vertex_1 -> vertex_2 [label="cnf", dir="back"];
+  vertex_2 [shape=box, label="negated_goal\l  ¬ (∀ A/135:point B/136:point. ((A/135 ≠ B/136) ∨ (A/135 = B/136)))\l  # skolems: [].\l", style=filled];
+  vertex_2 -> vertex_3 [label="cnf.neg", dir="back"];
+  vertex_3 [color=green, shape=box, label="goal\l  [file \"../resultat/geocoq_extract/zf/Ch02_cong/eq_dec_points.zf\" \l   \"zf_stmt_128\"]\l  ∀ A/135:point B/136:point. ((A/135 ≠ B/136) ∨ (A/135 = B/136)).\l", style=filled];
+  vertex_0 -> vertex_4 [label="simplify_reflect-", dir="back"];
+  vertex_4 [shape=box, label="sk_A = sk_B\l", style=filled];
+  vertex_4 -> vertex_2 [label="cnf", dir="back"];
+  }
+
+

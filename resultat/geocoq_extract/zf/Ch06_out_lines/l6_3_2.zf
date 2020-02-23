@@ -1,0 +1,7 @@
+include "../tarski_term_def.zf".
+#l5_2
+assert[name "Labell5_2"] forall (A B C D : point). A!=B => Bet A B C => Bet A B D => Bet B C D || Bet B D C.
+#between_symmetry
+assert[name "Labelbetween_symmetry"] forall (A B C : point). Bet A B C => Bet C B A.
+rewrite[name "LabelOut"] forall (P A B : point). Out P A B <=> A != P && B != P && (Bet P A B || Bet P B A).
+goal forall (A B P : point). (A!=P && B!=P && (exists (C: point). C!=P && Bet A P C && Bet B P C)) => Out P A B.

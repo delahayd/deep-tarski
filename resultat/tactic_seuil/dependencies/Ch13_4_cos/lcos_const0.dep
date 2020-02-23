@@ -1,0 +1,2 @@
+lemme : anga_sym lg_sym anga_distinct
+rewrite : Lcos

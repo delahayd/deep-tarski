@@ -1,0 +1,3 @@
+lemme : pj_right_comm pj_left_comm
+rewrite : 
+destruct : 

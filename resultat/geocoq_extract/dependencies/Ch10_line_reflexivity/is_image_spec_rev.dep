@@ -1,0 +1,3 @@
+lemme : perp_left_comm col_permutation_4
+rewrite : ReflectL
+destruct : 

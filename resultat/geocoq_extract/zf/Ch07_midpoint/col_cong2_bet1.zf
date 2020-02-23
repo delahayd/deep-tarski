@@ -1,0 +1,20 @@
+include "../tarski_term_def.zf".
+#eq_dec_points
+assert[name "Labeleq_dec_points"] forall (A B : point). A=B || A!=B.
+#cong_symmetry
+assert[name "Labelcong_symmetry"] forall (A B C D : point). Cong A B C D => Cong C D A B.
+#bet_cong_eq
+assert[name "Labelbet_cong_eq"] forall (A B C D : point). Bet A B C => Bet A C D => Cong B C A D => C=D && A=B.
+#between_trivial
+assert[name "Labelbetween_trivial"] forall (A B : point). Bet A B B.
+#col_cong_bet
+assert[name "Labelcol_cong_bet"] forall (A B C D : point). Col A B D => Cong A B C D => Bet A C B => (Bet C A D || Bet C B D).
+#between_symmetry
+assert[name "Labelbetween_symmetry"] forall (A B C : point). Bet A B C => Bet C B A.
+#cong_left_commutativity
+assert[name "Labelcong_left_commutativity"] forall (A B C D : point). Cong A B C D => Cong B A C D.
+#outer_transitivity_between2
+assert[name "Labelouter_transitivity_between2"] forall (A B C D : point). Bet A B C => Bet B C D => B!=C => Bet A C D.
+#cong_identity
+assert[name "Labelcong_identity"] forall (A B C : point). Cong A B C C => A = B.
+goal forall (A B C D : point). Col A B D => Bet A C B => Cong A B C D => Cong A C B D => Bet C B D.

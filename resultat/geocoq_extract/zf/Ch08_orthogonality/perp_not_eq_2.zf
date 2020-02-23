@@ -1,0 +1,6 @@
+include "../tarski_term_def.zf".
+#perp_sym
+assert[name "Labelperp_sym"] forall (A B C D : point). Perp A B C D => Perp C D A B.
+#perp_not_eq_1
+assert[name "Labelperp_not_eq_1"] forall (A B C D : point). Perp A B C D => A!=B.
+goal forall (A B C D : point). Perp A B C D => C!=D.

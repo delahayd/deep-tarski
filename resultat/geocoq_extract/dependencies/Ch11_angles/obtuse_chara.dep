@@ -1,0 +1,3 @@
+lemme : l11_18_1 bet_acute__obtuse conga_preserves_lta acute_obtuse__lta lta_trans conga_sym perp_in_comm angle_partition lta_diff conga_refl perp_in_sym conga_comm per_perp_in obtuse_distincts perp_in_per bet_obtuse__acute
+rewrite : 
+destruct : Hlta HUn

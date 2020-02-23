@@ -1,0 +1,3 @@
+lemme : sum_O_O sum_uniqueness
+rewrite : Sum Ar2
+destruct : 

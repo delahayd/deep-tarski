@@ -1,0 +1,3 @@
+lemme : not_col_permutation_4 col_permutation_4 eq_dec_points l6_21 col_permutation_2 par_left_comm l13_19_aux par_trans not_par_one_not_par par_symmetry col_trivial_3 col_permutation_1 col_trivial_1 col_permutation_5 col_transitivity_1 Par_dec par_reflexivity col_trivial_2 not_col_permutation_5
+rewrite : 
+destruct : 

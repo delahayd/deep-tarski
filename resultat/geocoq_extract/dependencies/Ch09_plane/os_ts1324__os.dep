@@ -1,0 +1,3 @@
+lemme : one_side_not_col123 col_one_side_out bet_out col_permutation_1 invert_one_side one_side_symmetry col_permutation_5 one_side_transitivity between_symmetry not_col_permutation_5 not_col_permutation_4 not_col_permutation_2 out_one_side not_col_permutation_1
+rewrite : 
+destruct : Hts

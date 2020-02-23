@@ -1,0 +1,3 @@
+lemme : conga_preserves_lta
+rewrite : GtA
+destruct : 

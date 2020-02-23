@@ -1,0 +1,3 @@
+lemme : cong_4321 cong_diff_2 cong_3421 bet_neq21__neq cong_commutativity segment_construction cong_diff l4_16 l2_11 bet_col cong_diff_4 cong_symmetry cong_right_commutativity cong_transitivity
+rewrite : FSC CongA Cong_3
+destruct : 

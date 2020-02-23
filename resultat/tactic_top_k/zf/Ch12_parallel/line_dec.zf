@@ -1,0 +1,2 @@
+include "../rew_type.zf".
+goal forall (B1 B2 C1 C2 : point). (Col C1 B1 B2 && Col C2 B1 B2) || ~(Col C1 B1 B2 && Col C2 B1 B2).

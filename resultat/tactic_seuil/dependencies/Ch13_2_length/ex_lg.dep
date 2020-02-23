@@ -1,0 +1,2 @@
+lemme : cong_reflexivity
+rewrite : Q_Cong

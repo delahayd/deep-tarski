@@ -1,0 +1,7 @@
+include "../rew_type.zf".
+rewrite[name "LabelMidpoint"] forall (M A B : point). Midpoint M A B <=> Bet A M B && Cong A M M B.
+#l7_15
+assert[name "Labell7_15"] forall (P Q R P1 Q1 R1 A : point). Midpoint A P P1 => Midpoint A Q Q1 => Midpoint A R R1 => Bet P Q R => Bet P1 Q1 R1.
+#l7_16
+assert[name "Labell7_16"] forall (P Q R S P1 Q1 S1 R1 A : point). Midpoint A P P1 => Midpoint A Q Q1 => Midpoint A R R1 => Midpoint A S S1 => Cong P Q R S => Cong P1 Q1 R1 S1.
+goal forall (A B C D E F Z : point). Midpoint Z A D => Midpoint Z B E => Midpoint Z C F => Midpoint B A C => Midpoint E D F.

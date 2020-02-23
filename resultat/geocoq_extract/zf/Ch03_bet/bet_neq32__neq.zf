@@ -1,0 +1,4 @@
+include "../tarski_term_def.zf".
+#bet_neq23__neq
+assert[name "Labelbet_neq23__neq"] forall (A B C : point). Bet A B C => B!=C=>A!=C.
+goal forall (A B C : point). Bet A B C => C!=B=>A!=C.

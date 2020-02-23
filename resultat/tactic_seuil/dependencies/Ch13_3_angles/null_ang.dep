@@ -1,0 +1,2 @@
+lemme : is_ang_distinct all_eqa conga_sym out_trivial l11_21_b is_ang_conga_is_ang eq_dec_points cong_symmetry
+rewrite :

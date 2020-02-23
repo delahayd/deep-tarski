@@ -1,0 +1,2 @@
+lemme : conga_sym cong_3_swap l4_6 cong_3_swap_2
+rewrite : Col Cong_3

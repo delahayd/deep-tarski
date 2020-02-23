@@ -1,0 +1,28 @@
+include "../tarski_term_def.zf".
+#perp_perp_in
+assert[name "Labelperp_perp_in"] forall (A B C : point). Perp A B C A => Perp_at A A B C A.
+#perp_distinct
+assert[name "Labelperp_distinct"] forall (A B C D : point). Perp A B C D => A!=B && C!=D.
+#lta_distincts
+assert[name "Labellta_distincts"] forall (A B C D E F : point). LtA A B C D E F => A!=B && C!=B && D!=E && F!=E.
+#acute_per__lta
+assert[name "Labelacute_per__lta"] forall (A B C D E F : point). Acute A B C => D!=E => E!=F => Per D E F => LtA A B C D E F.
+#perp_in_comm
+assert[name "Labelperp_in_comm"] forall (A B C D X : point). Perp_at X A B C D => Perp_at X B A D C.
+#l11_31_2
+assert[name "Labell11_31_2"] forall (A B C D E F : point). A!=B => C!=B => D!=E => F!=E => Bet D E F =>LeA A B C D E F.
+#lea__nlta
+assert[name "Labellea__nlta"] forall (A B C D E F : point). LeA A B C D E F => ~LtA D E F A B C.
+#between_symmetry
+assert[name "Labelbetween_symmetry"] forall (A B C : point). Bet A B C => Bet C B A.
+#not_col_permutation_5
+assert[name "Labelnot_col_permutation_5"] forall (A B C : point). ~Col A B C => ~Col A C B.
+#perp_not_col
+assert[name "Labelperp_not_col"] forall (A B P : point). Perp A B P A => ~Col A B P.
+#acute_distincts
+assert[name "Labelacute_distincts"] forall (A B C : point). Acute A B C => A!=B && C!=B.
+#perp_in_per
+assert[name "Labelperp_in_per"] forall (A B C : point). Perp_at B A B B C => Per A B C.
+#out_one_side
+assert[name "Labelout_one_side"] forall (A B X Y : point). (~Col A B X || ~Col A B Y) => Out A X Y => OS A B X Y.
+goal forall (P A O B : point). Col A O P => Acute A O P => Perp O A B O =>OS O B A P.

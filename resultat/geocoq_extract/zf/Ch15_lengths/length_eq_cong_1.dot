@@ -1,0 +1,40 @@
+digraph "unsat_graph" {
+  vertex_0 [color=red, label="[]", shape=box, style=filled];
+  vertex_0 -> vertex_1 [label="s_sup-\l", dir="back"];
+  vertex_1 [shape=box, label="¬Cong sk_A sk_B sk_C sk_D\l", style=filled];
+  vertex_1 -> vertex_2 [label="cnf", dir="back"];
+  vertex_2 [shape=box, label="negated_goal\l  ¬ (∀ O/149:point E/150:point E1/151:point A/152:point B/153:point \l        C/154:point D/155:point AB/156:point.\l        ((Length O/149 E/150 E1/151 A/152 B/153 AB/156) ⇒\l         ((Length O/149 E/150 E1/151 C/154 D/155 AB/156) ⇒\l          (Cong A/152 B/153 C/154 D/155))))\l  # skolems: [].\l", style=filled];
+  vertex_2 -> vertex_3 [label="cnf.neg", dir="back"];
+  vertex_3 [color=green, shape=box, label="goal\l  [file \"../resultat/geocoq_extract/zf/Ch15_lengths/length_eq_cong_1.zf\" \l   \"zf_stmt_128\"]\l  ∀ O/149:point E/150:point E1/151:point A/152:point B/153:point \l    C/154:point D/155:point AB/156:point.\l    ((Length O/149 E/150 E1/151 A/152 B/153 AB/156) ⇒\l     ((Length O/149 E/150 E1/151 C/154 D/155 AB/156) ⇒\l      (Cong A/152 B/153 C/154 D/155))).\l", style=filled];
+  vertex_0 -> vertex_4 [label="s_sup-\l", dir="back"];
+  vertex_4 [shape=box, label="Cong sk_A sk_B sk_C sk_D\l", style=filled];
+  vertex_4 -> vertex_5 [label="s_sup-\l\{X0[0] → sk_D[1], X1[0] → sk_C[1]\}[0]\l", dir="back"];
+  vertex_5 [shape=box, label="forall (X0:point) (X1:point).\l[Cong sk_A sk_B X1 X0 ∨ ¬Cong sk_O sk_AB X1 X0]\l", style=filled];
+  vertex_5 -> vertex_6 [label="s_sup-\l\{X4[0] → sk_A[1], X5[0] → sk_B[1], X6[0] → sk_O[1], X7[0] → sk_AB[1]\}[0]\l", dir="back"];
+  vertex_6 [shape=box, label="forall (X4:point) (X5:point) (X6:point) (X7:point) (X8:point) (X9:point).\l[¬Cong X4 X5 X6 X7 ∨ Cong X4 X5 X8 X9 ∨ ¬Cong X6 X7 X8 X9]\l", style=filled];
+  vertex_6 -> vertex_7 [label="cnf", dir="back"];
+  vertex_7 [color=yellow, shape=box, label="assert\l  [file \"../resultat/geocoq_extract/zf/Ch15_lengths/length_eq_cong_1.zf\" \l   \"Labelcong_transitivity\"]\l  ∀ A/137:point B/138:point C/139:point D/140:point E/141:point \l    F/142:point.\l    ((Cong A/137 B/138 C/139 D/140) ⇒\l     ((Cong C/139 D/140 E/141 F/142) ⇒ (Cong A/137 B/138 E/141 F/142))).\l", style=filled];
+  vertex_5 -> vertex_8 [label="s_sup-\l\{X4[0] → sk_A[1], X5[0] → sk_B[1], X6[0] → sk_O[1], X7[0] → sk_AB[1]\}[1]\l", dir="back"];
+  vertex_8 [shape=box, label="Cong sk_A sk_B sk_O sk_AB\l", style=filled];
+  vertex_8 -> vertex_9 [label="s_sup-\l\{X0[0] → sk_A[1], X1[0] → sk_B[1], X2[0] → sk_O[1], X3[0] → sk_AB[1]\}[0]\l", dir="back"];
+  vertex_9 [shape=box, label="forall (X0:point) (X1:point) (X2:point) (X3:point).\l[Cong X0 X1 X2 X3 ∨ ¬Cong X2 X3 X0 X1]\l", style=filled];
+  vertex_9 -> vertex_10 [label="cnf", dir="back"];
+  vertex_10 [color=yellow, shape=box, label="assert\l  [file \"../resultat/geocoq_extract/zf/Ch15_lengths/length_eq_cong_1.zf\" \l   \"Labelcong_symmetry\"]\l  ∀ A/133:point B/134:point C/135:point D/136:point.\l    ((Cong A/133 B/134 C/135 D/136) ⇒ (Cong C/135 D/136 A/133 B/134)).\l", style=filled];
+  vertex_8 -> vertex_11 [label="s_sup-\l\{X0[0] → sk_A[1], X1[0] → sk_B[1], X2[0] → sk_O[1], X3[0] → sk_AB[1]\}[1]\l", dir="back"];
+  vertex_11 [shape=box, label="Cong sk_O sk_AB sk_A sk_B\l", style=filled];
+  vertex_11 -> vertex_12 [label="rw_clause\l\{X10[1] → sk_O[0], \l X11[1] → sk_E[0], \l X12[1] → sk_E1[0], \l X13[1] → sk_A[0], \l X14[1] → sk_B[0], \l X15[1] → sk_AB[0]\}[1]\l", dir="back"];
+  vertex_12 [color=navajowhite, shape=box, label="(Length X10 X11 X12 X13 X14 X15 :=\l   [X10 ≠ X11∧\l    LeP X10 X11 X12 X10 X15∧\l    Cong X10 X15 X13 X14∧\l    Col X10 X11 X15] [B])\l", style=filled];
+  vertex_12 -> vertex_13 [label="rw.lit", dir="back"];
+  vertex_13 [color=yellow, shape=box, label="rewrite\l  [file \"../resultat/geocoq_extract/zf/Ch15_lengths/length_eq_cong_1.zf\" \l   \"LabelLength\"]\l  Length X10 X11 X12 X13 X14 X15\l  =\> X10 ≠ X11 && LeP X10 X11 X12 X10 X15 && Cong X10 X15 X13 X14 && \l     Col X10 X11 X15.\l", style=filled];
+  vertex_11 -> vertex_14 [label="rw_clause\l\{X10[1] → sk_O[0], \l X11[1] → sk_E[0], \l X12[1] → sk_E1[0], \l X13[1] → sk_A[0], \l X14[1] → sk_B[0], \l X15[1] → sk_AB[0]\}[0]\l", dir="back"];
+  vertex_14 [shape=box, label="Length sk_O sk_E sk_E1 sk_A sk_B sk_AB\l", style=filled];
+  vertex_14 -> vertex_2 [label="cnf", dir="back"];
+  vertex_4 -> vertex_15 [label="s_sup-\l\{X0[0] → sk_D[1], X1[0] → sk_C[1]\}[1]\l", dir="back"];
+  vertex_15 [shape=box, label="Cong sk_O sk_AB sk_C sk_D\l", style=filled];
+  vertex_15 -> vertex_12 [label="rw_clause\l\{X10[1] → sk_O[0], \l X11[1] → sk_E[0], \l X12[1] → sk_E1[0], \l X13[1] → sk_C[0], \l X14[1] → sk_D[0], \l X15[1] → sk_AB[0]\}[1]\l", dir="back"];
+  vertex_15 -> vertex_16 [label="rw_clause\l\{X10[1] → sk_O[0], \l X11[1] → sk_E[0], \l X12[1] → sk_E1[0], \l X13[1] → sk_C[0], \l X14[1] → sk_D[0], \l X15[1] → sk_AB[0]\}[0]\l", dir="back"];
+  vertex_16 [shape=box, label="Length sk_O sk_E sk_E1 sk_C sk_D sk_AB\l", style=filled];
+  vertex_16 -> vertex_2 [label="cnf", dir="back"];
+  }
+
+

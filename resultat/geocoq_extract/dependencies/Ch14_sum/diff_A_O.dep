@@ -1,0 +1,3 @@
+lemme : sum_O_O sum_A_O
+rewrite : Opp Diff
+destruct : 

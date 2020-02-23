@@ -1,0 +1,10 @@
+include "../tarski_term_def.zf".
+val O : point.
+val E : point.
+val E1 : point.
+assert ~Col O E E1.
+#opp_prod
+assert[name "Labelopp_prod"] forall (O E E1 ME X MX : point). Opp O E E1 E ME => Opp O E E1 X MX => Prod O E E1 X ME MX.
+#diff_opp
+assert[name "Labeldiff_opp"] forall (O E E1 A B AmB BmA : point). Diff O E E1 A B AmB => Diff O E E1 B A BmA => Opp O E E1 AmB BmA.
+goal forall (O E E1 A B AMB BMA ME : point). Opp O E E1 E ME => Diff O E E1 A B AMB => Diff O E E1 B A BMA => Prod O E E1 AMB ME BMA.

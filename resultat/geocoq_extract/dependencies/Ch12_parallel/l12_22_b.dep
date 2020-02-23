@@ -1,0 +1,3 @@
+lemme : conga__or_out_ts eq_dec_points par_symmetry col_permutation_1 conga_sym col_trivial_1 out_col col_one_side l12_22_aux l9_9 one_side_symmetry bet_col conga_comm col_permutation_5
+rewrite : CongA Out Par
+destruct : 

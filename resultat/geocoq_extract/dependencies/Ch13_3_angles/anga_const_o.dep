@@ -1,0 +1,3 @@
+lemme : anga_not_flat ang_const_o anga_is_ang out_null_anga
+rewrite : Q_CongA_nNull
+destruct : 

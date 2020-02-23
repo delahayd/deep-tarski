@@ -1,0 +1,76 @@
+include "../tarski_term_def.zf".
+#out321__inangle
+assert[name "Labelout321__inangle"] forall (A B C P : point). C!=B => Out B A P => InAngle P A B C.
+#eq_dec_points
+assert[name "Labeleq_dec_points"] forall (A B : point). A=B || A!=B.
+#inangle1123
+assert[name "Labelinangle1123"] forall (A B C : point). A!=B => C!=B => InAngle A A B C.
+#invert_one_side
+assert[name "Labelinvert_one_side"] forall (A B P Q : point). OS A B P Q => OS B A P Q.
+#one_side_not_col124
+assert[name "Labelone_side_not_col124"] forall (A B X Y : point). OS A B X Y => ~Col A B Y.
+#one_side_transitivity
+assert[name "Labelone_side_transitivity"] forall (P Q A B C : point). OS P Q A B => OS P Q B C => OS P Q A C.
+#os2__inangle
+assert[name "Labelos2__inangle"] forall (A B C P : point). OS B A C P => OS B C A P => InAngle P A B C.
+#not_col_permutation_4
+assert[name "Labelnot_col_permutation_4"] forall (A B C : point). ~Col A B C => ~Col B A C.
+#bet_neq21__neq
+assert[name "Labelbet_neq21__neq"] forall (A B C : point). Bet A B C => B!=A=>A!=C.
+#col_trivial_1
+assert[name "Labelcol_trivial_1"] forall (A B : point). Col A A B.
+#between_trivial
+assert[name "Labelbetween_trivial"] forall (A B : point). Bet A B B.
+#inangle3123
+assert[name "Labelinangle3123"] forall (A B C : point). A!=B => C!=B => InAngle C A B C.
+#not_out_bet
+assert[name "Labelnot_out_bet"] forall (A B C : point). Col A B C => ~Out B A C => Bet A B C.
+#not_col_distincts
+assert[name "Labelnot_col_distincts"] forall (A B C : point). ~Col A B C => ~Col A B C && A!=B && B!=C && A!=C.
+#in_angle_line
+assert[name "Labelin_angle_line"] forall (A B C P : point). P!=B => A!=B => C!=B => Bet A B C => InAngle P A B C.
+#col_permutation_4
+assert[name "Labelcol_permutation_4"] forall (A B C : point). Col A B C => Col B A C.
+#not_col_permutation_5
+assert[name "Labelnot_col_permutation_5"] forall (A B C : point). ~Col A B C => ~Col A C B.
+#segment_construction
+assert[name "Labelsegment_construction"] forall (A B C D : point). exists (E :point). Bet A B E && Cong B E C D.
+#col_permutation_5
+assert[name "Labelcol_permutation_5"] forall (A B C : point). Col A B C => Col A C B.
+#l11_25
+assert[name "Labell11_25"] forall (P A B C A1 C1 P1 : point). InAngle P A B C => Out B A1 A => Out B C1 C => Out B P P1 => InAngle P1 A1 B C1.
+#col_one_side_out
+assert[name "Labelcol_one_side_out"] forall (A B X Y : point). Col A X Y => OS A B X Y => Out A X Y.
+#bet_out
+assert[name "Labelbet_out"] forall (A B C : point). B!=A => Bet A B C => Out A B C.
+#not_one_side_two_sides
+assert[name "Labelnot_one_side_two_sides"] forall (A B X Y : point). A!=B => ~Col X A B => ~Col Y A B => ~OS A B X Y => TS A B X Y.
+#one_side_dec
+assert[name "Labelone_side_dec"] forall (A B C D : point). OS A B C D || ~OS A B C D.
+#out_trivial
+assert[name "Labelout_trivial"] forall (P A : point). A!=P => Out P A A.
+#os_distincts
+assert[name "Labelos_distincts"] forall (A B X Y : point). OS A B X Y => A!=B && A!=X && A!=Y && B!=X && B!=Y.
+#bet_col
+assert[name "Labelbet_col"] forall (A B C : point). Bet A B C => Col A B C.
+#cong_diff_4
+assert[name "Labelcong_diff_4"] forall (A B C D : point). D!=C => Cong A B C D => A!=B.
+#col_trivial_2
+assert[name "Labelcol_trivial_2"] forall (A B : point). Col A B B.
+#not_par_same_side
+assert[name "Labelnot_par_same_side"] forall (A B C D I P : point). C!=D => Col A B I => Col C D I => ~Col A B C => ~ Col A B P => (exists (Q : point). Col C D Q && OS A B P Q).
+#inangle_distincts
+assert[name "Labelinangle_distincts"] forall (A B C P : point). InAngle P A B C => A!=B && C!=B && P!=B.
+#out_one_side
+assert[name "Labelout_one_side"] forall (A B X Y : point). (~Col A B X || ~Col A B Y) => Out A X Y => OS A B X Y.
+#l11_24
+assert[name "Labell11_24"] forall (P A B C : point). InAngle P A B C => InAngle P C B A.
+#l6_6
+assert[name "Labell6_6"] forall (P A B : point). Out P A B => Out P B A.
+#not_col_permutation_3
+assert[name "Labelnot_col_permutation_3"] forall (A B C : point). ~Col A B C => ~Col C B A.
+#between_symmetry
+assert[name "Labelbetween_symmetry"] forall (A B C : point). Bet A B C => Bet C B A.
+#in_angle_trans
+assert[name "Labelin_angle_trans"] forall (A B C D E : point). InAngle C A B D => InAngle D A B E => InAngle C A B E.
+goal forall (A B C P Q : point). ~Out B A C => InAngle P A B C => (exists (R : point). InAngle R A B C && P!=R && Col P Q R).

@@ -1,0 +1,3 @@
+lemme : eq_dec_points cong_symmetry five_segment_with_def cong_4312 cong_commutativity cong_reflexivity cong_transitivity segment_construction cong_identity
+rewrite : Midpoint Cong_3 Per OFSC
+destruct : 

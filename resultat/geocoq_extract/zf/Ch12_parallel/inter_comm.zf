@@ -1,0 +1,6 @@
+include "../tarski_term_def.zf".
+#inter_right_comm
+assert[name "Labelinter_right_comm"] forall (A B C D X : point). Inter A B C D X => Inter A B D C X.
+#inter_left_comm
+assert[name "Labelinter_left_comm"] forall (A B C D X : point). Inter A B C D X => Inter B A C D X.
+goal forall (A B C D X : point). Inter A B C D X => Inter B A D C X.

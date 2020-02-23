@@ -1,0 +1,36 @@
+digraph "unsat_graph" {
+  vertex_0 [color=red, label="[]", shape=box, style=filled];
+  vertex_0 -> vertex_1 [label="s_sup-\l", dir="back"];
+  vertex_1 [shape=box, label="¬Col sk_A sk_B sk_C\l", style=filled];
+  vertex_1 -> vertex_2 [label="cnf", dir="back"];
+  vertex_2 [shape=box, label="negated_goal\l  ¬ (∀ A/138:point B/139:point X/140:point C/141:point C1/142:point.\l        ((¬ (Col A/138 B/139 C/141)) ⇒\l         ((Col A/138 B/139 X/140) ⇒\l          ((Midpoint X/140 C/141 C1/142) ⇒ (C/141 ≠ C1/142)))))\l  # skolems: [].\l", style=filled];
+  vertex_2 -> vertex_3 [label="cnf.neg", dir="back"];
+  vertex_3 [color=green, shape=box, label="goal\l  [file\l   \"../resultat/geocoq_extract/zf/Ch08_orthogonality/midpoint_distinct.zf\" \l   \"zf_stmt_128\"]\l  ∀ A/138:point B/139:point X/140:point C/141:point C1/142:point.\l    ((¬ (Col A/138 B/139 C/141)) ⇒\l     ((Col A/138 B/139 X/140) ⇒\l      ((Midpoint X/140 C/141 C1/142) ⇒ (C/141 ≠ C1/142)))).\l", style=filled];
+  vertex_0 -> vertex_4 [label="s_sup-\l", dir="back"];
+  vertex_4 [shape=box, label="Col sk_A sk_B sk_C\l", style=filled];
+  vertex_4 -> vertex_5 [label="demod", dir="back"];
+  vertex_5 [shape=box, label="sk_C = sk_X\l", style=filled];
+  vertex_5 -> vertex_6 [label="s_sup-\l\{X0[0] → sk_X[1], X1[0] → sk_C[1]\}[0]\l", dir="back"];
+  vertex_6 [shape=box, label="forall (X0:point) (X1:point). [X1 = X0 ∨ ¬Bet X1 X0 X1]\l", style=filled];
+  vertex_6 -> vertex_7 [label="cnf", dir="back"];
+  vertex_7 [color=yellow, shape=box, label="assert\l  [file\l   \"../resultat/geocoq_extract/zf/Ch08_orthogonality/midpoint_distinct.zf\" \l   \"Labelbetween_identity\"]\l  ∀ A/133:point B/134:point. ((Bet A/133 B/134 A/133) ⇒ (A/133 = B/134)).\l", style=filled];
+  vertex_5 -> vertex_8 [label="s_sup-\l\{X0[0] → sk_X[1], X1[0] → sk_C[1]\}[1]\l", dir="back"];
+  vertex_8 [shape=box, label="Bet sk_C sk_X sk_C\l", style=filled];
+  vertex_8 -> vertex_9 [label="rw_clause\l\{X2[1] → sk_X[0], X3[1] → sk_C[0], X4[1] → sk_C[0]\}[1]\l", dir="back"];
+  vertex_9 [color=navajowhite, shape=box, label="(Midpoint X2 X3 X4 := [Bet X3 X2 X4∧\l                       Cong X3 X2 X2 X4] [B])\l", style=filled];
+  vertex_9 -> vertex_10 [label="rw.lit", dir="back"];
+  vertex_10 [color=yellow, shape=box, label="rewrite\l  [file\l   \"../resultat/geocoq_extract/zf/Ch08_orthogonality/midpoint_distinct.zf\" \l   \"LabelMidpoint\"]\l  Midpoint X2 X3 X4 =\> Bet X3 X2 X4 && Cong X3 X2 X2 X4.\l", style=filled];
+  vertex_8 -> vertex_11 [label="rw_clause\l\{X2[1] → sk_X[0], X3[1] → sk_C[0], X4[1] → sk_C[0]\}[0]\l", dir="back"];
+  vertex_11 [shape=box, label="Midpoint sk_X sk_C sk_C\l", style=filled];
+  vertex_11 -> vertex_12 [label="demod", dir="back"];
+  vertex_12 [shape=box, label="sk_C = sk_C1\l", style=filled];
+  vertex_12 -> vertex_2 [label="cnf", dir="back"];
+  vertex_11 -> vertex_13 [label="demod", dir="back"];
+  vertex_13 [shape=box, label="Midpoint sk_X sk_C sk_C1\l", style=filled];
+  vertex_13 -> vertex_2 [label="cnf", dir="back"];
+  vertex_4 -> vertex_14 [label="demod", dir="back"];
+  vertex_14 [shape=box, label="Col sk_A sk_B sk_X\l", style=filled];
+  vertex_14 -> vertex_2 [label="cnf", dir="back"];
+  }
+
+

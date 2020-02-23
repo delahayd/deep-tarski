@@ -1,0 +1,3 @@
+lemme : prod_O_l_eq l6_21 prod_0_l col_trivial_3 col_permutation_1 col_permutation_3 col_trivial_1 col_permutation_5 col_trivial_2
+rewrite : Prod Ar2 Ar1
+destruct : 

@@ -1,0 +1,37 @@
+# $Id$
+
+include "tarski_term_def.zf".
+
+#cong_pseudo_reflexivity
+assert forall (A B : point). Cong A B B A.
+
+#cong_inner_transitivity
+assert forall (A B C D E F : point).Cong A B C D => Cong A B E F => Cong C D E F.
+
+#cong_identity
+assert forall (A B C : point). Cong A B C C => A = B.
+
+#segment_construction
+assert forall (A B C D : point). exists (E :point). Bet A B E && Cong B E C D.
+
+#five_segment
+assert forall (A B C D A1 B1 C1 D1 : point). Cong A B A1 B1 => Cong B C B1 C1 => Cong A D A1 D1 => Cong B D B1 D1 => Bet A B C => Bet A1 B1 C1 => A!=B => Cong C D C1 D1.
+
+#between_identity
+assert forall (A B : point). Bet A B A => A=B.
+
+#inner_pasch
+assert forall (A B C P Q : point). Bet A P C => Bet B Q C =>(exists (X : point). Bet P X B && Bet Q X A).
+
+#lower_dim
+assert  ~(Bet PA PB PC || Bet PB PC PA || Bet PC PA PB).
+
+#upper_dim
+assert forall (A B C P Q : point). Cong A P A Q => Cong B P B Q => Cong C P C Q => P!=Q => Bet A B C || Bet B C A || Bet C A B.
+
+#euclid
+assert forall (A B C D T : point). Bet A D T => Bet B D C => A!=D =>(exists (X Y : point). Bet A B X && Bet A C Y && Bet X T Y).
+
+#point_equality_decidability
+assert forall (A B : point). A=B || A!=B.
+

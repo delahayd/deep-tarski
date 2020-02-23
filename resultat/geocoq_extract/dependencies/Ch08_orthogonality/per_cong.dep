@@ -1,0 +1,3 @@
+lemme : l4_2 per_not_colp col3 l7_2 symmetric_point_construction symmetric_point_uniqueness cong_left_commutativity cong_pseudo_reflexivity l8_9 col_permutation_1 cong_commutativity col_trivial_1 per_not_col l7_22 col_transitivity_1 per_col col_permutation_4 segment_construction l8_8 l8_18_uniqueness l8_2 col_permutation_5 perp_col perp_right_comm l2_11 l7_3 midpoint_bet is_midpoint_id per_perp col_trivial_2 cong_symmetry perp_comm five_segment_with_def col_trivial_3 cong_right_commutativity l7_3_2 midpoint_cong between_symmetry cong_transitivity l7_25 cong_identity
+rewrite : Per Col OFSC IFSC Midpoint
+destruct : 

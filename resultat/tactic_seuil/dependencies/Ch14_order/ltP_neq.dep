@@ -1,0 +1,2 @@
+lemme : diff_null ltP_ar2 diff_ar2 diff_uniqueness
+rewrite : LtP Out Ar2 Ps LeP

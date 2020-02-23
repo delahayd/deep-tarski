@@ -1,0 +1,2 @@
+lemme : l10_10_spec l10_4_spec is_image_is_image_spec cong_transitivity image_preserves_bet
+rewrite : Midpoint

@@ -1,0 +1,3 @@
+lemme : anga_const ex_point_lg_out out_trivial lcos_lg_not_null anga_out_anga l6_6 anga_distincts
+rewrite : Lcos Q_Cong_Null
+destruct : 

@@ -1,0 +1,10 @@
+include "../rew_type.zf".
+#between_symmetry
+assert[name "Labelbetween_symmetry"] forall (A B C : point). Bet A B C => Bet C B A.
+#col123__nos
+assert[name "Labelcol123__nos"] forall (A B P Q : point). Col P Q A => ~OS P Q A B.
+#one_side_not_col123
+assert[name "Labelone_side_not_col123"] forall (A B X Y : point). OS A B X Y => ~Col A B X.
+#one_side_symmetry
+assert[name "Labelone_side_symmetry"] forall (P Q A B : point). OS P Q A B => OS P Q B A.
+goal forall (A B P Q : point). Col P Q B => ~OS P Q A B.

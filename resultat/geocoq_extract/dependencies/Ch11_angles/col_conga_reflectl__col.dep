@@ -1,0 +1,3 @@
+lemme : eq_dec_points l10_6_uniqueness_spec cong_diff_3 cong_diff_2 out_distinct col_permutation_1 conga_distinct col_trivial_1 bet_neq12__neq not_out_bet conga_comm segment_construction col_permutation_5 bet_neq32__neq l11_13 bet_col out_conga_reflect__out l6_6 col_trivial_3 out_col col__refl l6_2 between_symmetry out_dec
+rewrite : 
+destruct : 

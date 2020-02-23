@@ -1,0 +1,3 @@
+lemme : eq_dec_points perp_distinct perp_col perp_perp_col_col col_permutation_1 all_coplanar perp_left_comm col_permutation_5
+rewrite : Par_strict Par
+destruct : 

@@ -1,0 +1,3 @@
+lemme : par_symmetry par_left_comm Par_dec not_par_inter_exists par_trans
+rewrite : 
+destruct : 

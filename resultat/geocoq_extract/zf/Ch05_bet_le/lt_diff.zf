@@ -1,0 +1,6 @@
+include "../tarski_term_def.zf".
+#le_zero
+assert[name "Labelle_zero"] forall (A B C : point). Le A B C C => A=B.
+#cong_trivial_identity
+assert[name "Labelcong_trivial_identity"] forall (A B : point). Cong A A B B.
+goal forall (A B C D : point). Lt A B C D => C!=D.

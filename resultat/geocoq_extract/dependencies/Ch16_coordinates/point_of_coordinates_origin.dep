@@ -1,0 +1,3 @@
+lemme : cong_symmetry col_trivial_3 cong_trivial_identity all_coplanar cong_4321 cong_diff
+rewrite : 
+destruct : HCs

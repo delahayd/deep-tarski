@@ -1,0 +1,3 @@
+lemme : 
+rewrite : InAngle CongA LeA LtA
+destruct : 

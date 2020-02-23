@@ -1,0 +1,20 @@
+include "../tarski_term_def.zf".
+#l8_14_2_1b
+assert[name "Labell8_14_2_1b"] forall (X A B C D Y : point). Perp_at X A B C D => Col Y A B => Col Y C D => X=Y.
+#col_permutation_3
+assert[name "Labelcol_permutation_3"] forall (A B C : point). Col A B C => Col C B A.
+#col_trivial_3
+assert[name "Labelcol_trivial_3"] forall (A B : point). Col A B A.
+#col3
+assert[name "Labelcol3"] forall (X Y A B C : point). X!=Y => Col X Y A => Col X Y B => Col X Y C => Col A B C.
+#col_trivial_1
+assert[name "Labelcol_trivial_1"] forall (A B : point). Col A A B.
+#perp_col0
+assert[name "Labelperp_col0"] forall (A B C D X Y : point). Perp A B C D => X!=Y => Col A B X => Col A B Y => Perp C D X Y.
+#l8_14_2_1b_bis
+assert[name "Labell8_14_2_1b_bis"] forall (A B C D X : point). Perp A B C D => Col X A B => Col X C D => Perp_at X A B C D.
+#l8_15_1
+assert[name "Labell8_15_1"] forall (A B C X : point). A!=B => Col A B X => Perp A B C X => Perp_at X A B C X.
+#col_permutation_5
+assert[name "Labelcol_permutation_5"] forall (A B C : point). Col A B C => Col A C B.
+goal forall (A B C U X : point). A!=B => Col A B X => Col A B U => U!=X=> Perp A B C X => ~Col A B C && Per C X U.

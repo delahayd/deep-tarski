@@ -1,0 +1,8 @@
+include "../tarski_term_def.zf".
+#cong_transitivity
+assert[name "Labelcong_transitivity"] forall (A B C D E F : point). Cong A B C D => Cong C D E F => Cong A B E F.
+#cong_symmetry
+assert[name "Labelcong_symmetry"] forall (A B C D : point). Cong A B C D => Cong C D A B.
+#l5_6
+assert[name "Labell5_6"] forall (A B C D A1 B1 C1 D1 : point). Le A B C D => Cong A B A1 B1 => Cong C D C1 D1 => Le A1 B1 C1 D1.
+goal forall (A B C D A1 B1 C1 D1 : point). Lt A B C D => Cong A B A1 B1 =>Cong C D C1 D1 => Lt A1 B1 C1 D1.

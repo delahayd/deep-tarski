@@ -1,0 +1,3 @@
+lemme : sum_comm sum22_permut sum_ar2 sum_uniqueness
+rewrite : sum22 Ar2
+destruct : 

@@ -1,0 +1,2 @@
+lemme : col_permutation_5 cong_inner_transitivity cong_pseudo_reflexivity par_left_comm
+rewrite : Par_strict Par Pj

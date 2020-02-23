@@ -1,0 +1,20 @@
+include "../tarski_term_def.zf".
+#t18_18
+assert[name "Labelt18_18"] forall (A B C D E F : point). Cong A B D E => Cong A C D F => LtA F D E C A B => Lt E F B C.
+#lt_diff
+assert[name "Labellt_diff"] forall (A B C D : point). Lt A B C D => C!=D.
+#cong_symmetry
+assert[name "Labelcong_symmetry"] forall (A B C D : point). Cong A B C D => Cong C D A B.
+#not_and_lt
+assert[name "Labelnot_and_lt"] forall (A B C D : point). ~(Lt A B C D && Lt C D A B).
+#cong_4321
+assert[name "Labelcong_4321"] forall (A B C D : point). Cong A B C D => Cong D C B A.
+#conga_dec
+assert[name "Labelconga_dec"] forall (A B C D E F : point). CongA A B C D E F || ~CongA A B C D E F.
+#nlea__lta
+assert[name "Labelnlea__lta"] forall (A B C D E F : point). ~LeA A B C D E F => A!=B => B!=C => D!=E => E!=F => LtA D E F A B C.
+#l11_49
+assert[name "Labell11_49"] forall (A B C A1 B1 C1 : point). CongA A B C A1 B1 C1 => Cong B A B1 A1 => Cong B C B1 C1 => Cong A C A1 C1 && (A!=C => CongA B A C B1 A1 C1 && CongA B C A B1 C1 A1).
+#cong_diff
+assert[name "Labelcong_diff"] forall (A B C D : point). A!=B => Cong A B C D => C!=D.
+goal forall (A B C D E F : point). A!=B => A!=C => Cong A B D E => Cong A C D F => Lt E F B C => LtA F D E C A B.

@@ -1,0 +1,5 @@
+include "../tarski_term_def.zf".
+#conga_right_comm
+assert[name "Labelconga_right_comm"] forall (A B C D E F : point). CongA A B C D E F => CongA A B C F E D.
+rewrite[name "LabelQ_CongA"] forall (a : point->point->point->prop). Q_CongA a <=> (exists (A B C : point). A != B && C != B && (forall (X Y Z : point). CongA A B C X Y Z <=> a X Y Z)).
+goal forall (A B C : point) ( a : point->point->point->prop). Q_CongA a => a A B C => a C B A.

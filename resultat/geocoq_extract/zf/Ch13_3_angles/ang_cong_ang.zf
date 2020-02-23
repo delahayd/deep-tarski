@@ -1,0 +1,5 @@
+include "../tarski_term_def.zf".
+#is_ang_conga_is_ang
+assert[name "Labelis_ang_conga_is_ang"] forall (A B C A1 B1 C1 : point) (a : point->point->point->prop). Ang A B C a => CongA A B C A1 B1 C1 => Ang A1 B1 C1 a.
+rewrite[name "LabelAng"] forall (A B C : point) (a : point->point->point->prop). Ang A B C a <=> Q_CongA a && a A B C.
+goal forall (A B C A1 B1 C1 : point) (a : point->point->point->prop). Q_CongA a => a A B C => CongA A B C A1 B1 C1 => a A1 B1 C1.

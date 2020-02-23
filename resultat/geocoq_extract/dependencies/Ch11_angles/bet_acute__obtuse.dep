@@ -1,0 +1,3 @@
+lemme : col_permutation_3 perp_distinct acute_obtuse__lta conga_trans invert_one_side lea_in_angle lta__lea l8_3 perp_left_comm os2__inangle invert_two_sides not_col_permutation_4 not_col_permutation_1 conga__or_out_ts not_bet_out bet_neq12__neq conga_refl not_col_distincts per_col perp_in_sym conga_comm col_permutation_4 not_col_permutation_5 col_permutation_5 acute_per__lta perp_in_comm one_side_symmetry bet_col col_trivial_2 acute_distincts perp_in_per l11_24 in_angle_two_sides l11_18_1 perp_perp_in bet_dec l11_16 out_col col_one_side l6_2 bet__obtuse between_trivial2 l9_9_bis between_symmetry l10_15
+rewrite : 
+destruct : HD Hlta HUn Hd

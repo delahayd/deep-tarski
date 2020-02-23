@@ -1,0 +1,2 @@
+include "../tarski_term_def.zf".
+goal (forall (O E A : point). O!=E => (forall (E1 B C AB BC AC : point). Bet A B C => Length O E E1 A B AB => Length O E E1 B C BC => Length O E E1 A C AC => Sum O E E1 AB BC AC)) <=> (forall (O E E1 A B C AB BC AC : point). O!=E => Bet A B C => Length O E E1 A B AB => Length O E E1 B C BC => Length O E E1 A C AC => Sum O E E1 AB BC AC).

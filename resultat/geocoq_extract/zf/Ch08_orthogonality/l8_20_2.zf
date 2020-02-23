@@ -1,0 +1,6 @@
+include "../tarski_term_def.zf".
+#l7_3
+assert[name "Labell7_3"] forall (M A : point). Midpoint M A A => M=A.
+#symmetric_point_uniqueness
+assert[name "Labelsymmetric_point_uniqueness"] forall (A P P1 P2 : point). Midpoint P A P1 => Midpoint P A P2 => P1=P2.
+goal forall (A B C C1 D P : point). Per A B C => Midpoint P C1 D => Midpoint A C1 C => Midpoint B D C => B!=C => A!=P.

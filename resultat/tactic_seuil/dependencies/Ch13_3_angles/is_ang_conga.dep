@@ -1,0 +1,2 @@
+lemme : conga_sym conga_trans anga_conga anga_is_ang
+rewrite : Ang_Acute Q_CongA Ang

@@ -1,0 +1,2 @@
+lemme : col_permutation_5 perp_comm col_permutation_1 between_symmetry perp_left_comm perp_per_1 per_cong
+rewrite :

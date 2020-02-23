@@ -1,0 +1,11 @@
+include "../rew_type.zf".
+rewrite[name "LabelEq_Lcos"] forall (la lb : point->point->prop) (a b : point->point->point->prop). Eq_Lcos la a lb b <=> (exists (lp : point->point->prop). Lcos lp la a && Lcos lp lb b).
+rewrite[name "LabelEq_Lcos2"] forall (l1 l2 : point->point->prop) (a b c d : point->point->point->prop). Eq_Lcos2 l1 a b l2 c d <=> (exists (lp : point->point->prop). lcos2 lp l1 a b && lcos2 lp l2 c d).
+rewrite[name "Labellcos2"] forall (lp l : point->point->prop) (a b : point->point->point->prop). lcos2 lp l a b <=> (exists (la : point->point->prop). Lcos la l a && Lcos lp la b).
+#lcos_exists
+assert[name "Labellcos_exists"] forall (l : point->point->prop) (a : point->point->point->prop). Q_CongA_Acute a => Q_Cong l => ~Q_Cong_Null l => (exists (lp : point->point->prop). Lcos lp l a).
+#lcos_lg_anga
+assert[name "Labellcos_lg_anga"] forall (lp l : point->point->prop) (a : point->point->point->prop).Lcos lp l a => Lcos lp l a && Q_Cong l && Q_Cong lp && Q_CongA_Acute a.
+#lcos_lg_not_null
+assert[name "Labellcos_lg_not_null"] forall (lp l : point->point->prop) (a : point->point->point->prop). Lcos l lp a => ~Q_Cong_Null l && ~Q_Cong_Null lp.
+goal forall (la lb : point->point->prop) (a b c : point->point->point->prop). Q_CongA_Acute c => Eq_Lcos la a lb b => Eq_Lcos2 la a c lb b c.

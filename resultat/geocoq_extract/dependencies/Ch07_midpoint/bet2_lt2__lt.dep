@@ -1,0 +1,3 @@
+lemme : eq_dec_points le_zero cong_left_commutativity between_identity cong_commutativity between_exchange2 l7_20 col_permutation_4 col_permutation_5 l2_11 between_cong between_inner_transitivity bet_col col_cong_bet cong_symmetry between_exchange3 bet2_le2__le cong_trivial_identity between_equality between_symmetry cong_transitivity cong_identity
+rewrite : Lt Le Midpoint
+destruct : 

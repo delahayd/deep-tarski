@@ -1,0 +1,8 @@
+include "../tarski_term_def.zf".
+#col_trivial_2
+assert[name "Labelcol_trivial_2"] forall (A B : point). Col A B B.
+#col_trivial_3
+assert[name "Labelcol_trivial_3"] forall (A B : point). Col A B A.
+#col_trivial_1
+assert[name "Labelcol_trivial_1"] forall (A B : point). Col A A B.
+goal forall (A B C : point). ~Col A B C => ~Col A B C && A!=B && B!=C && A!=C.

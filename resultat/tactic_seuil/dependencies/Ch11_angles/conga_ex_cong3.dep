@@ -1,0 +1,2 @@
+lemme : conga_right_comm conga_refl col_permutation_1 col_trivial_3 col_permutation_2 out_trivial par_trans eq_dec_points cong_identity cong_commutativity cong_symmetry l6_6 cong_4321 col_permutation_5 col_trivial_1 conga_sym col_permutation_4 between_symmetry cong_transitivity
+rewrite : CongA Out Cong_3

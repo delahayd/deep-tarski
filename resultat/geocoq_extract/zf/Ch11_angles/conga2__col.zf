@@ -1,0 +1,20 @@
+include "../tarski_term_def.zf".
+#out_conga
+assert[name "Labelout_conga"] forall (A B C A1 B1 C1 A0 C0 A2 C2 : point). CongA A B C A1 B1 C1 => Out B A A0 => Out B C C0 => Out B1 A1 A2 => Out B1 C1 C2 => CongA A0 B C0 A2 B1 C2.
+#cong_symmetry
+assert[name "Labelcong_symmetry"] forall (A B C D : point). Cong A B C D => Cong C D A B.
+#l6_6
+assert[name "Labell6_6"] forall (P A B : point). Out P A B => Out P B A.
+#conga_distinct
+assert[name "Labelconga_distinct"] forall (A B C D E F : point). CongA A B C D E F => CongA A B C D E F && A!=B && C!=B && D!=E && F!=E.
+#upper_dim
+assert[name "Labelupper_dim"] forall (A B C P Q : point). Cong A P A Q => Cong B P B Q => Cong C P C Q => P!=Q => Bet A B C || Bet B C A || Bet C A B.
+#out_trivial
+assert[name "Labelout_trivial"] forall (P A : point). A!=P => Out P A A.
+#l6_11_existence
+assert[name "Labell6_11_existence"] forall (A B C R : point). R!=A => B!=C => (exists (X : point). Out A X R && Cong A X B C).
+#cong_reflexivity
+assert[name "Labelcong_reflexivity"] forall (A B : point). Cong A B A B.
+#l11_49
+assert[name "Labell11_49"] forall (A B C A1 B1 C1 : point). CongA A B C A1 B1 C1 => Cong B A B1 A1 => Cong B C B1 C1 => Cong A C A1 C1 && (A!=C => CongA B A C B1 A1 C1 && CongA B C A B1 C1 A1).
+goal forall (A B C P P1 : point). ~Out B A C => CongA P B A P B C => CongA P1 B A P1 B C => Col B P P1.

@@ -1,0 +1,39 @@
+digraph "unsat_graph" {
+  vertex_0 [color=red, label="[]", shape=box, style=filled];
+  vertex_0 -> vertex_1 [label="simplify", dir="back"];
+  vertex_1 [color=red, label="[]", shape=box, style=filled];
+  vertex_1 -> vertex_2 [label="demod\l\{X34[2] → O[0], X35[2] → E1[0]\}[2]\l", dir="back"];
+  vertex_2 [shape=box, label="forall (X34:point) (X35:point). Col X34 X34 X35\l", style=filled];
+  vertex_2 -> vertex_3 [label="cnf", dir="back"];
+  vertex_3 [color=yellow, shape=box, label="assert\l  [file \"../resultat/geocoq_extract/zf/Ch14_sum/sum_diff.zf\" \l   \"Labelcol_trivial_1\"]\l  ∀ A/171:point B/172:point. (Col A/171 A/171 B/172).\l", style=filled];
+  vertex_1 -> vertex_4 [label="demod", dir="back"];
+  vertex_4 [shape=box, label="E = O\l", style=filled];
+  vertex_4 -> vertex_5 [label="s_sup-\l\{X0[0] → E[0], X540[1] → O[0], X541[1] → E[0]\}[0]\l", dir="back"];
+  vertex_5 [shape=box, label="forall (X0:point). [¬Col O E X0 ∨ X0 = O]\l", style=filled];
+  vertex_5 -> vertex_6 [label="s_sup-\l\{X36[1] → X0[0]\}[0]\l", dir="back"];
+  vertex_6 [shape=box, label="forall (X0:point). [X0 = O ∨ ¬Sum O E E1 X0 O X0]\l", style=filled];
+  vertex_6 -> vertex_7 [label="simplify\l\{X1[0] → O[0], X2[0] → X0[0]\}[0]\l", dir="back"];
+  vertex_7 [shape=box, label="forall (X0:point) (X1:point) (X2:point).\l[O ≠ X1 ∨ X2 ≠ X0 ∨ ¬Sum O E E1 X2 X1 X0 ∨ X2 = O]\l", style=filled];
+  vertex_7 -> vertex_8 [label="rw_clause\l\{X605[1] → O[0], X606[1] → X6[0], X607[1] → X5[0], X608[1] → X7[0]\}[1]\l", dir="back"];
+  vertex_8 [color=navajowhite, shape=box, label="(Parallelogram_flat X605 X606 X607 X608 :=\l   [Col X605 X606 X607∧\l    Cong X605 X606 X607 X608∧\l    X605 ≠ X607 ∨ X606 ≠ X608∧\l    Cong X605 X608 X607 X606∧\l    Col X605 X606 X608] [B])\l", style=filled];
+  vertex_8 -> vertex_9 [label="rw.lit", dir="back"];
+  vertex_9 [color=yellow, shape=box, label="rewrite\l  [file \"../resultat/geocoq_extract/zf/Ch14_sum/sum_diff.zf\" \l   \"LabelParallelogram_flat\"]\l  Parallelogram_flat X605 X606 X607 X608\l  =\> Col X605 X606 X607 && Cong X605 X606 X607 X608 && X605 ≠ X607 ∨ \l     X606 ≠ X608 && Cong X605 X608 X607 X606 && Col X605 X606 X608.\l", style=filled];
+  vertex_7 -> vertex_10 [label="rw_clause\l\{X605[1] → O[0], X606[1] → X6[0], X607[1] → X5[0], X608[1] → X7[0]\}[0]\l", dir="back"];
+  vertex_10 [shape=box, label="forall (X5:point) (X6:point) (X7:point).\l[X6 = O ∨ ¬Sum O E E1 X6 X5 X7 ∨ Parallelogram_flat O X6 X5 X7]\l", style=filled];
+  vertex_10 -> vertex_11 [label="cnf", dir="back"];
+  vertex_11 [color=yellow, shape=box, label="assert\l  [file \"../resultat/geocoq_extract/zf/Ch14_sum/sum_diff.zf\" \"Labelsum_cong\"]\l  ∀ A/141:point B/142:point C/143:point.\l    ((Sum O E E1 A/141 B/142 C/143) ⇒\l     (((B/142 ≠ O) ∨ (A/141 ≠ O)) ⇒\l      (Parallelogram_flat O A/141 B/142 C/143))).\l", style=filled];
+  vertex_5 -> vertex_12 [label="s_sup-\l\{X36[1] → X0[0]\}[1]\l", dir="back"];
+  vertex_12 [shape=box, label="forall (X36:point). [Sum O E E1 X36 O X36 ∨ ¬Col O E X36]\l", style=filled];
+  vertex_12 -> vertex_13 [label="cnf", dir="back"];
+  vertex_13 [color=yellow, shape=box, label="assert\l  [file \"../resultat/geocoq_extract/zf/Ch14_sum/sum_diff.zf\" \"Labelsum_A_O\"]\l  ∀ A/173:point. ((Col O E A/173) ⇒ (Sum O E E1 A/173 O A/173)).\l", style=filled];
+  vertex_4 -> vertex_14 [label="s_sup-\l\{X0[0] → E[0], X540[1] → O[0], X541[1] → E[0]\}[1]\l", dir="back"];
+  vertex_14 [shape=box, label="forall (X540:point) (X541:point). Col X540 X541 X541\l", style=filled];
+  vertex_14 -> vertex_15 [label="cnf", dir="back"];
+  vertex_15 [color=yellow, shape=box, label="assert\l  [file \"../resultat/geocoq_extract/zf/Ch14_sum/sum_diff.zf\" \l   \"Labelcol_trivial_2\"]\l  ∀ A/682:point B/683:point. (Col A/682 B/683 B/683).\l", style=filled];
+  vertex_1 -> vertex_16 [label="demod", dir="back"];
+  vertex_16 [shape=box, label="¬Col O E E1\l", style=filled];
+  vertex_16 -> vertex_17 [label="cnf", dir="back"];
+  vertex_17 [color=yellow, shape=box, label="assert\l  [file \"../resultat/geocoq_extract/zf/Ch14_sum/sum_diff.zf\" \"zf_stmt_131\"]\l  ¬ (Col O E E1).\l", style=filled];
+  }
+
+

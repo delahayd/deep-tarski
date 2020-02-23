@@ -1,0 +1,3 @@
+lemme : between_symmetry between_trivial2 cong_reflexivity
+rewrite : Midpoint
+destruct : 

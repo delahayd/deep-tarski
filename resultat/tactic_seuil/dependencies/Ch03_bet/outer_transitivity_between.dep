@@ -1,0 +1,2 @@
+lemme : construction_uniqueness between_symmetry cong_reflexivity cong_identity cong_symmetry outer_transitivity_between2
+rewrite :

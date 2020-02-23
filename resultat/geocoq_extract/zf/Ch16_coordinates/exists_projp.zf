@@ -1,0 +1,4 @@
+include "../tarski_term_def.zf".
+#l8_18_existence
+assert[name "Labell8_18_existence"] forall (A B C : point). ~Col A B C => (exists (X : point). Col A B X && Perp A B C X).
+goal forall (A B P : point). A!=B => (exists (P1 : point). Projp P P1 A B).

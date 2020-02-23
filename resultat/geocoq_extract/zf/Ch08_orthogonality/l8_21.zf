@@ -1,0 +1,8 @@
+include "../tarski_term_def.zf".
+#between_trivial2
+assert[name "Labelbetween_trivial2"] forall (A B : point). Bet A A B.
+#l8_21_aux
+assert[name "Labell8_21_aux"] forall (A B C : point). ~Col A B C => (exists (P T : point). Perp A B P A && Col A B T && Bet C T P).
+#not_col_exists
+assert[name "Labelnot_col_exists"] forall (A B : point). A!=B => (exists (C : point). ~Col A B C).
+goal forall (A B C : point). A!=B => (exists (P T : point). Perp A B P A && Col A B T && Bet C T P).

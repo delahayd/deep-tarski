@@ -1,0 +1,3 @@
+lemme : prod_exists l11_17 thales diff_sum l11_10 perp_in_id prod_sym per_perp_in perp_sym length_uniqueness eq_dec_points cong_diff prod_0_r perp_in_col perp_col prod_uniqueness conga_right_comm perp_distinct length_id_1 out_col par_left_comm segment_construction_2 conga_refl perp_perp_in l6_6 perp_in_comm perp_comm conga_distinct par_comm perp_not_col par_symmetry perp_in_right_comm cong_symmetry l8_7 not_col_distincts col_trivial_3 out_trivial perp_left_comm length_id_2 cong_diff_4 sum_ar2 l8_2 cong_identity col_permutation_5 length_eq_cong_2 l12_9 l11_49 perp_right_comm prod_comm perp_in_distinct perp_in_perp_bis perp_in_per length_existence
+rewrite : Out Length LtP Ar2 CongA LeP
+destruct : 

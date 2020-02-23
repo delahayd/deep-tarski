@@ -1,0 +1,6 @@
+include "../tarski_term_def.zf".
+#l7_17
+assert[name "Labell7_17"] forall (P P1 A B : point). Midpoint A P P1 => Midpoint B P P1 => A=B.
+#l7_2
+assert[name "Labell7_2"] forall (M A B : point). Midpoint M A B => Midpoint M B A.
+goal forall (P P1 A B : point). Midpoint A P P1 => Midpoint B P1 P => A=B.

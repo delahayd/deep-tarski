@@ -1,0 +1,20 @@
+include "../tarski_term_def.zf".
+#le_reflexivity
+assert[name "Labelle_reflexivity"] forall (A B : point). Le A B A B.
+#eq_dec_points
+assert[name "Labeleq_dec_points"] forall (A B : point). A=B || A!=B.
+#bet_dec
+assert[name "Labelbet_dec"] forall (A B C : point). Bet A B C || ~Bet A B C.
+#triangle_strict_inequality
+assert[name "Labeltriangle_strict_inequality"] forall (A B C D : point). Bet A B D => Cong B C B D => ~Bet A B C => Lt A C A D.
+#cong__le3412
+assert[name "Labelcong__le3412"] forall (A B C D : point). Cong A B C D => Le C D A B.
+#cong_reflexivity
+assert[name "Labelcong_reflexivity"] forall (A B : point). Cong A B A B.
+#le_anti_symmetry
+assert[name "Labelle_anti_symmetry"] forall (A B C D : point). Le A B C D => Le C D A B => Cong A B C D.
+#construction_uniqueness
+assert[name "Labelconstruction_uniqueness"] forall (Q A B C X Y : point). Q!=A => Bet Q A X => Cong A X B C => Bet Q A Y => Cong A Y B C => X=Y.
+#cong__le
+assert[name "Labelcong__le"] forall (A B C D : point). Cong A B C D => Le A B C D.
+goal forall (A B C D : point). Bet A B D => Cong B C B D => Le A C A D.

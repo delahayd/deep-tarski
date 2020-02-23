@@ -1,0 +1,3 @@
+lemme : cong_identity cong_reflexivity eq_dec_points
+rewrite : Q_Cong Q_Cong_Null
+destruct : 

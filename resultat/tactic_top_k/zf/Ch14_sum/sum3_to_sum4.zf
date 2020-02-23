@@ -1,0 +1,3 @@
+include "../rew_type.zf".
+rewrite[name "LabelSum4"] forall (O E E1 A B C D S: point). Sum4 O E E1 A B C D S <=> (exists (ABC : point). sum3 O E E1 A B C ABC && Sum O E E1 ABC D S).
+goal forall (O E E1 A B C X ABC S : point). sum3 O E E1 A B C ABC => Sum O E E1 ABC X S => Sum4 O E E1 A B C X S.

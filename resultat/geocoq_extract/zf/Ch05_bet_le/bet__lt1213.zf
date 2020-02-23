@@ -1,0 +1,6 @@
+include "../tarski_term_def.zf".
+#bet__le1213
+assert[name "Labelbet__le1213"] forall (A B C : point). Bet A B C => Le A B A C.
+#between_cong
+assert[name "Labelbetween_cong"] forall (A B C : point). Bet A C B => Cong A C A B => C=B.
+goal forall (A B C : point). B!=C => Bet A B C => Lt B C A C.

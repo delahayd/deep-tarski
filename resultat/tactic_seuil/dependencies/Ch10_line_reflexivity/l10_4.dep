@@ -1,0 +1,2 @@
+lemme : col_trivial_1 one_side_not_col123 between_symmetry is_image_is_image_spec one_side_symmetry eq_dec_points col_trivial_3 l7_2 cong_symmetry perp_right_comm
+rewrite : ReflectL TS Reflect

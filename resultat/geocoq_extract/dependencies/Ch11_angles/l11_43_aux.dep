@@ -1,0 +1,3 @@
+lemme : l11_17 lta_trans conga_sym conga_right_comm conga_trans l11_30 col_permutation_1 col_trivial_1 conga_refl col_transitivity_1 not_col_distincts per_col conga_comm col_permutation_4 segment_construction l8_2 conga_left_comm l11_36 bet_col l11_41 cong_symmetry l11_16 lta_right_comm cong_identity
+rewrite : Acute CongA LtA LeA Obtuse GtA
+destruct : HH

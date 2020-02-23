@@ -1,0 +1,2 @@
+lemme : conga_sym conga_right_comm lta_left_comm lta_right_comm
+rewrite : LeA

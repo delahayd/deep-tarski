@@ -1,0 +1,3 @@
+lemme : bet_conga_bet ang_conga conga_refl
+rewrite : Q_CongA_nFlat Q_CongA
+destruct : HH

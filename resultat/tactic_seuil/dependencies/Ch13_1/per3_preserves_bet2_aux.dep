@@ -1,0 +1,2 @@
+lemme : not_col_distincts col_permutation_2 eq_dec_points perp_in_sym perp_sym l12_9 col_permutation_5 col_trivial_1 perp_in_per l12_6 one_side_symmetry col_trivial_2 perp_in_comm per_col per_not_col bet_col between_trivial l8_2 perp_distinct between_identity between_symmetry l9_2 l9_8_2 l6_21
+rewrite : TS

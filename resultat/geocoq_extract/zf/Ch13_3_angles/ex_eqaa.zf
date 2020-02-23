@@ -1,0 +1,6 @@
+include "../tarski_term_def.zf".
+#ex_eqa
+assert[name "Labelex_eqa"] forall (a1 a2 : point->point->point->prop). (exists (A B C : point). Ang A B C a1 && Ang A B C a2) => EqA a1 a2.
+#is_anga_to_is_ang
+assert[name "Labelis_anga_to_is_ang"] forall (A B C : point) (a : point->point->point->prop). Ang_Acute A B C a => Ang A B C a.
+goal forall (a1 a2 : point->point->point->prop). (exists (A B C : point). Ang_Acute A B C a1 && Ang_Acute A B C a2) => EqA a1 a2.

@@ -1,0 +1,38 @@
+include "../tarski_term_def.zf".
+#bet_neq12__neq
+assert[name "Labelbet_neq12__neq"] forall (A B C : point). Bet A B C => A!=B=>A!=C.
+#outer_transitivity_between
+assert[name "Labelouter_transitivity_between"] forall (A B C D : point). Bet A B C=> Bet B C D => B!=C => Bet A B D.
+#between_exchange3
+assert[name "Labelbetween_exchange3"] forall (A B C D : point). Bet A B C => Bet A C D => Bet B C D.
+#between_symmetry
+assert[name "Labelbetween_symmetry"] forall (A B C : point). Bet A B C => Bet C B A.
+#perp2_preserves_bet23
+assert[name "Labelperp2_preserves_bet23"] forall (O A B A1 B1 : point). Bet O A B => Col O A1 B1 => ~Col O A A1 => Perp2 A A1 B B1 O => Bet O A1 B1.
+#perp2_sym
+assert[name "Labelperp2_sym"] forall (A B C D P : point). Perp2 A B C D P => Perp2 C D A B P.
+#not_col_distincts
+assert[name "Labelnot_col_distincts"] forall (A B C : point). ~Col A B C => ~Col A B C && A!=B && B!=C && A!=C.
+#col_trivial_3
+assert[name "Labelcol_trivial_3"] forall (A B : point). Col A B A.
+#between_inner_transitivity
+assert[name "Labelbetween_inner_transitivity"] forall (A B C D : point). Bet A B D => Bet B C D => Bet A B C.
+#perp2_preserves_bet13
+assert[name "Labelperp2_preserves_bet13"] forall (O B C B1 C1 : point). Bet B O C => Col O B1 C1 => ~Col O B B1 => Perp2 B C1 C B1 O => Bet B1 O C1.
+#col_permutation_1
+assert[name "Labelcol_permutation_1"] forall (A B C : point). Col A B C => Col B C A.
+#col_trivial_1
+assert[name "Labelcol_trivial_1"] forall (A B : point). Col A A B.
+#col_permutation_5
+assert[name "Labelcol_permutation_5"] forall (A B C : point). Col A B C => Col A C B.
+#outer_transitivity_between2
+assert[name "Labelouter_transitivity_between2"] forall (A B C D : point). Bet A B C => Bet B C D => B!=C => Bet A C D.
+#col_transitivity_1
+assert[name "Labelcol_transitivity_1"] forall (P Q A B : point). P!=Q => Col P Q A => Col P Q B => Col P A B.
+#bet_col
+assert[name "Labelbet_col"] forall (A B C : point). Bet A B C => Col A B C.
+#between_exchange4
+assert[name "Labelbetween_exchange4"] forall (A B C D : point). Bet A B C => Bet A C D => Bet A B D.
+#fourth_point
+assert[name "Labelfourth_point"] forall (A B C P : point). A!=B => B!=C => Col A B P => Bet A B C => Bet P A B || Bet A P B => Bet B P C => Bet B C P.
+goal forall (A B C A1 B1 C1 O : point). ~Col O A A1 => B!=O => C!=O => Col O A B => Col O B C => B1!=O => C1!=O => Col O A1 B1 => Col O B1 C1 => Perp2 B C1 C B1 O => Perp2 C A1 A C1 O => Bet A O B => Bet A1 O B1.

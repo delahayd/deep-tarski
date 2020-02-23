@@ -1,0 +1,26 @@
+digraph "unsat_graph" {
+  vertex_0 [color=red, label="[]", shape=box, style=filled];
+  vertex_0 -> vertex_1 [label="s_sup-\l", dir="back"];
+  vertex_1 [shape=box, label="¬Inter sk_B sk_A sk_D sk_C sk_X\l", style=filled];
+  vertex_1 -> vertex_2 [label="cnf", dir="back"];
+  vertex_2 [shape=box, label="negated_goal\l  ¬ (∀ A/143:point B/144:point C/145:point D/146:point X/147:point.\l        ((Inter A/143 B/144 C/145 D/146 X/147) ⇒\l         (Inter B/144 A/143 D/146 C/145 X/147)))\l  # skolems: [].\l", style=filled];
+  vertex_2 -> vertex_3 [label="cnf.neg", dir="back"];
+  vertex_3 [color=green, shape=box, label="goal\l  [file \"../resultat/geocoq_extract/zf/Ch12_parallel/inter_comm.zf\" \l   \"zf_stmt_128\"]\l  ∀ A/143:point B/144:point C/145:point D/146:point X/147:point.\l    ((Inter A/143 B/144 C/145 D/146 X/147) ⇒\l     (Inter B/144 A/143 D/146 C/145 X/147)).\l", style=filled];
+  vertex_0 -> vertex_4 [label="s_sup-\l", dir="back"];
+  vertex_4 [shape=box, label="Inter sk_B sk_A sk_D sk_C sk_X\l", style=filled];
+  vertex_4 -> vertex_5 [label="s_sup-\l\{X5[0] → sk_B[1], \l X6[0] → sk_A[1], \l X7[0] → sk_D[1], \l X8[0] → sk_C[1], \l X9[0] → sk_X[1]\}[0]\l", dir="back"];
+  vertex_5 [shape=box, label="forall (X5:point) (X6:point) (X7:point) (X8:point) (X9:point).\l[Inter X5 X6 X7 X8 X9 ∨ ¬Inter X6 X5 X7 X8 X9]\l", style=filled];
+  vertex_5 -> vertex_6 [label="cnf", dir="back"];
+  vertex_6 [color=yellow, shape=box, label="assert\l  [file \"../resultat/geocoq_extract/zf/Ch12_parallel/inter_comm.zf\" \l   \"Labelinter_left_comm\"]\l  ∀ A/138:point B/139:point C/140:point D/141:point X/142:point.\l    ((Inter A/138 B/139 C/140 D/141 X/142) ⇒\l     (Inter B/139 A/138 C/140 D/141 X/142)).\l", style=filled];
+  vertex_4 -> vertex_7 [label="s_sup-\l\{X5[0] → sk_B[1], \l X6[0] → sk_A[1], \l X7[0] → sk_D[1], \l X8[0] → sk_C[1], \l X9[0] → sk_X[1]\}[1]\l", dir="back"];
+  vertex_7 [shape=box, label="Inter sk_A sk_B sk_D sk_C sk_X\l", style=filled];
+  vertex_7 -> vertex_8 [label="s_sup-\l\{X0[0] → sk_A[1], \l X1[0] → sk_B[1], \l X2[0] → sk_D[1], \l X3[0] → sk_C[1], \l X4[0] → sk_X[1]\}[0]\l", dir="back"];
+  vertex_8 [shape=box, label="forall (X0:point) (X1:point) (X2:point) (X3:point) (X4:point).\l[Inter X0 X1 X2 X3 X4 ∨ ¬Inter X0 X1 X3 X2 X4]\l", style=filled];
+  vertex_8 -> vertex_9 [label="cnf", dir="back"];
+  vertex_9 [color=yellow, shape=box, label="assert\l  [file \"../resultat/geocoq_extract/zf/Ch12_parallel/inter_comm.zf\" \l   \"Labelinter_right_comm\"]\l  ∀ A/133:point B/134:point C/135:point D/136:point X/137:point.\l    ((Inter A/133 B/134 C/135 D/136 X/137) ⇒\l     (Inter A/133 B/134 D/136 C/135 X/137)).\l", style=filled];
+  vertex_7 -> vertex_10 [label="s_sup-\l\{X0[0] → sk_A[1], \l X1[0] → sk_B[1], \l X2[0] → sk_D[1], \l X3[0] → sk_C[1], \l X4[0] → sk_X[1]\}[1]\l", dir="back"];
+  vertex_10 [shape=box, label="Inter sk_A sk_B sk_C sk_D sk_X\l", style=filled];
+  vertex_10 -> vertex_2 [label="cnf", dir="back"];
+  }
+
+

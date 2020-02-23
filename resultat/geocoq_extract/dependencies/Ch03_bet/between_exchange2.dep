@@ -1,0 +1,3 @@
+lemme : between_symmetry eq_dec_points between_inner_transitivity outer_transitivity_between2
+rewrite : 
+destruct : 

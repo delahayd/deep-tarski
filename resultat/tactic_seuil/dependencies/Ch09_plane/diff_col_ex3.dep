@@ -1,0 +1,2 @@
+lemme : between_equality outer_transitivity_between col_trivial_1 between_trivial2 between_trivial col_permutation_1 between_identity between_symmetry cong_reflexivity eq_dec_points point_construction_different cong_identity cong_symmetry cong_4321 diff_col_ex
+rewrite : Col Out

@@ -1,0 +1,2 @@
+lemme : le_cases le_anti_symmetry l7_2 le_mid2__le13 cong_cong_half_1 cong__le
+rewrite :

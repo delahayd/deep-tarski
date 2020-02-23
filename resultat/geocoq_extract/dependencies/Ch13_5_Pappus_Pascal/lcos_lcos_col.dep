@@ -1,0 +1,3 @@
+lemme : lcos_lg_anga l8_2 anga_sym lcos_lg_not_null lcos_per per_per_col
+rewrite : Q_Cong_Null
+destruct : 

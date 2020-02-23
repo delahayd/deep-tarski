@@ -1,0 +1,38 @@
+digraph "unsat_graph" {
+  vertex_0 [color=red, label="[]", shape=box, style=filled];
+  vertex_0 -> vertex_1 [label="s_sup-\l", dir="back"];
+  vertex_1 [shape=box, label="¬Col sk_C sk_A sk_B\l", style=filled];
+  vertex_1 -> vertex_2 [label="s_sup-\l\{X0[0] → sk_C[0], X6[1] → X0[0], X7[1] → sk_D[0]\}[0]\l", dir="back"];
+  vertex_2 [shape=box, label="forall (X0:point). [¬Col X0 sk_A sk_B ∨ ¬Col X0 sk_C sk_D]\l", style=filled];
+  vertex_2 -> vertex_3 [label="rw_clause\l\{X8[1] → sk_A[0], X9[1] → sk_B[0], X10[1] → sk_C[0], X11[1] → sk_D[0]\}[1]\l", dir="back"];
+  vertex_3 [color=navajowhite, shape=box, label="(Par_strict X8 X9 X10 X11 :=\l   [X10 ≠ X11∧\l    ¬Col X12 X8 X9 ∨ ¬Col X12 X10 X11∧\l    Coplanar X8 X9 X10 X11∧\l    X8 ≠ X9] [B])\l", style=filled];
+  vertex_3 -> vertex_4 [label="rw.lit", dir="back"];
+  vertex_4 [color=yellow, shape=box, label="rewrite\l  [file\l   \"../resultat/geocoq_extract/zf/Ch12_parallel/par_strict_not_col_1.zf\" \l   \"LabelPar_strict\"]\l  Par_strict X8 X9 X10 X11\l  =\> X10 ≠ X11 && ¬ Col X12 X8 X9 ∨ ¬ Col X12 X10 X11 && \l     Coplanar X8 X9 X10 X11 && X8 ≠ X9.\l", style=filled];
+  vertex_2 -> vertex_5 [label="rw_clause\l\{X8[1] → sk_A[0], X9[1] → sk_B[0], X10[1] → sk_C[0], X11[1] → sk_D[0]\}[0]\l", dir="back"];
+  vertex_5 [shape=box, label="Par_strict sk_A sk_B sk_C sk_D\l", style=filled];
+  vertex_5 -> vertex_6 [label="cnf", dir="back"];
+  vertex_6 [shape=box, label="negated_goal\l  ¬ (∀ A/146:point B/147:point C/148:point D/149:point.\l        ((Par_strict A/146 B/147 C/148 D/149) ⇒\l         (¬ (Col A/146 B/147 C/148))))\l  # skolems: [].\l", style=filled];
+  vertex_6 -> vertex_7 [label="cnf.neg", dir="back"];
+  vertex_7 [color=green, shape=box, label="goal\l  [file\l   \"../resultat/geocoq_extract/zf/Ch12_parallel/par_strict_not_col_1.zf\" \l   \"zf_stmt_128\"]\l  ∀ A/146:point B/147:point C/148:point D/149:point.\l    ((Par_strict A/146 B/147 C/148 D/149) ⇒ (¬ (Col A/146 B/147 C/148))).\l", style=filled];
+  vertex_1 -> vertex_8 [label="s_sup-\l\{X0[0] → sk_C[0], X6[1] → X0[0], X7[1] → sk_D[0]\}[1]\l", dir="back"];
+  vertex_8 [shape=box, label="forall (X6:point) (X7:point). Col X6 X6 X7\l", style=filled];
+  vertex_8 -> vertex_9 [label="cnf", dir="back"];
+  vertex_9 [color=yellow, shape=box, label="assert\l  [file\l   \"../resultat/geocoq_extract/zf/Ch12_parallel/par_strict_not_col_1.zf\" \l   \"Labelcol_trivial_1\"]\l  ∀ A/139:point B/140:point. (Col A/139 A/139 B/140).\l", style=filled];
+  vertex_0 -> vertex_10 [label="s_sup-\l", dir="back"];
+  vertex_10 [shape=box, label="Col sk_C sk_A sk_B\l", style=filled];
+  vertex_10 -> vertex_11 [label="s_sup-\l\{X3[0] → sk_C[1], X4[0] → sk_A[1], X5[0] → sk_B[1]\}[0]\l", dir="back"];
+  vertex_11 [shape=box, label="forall (X3:point) (X4:point) (X5:point). [Col X3 X4 X5 ∨ ¬Col X3 X5 X4]\l", style=filled];
+  vertex_11 -> vertex_12 [label="cnf", dir="back"];
+  vertex_12 [color=yellow, shape=box, label="assert\l  [file\l   \"../resultat/geocoq_extract/zf/Ch12_parallel/par_strict_not_col_1.zf\" \l   \"Labelcol_permutation_5\"]\l  ∀ A/136:point B/137:point C/138:point.\l    ((Col A/136 B/137 C/138) ⇒ (Col A/136 C/138 B/137)).\l", style=filled];
+  vertex_10 -> vertex_13 [label="s_sup-\l\{X3[0] → sk_C[1], X4[0] → sk_A[1], X5[0] → sk_B[1]\}[1]\l", dir="back"];
+  vertex_13 [shape=box, label="Col sk_C sk_B sk_A\l", style=filled];
+  vertex_13 -> vertex_14 [label="s_sup-\l\{X0[0] → sk_C[1], X1[0] → sk_B[1], X2[0] → sk_A[1]\}[0]\l", dir="back"];
+  vertex_14 [shape=box, label="forall (X0:point) (X1:point) (X2:point). [Col X0 X1 X2 ∨ ¬Col X2 X1 X0]\l", style=filled];
+  vertex_14 -> vertex_15 [label="cnf", dir="back"];
+  vertex_15 [color=yellow, shape=box, label="assert\l  [file\l   \"../resultat/geocoq_extract/zf/Ch12_parallel/par_strict_not_col_1.zf\" \l   \"Labelcol_permutation_3\"]\l  ∀ A/133:point B/134:point C/135:point.\l    ((Col A/133 B/134 C/135) ⇒ (Col C/135 B/134 A/133)).\l", style=filled];
+  vertex_13 -> vertex_16 [label="s_sup-\l\{X0[0] → sk_C[1], X1[0] → sk_B[1], X2[0] → sk_A[1]\}[1]\l", dir="back"];
+  vertex_16 [shape=box, label="Col sk_A sk_B sk_C\l", style=filled];
+  vertex_16 -> vertex_6 [label="cnf", dir="back"];
+  }
+
+

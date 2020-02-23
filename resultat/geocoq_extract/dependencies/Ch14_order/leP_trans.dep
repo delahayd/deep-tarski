@@ -1,0 +1,3 @@
+lemme : sum_pos_pos diff_ar2 sum_exists sum_comm sum_diff_diff_b
+rewrite : Ar2 LtP LeP
+destruct : 

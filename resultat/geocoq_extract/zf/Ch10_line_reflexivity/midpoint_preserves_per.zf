@@ -1,0 +1,9 @@
+include "../tarski_term_def.zf".
+#symmetric_point_construction
+assert[name "Labelsymmetric_point_construction"] forall (P A : point). exists (P1 : point). Midpoint A P P1.
+#l7_16
+assert[name "Labell7_16"] forall (P Q R S P1 Q1 S1 R1 A : point). Midpoint A P P1 => Midpoint A Q Q1 => Midpoint A R R1 => Midpoint A S S1 => Cong P Q R S => Cong P1 Q1 R1 S1.
+#symmetry_preserves_midpoint
+assert[name "Labelsymmetry_preserves_midpoint"] forall (A B C D E F Z : point). Midpoint Z A D => Midpoint Z B E => Midpoint Z C F => Midpoint B A C => Midpoint E D F.
+rewrite[name "LabelPer"] forall (A B C : point). Per A B C <=> (exists (C1 : point). Midpoint B C C1 && Cong A C A C1).
+goal forall (A B C A1 B1 C1 M : point). Per A B C => Midpoint M A A1 => Midpoint M B B1 => Midpoint M C C1 => Per A1 B1 C1.

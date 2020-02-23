@@ -1,0 +1,3 @@
+lemme : lcos_lg_not_null
+rewrite : Lcos Q_Cong_Null
+destruct : 

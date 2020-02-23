@@ -1,0 +1,3 @@
+lemme : outer_transitivity_between2 eq_dec_points cong_diff_3 out_distinct one_side_transitivity out_one_side_1 col_permutation_1 bet_neq21__neq col_trivial_1 col_transitivity_1 not_col_distincts segment_construction col_permutation_5 one_side_symmetry bet_col col_trivial_2 l5_3 cong_symmetry l6_6 between_exchange3 col_trivial_3 out_col between_symmetry cong_identity
+rewrite : OS InAngle TS Out
+destruct : 

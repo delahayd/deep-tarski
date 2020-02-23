@@ -1,0 +1,384 @@
+include "tarski_term_def.zf".
+
+# rewrite 2.10. 
+
+rewrite[name "LabelOFSC"] forall (A B C D A1 B1 C1 D1 : point). OFSC A B C D A1 B1 C1 D1 <=> Bet A B C && Bet A1 B1 C1 && Cong A B A1 B1 && Cong B C B1 C1 && Cong A D A1 D1 && Cong B D B1 D1.
+
+# rewrite 3.8. 
+
+rewrite[name "LabelBet_4"] forall (A1 A2 A3 A4 : point). Bet_4 A1 A2 A3 A4 <=> Bet A1 A2 A3 && Bet A2 A3 A4 && Bet A1 A3 A4 && Bet A1 A2 A4.
+
+# rewrite 4.1. 
+
+rewrite[name "LabelIFSC"] forall (A B C D A1 B1 C1 D1 : point). IFSC A B C D A1 B1 C1 D1 <=> Bet A B C && Bet A1 B1 C1 &&  Cong A C A1 C1 && Cong B C B1 C1 &&  Cong A D A1 D1 && Cong C D C1 D1.
+
+# rewrite 4.4. 
+
+rewrite[name "LabelCong_3"] forall (A B C A1 B1 C1 : point). Cong_3 A B C A1 B1 C1 <=> Cong A B A1 B1 && Cong A C A1 C1 && Cong B C B1 C1.
+
+rewrite[name "LabelCong_4"] forall (P1 P2 P3 P4 Q1 Q2 Q3 Q4 : point). Cong_4 P1 P2 P3 P4 Q1 Q2 Q3 Q4 <=> Cong P1 P2 Q1 Q2 && Cong P1 P3 Q1 Q3 && Cong P1 P4 Q1 Q4 && Cong P2 P3 Q2 Q3 && Cong P2 P4 Q2 Q4 && Cong P3 P4 Q3 Q4.
+
+rewrite[name "LabelCong_5"] forall (P1 P2 P3 P4 P5 Q1 Q2 Q3 Q4 Q5 : point). Cong_5 P1 P2 P3 P4 P5 Q1 Q2 Q3 Q4 Q5 <=> Cong P1 P2 Q1 Q2 && Cong P1 P3 Q1 Q3 && Cong P1 P4 Q1 Q4 && Cong P1 P5 Q1 Q5 && Cong P2 P3 Q2 Q3 && Cong P2 P4 Q2 Q4 && Cong P2 P5 Q2 Q5 && Cong P3 P4 Q3 Q4 && Cong P3 P5 Q3 Q5 && Cong P4 P5 Q4 Q5.
+
+# rewrite 4.10. 
+
+rewrite[name "LabelCol"] forall (A B C : point). Col A B C <=> Bet A B C || Bet B C A || Bet C A B.
+
+# rewrite 4.15. 
+
+rewrite[name "LabelFSC"] forall (A B C D A1 B1 C1 D1 : point). FSC A B C D A1 B1 C1 D1 <=> Col A B C && Cong_3 A B C A1 B1 C1 && Cong A D A1 D1 && Cong B D B1 D1.
+
+# rewrite 5.4. 
+
+rewrite[name "LabelLe"] forall (A B C D : point). Le A B C D <=> (exists (E : point). (Bet C E D && Cong A B C E)).
+
+rewrite[name "LabelGe"] forall (A B C D : point). Ge A B C D <=> Le C D A B.
+
+# rewrite 5.14. 
+
+rewrite[name "LabelLt"] forall (A B C D : point). Lt A B C D <=> Le A B C D && ~ Cong A B C D.
+
+rewrite[name "LabelGt"] forall (A B C D : point). Gt A B C D <=> Lt C D A B.
+
+# rewrite 6.1. 
+
+rewrite[name "LabelOut"] forall (P A B : point). Out P A B <=> A != P && B != P && (Bet P A B || Bet P B A).
+
+# rewrite 6.22. 
+
+rewrite[name "LabelInter"] forall (A1 A2 B1 B2 X : point). Inter A1 A2 B1 B2 X <=> (exists (P : point). Col P B1 B2 && ~Col P A1 A2) &&Col A1 A2 X && Col B1 B2 X.
+
+# rewrite 7.1. 
+
+rewrite[name "LabelMidpoint"] forall (M A B : point). Midpoint M A B <=> Bet A M B && Cong A M M B.
+
+# rewrite 8.1. 
+
+rewrite[name "LabelPer"] forall (A B C : point). Per A B C <=> (exists (C1 : point). Midpoint B C C1 && Cong A C A C1).
+
+# rewrite 8.11. 
+
+rewrite[name "LabelPerp_at"] forall (X A B C D : point). Perp_at X A B C D <=> A != B && C != D && Col X A B && Col X C D && (forall (U V : point). Col U A B => Col V C D => Per U X V).
+
+# rewrite 8.11. 
+
+rewrite[name "LabelPerp"] forall (A B C D : point). Perp A B C D <=> (exists (X : point). Perp_at X A B C D).
+
+# rewrite 9.1. 
+
+rewrite[name "LabelTS"] forall (A B P Q : point). TS A B P Q <=> ~(Col P A B) && ~(Col Q A B) && (exists (T : point). Col T A B && Bet P T Q).
+
+rewrite[name "LabelReflectP"] forall (A A1 C : point). ReflectP A A1 C <=> Midpoint C A A1.
+
+# rewrite 9.7. 
+
+rewrite[name "LabelOS"] forall (A B P Q : point). OS A B P Q <=> (exists (R : point). TS A B P R && TS A B Q R).
+
+# Satz 9.33. 
+
+rewrite[name "LabelCoplanar"] forall (A B C D : point). Coplanar A B C D <=> (exists (X : point). (Col A B X && Col C D X) || (Col A C X && Col B D X) || (Col A D X && Col B C X)).
+
+# rewrite 10.3. 
+
+rewrite[name "LabelReflectL"] forall (P1 P A B : point). ReflectL P1 P A B <=> (exists (X : point). Midpoint X P P1 && Col A B X) && (Perp A B P P1 || P = P1).
+
+rewrite[name "LabelReflect"] forall (P1 P A B : point). Reflect P1 P A B <=> (A != B && ReflectL P1 P A B) || (A = B && Midpoint A P P1).
+
+rewrite[name "LabelReflectL_at"] forall (M P1 P A B : point). ReflectL_at M P1 P A B <=> (Midpoint M P P1 && Col A B M) && (Perp A B P P1 || P = P1).
+
+rewrite[name "LabelReflect_at"] forall (M P1 P A B : point). Reflect_at M P1 P A B <=> (A != B && ReflectL_at M P1 P A B) || (A = B && A = M && Midpoint M P P1).
+
+# rewrite 11.2. 
+
+rewrite[name "LabelCongA"] forall (A B C D E F : point). CongA A B C D E F <=> A != B && C != B && D != E && F != E && (exists (A1 C1 D1 F1 : point).  Bet B A A1 && Cong A A1 E D && Bet B C C1 && Cong C C1 E F && Bet E D D1 && Cong D D1 B A && Bet E F F1 && Cong F F1 B C && Cong A1 C1 D1 F1).
+
+# rewrite 11.23. 
+
+rewrite[name "LabelInAngle"] forall (P A B C : point). InAngle P A B C <=> A != B && C != B && P != B && (exists (X : point). Bet A X C && (X = B || Out B X P)).
+
+# rewrite 11.27. 
+
+rewrite[name "LabelLeA"] forall (A B C D E F : point). LeA A B C D E F <=> (exists (P : point). InAngle P D E F && CongA A B C D E P).
+
+rewrite[name "LabelGeA"] forall (A B C D E F : point). GeA A B C D E F <=> LeA D E F A B C.
+
+# rewrite 11.38. 
+
+rewrite[name "LabelLtA"] forall (A B C D E F : point). LtA A B C D E F <=> LeA A B C D E F && ~ CongA A B C D E F.
+
+rewrite[name "LabelGtA"] forall (A B C D E F : point). GtA A B C D E F <=> LtA D E F A B C.
+
+# rewrite 11.39. 
+
+rewrite[name "LabelAcute"] forall (A B C : point). Acute A B C <=> (exists (A1 B1 C1 : point). Per A1 B1 C1 && LtA A B C A1 B1 C1).
+
+# rewrite 11.39. 
+
+rewrite[name "LabelObtuse"] forall (A B C : point). Obtuse A B C <=> (exists (A1 B1 C1 : point). Per A1 B1 C1 && GtA A B C A1 B1 C1).
+
+# rewrite 12.2. 
+
+rewrite[name "LabelPar_strict"] forall (A B C D : point). Par_strict A B C D <=> A != B && C != D && Coplanar A B C D && ~(exists (X : point). Col X A B && Col X C D).
+
+# rewrite 12.3. 
+
+rewrite[name "LabelPar"] forall (A B C D : point). Par A B C D <=> Par_strict A B C D || (A != B && C != D && Col A C D && Col B C D).
+
+# rewrite 13.4. 
+
+rewrite[name "LabelQ_Cong"] forall (A B C D E F : point) (l : point->point->prop). Q_Cong l <=> (exists (A B : point). forall X Y. Cong A B X Y <=> l X Y).
+
+rewrite[name "LabelLen"] forall (A B : point) (l : point->point->prop). Len A B l <=> Q_Cong l && l A B.
+
+rewrite[name "LabelQ_Cong_Null"] forall (l : point->point->prop). Q_Cong_Null l <=> Q_Cong l && (exists (A : point). l A A).
+
+rewrite[name "LabelEqL"] forall (l1 l2 : point->point->prop). EqL l1 l2 <=> (forall (A B : point). l1 A B <=> l2 A B).
+
+rewrite[name "LabelQ_CongA"] forall (a : point->point->point->prop). Q_CongA a <=> (exists (A B C : point). A != B && C != B && (forall (X Y Z : point). CongA A B C X Y Z <=> a X Y Z)).
+
+rewrite[name "LabelAng"] forall (A B C : point) (a : point->point->point->prop). Ang A B C a <=> Q_CongA a && a A B C.
+
+rewrite[name "LabelAng_Flat"] forall (a : point->point->point->prop). Ang_Flat a <=> Q_CongA a && (forall (A B C : point). a A B C => Bet A B C).
+
+rewrite[name "LabelEqA"] forall (a1 a2 : point->point->point->prop). EqA a1 a2 <=> (forall (A B C : point). a1 A B C <=> a2 A B C).
+
+# rewrite 13.9. 
+
+rewrite[name "LabelPerp2"] forall (A B C D P : point). Perp2 A B C D P <=> (exists (X Y : point). Col P X Y && Perp X Y A B && Perp X Y C D).
+
+rewrite[name "LabelQ_CongA_Acute"] forall (a : point->point->point->prop). Q_CongA_Acute a <=> (exists (A B C : point). Acute A B C && (forall (X Y Z : point). CongA A B C X Y Z <=> a X Y Z)).
+
+rewrite[name "LabelAng_Acute"] forall (A B C : point) (a : point->point->point->prop). Ang_Acute A B C a <=> Q_CongA_Acute a && a A B C.
+
+rewrite[name "LabelQ_CongA_nNull"] forall (a : point->point->point->prop). Q_CongA_nNull a <=> Q_CongA a && (forall (A B C : point). a A B C => ~ Out B A C).
+
+rewrite[name "LabelQ_CongA_nFlat"] forall (a : point->point->point->prop). Q_CongA_nFlat a <=> Q_CongA a && (forall (A B C : point). a A B C => ~ Bet A B C).
+
+rewrite[name "LabelQ_CongA_Null"] forall (a : point->point->point->prop). Q_CongA_Null a <=> Q_CongA a && (forall (A B C : point). a A B C => Out B A C).
+
+rewrite[name "LabelQ_CongA_Null_Acute"] forall (a : point->point->point->prop). Q_CongA_Null_Acute a <=> Q_CongA_Acute a && (forall (A B C : point). a A B C => Out B A C).
+
+rewrite[name "Labelis_null_anga"] forall (a : point->point->point->prop). is_null_anga a <=> Q_CongA_Acute a && (exists (A B C : point). a A B C && Out B A C).
+
+rewrite[name "LabelQ_CongA_Null_Acute"] forall (a : point->point->point->prop). Q_CongA_Null_Acute a <=> Q_CongA_Acute a && (forall (A B C : point). a A B C => Out B A C).
+
+rewrite[name "LabelLcos"] forall (lb lc : point->point->prop) (a : point->point->point->prop). Lcos lb lc a <=> Q_Cong lb && Q_Cong lc && Q_CongA_Acute a && (exists (A B C : point). (Per C B A && lb A B && lc A C && a B A C)).
+
+rewrite[name "LabelEq_Lcos"] forall (la lb : point->point->prop) (a b : point->point->point->prop). Eq_Lcos la a lb b <=> (exists (lp : point->point->prop). Lcos lp la a && Lcos lp lb b).
+
+rewrite[name "Labellcos2"] forall (lp l : point->point->prop) (a b : point->point->point->prop). lcos2 lp l a b <=> (exists (la : point->point->prop). Lcos la l a && Lcos lp la b).
+
+rewrite[name "LabelEq_Lcos2"] forall (l1 l2 : point->point->prop) (a b c d : point->point->point->prop). Eq_Lcos2 l1 a b l2 c d <=> (exists (lp : point->point->prop). lcos2 lp l1 a b && lcos2 lp l2 c d).
+
+rewrite[name "LabelLcos3"] forall (lp l : point->point->prop) (a b c : point->point->point->prop). Lcos3 lp l a b c <=> (exists (la lab : point->point->prop). Lcos la l a && Lcos lab la b && Lcos lp lab c).
+
+rewrite[name "LabelEq_Lcos3"] forall (l1 l2 : point->point->prop) (a b c d e f : point->point->point->prop). Eq_Lcos3 l1 a b c l2 d e f <=> (exists (lp : point->point->prop). Lcos3 lp l1 a b c && Lcos3 lp l2 d e f).
+
+# rewrite 14.1. 
+
+rewrite[name "LabelAr1"] forall (O E A B C : point). Ar1 O E A B C <=> O != E && Col O E A && Col O E B && Col O E C.
+
+rewrite[name "LabelAr2"] forall (O E E1 A B C : point). Ar2 O E E1 A B C <=> ~ Col O E E1 && Col O E A && Col O E B && Col O E C.
+
+# rewrite 14.2. 
+
+rewrite[name "LabelPj"] forall (A B C D : point). Pj A B C D <=> Par A B C D || C = D.
+
+# rewrite 14.3. 
+
+rewrite[name "LabelSum"] forall (O E E1 A B C : point). Sum O E E1 A B C <=> Ar2 O E E1 A B C && (exists (A1 C1 : point). Pj E E1 A  A1 && Col O E1 A1 && Pj O E  A1 C1 && Pj O E1 B  C1 && Pj E1 E C1 C).
+
+rewrite[name "LabelProj"] forall (P Q A B X Y : point). Proj P Q A B X Y <=> A != B && X != Y && ~Par A B X Y  && Col A B Q && (Par P Q X Y || P = Q).
+
+rewrite[name "LabelSump"] forall (O E E1 A B C : point). Sump O E E1 A B C <=> Col O E A && Col O E B && (exists (A1 C1 P1 : point). Proj A A1 O E1 E E1 &&  Par O E A1 P1 &&  Proj B C1 A1 P1 O E1 &&  Proj C1 C O E E E1).
+
+# rewrite 14.4. 
+
+rewrite[name "LabelProd"] forall (O E E1 A B C : point). Prod O E E1 A B C <=> Ar2 O E E1 A B C && (exists (B1 : point). Pj E E1 B B1 && Col O E1 B1 && Pj E1 A B1 C).
+
+rewrite[name "LabelProdp"] forall (O E E1 A B C : point). Prodp O E E1 A B C <=> Col O E A && Col O E B && (exists (B1 : point). Proj B B1 O E1 E E1 && Proj B1 C O E A E1).
+
+# rewrite 14.8. 
+
+rewrite[name "LabelOpp"] forall (O E E1 A B : point). Opp O E E1 A B <=> Sum O E E1 B A O.
+
+# rewrite 14.38. 
+
+rewrite[name "LabelDiff"] forall (O E E1 A B C : point). Diff O E E1 A B C <=> (exists (B1 : point). Opp O E E1 B B1 && Sum O E E1 A B1 C).
+
+rewrite[name "Labelsum3"] forall (O E E1 A B C S : point). sum3 O E E1 A B C S <=> (exists (AB : point). Sum O E E1 A B AB && Sum O E E1 AB C S).
+
+rewrite[name "LabelSum4"] forall (O E E1 A B C D S: point). Sum4 O E E1 A B C D S <=> (exists (ABC : point). sum3 O E E1 A B C ABC && Sum O E E1 ABC D S).
+
+rewrite[name "Labelsum22"] forall (O E E1 A B C D S: point). sum22 O E E1 A B C D S <=> (exists (AB CD : point). Sum O E E1 A B AB && Sum O E E1 C D CD && Sum O E E1 AB CD S).
+
+rewrite[name "LabelAr2_4"] forall (O E E1 A B C D : point). Ar2_4 O E E1 A B C D <=> ~ Col O E E1 && Col O E A && Col O E B && Col O E C && Col O E D.
+
+# rewrite 14.34. 
+
+rewrite[name "LabelPs"] forall (O E A : point). Ps O E A <=> Out O A E.
+
+rewrite[name "LabelNg"] forall (O E A : point). Ng O E A <=> A != O && E != O && Bet A O E .
+
+# rewrite 14.38. 
+
+rewrite[name "LabelLtP"] forall (O E E1 A B : point). LtP O E E1 A B <=> (exists (D : point). Diff O E E1 B A D && Ps O E D).
+
+rewrite[name "LabelLeP"] forall (O E E1 A B : point). LeP O E E1 A B <=> LtP O E E1 A B || A = B.
+
+rewrite[name "LabelLength"] forall (O E E1 A B L: point). Length O E E1 A B L <=> O != E && Col O E L && LeP O E E1 O L && Cong O L A B.
+
+# rewrite 15.1. 
+
+rewrite[name "LabelIs_length"] forall (O E E1 A B L : point). Is_length O E E1 A B L <=> Length O E E1 A B L || (O = E && O = L).
+
+rewrite[name "LabelSumg"] forall (O E E1 A B C : point). Sumg O E E1 A B C <=> Sum O E E1 A B C || (~(Ar2 O E E1 A B B) && C = O).
+
+rewrite[name "LabelProdg"] forall (O E E1 A B C : point). Prodg O E E1 A B C <=> Prod O E E1 A B C || (~(Ar2 O E E1 A B B) && C = O).
+
+rewrite[name "LabelPythRel"] forall (O E E1 A B C : point). PythRel O E E1 A B C <=> Ar2 O E E1 A B C && ((O = B && (A = C || Opp O E E1 A C)) || (exists (B1 : point). Perp O B1 O B && Cong O B1 O B && Cong O C A B1)).
+
+# rewrite 16.1. 
+# We skip the case of dimension 1. 
+
+rewrite[name "LabelCs"] forall (O E S U1 U2 : point). Cs O E S U1 U2 <=> O != E && Cong O E S U1 && Cong O E S U2 && Per U1 S U2.
+
+# rewrite 16.5. 
+# P is of coordinates (X.Y) in the grip SU1U2 using unit length OE. 
+
+rewrite[name "LabelProjp"] forall (P Q A B : point). Projp P Q A B <=> A != B && ((Col A B Q && Perp A B P Q) || (Col A B P && P = Q)).
+
+rewrite[name "LabelCd"] forall (O E S U1 U2 P X Y : point). Cd O E S U1 U2 P X Y <=> Cs O E S U1 U2 && Coplanar P S U1 U2 && (exists PX. Projp P PX S U1 && Cong_3 O E X S U1 PX) && (exists (PY : point). Projp P PY S U2 && Cong_3 O E Y S U2 PY).
+
+# Strict betweeness 
+
+rewrite[name "LabelBetS"] forall (A B C : point). BetS A B C <=> Bet A B C && A != B && B != C.
+
+# rewrite of the Sum of segments.
+#    SumS A B C D E F means that AB + CD = EF. 
+
+rewrite[name "LabelSumS"] forall (A B C D E F: point). SumS A B C D E F <=> (exists (P Q R : point).  Bet P Q R && Cong P Q A B && Cong Q R C D && Cong P R E F).
+
+# PQ is the perpendicular bisector of segment AB 
+
+rewrite[name "LabelPerp_bisect"] forall (P Q A B : point). Perp_bisect P Q A B <=> ReflectL A B P Q && A != B.
+
+rewrite[name "LabelPerp_bisect_bis"] forall (P Q A B : point). Perp_bisect_bis P Q A B <=> (exists (I : point). Perp_at I P Q A B && Midpoint I A B).
+
+rewrite[name "LabelIs_on_perp_bisect"] forall (P A B : point). Is_on_perp_bisect P A B <=> Cong A P P B.
+
+# rewrite of the Sum of angles.
+#    SumA A B C D E F G H I means that ABC+DEF = GHI. 
+
+rewrite[name "LabelSumA"] forall (A B C D E F G H I : point). SumA A B C D E F G H I <=> (exists (J : point). CongA C B J D E F && ~ OS B C A J && CongA A B J G H I).
+
+# The SAMS predicate describes the fact that the Sum of the two angles is "at most straight" 
+
+rewrite[name "LabelSAMS"] forall (A B C D E F : point). SAMS A B C D E F <=> A != B && (Out E D F || ~ Bet A B C) && (exists (J : point). CongA C B J D E F && ~ OS B C A J && ~ TS A B C J).
+
+# rewrite of the Sum of the interior angles of a triangle.
+#    TriSumA A B C D E F means that the Sum of the angles of the triangle ABC
+#    is equal to the angle DEF 
+
+rewrite[name "LabelTriSumA"] forall (A B C D E F : point). TriSumA A B C D E F <=> (exists (G H I : point). SumA A B C B C A G H I && SumA G H I C A B D E F).
+
+# The difference between a straight angle and the Sum of the angles of the triangle ABC.
+#    It is a non-oriented angle. so we can1t discriminate between positive and negative difference 
+
+rewrite[name "LabelDefect"] forall (A B C D E F : point). Defect A B C D E F <=> (exists (G H I J K L : point).  TriSumA A B C G H I && Bet J K L && SumA G H I D E F J K L).
+
+# P is on the circle of center A going through B 
+
+rewrite[name "LabelOnCircle"] forall (P A B : point). OnCircle P A B <=> Cong A P A B.
+
+# P is inside or on the circle of center A going through B 
+
+rewrite[name "LabelInCircle"] forall (P A B : point). InCircle P A B <=> Le A P A B.
+
+# P is outside or on the circle of center A going through B 
+
+rewrite[name "LabelOutCircle"] forall (P A B : point). OutCircle P A B <=> Le A B A P.
+
+# P is strictly inside the circle of center A going through B 
+
+rewrite[name "LabelInCircleS"] forall (P A B : point). InCircleS P A B <=> Lt A P A B.
+
+# P is strictly outside the circle of center A going through B 
+
+rewrite[name "LabelOutCircleS"] forall (P A B : point). OutCircleS P A B <=> Lt A B A P.
+
+rewrite[name "LabelEqC"] forall (A B C D : point). EqC A B C D <=> (forall (X : point). OnCircle X A B <=> OnCircle X C D).
+
+# The circles of center A passing through B and
+#                of center C passing through D intersect
+#                in two distinct points P and Q. 
+
+rewrite[name "LabelInterCCAt"] forall (A B C D P Q : point). InterCCAt A B C D P Q <=> ~ EqC A B C D && P!=Q && OnCircle P C D && OnCircle Q C D && OnCircle P A B && OnCircle Q A B.
+
+
+# The circles of center A passing through B and
+#                of center C passing through D
+#                have two distinct intersections. 
+
+rewrite[name "LabelInterCC"] forall (A B C D : point). InterCC A B C D <=> (exists (P Q : point). InterCCAt A B C D P Q).
+
+# The circles of center A passing through B and of center C passing through D are tangent. 
+
+rewrite[name "LabelTangentCC"] forall (A B C D : point). TangentCC A B C D <=> (exists (X : point). OnCircle X A B && OnCircle X C D).
+
+# The line AB is tangent to the circle OP 
+
+rewrite[name "LabelTangent"] forall (A B O P : point). Tangent A B O P <=> (exists (X : point). Col A B X && OnCircle X O P).
+
+rewrite[name "LabelTangentAt"] forall (A B O P T : point). TangentAt A B O P T <=> Tangent A B O P && Col A B T && OnCircle T O P.
+
+
+# Parallelogram 
+
+rewrite[name "LabelParallelogram_strict"] forall (A B A1 B1 : point). Parallelogram_strict A B A1 B1 <=> TS A A1 B B1 && Par A B A1 B1 && Cong A B A1 B1.
+
+rewrite[name "LabelParallelogram_flat"] forall (A B A1 B1 : point). Parallelogram_flat A B A1 B1 <=> Col A B A1 && Col A B B1 && Cong A B A1 B1 && Cong A B1 A1 B && (A != A1 || B != B1).
+
+rewrite[name "LabelParallelogram"] forall (A B A1 B1 : point). Parallelogram A B A1 B1 <=> Parallelogram_strict A B A1 B1 || Parallelogram_flat A B A1 B1.
+
+rewrite[name "LabelPlg"] forall (A B C D : point). Plg A B C D <=> (A != C || B != D) && (exists (M : point). Midpoint M A C && Midpoint M B D).
+
+# Rhombus 
+
+rewrite[name "LabelRhombus"] forall (A B C D : point). Rhombus A B C D <=> Plg A B C D && Cong A B B C.
+
+# Rectangle 
+
+rewrite[name "LabelRectangle"] forall (A B C D : point). Rectangle A B C D <=> Plg A B C D && Cong A C B D.
+
+# Square 
+
+rewrite[name "LabelSquare"] forall (A B C D : point). Square A B C D <=> Rectangle A B C D && Cong A B B C.
+
+# Kite 
+
+rewrite[name "LabelKite"] forall (A B C D : point). Kite A B C D <=> Cong B C C D && Cong D A A B.
+
+# Saccheri 
+
+rewrite[name "LabelSaccheri"] forall (A B C D : point). Saccheri A B C D <=> Per B A D && Per A D C && Cong A B C D && OS A D B C.
+
+# Lambert 
+
+rewrite[name "LabelLambert"] forall (A B C D : point). Lambert A B C D <=> A != B && B != C && C != D && A != D && Per B A D && Per A D C && Per A B C.
+
+# Vector 
+
+rewrite[name "LabelEqV"] forall (A B C D : point). EqV A B C D <=> Parallelogram A B D C || A = B && C = D.
+
+rewrite[name "LabelSumV"] forall (A B C D E F : point). SumV A B C D E F <=> (forall (D1 : point). EqV C D B D1 => EqV A D1 E F).
+
+rewrite[name "LabelSumV_exists"] forall (A B C D E F : point). SumV_exists A B C D E F <=> (exists (D1 : point). EqV B D1 C D && EqV A D1 E F).
+
+rewrite[name "LabelSame_dir"] forall (A B C D : point). Same_dir A B C D <=> A = B && C = D || (exists (D1 : point). Out C D D1 && EqV A B C D1).
+
+rewrite[name "LabelOpp_dir"] forall (A B C D : point). Opp_dir A B C D <=> Same_dir A B D C.
+
+# Projections 
+
+rewrite[name "LabelCongA_3"] forall (A B C A1 B1 C1 : point). CongA_3 A B C A1 B1 C1 <=> CongA A B C A1 B1 C1 && CongA B C A B1 C1 A1 && CongA C A B C1 A1 B1.

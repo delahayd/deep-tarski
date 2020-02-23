@@ -1,0 +1,2 @@
+include "../rew_type.zf".
+goal forall (A B : point). A!=B => B!=A.

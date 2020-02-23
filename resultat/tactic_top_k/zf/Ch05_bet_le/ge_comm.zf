@@ -1,0 +1,13 @@
+include "../rew_type.zf".
+rewrite[name "LabelGe"] forall (A B C D : point). Ge A B C D <=> Le C D A B.
+rewrite[name "LabelLt"] forall (A B C D : point). Lt A B C D <=> Le A B C D && ~ Cong A B C D.
+rewrite[name "LabelPar_strict"] forall (A B C D : point). Par_strict A B C D <=> A != B && C != D && Coplanar A B C D && ~(exists (X : point). Col X A B && Col X C D).
+#ge_left_comm
+assert[name "Labelge_left_comm"] forall (A B C D : point). Ge A B C D => Ge B A C D.
+#ge_right_comm
+assert[name "Labelge_right_comm"] forall (A B C D : point). Ge A B C D => Ge A B D C.
+#le_right_comm
+assert[name "Labelle_right_comm"] forall (A B C D : point). Le A B C D => Le A B D C.
+#perp_not_eq_1
+assert[name "Labelperp_not_eq_1"] forall (A B C D : point). Perp A B C D => A!=B.
+goal forall (A B C D : point). Ge A B C D => Ge B A D C.

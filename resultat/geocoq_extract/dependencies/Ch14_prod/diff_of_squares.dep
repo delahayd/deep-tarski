@@ -1,0 +1,3 @@
+lemme : diff_ar2 prod_exists sum_diff_diff_b prod_uniqueness distr_r diff_exists sum_uniqueness sum_exists distr_l_diff diff_uniqueness prod_comm
+rewrite : Prod Ar2
+destruct : 

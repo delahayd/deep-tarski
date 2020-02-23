@@ -1,0 +1,3 @@
+lemme : out_trivial acute_distincts l11_21_b conga_refl
+rewrite : Q_CongA_Acute Q_CongA_Null_Acute
+destruct : 

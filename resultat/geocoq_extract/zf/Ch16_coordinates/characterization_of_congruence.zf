@@ -1,0 +1,64 @@
+include "../tarski_term_def.zf".
+val O : point.
+val E : point.
+val E1 : point.
+assert ~Col O E E1.
+#length_eq_cong_1
+assert[name "Labellength_eq_cong_1"] forall (O E E1 A B C D AB : point). Length O E E1 A B AB => Length O E E1 C D AB => Cong A B C D.
+#diff_ar2
+assert[name "Labeldiff_ar2"] forall (O E E1 A B AMB : point). Diff O E E1 A B AMB => Ar2 O E E1 A B AMB.
+#prod_exists
+assert[name "Labelprod_exists"] forall (A B : point). Col O E A => Col O E B => (exists (C : point). Prod O E E1 A B C).
+#cong_transitivity
+assert[name "Labelcong_transitivity"] forall (A B C D E F : point). Cong A B C D => Cong C D E F => Cong A B E F.
+#prod_uniqueness
+assert[name "Labelprod_uniqueness"] forall (A B C1 C2 : point). Prod O E E1 A B C1 => Prod O E E1 A B C2 => C1=C2.
+#prod_assoc1
+assert[name "Labelprod_assoc1"] forall (O E E1 A B C AB BC ABC : point). Prod O E E1 A B AB => Prod O E E1 B C BC => (Prod O E E1 A BC ABC => Prod O E E1 AB C ABC).
+#opp_exists
+assert[name "Labelopp_exists"] forall (A : point). Col O E A => (exists (MA : point). Opp O E E1 A MA).
+#opp_prod
+assert[name "Labelopp_prod"] forall (O E E1 ME X MX : point). Opp O E E1 E ME => Opp O E E1 X MX => Prod O E E1 X ME MX.
+#l7_20
+assert[name "Labell7_20"] forall (M A B : point). Col A M B => Cong M A M B => A=B || Midpoint M A B.
+#square_distance_formula
+assert[name "Labelsquare_distance_formula"] forall (O E E1 S U1 U2 P PX PY Q QX QY PQ PQ2 PXMQX PYMQY PXMQX2 PYMQY2 F : point). Cd O E S U1 U2 P PX PY => Cd O E S U1 U2 Q QX QY => Prod O E E1 PQ PQ PQ2 => Diff O E E1 PX QX PXMQX => Prod O E E1 PXMQX PXMQX PXMQX2 => Prod O E E1 PYMQY PYMQY PYMQY2 => Diff O E E1 PY QY PYMQY => Sum O E E1 PXMQX2 PYMQY2 F => PQ2=F.
+#eq_squares_eq_or_opp
+assert[name "Labeleq_squares_eq_or_opp"] forall (O E E1 A B A2 : point). Prod O E E1 A A A2 => Prod O E E1 B B A2 => A=B || Opp O E E1 A B.
+#prod_assoc2
+assert[name "Labelprod_assoc2"] forall (O E E1 A B C AB BC ABC : point). Prod O E E1 A B AB => Prod O E E1 B C BC => (Prod O E E1 AB C ABC => Prod O E E1 A BC ABC).
+#cong_symmetry
+assert[name "Labelcong_symmetry"] forall (A B C D : point). Cong A B C D => Cong C D A B.
+#not_col_distincts
+assert[name "Labelnot_col_distincts"] forall (A B C : point). ~Col A B C => ~Col A B C && A!=B && B!=C && A!=C.
+#col_trivial_3
+assert[name "Labelcol_trivial_3"] forall (A B : point). Col A B A.
+#opp_midpoint
+assert[name "Labelopp_midpoint"] forall (O E E1 A MA : point). Opp O E E1 A MA => Midpoint O A MA.
+#opp_comm
+assert[name "Labelopp_comm"] forall (X Y : point). Opp O E E1 X Y => Opp O E E1 Y X.
+#col_permutation_1
+assert[name "Labelcol_permutation_1"] forall (A B C : point). Col A B C => Col B C A.
+#col_trivial_1
+assert[name "Labelcol_trivial_1"] forall (A B : point). Col A A B.
+#col_permutation_5
+assert[name "Labelcol_permutation_5"] forall (A B C : point). Col A B C => Col A C B.
+#is_length_exists
+assert[name "Labelis_length_exists"] forall (O E E1 X Y : point). ~Col O E E1 => (exists (XY : point). Is_length O E E1 X Y XY).
+#prod_1_l
+assert[name "Labelprod_1_l"] forall (O E E1 A IA : point). O!=A => LeP O E E1 O A => Prod O E E1 A IA E => LeP O E E1 O IA.
+#cong_left_commutativity
+assert[name "Labelcong_left_commutativity"] forall (A B C D : point). Cong A B C D => Cong B A C D.
+#col_trivial_2
+assert[name "Labelcol_trivial_2"] forall (A B : point). Col A B B.
+#prod_comm
+assert[name "Labelprod_comm"] forall (O E E1 A B C : point). Prod O E E1 A B C => Prod O E E1 B A C.
+#midpoint_opp
+assert[name "Labelmidpoint_opp"] forall (O E E1 A B : point). Ar2 O E E1 O A B => Midpoint O A B => Opp O E E1 A B.
+rewrite[name "LabelIs_length"] forall (O E E1 A B L : point). Is_length O E E1 A B L <=> Length O E E1 A B L || (O = E && O = L).
+rewrite[name "LabelLength"] forall (O E E1 A B L: point). Length O E E1 A B L <=> O != E && Col O E L && LeP O E E1 O L && Cong O L A B.
+rewrite[name "LabelMidpoint"] forall (M A B : point). Midpoint M A B <=> Bet A M B && Cong A M M B.
+rewrite[name "LabelLtP"] forall (O E E1 A B : point). LtP O E E1 A B <=> (exists (D : point). Diff O E E1 B A D && Ps O E D).
+rewrite[name "LabelAr2"] forall (O E E1 A B C : point). Ar2 O E E1 A B C <=> ~ Col O E E1 && Col O E A && Col O E B && Col O E C.
+rewrite[name "LabelLeP"] forall (O E E1 A B : point). LeP O E E1 A B <=> LtP O E E1 A B || A = B.
+goal forall (O E E1 S U1 U2 A AX AY B BX BY C CX CY D DX DY AXMBX AXMBX2 AYMBY AYMBY2 AB2 CXMDX CXMDX2 CYMDY CYMDY2 CD2 : point). Cd O E S U1 U2 A AX AY => Cd O E S U1 U2 B BX BY => Cd O E S U1 U2 C CX CY => Cd O E S U1 U2 D DX DY => Diff O E E1 AX BX AXMBX => Prod O E E1 AXMBX AXMBX AXMBX2 => Diff O E E1 AY BY AYMBY => Prod O E E1 AYMBY AYMBY AYMBY2 => Sum O E E1 AXMBX2 AYMBY2 AB2 => Diff O E E1 CX DX CXMDX => Prod O E E1 CXMDX CXMDX CXMDX2 => Diff O E E1 CY DY CYMDY => Prod O E E1 CYMDY CYMDY CYMDY2 => Sum O E E1 CXMDX2 CYMDY2 CD2 => (Cong A B C D <=> AB2 = CD2).

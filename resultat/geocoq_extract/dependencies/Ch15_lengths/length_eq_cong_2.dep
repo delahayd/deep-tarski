@@ -1,0 +1,3 @@
+lemme : cong_transitivity
+rewrite : Length
+destruct : 

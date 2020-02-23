@@ -1,0 +1,3 @@
+lemme : cong_transitivity cong_symmetry l5_6
+rewrite : 
+destruct : Hlt

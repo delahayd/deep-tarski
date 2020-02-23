@@ -1,0 +1,41 @@
+digraph "unsat_graph" {
+  vertex_0 [color=red, label="[]", shape=box, style=filled];
+  vertex_0 -> vertex_1 [label="simpl_trail", dir="back"];
+  vertex_1 [color=cyan3, shape=box, label="¬⟦Cong sk_A sk_B sk_B sk_C⟧/2\l", style=filled];
+  vertex_1 -> vertex_2 [label="sat_resolution", dir="back"];
+  vertex_2 [color=cyan3, shape=box, label="⟦Bet sk_A sk_B sk_C⟧/3\l", style=filled];
+  vertex_2 -> vertex_3 [label="simplify", dir="back"];
+  vertex_3 [color=orange, shape=box, label="¬true ← ¬⟦Bet sk_A sk_B sk_C⟧/3\l", style=filled];
+  vertex_3 -> vertex_4 [label="demod", dir="back"];
+  vertex_4 [shape=box, label="Bet sk_A sk_B sk_C\l", style=filled];
+  vertex_4 -> vertex_5 [label="cnf", dir="back"];
+  vertex_5 [shape=box, label="negated_goal\l  ¬ (∀ A/136:point B/137:point C/138:point.\l        ((Bet A/136 B/137 C/138) ⇒\l         ((Cong A/136 B/137 B/137 C/138) ⇒ (Midpoint B/137 A/136 C/138))))\l  # skolems: [].\l", style=filled];
+  vertex_5 -> vertex_6 [label="cnf.neg", dir="back"];
+  vertex_6 [color=green, shape=box, label="goal\l  [file \"../resultat/geocoq_extract/zf/Ch07_midpoint/midpoint_def.zf\" \l   \"zf_stmt_128\"]\l  ∀ A/136:point B/137:point C/138:point.\l    ((Bet A/136 B/137 C/138) ⇒\l     ((Cong A/136 B/137 B/137 C/138) ⇒ (Midpoint B/137 A/136 C/138))).\l", style=filled];
+  vertex_3 -> vertex_7 [label="demod", dir="back"];
+  vertex_7 [shape=box, label="¬Bet sk_A sk_B sk_C ← ¬⟦Bet sk_A sk_B sk_C⟧/3\l", style=filled];
+  vertex_7 -> vertex_8 [label="split", dir="back"];
+  vertex_8 [shape=box, label="[¬Bet sk_A sk_B sk_C ∨ ¬Cong sk_A sk_B sk_B sk_C]\l", style=filled];
+  vertex_8 -> vertex_9 [label="rw_clause\l\{X0[1] → sk_B[0], X1[1] → sk_A[0], X2[1] → sk_C[0]\}[1]\l", dir="back"];
+  vertex_9 [color=navajowhite, shape=box, label="(¬Midpoint X0 X1 X2 := [¬Bet X1 X0 X2 ∨ ¬Cong X1 X0 X0 X2] [B])\l", style=filled];
+  vertex_9 -> vertex_10 [label="rw.lit", dir="back"];
+  vertex_10 [color=yellow, shape=box, label="rewrite\l  [file \"../resultat/geocoq_extract/zf/Ch07_midpoint/midpoint_def.zf\" \l   \"LabelMidpoint\"]\l  ¬ Midpoint X0 X1 X2 =\> ¬ Bet X1 X0 X2 ∨ ¬ Cong X1 X0 X0 X2.\l", style=filled];
+  vertex_8 -> vertex_11 [label="rw_clause\l\{X0[1] → sk_B[0], X1[1] → sk_A[0], X2[1] → sk_C[0]\}[0]\l", dir="back"];
+  vertex_11 [shape=box, label="¬Midpoint sk_B sk_A sk_C\l", style=filled];
+  vertex_11 -> vertex_5 [label="cnf", dir="back"];
+  vertex_1 -> vertex_12 [label="sat_resolution", dir="back"];
+  vertex_12 [color=cyan3, shape=box, label="¬⟦Cong sk_A sk_B sk_B sk_C⟧/2 ⊔ ¬⟦Bet sk_A sk_B sk_C⟧/3\l", style=filled];
+  vertex_12 -> vertex_8 [label="split", dir="back"];
+  vertex_0 -> vertex_13 [label="simpl_trail", dir="back"];
+  vertex_13 [color=orange, shape=box, label="⊥ ← ¬⟦Cong sk_A sk_B sk_B sk_C⟧/2\l", style=filled];
+  vertex_13 -> vertex_14 [label="simplify", dir="back"];
+  vertex_14 [color=orange, shape=box, label="¬true ← ¬⟦Cong sk_A sk_B sk_B sk_C⟧/2\l", style=filled];
+  vertex_14 -> vertex_15 [label="demod", dir="back"];
+  vertex_15 [shape=box, label="Cong sk_A sk_B sk_B sk_C\l", style=filled];
+  vertex_15 -> vertex_5 [label="cnf", dir="back"];
+  vertex_14 -> vertex_16 [label="demod", dir="back"];
+  vertex_16 [shape=box, label="¬Cong sk_A sk_B sk_B sk_C ← ¬⟦Cong sk_A sk_B sk_B sk_C⟧/2\l", style=filled];
+  vertex_16 -> vertex_8 [label="split", dir="back"];
+  }
+
+

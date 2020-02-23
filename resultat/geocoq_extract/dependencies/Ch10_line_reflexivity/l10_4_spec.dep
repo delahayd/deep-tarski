@@ -1,0 +1,3 @@
+lemme : perp_right_comm l7_2
+rewrite : ReflectL
+destruct : 

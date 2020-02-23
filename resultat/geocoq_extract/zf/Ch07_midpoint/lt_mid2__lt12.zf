@@ -1,0 +1,6 @@
+include "../tarski_term_def.zf".
+#cong_mid2__cong
+assert[name "Labelcong_mid2__cong"] forall (A M B A1 M1 B1 : point). Midpoint M A B => Midpoint M1 A1 B1 => Cong A M A1 M1 => Cong A B A1 B1.
+#le_mid2__le12
+assert[name "Labelle_mid2__le12"] forall (A M B A1 M1 B1 : point). Midpoint M A B => Midpoint M1 A1 B1 => Le A B A1 B1 => Le A M A1 M1.
+goal forall (A M B A1 M1 B1 : point). Midpoint M A B => Midpoint M1 A1 B1 => Lt A B A1 B1 => Lt A M A1 M1.

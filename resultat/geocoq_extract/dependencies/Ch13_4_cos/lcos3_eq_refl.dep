@@ -1,0 +1,3 @@
+lemme : lcos3_exists
+rewrite : Eq_Lcos3
+destruct : 

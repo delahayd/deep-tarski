@@ -1,0 +1,34 @@
+digraph "unsat_graph" {
+  vertex_0 [color=red, label="[]", shape=box, style=filled];
+  vertex_0 -> vertex_1 [label="simplify", dir="back"];
+  vertex_1 [color=red, label="[]", shape=box, style=filled];
+  vertex_1 -> vertex_2 [label="demod", dir="back"];
+  vertex_2 [shape=box, label="Lcos sk_lp1 (sk_la sk_b sk_a sk_l sk_lp1) sk_b\l", style=filled];
+  vertex_2 -> vertex_3 [label="rw_clause\l\{F20[1] → sk_lp1[0], F21[1] → sk_l[0], F22[1] → sk_a[0], F23[1] → sk_b[0]\}[1]\l", dir="back"];
+  vertex_3 [color=navajowhite, shape=box, label="(lcos2 F20 F21 F22 F23 :=\l   [Lcos F20 (sk_la F23 F22 F21 F20) F23∧\l    Lcos (sk_la F23 F22 F21 F20) F21 F22] [B])\l", style=filled];
+  vertex_3 -> vertex_4 [label="rw.lit", dir="back"];
+  vertex_4 [color=yellow, shape=box, label="rewrite\l  [file \"../resultat/geocoq_extract/zf/Ch13_4_cos/lcos2_comm.zf\" \"Labellcos2\"]\l  lcos2 F20 F21 F22 F23\l  =\> Lcos F20 (sk_la F23 F22 F21 F20) F23 && \l     Lcos (sk_la F23 F22 F21 F20) F21 F22.\l", style=filled];
+  vertex_2 -> vertex_5 [label="rw_clause\l\{F20[1] → sk_lp1[0], F21[1] → sk_l[0], F22[1] → sk_a[0], F23[1] → sk_b[0]\}[0]\l", dir="back"];
+  vertex_5 [shape=box, label="lcos2 sk_lp1 sk_l sk_a sk_b\l", style=filled];
+  vertex_5 -> vertex_6 [label="cnf", dir="back"];
+  vertex_6 [shape=box, label="negated_goal\l  ¬ (∀ lp/159:(point → point → prop) l/160:(point → point → prop) \l        a/161:(point → point → point → prop) \l        b/162:(point → point → point → prop).\l        ((lcos2 lp/159 l/160 a/161 b/162) ⇒\l         (lcos2 lp/159 l/160 a/161 b/162)))\l  # skolems: [].\l", style=filled];
+  vertex_6 -> vertex_7 [label="cnf.neg", dir="back"];
+  vertex_7 [color=green, shape=box, label="goal\l  [file \"../resultat/geocoq_extract/zf/Ch13_4_cos/lcos2_comm.zf\" \l   \"zf_stmt_128\"]\l  ∀ lp/159:(point → point → prop) l/160:(point → point → prop) \l    a/161:(point → point → point → prop) \l    b/162:(point → point → point → prop).\l    ((lcos2 lp/159 l/160 a/161 b/162) ⇒ (lcos2 lp/159 l/160 a/161 b/162)).\l", style=filled];
+  vertex_1 -> vertex_8 [label="demod", dir="back"];
+  vertex_8 [shape=box, label="¬Lcos sk_lp1 (sk_la sk_b sk_a sk_l sk_lp1) sk_b\l", style=filled];
+  vertex_8 -> vertex_9 [label="s_sup-\l\{F0[0] → sk_la sk_b sk_a sk_l sk_lp1[1]\}[0]\l", dir="back"];
+  vertex_9 [shape=box, label="forall (F0:point → point → prop).\l[¬Lcos F0 sk_l sk_a ∨ ¬Lcos sk_lp1 F0 sk_b]\l", style=filled];
+  vertex_9 -> vertex_10 [label="rw_clause\l\{F20[1] → sk_lp1[0], F21[1] → sk_l[0], F22[1] → sk_a[0], F23[1] → sk_b[0]\}[1]\l", dir="back"];
+  vertex_10 [color=navajowhite, shape=box, label="(¬lcos2 F20 F21 F22 F23 := [¬Lcos F24 F21 F22 ∨ ¬Lcos F20 F24 F23] [B])\l", style=filled];
+  vertex_10 -> vertex_11 [label="rw.lit", dir="back"];
+  vertex_11 [color=yellow, shape=box, label="rewrite\l  [file \"../resultat/geocoq_extract/zf/Ch13_4_cos/lcos2_comm.zf\" \"Labellcos2\"]\l  ¬ lcos2 F20 F21 F22 F23 =\> ¬ Lcos F24 F21 F22 ∨ ¬ Lcos F20 F24 F23.\l", style=filled];
+  vertex_9 -> vertex_12 [label="rw_clause\l\{F20[1] → sk_lp1[0], F21[1] → sk_l[0], F22[1] → sk_a[0], F23[1] → sk_b[0]\}[0]\l", dir="back"];
+  vertex_12 [shape=box, label="¬lcos2 sk_lp1 sk_l sk_a sk_b\l", style=filled];
+  vertex_12 -> vertex_6 [label="cnf", dir="back"];
+  vertex_8 -> vertex_13 [label="s_sup-\l\{F0[0] → sk_la sk_b sk_a sk_l sk_lp1[1]\}[1]\l", dir="back"];
+  vertex_13 [shape=box, label="Lcos (sk_la sk_b sk_a sk_l sk_lp1) sk_l sk_a\l", style=filled];
+  vertex_13 -> vertex_3 [label="rw_clause\l\{F20[1] → sk_lp1[0], F21[1] → sk_l[0], F22[1] → sk_a[0], F23[1] → sk_b[0]\}[1]\l", dir="back"];
+  vertex_13 -> vertex_5 [label="rw_clause\l\{F20[1] → sk_lp1[0], F21[1] → sk_l[0], F22[1] → sk_a[0], F23[1] → sk_b[0]\}[0]\l", dir="back"];
+  }
+
+

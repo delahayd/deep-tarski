@@ -1,0 +1,3 @@
+lemme : conga_line trisuma__bet conga_diff2 ex_conga_ts conga_sym bet_conga_bet col_permutation_5 ts_distincts bet_neq12__neq col124__nos conga_diff56 l11_10 col_permutation_2 conga_trans out_conga_out col_permutation_4 not_col_distincts not_one_side_two_sides conga_left_comm not_col_permutation_2 bet_col out_trivial out_conga conga_line col_conga_col between_symmetry one_side_not_col123 angle_construction_3 l9_2 cong_diff l11_13 midpoint_distinct_2 conga_comm col_trivial_2 conga_refl l6_4_2 conga_trivial_1 one_side_symmetry l9_9 col123__nos l11_22a conga_diff1 bet_dec symmetric_point_construction conga_right_comm col_permutation_1 invert_two_sides not_col_permutation_5 conga_diff45
+rewrite : 
+destruct : ex_trisuma HMid HK ex_suma HTri HJ Hsuma Hsuma'

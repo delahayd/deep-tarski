@@ -1,0 +1,2 @@
+include "../rew_type.zf".
+goal forall (A B C : point). Bet A B C || ~Bet A B C.

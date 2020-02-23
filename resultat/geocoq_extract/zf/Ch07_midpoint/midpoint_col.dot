@@ -1,0 +1,32 @@
+digraph "unsat_graph" {
+  vertex_0 [color=red, label="[]", shape=box, style=filled];
+  vertex_0 -> vertex_1 [label="s_sup-\l", dir="back"];
+  vertex_1 [shape=box, label="¬Bet sk_B sk_M sk_A\l", style=filled];
+  vertex_1 -> vertex_2 [label="rw_clause\l\{X6[1] → sk_M[0], X7[1] → sk_A[0], X8[1] → sk_B[0]\}[1]\l", dir="back"];
+  vertex_2 [color=navajowhite, shape=box, label="(¬Col X6 X7 X8 := [¬Bet X7 X8 X6∧\l                    ¬Bet X8 X6 X7∧\l                    ¬Bet X6 X7 X8] [B])\l", style=filled];
+  vertex_2 -> vertex_3 [label="rw.lit", dir="back"];
+  vertex_3 [color=yellow, shape=box, label="rewrite\l  [file \"../resultat/geocoq_extract/zf/Ch07_midpoint/midpoint_col.zf\" \l   \"LabelCol\"]\l  ¬ Col X6 X7 X8 =\> ¬ Bet X7 X8 X6 && ¬ Bet X8 X6 X7 && ¬ Bet X6 X7 X8.\l", style=filled];
+  vertex_1 -> vertex_4 [label="rw_clause\l\{X6[1] → sk_M[0], X7[1] → sk_A[0], X8[1] → sk_B[0]\}[0]\l", dir="back"];
+  vertex_4 [shape=box, label="¬Col sk_M sk_A sk_B\l", style=filled];
+  vertex_4 -> vertex_5 [label="cnf", dir="back"];
+  vertex_5 [shape=box, label="negated_goal\l  ¬ (∀ A/142:point M/143:point B/144:point.\l        ((Midpoint M/143 A/142 B/144) ⇒ (Col M/143 A/142 B/144)))\l  # skolems: [].\l", style=filled];
+  vertex_5 -> vertex_6 [label="cnf.neg", dir="back"];
+  vertex_6 [color=green, shape=box, label="goal\l  [file \"../resultat/geocoq_extract/zf/Ch07_midpoint/midpoint_col.zf\" \l   \"zf_stmt_128\"]\l  ∀ A/142:point M/143:point B/144:point.\l    ((Midpoint M/143 A/142 B/144) ⇒ (Col M/143 A/142 B/144)).\l", style=filled];
+  vertex_0 -> vertex_7 [label="s_sup-\l", dir="back"];
+  vertex_7 [shape=box, label="Bet sk_B sk_M sk_A\l", style=filled];
+  vertex_7 -> vertex_8 [label="s_sup-\l\{X3[0] → sk_B[1], X4[0] → sk_M[1], X5[0] → sk_A[1]\}[0]\l", dir="back"];
+  vertex_8 [shape=box, label="forall (X3:point) (X4:point) (X5:point).\l[Bet X3 X4 X5 ∨ ¬Midpoint X4 X3 X5]\l", style=filled];
+  vertex_8 -> vertex_9 [label="cnf", dir="back"];
+  vertex_9 [color=yellow, shape=box, label="assert\l  [file \"../resultat/geocoq_extract/zf/Ch07_midpoint/midpoint_col.zf\" \l   \"Labelmidpoint_bet\"]\l  ∀ A/136:point B/137:point C/138:point.\l    ((Midpoint B/137 A/136 C/138) ⇒ (Bet A/136 B/137 C/138)).\l", style=filled];
+  vertex_7 -> vertex_10 [label="s_sup-\l\{X3[0] → sk_B[1], X4[0] → sk_M[1], X5[0] → sk_A[1]\}[1]\l", dir="back"];
+  vertex_10 [shape=box, label="Midpoint sk_M sk_B sk_A\l", style=filled];
+  vertex_10 -> vertex_11 [label="s_sup-\l\{X0[0] → sk_M[1], X1[0] → sk_B[1], X2[0] → sk_A[1]\}[0]\l", dir="back"];
+  vertex_11 [shape=box, label="forall (X0:point) (X1:point) (X2:point).\l[Midpoint X0 X1 X2 ∨ ¬Midpoint X0 X2 X1]\l", style=filled];
+  vertex_11 -> vertex_12 [label="cnf", dir="back"];
+  vertex_12 [color=yellow, shape=box, label="assert\l  [file \"../resultat/geocoq_extract/zf/Ch07_midpoint/midpoint_col.zf\" \l   \"Labell7_2\"]\l  ∀ M/133:point A/134:point B/135:point.\l    ((Midpoint M/133 A/134 B/135) ⇒ (Midpoint M/133 B/135 A/134)).\l", style=filled];
+  vertex_10 -> vertex_13 [label="s_sup-\l\{X0[0] → sk_M[1], X1[0] → sk_B[1], X2[0] → sk_A[1]\}[1]\l", dir="back"];
+  vertex_13 [shape=box, label="Midpoint sk_M sk_A sk_B\l", style=filled];
+  vertex_13 -> vertex_5 [label="cnf", dir="back"];
+  }
+
+

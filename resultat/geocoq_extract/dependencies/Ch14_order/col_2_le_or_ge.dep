@@ -1,0 +1,3 @@
+lemme : diff_ar2 not_col_distincts eq_dec_points diff_exists bet_col diff_null_eq col_pos_or_neg opp_neg_pos diff_opp
+rewrite : Ar2
+destruct : 

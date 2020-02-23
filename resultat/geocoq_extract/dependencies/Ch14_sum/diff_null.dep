@@ -1,0 +1,3 @@
+lemme : opp_exists sum_comm
+rewrite : Opp Diff
+destruct : 

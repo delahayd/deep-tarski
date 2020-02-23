@@ -1,0 +1,106 @@
+include "../tarski_term_def.zf".
+val O : point.
+val E : point.
+val E1 : point.
+assert ~Col O E E1.
+#le_pos_prod_le
+assert[name "Labelle_pos_prod_le"] forall (O E E1 A B C AC BC : point). LeP O E E1 A B => LeP O E E1 O C => Prod O E E1 A C AC => Prod O E E1 B C BC => LeP O E E1 AC BC.
+#diff_ar2
+assert[name "Labeldiff_ar2"] forall (O E E1 A B AMB : point). Diff O E E1 A B AMB => Ar2 O E E1 A B AMB.
+#prod_exists
+assert[name "Labelprod_exists"] forall (A B : point). Col O E A => Col O E B => (exists (C : point). Prod O E E1 A B C).
+#eq_points_coordinates
+assert[name "Labeleq_points_coordinates"] forall (O E S U1 U2 P1 X1 Y1 P2 X2 Y2 : point). Cd O E S U1 U2 P1 X1 Y1 => Cd O E S U1 U2 P2 X2 Y2 => (P1=P2 <=> (X1=X2 && Y1=Y2)).
+#length_uniqueness
+assert[name "Labellength_uniqueness"] forall (O E E1 A B AB AB1 : point). Length O E E1 A B AB => Length O E E1 A B AB1 => AB=AB1.
+#eq_dec_points
+assert[name "Labeleq_dec_points"] forall (A B : point). A=B || A!=B.
+#diff_null
+assert[name "Labeldiff_null"] forall (O E E1 A : point). ~Col O E E1 => Col O E A => Diff O E E1 A A O.
+#between_symmetry
+assert[name "Labelbetween_symmetry"] forall (A B C : point). Bet A B C => Bet C B A.
+#prod_0_r
+assert[name "Labelprod_0_r"] forall (O E E1 A : point). ~Col O E E1 => Col O E A => Prod O E E1 A O O.
+#prod_uniquenessA
+assert[name "Labelprod_uniquenessA"] forall (O E E1 A A1 B C : point). B!=O => Prod O E E1 A B C => Prod O E E1 A1 B C => A=A1.
+#le_bet
+assert[name "Labelle_bet"] forall (A B C D : point). Le C D A B => (exists (X : point). Bet A X B && Cong A X C D).
+#prod_uniqueness
+assert[name "Labelprod_uniqueness"] forall (A B C1 C2 : point). Prod O E E1 A B C1 => Prod O E E1 A B C2 => C1=C2.
+#l5_5_2
+assert[name "Labell5_5_2"] forall (A B C D : point). (exists (x : point). Bet A B x && Cong A x C D)=> Le A B C D.
+#prod_assoc1
+assert[name "Labelprod_assoc1"] forall (O E E1 A B C AB BC ABC : point). Prod O E E1 A B AB => Prod O E E1 B C BC => (Prod O E E1 A BC ABC => Prod O E E1 AB C ABC).
+#coordinates_of_point
+assert[name "Labelcoordinates_of_point"] forall (O E S U1 U2 P : point). Cs O E S U1 U2 => (exists (X Y : point). Cd O E S U1 U2 P X Y).
+#diff_exists
+assert[name "Labeldiff_exists"] forall (O E E1 A B : point). ~Col O E E1 => Col O E A => Col O E B => (exists (D : point). Diff O E E1 A B D).
+#prod_0_l
+assert[name "Labelprod_0_l"] forall (O E E1 A B C APC BPC : point). LeP O E E1 A B => Sum O E E1 A C APC => Sum O E E1 B C BPC => LeP O E E1 APC BPC.
+#length_pos
+assert[name "Labellength_pos"] forall (O E E1 A B L : point). Length O E E1 A B L => LeP O E E1 O L.
+#triangular_equality_bis
+assert[name "Labeltriangular_equality_bis"] forall (O E E1 A B C AB BC AC : point). (A!=B || C!=B || A!=C) => O!=E => Bet A B C => Length O E E1 A B AB => Length O E E1 B C BC => Length O E E1 A C AC => Sum O E E1 AB BC AC.
+#prod_null
+assert[name "Labelprod_null"] forall (O E E1 A B : point). Prod O E E1 A B O => A=O || B=O.
+#between_identity
+assert[name "Labelbetween_identity"] forall (A B : point). Bet A B A => A=B.
+#cong_reflexivity
+assert[name "Labelcong_reflexivity"] forall (A B : point). Cong A B A B.
+#cong_symmetry
+assert[name "Labelcong_symmetry"] forall (A B C D : point). Cong A B C D => Cong C D A B.
+#not_col_distincts
+assert[name "Labelnot_col_distincts"] forall (A B C : point). ~Col A B C => ~Col A B C && A!=B && B!=C && A!=C.
+#col_trivial_3
+assert[name "Labelcol_trivial_3"] forall (A B : point). Col A B A.
+#leP_refl
+assert[name "LabelleP_refl"] forall (O E E1 A : point). LeP O E E1 A A.
+#length_id_2
+assert[name "Labellength_id_2"] forall (O E E1 A : point). O!=E => Length O E E1 A A O.
+#midpoint_bet
+assert[name "Labelmidpoint_bet"] forall (A B C : point). Midpoint B A C => Bet A B C.
+#characterization_of_betweenness_aux
+assert[name "Labelcharacterization_of_betweenness_aux"] forall (O E E1 S U1 U2 A AX AY B BX BY C CX CY BXMAX CXMAX AB AC IAC T : point). Cd O E S U1 U2 A AX AY => Cd O E S U1 U2 B BX BY => Cd O E S U1 U2 C CX CY => ~Col O E E1 => Col O E AX => Col O E BX => Col O E CX => Col O E BXMAX => Col O E CXMAX => Col O E T => Col O E AB => Col O E AC => Col O E IAC => Diff O E E1 BX AX BXMAX => Diff O E E1 CX AX CXMAX => Length O E E1 A B AB => Length O E E1 A C AC => Prod O E E1 T AC AB => Prod O E E1 IAC AC E => Bet A B C => A != B => A != C => B != C => Prod O E E1 T CXMAX BXMAX.
+#pos_inv_pos
+assert[name "Labelpos_inv_pos"] forall (O E E1 A IA : point). O!=A => LeP O E E1 O A => Prod O E E1 A IA E => LeP O E E1 O IA.
+#between_trivial2
+assert[name "Labelbetween_trivial2"] forall (A B : point). Bet A A B.
+#cong_identity
+assert[name "Labelcong_identity"] forall (A B C : point). Cong A B C C => A = B.
+#col_trivial_1
+assert[name "Labelcol_trivial_1"] forall (A B : point). Col A A B.
+#ps_le
+assert[name "Labelps_le"] forall (O E E1 X : point). ~Col O E E1 => Bet O X E || Bet O E X => LeP O E E1 O X.
+#prod_1_l
+assert[name "Labelprod_1_l"] forall (O E E1 A IA : point). O!=A => LeP O E E1 O A => Prod O E E1 A IA E => LeP O E E1 O IA.
+#between_trivial
+assert[name "Labelbetween_trivial"] forall (A B : point). Bet A B B.
+#prod_1_r
+assert[name "Labelprod_1_r"] forall (O E E1 A : point). ~Col O E E1 => Col O E A => Prod O E E1 A E A.
+#inv_exists
+assert[name "Labelinv_exists"] forall (O E E1 A : point). ~Col O E E1 => Col O E A => A!=O => (exists (IA : point). Prod O E E1 IA A E).
+#coord_exchange_axes
+assert[name "Labelcoord_exchange_axes"] forall (O E S U1 U2 P X Y : point). Cd O E S U1 U2 P X Y => Cd O E S U2 U1 P X Y.
+#length_leP_le_1
+assert[name "Labellength_leP_le_1"] forall (O E E1 A B C D AB CD : point). Length O E E1 A B AB => Length O E E1 C D CD => LeP O E E1 AB CD => Le A B C D.
+#diff_uniqueness
+assert[name "Labeldiff_uniqueness"] forall (O E E1 A B D1 D2 : point). Diff O E E1 A B D1 => Diff O E E1 A B D2 => D1=D2.
+#diff_uniquenessA
+assert[name "Labeldiff_uniquenessA"] forall (O E E1 A A1 B C : point). Diff O E E1 A B C => Diff O E E1 A1 B C => A=A1.
+#prod_comm
+assert[name "Labelprod_comm"] forall (O E E1 A B C : point). Prod O E E1 A B C => Prod O E E1 B A C.
+#col_trivial_2
+assert[name "Labelcol_trivial_2"] forall (A B : point). Col A B B.
+#length_existence
+assert[name "Labellength_existence"] forall (O E E1 A B : point). ~Col O E E1 => (exists (AB : point). Length O E E1 A B AB).
+#compatibility_of_prod_with_order
+assert[name "Labelcompatibility_of_prod_with_order"] forall (O E E1 A B AB : point). LeP O E E1 O A => LeP O E E1 O B => Prod O E E1 A B AB =>LeP O E E1 O AB.
+#length_id
+assert[name "Labellength_id"] forall (O E E1 A B : point). (A=B && O!=E)<=>Length O E E1 A B O.
+#length_leP_le_2
+assert[name "Labellength_leP_le_2"] forall (O E E1 A B C D AB CD : point). Length O E E1 A B AB => Length O E E1 C D CD => Le A B C D => LeP O E E1 AB CD.
+rewrite[name "LabelProd"] forall (O E E1 A B C : point). Prod O E E1 A B C <=> Ar2 O E E1 A B C && (exists (B1 : point). Pj E E1 B B1 && Col O E1 B1 && Pj E1 A B1 C).
+rewrite[name "LabelAr2"] forall (O E E1 A B C : point). Ar2 O E E1 A B C <=> ~ Col O E E1 && Col O E A && Col O E B && Col O E C.
+rewrite[name "LabelCd"] forall (O E S U1 U2 P X Y : point). Cd O E S U1 U2 P X Y <=> Cs O E S U1 U2 && Coplanar P S U1 U2 && (exists PX. Projp P PX S U1 && Cong_3 O E X S U1 PX) && (exists (PY : point). Projp P PY S U2 && Cong_3 O E Y S U2 PY).
+rewrite[name "LabelLength"] forall (O E E1 A B L: point). Length O E E1 A B L <=> O != E && Col O E L && LeP O E E1 O L && Cong O L A B.
+goal forall (O E E1 S U1 U2 A AX AY B BX BY C CX CY BXMAX BYMAY CXMAX CYMAY : point). Cd O E S U1 U2 A AX AY => Cd O E S U1 U2 B BX BY => Cd O E S U1 U2 C CX CY => Diff O E E1 BX AX BXMAX => Diff O E E1 BY AY BYMAY => Diff O E E1 CX AX CXMAX => Diff O E E1 CY AY CYMAY => (Bet A B C <=> (exists (T : point). O != E && Col O E T && LeP O E E1 O T && LeP O E E1 T E && Prod O E E1 T CXMAX BXMAX && Prod O E E1 T CYMAY BYMAY)).

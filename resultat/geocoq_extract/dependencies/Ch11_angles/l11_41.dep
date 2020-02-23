@@ -1,0 +1,3 @@
+lemme : l11_30 l11_41_aux bet_neq21__neq conga_sym conga_trans l11_13 conga_refl not_col_distincts cong_diff_4 conga_comm segment_construction col_permutation_5 conga_left_comm
+rewrite : LtA
+destruct : 

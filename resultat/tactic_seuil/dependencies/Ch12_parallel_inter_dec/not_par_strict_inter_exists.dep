@@ -1,0 +1,2 @@
+lemme : col_trivial_1 col_trivial_2 eq_dec_points all_coplanar cong_symmetry
+rewrite : Par_strict Par

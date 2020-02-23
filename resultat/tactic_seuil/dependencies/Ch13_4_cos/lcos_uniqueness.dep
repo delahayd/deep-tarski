@@ -1,0 +1,2 @@
+lemme : l13_6 anga_is_ang lcos_lg_anga out_trivial conga_refl acute_distincts eqA_preserves_ang eq_dec_points cong_identity cong_symmetry
+rewrite : Eq_Lcos Q_CongA_nFlat Ang Q_Cong_Null Q_CongA Q_CongA_nNull Q_CongA_Acute

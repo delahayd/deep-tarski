@@ -1,0 +1,3 @@
+lemme : l10_8 l10_4 image_gen_preserves_ncol not_col_distincts image_gen_preserves_inter
+rewrite : 
+destruct : 

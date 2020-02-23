@@ -1,0 +1,2 @@
+lemme : cong_right_commutativity col_permutation_5 col_permutation_2 col_trivial_1 par_strict_right_comm l12_6 le__nlt par_strict_symmetry col_permutation_1 between_symmetry par_strict_one_side cong_inner_transitivity col_trivial_3 cong_identity cong_symmetry not_and_lt perp_not_eq_1 cong_pseudo_reflexivity
+rewrite : Perp Le Par_strict Par Pj

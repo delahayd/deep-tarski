@@ -1,0 +1,3 @@
+lemme : sum_pos_pos sum_A_O_eq sum_diff2_diff_sum2_b diff_exists sum_O_B_eq diff_null sum_uniqueness sum_ar2
+rewrite : Ar2 LtP LeP
+destruct : 

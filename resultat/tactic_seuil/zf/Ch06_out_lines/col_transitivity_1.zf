@@ -1,0 +1,13 @@
+include "../rew_type.zf".
+rewrite[name "LabelCol"] forall (A B C : point). Col A B C <=> Bet A B C || Bet B C A || Bet C A B.
+#between_symmetry
+assert[name "Labelbetween_symmetry"] forall (A B C : point). Bet A B C => Bet C B A.
+#between_trivial
+assert[name "Labelbetween_trivial"] forall (A B : point). Bet A B B.
+#col_permutation_1
+assert[name "Labelcol_permutation_1"] forall (A B C : point). Col A B C => Col B C A.
+#eq_dec_points
+assert[name "Labeleq_dec_points"] forall (A B : point). A=B || A!=B.
+#l6_16_1
+assert[name "Labell6_16_1"] forall (P Q S X : point). P!=Q => S!=P => Col S P Q => Col X P Q => Col X P S.
+goal forall (P Q A B : point). P!=Q => Col P Q A => Col P Q B => Col P A B.

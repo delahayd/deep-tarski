@@ -1,0 +1,3 @@
+lemme : diff_ar2 diff_sum sum_assoc_1 opp_exists sum_comm compatibility_of_sum_with_order sum_O_B
+rewrite : Ar2
+destruct : 

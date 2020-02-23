@@ -1,0 +1,3 @@
+lemme : perp_col perp_distinct perp_sym l7_3 l8_18_existence symmetric_point_construction midpoint_bet l7_3_2
+rewrite : Col ReflectL
+destruct : 

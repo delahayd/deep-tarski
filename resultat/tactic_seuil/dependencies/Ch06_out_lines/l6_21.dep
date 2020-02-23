@@ -1,0 +1,2 @@
+lemme : not_col_distincts col_permutation_5 col_permutation_2 conga_sym col_permutation_4 col_permutation_1 eq_dec_points cong_symmetry col_transitivity_1
+rewrite : Out

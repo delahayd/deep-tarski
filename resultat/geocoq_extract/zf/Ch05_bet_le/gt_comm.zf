@@ -1,0 +1,6 @@
+include "../tarski_term_def.zf".
+#gt_right_comm
+assert[name "Labelgt_right_comm"] forall (A B C D : point). Gt A B C D => Gt A B D C.
+#gt_left_comm
+assert[name "Labelgt_left_comm"] forall (A B C D : point). Gt A B C D => Gt B A C D.
+goal forall (A B C D : point). Gt A B C D => Gt B A D C.

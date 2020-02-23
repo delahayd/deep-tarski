@@ -1,0 +1,2 @@
+lemme : cong_reverse_identity cong_symmetry cong_trivial_identity
+rewrite : Q_CongA Q_Cong Q_Cong_Null

@@ -1,0 +1,2 @@
+lemme : is_ang_distinct acute_lea_acute bet_conga_bet conga_sym conga_right_comm ex_lg between_trivial ang_sym acute_distincts out_trivial between_symmetry
+rewrite : Col Q_CongA_Null_Acute Ang LeA InAngle Q_Cong_Null Q_CongA_Acute

@@ -1,0 +1,2 @@
+lemme : conga_sym conga_trans l11_21_b
+rewrite : Q_CongA Q_CongA_Acute

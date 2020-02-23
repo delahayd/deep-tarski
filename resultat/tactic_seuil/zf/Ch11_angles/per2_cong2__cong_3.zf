@@ -1,0 +1,9 @@
+include "../rew_type.zf".
+rewrite[name "LabelCong_3"] forall (A B C A1 B1 C1 : point). Cong_3 A B C A1 B1 C1 <=> Cong A B A1 B1 && Cong A C A1 C1 && Cong B C B1 C1.
+#cong_commutativity
+assert[name "Labelcong_commutativity"] forall (A B C D : point). Cong A B C D => Cong B A D C.
+#cong_symmetry
+assert[name "Labelcong_symmetry"] forall (A B C D : point). Cong A B C D => Cong C D A B.
+#per2_cong2__cong_conga2
+assert[name "Labelper2_cong2__cong_conga2"] forall (A B C A1 B1 C1 : point). A!=B => B!=C => A1!=B1 => B1!=C1 => Per A B C => Per A1 B1 C1 => Cong A C A1 C1 => Cong B C B1 C1 => Cong B A B1 A1 && CongA B A C B1 A1 C1 && CongA B C A B1 C1 A1.
+goal forall (A B C A1 B1 C1 : point). A!=B => B!=C => A1!=B1 => B1!=C1 => Per A B C => Per A1 B1 C1 => Cong A C A1 C1 => Cong B C B1 C1 => Cong_3 A B C A1 B1 C1.

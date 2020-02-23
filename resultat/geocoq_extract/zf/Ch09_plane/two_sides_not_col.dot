@@ -1,0 +1,26 @@
+digraph "unsat_graph" {
+  vertex_0 [color=red, label="[]", shape=box, style=filled];
+  vertex_0 -> vertex_1 [label="s_sup-\l", dir="back"];
+  vertex_1 [shape=box, label="¬Col sk_X sk_A sk_B\l", style=filled];
+  vertex_1 -> vertex_2 [label="rw_clause\l\{X3[1] → sk_A[0], X4[1] → sk_B[0], X5[1] → sk_X[0], X6[1] → sk_Y[0]\}[1]\l", dir="back"];
+  vertex_2 [color=navajowhite, shape=box, label="(TS X3 X4 X5 X6 :=\l   [¬Col X6 X3 X4∧\l    Col (sk_T X6 X5 X4 X3) X3 X4∧\l    Bet X5 (sk_T X6 X5 X4 X3) X6∧\l    ¬Col X5 X3 X4] [B])\l", style=filled];
+  vertex_2 -> vertex_3 [label="rw.lit", dir="back"];
+  vertex_3 [color=yellow, shape=box, label="rewrite\l  [file \"../resultat/geocoq_extract/zf/Ch09_plane/two_sides_not_col.zf\" \l   \"LabelTS\"]\l  TS X3 X4 X5 X6\l  =\> ¬ Col X6 X3 X4 && Col (sk_T X6 X5 X4 X3) X3 X4 && \l     Bet X5 (sk_T X6 X5 X4 X3) X6 && ¬ Col X5 X3 X4.\l", style=filled];
+  vertex_1 -> vertex_4 [label="rw_clause\l\{X3[1] → sk_A[0], X4[1] → sk_B[0], X5[1] → sk_X[0], X6[1] → sk_Y[0]\}[0]\l", dir="back"];
+  vertex_4 [shape=box, label="TS sk_A sk_B sk_X sk_Y\l", style=filled];
+  vertex_4 -> vertex_5 [label="cnf", dir="back"];
+  vertex_5 [shape=box, label="negated_goal\l  ¬ (∀ A/141:point B/142:point X/143:point Y/144:point.\l        ((TS A/141 B/142 X/143 Y/144) ⇒ (¬ (Col A/141 B/142 X/143))))\l  # skolems: [].\l", style=filled];
+  vertex_5 -> vertex_6 [label="cnf.neg", dir="back"];
+  vertex_6 [color=green, shape=box, label="goal\l  [file \"../resultat/geocoq_extract/zf/Ch09_plane/two_sides_not_col.zf\" \l   \"zf_stmt_128\"]\l  ∀ A/141:point B/142:point X/143:point Y/144:point.\l    ((TS A/141 B/142 X/143 Y/144) ⇒ (¬ (Col A/141 B/142 X/143))).\l", style=filled];
+  vertex_0 -> vertex_7 [label="s_sup-\l", dir="back"];
+  vertex_7 [shape=box, label="Col sk_X sk_A sk_B\l", style=filled];
+  vertex_7 -> vertex_8 [label="s_sup-\l\{X0[0] → sk_X[1], X1[0] → sk_A[1], X2[0] → sk_B[1]\}[0]\l", dir="back"];
+  vertex_8 [shape=box, label="forall (X0:point) (X1:point) (X2:point). [Col X0 X1 X2 ∨ ¬Col X1 X2 X0]\l", style=filled];
+  vertex_8 -> vertex_9 [label="cnf", dir="back"];
+  vertex_9 [color=yellow, shape=box, label="assert\l  [file \"../resultat/geocoq_extract/zf/Ch09_plane/two_sides_not_col.zf\" \l   \"Labelcol_permutation_2\"]\l  ∀ A/133:point B/134:point C/135:point.\l    ((Col A/133 B/134 C/135) ⇒ (Col C/135 A/133 B/134)).\l", style=filled];
+  vertex_7 -> vertex_10 [label="s_sup-\l\{X0[0] → sk_X[1], X1[0] → sk_A[1], X2[0] → sk_B[1]\}[1]\l", dir="back"];
+  vertex_10 [shape=box, label="Col sk_A sk_B sk_X\l", style=filled];
+  vertex_10 -> vertex_5 [label="cnf", dir="back"];
+  }
+
+

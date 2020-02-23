@@ -1,0 +1,26 @@
+digraph "unsat_graph" {
+  vertex_0 [color=red, label="[]", shape=box, style=filled];
+  vertex_0 -> vertex_1 [label="s_sup-\l", dir="back"];
+  vertex_1 [shape=box, label="¬Opp sk_O sk_E sk_E1 sk_X sk_MX\l", style=filled];
+  vertex_1 -> vertex_2 [label="cnf", dir="back"];
+  vertex_2 [shape=box, label="negated_goal\l  ¬ (∀ O/147:point E/148:point E1/149:point X/150:point MX/151:point.\l        ((Sum O/147 E/148 E1/149 X/150 MX/151 O/147) ⇒\l         (Opp O/147 E/148 E1/149 X/150 MX/151)))\l  # skolems: [].\l", style=filled];
+  vertex_2 -> vertex_3 [label="cnf.neg", dir="back"];
+  vertex_3 [color=green, shape=box, label="goal [file \"../resultat/geocoq_extract/zf/Ch14_sum/sum_opp.zf\" \"zf_stmt_132\"]\l  ∀ O/147:point E/148:point E1/149:point X/150:point MX/151:point.\l    ((Sum O/147 E/148 E1/149 X/150 MX/151 O/147) ⇒\l     (Opp O/147 E/148 E1/149 X/150 MX/151)).\l", style=filled];
+  vertex_0 -> vertex_4 [label="s_sup-\l", dir="back"];
+  vertex_4 [shape=box, label="Opp sk_O sk_E sk_E1 sk_X sk_MX\l", style=filled];
+  vertex_4 -> vertex_5 [label="s_sup-\l\{X6[1] → sk_O[0], \l X7[1] → sk_E[0], \l X8[1] → sk_E1[0], \l X9[1] → sk_X[0], \l X10[1] → sk_MX[0]\}[1]\l", dir="back"];
+  vertex_5 [shape=box, label="forall (X6:point) (X7:point) (X8:point) (X9:point) (X10:point).\l[Opp X6 X7 X8 X9 X10 ∨ ¬Diff X6 X7 X8 X6 X9 X10]\l", style=filled];
+  vertex_5 -> vertex_6 [label="cnf", dir="back"];
+  vertex_6 [color=yellow, shape=box, label="assert\l  [file \"../resultat/geocoq_extract/zf/Ch14_sum/sum_opp.zf\" \l   \"Labeldiff_O_A_opp\"]\l  ∀ O/142:point E/143:point E1/144:point A/145:point mA/146:point.\l    ((Diff O/142 E/143 E1/144 O/142 A/145 mA/146) ⇒\l     (Opp O/142 E/143 E1/144 A/145 mA/146)).\l", style=filled];
+  vertex_4 -> vertex_7 [label="s_sup-\l\{X6[1] → sk_O[0], \l X7[1] → sk_E[0], \l X8[1] → sk_E1[0], \l X9[1] → sk_X[0], \l X10[1] → sk_MX[0]\}[0]\l", dir="back"];
+  vertex_7 [shape=box, label="Diff sk_O sk_E sk_E1 sk_O sk_X sk_MX\l", style=filled];
+  vertex_7 -> vertex_8 [label="s_sup-\l\{X0[0] → sk_O[1], \l X1[0] → sk_E[1], \l X2[0] → sk_E1[1], \l X3[0] → sk_O[1], \l X4[0] → sk_X[1], \l X5[0] → sk_MX[1]\}[0]\l", dir="back"];
+  vertex_8 [shape=box, label="forall (X0:point) (X1:point) (X2:point) (X3:point) (X4:point) (X5:point).\l[Diff X0 X1 X2 X3 X4 X5 ∨ ¬Sum X0 X1 X2 X4 X5 X3]\l", style=filled];
+  vertex_8 -> vertex_9 [label="cnf", dir="back"];
+  vertex_9 [color=yellow, shape=box, label="assert\l  [file \"../resultat/geocoq_extract/zf/Ch14_sum/sum_opp.zf\" \"Labelsum_diff\"]\l  ∀ O/136:point E/137:point E1/138:point A/139:point B/140:point \l    S/141:point.\l    ((Sum O/136 E/137 E1/138 A/139 B/140 S/141) ⇒\l     (Diff O/136 E/137 E1/138 S/141 A/139 B/140)).\l", style=filled];
+  vertex_7 -> vertex_10 [label="s_sup-\l\{X0[0] → sk_O[1], \l X1[0] → sk_E[1], \l X2[0] → sk_E1[1], \l X3[0] → sk_O[1], \l X4[0] → sk_X[1], \l X5[0] → sk_MX[1]\}[1]\l", dir="back"];
+  vertex_10 [shape=box, label="Sum sk_O sk_E sk_E1 sk_X sk_MX sk_O\l", style=filled];
+  vertex_10 -> vertex_2 [label="cnf", dir="back"];
+  }
+
+

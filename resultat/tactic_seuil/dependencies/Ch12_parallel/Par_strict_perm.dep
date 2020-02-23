@@ -1,0 +1,2 @@
+lemme : par_strict_right_comm par_strict_comm par_strict_left_comm par_strict_symmetry
+rewrite :

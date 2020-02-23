@@ -1,0 +1,4 @@
+include "../tarski_term_def.zf".
+#conga_sym
+assert[name "Labelconga_sym"] forall (A B C A1 B1 C1 : point). CongA A B C A1 B1 C1 => CongA A1 B1 C1 A B C.
+goal forall (A B C A1 B1 C1 : point). CongA A B C A1 B1 C1 <=> CongA A1 B1 C1 A B C.

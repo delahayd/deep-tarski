@@ -1,0 +1,3 @@
+lemme : le_left_comm per_col_eq col_permutation_1 l11_46 l8_14_2_1a col_trivial_1 not_col_distincts per_col perp_in_sym l8_2 col_permutation_5 perp_in_comm l8_7 perp_in_per l8_14_3 perp_perp_in l5_12_b le_transitivity per_perp_in
+rewrite : Lt Perp_at
+destruct : 

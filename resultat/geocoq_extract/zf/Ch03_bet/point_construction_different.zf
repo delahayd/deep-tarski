@@ -1,0 +1,10 @@
+include "../tarski_term_def.zf".
+#two_distinct_points
+assert[name "Labeltwo_distinct_points"] exists (X Y : point). X!=Y.
+#cong_symmetry
+assert[name "Labelcong_symmetry"] forall (A B C D : point). Cong A B C D => Cong C D A B.
+#segment_construction
+assert[name "Labelsegment_construction"] forall (A B C D : point). exists (E :point). Bet A B E && Cong B E C D.
+#cong_identity
+assert[name "Labelcong_identity"] forall (A B C : point). Cong A B C C => A = B.
+goal forall (A B : point). exists (C : point). Bet A B C && B!=C.

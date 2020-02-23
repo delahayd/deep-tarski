@@ -1,0 +1,2 @@
+lemme : lcos_eql_lcos l13_6_bis lcos_lg_anga
+rewrite : Eq_Lcos Eq_Lcos2 lcos2

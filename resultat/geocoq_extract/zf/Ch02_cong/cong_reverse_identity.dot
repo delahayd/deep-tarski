@@ -1,0 +1,26 @@
+digraph "unsat_graph" {
+  vertex_0 [color=red, label="[]", shape=box, style=filled];
+  vertex_0 -> vertex_1 [label="simplify_reflect-", dir="back"];
+  vertex_1 [shape=box, label="sk_C ≠ sk_D\l", style=filled];
+  vertex_1 -> vertex_2 [label="cnf", dir="back"];
+  vertex_2 [shape=box, label="negated_goal\l  ¬ (∀ A/140:point C/141:point D/142:point.\l        ((Cong A/140 A/140 C/141 D/142) ⇒ (C/141 = D/142)))\l  # skolems: [].\l", style=filled];
+  vertex_2 -> vertex_3 [label="cnf.neg", dir="back"];
+  vertex_3 [color=green, shape=box, label="goal\l  [file \"../resultat/geocoq_extract/zf/Ch02_cong/cong_reverse_identity.zf\" \l   \"zf_stmt_128\"]\l  ∀ A/140:point C/141:point D/142:point.\l    ((Cong A/140 A/140 C/141 D/142) ⇒ (C/141 = D/142)).\l", style=filled];
+  vertex_0 -> vertex_4 [label="simplify_reflect-", dir="back"];
+  vertex_4 [shape=box, label="sk_C = sk_D\l", style=filled];
+  vertex_4 -> vertex_5 [label="s_sup-\l\{X4[1] → sk_D[0], X5[1] → sk_C[0], X6[1] → sk_A[0]\}[1]\l", dir="back"];
+  vertex_5 [shape=box, label="forall (X4:point) (X5:point) (X6:point). [X5 = X4 ∨ ¬Cong X5 X4 X6 X6]\l", style=filled];
+  vertex_5 -> vertex_6 [label="cnf", dir="back"];
+  vertex_6 [color=yellow, shape=box, label="assert\l  [file \"../resultat/geocoq_extract/zf/Ch02_cong/cong_reverse_identity.zf\" \l   \"Labelcong_identity\"]\l  ∀ A/137:point B/138:point C/139:point.\l    ((Cong A/137 B/138 C/139 C/139) ⇒ (A/137 = B/138)).\l", style=filled];
+  vertex_4 -> vertex_7 [label="s_sup-\l\{X4[1] → sk_D[0], X5[1] → sk_C[0], X6[1] → sk_A[0]\}[0]\l", dir="back"];
+  vertex_7 [shape=box, label="Cong sk_C sk_D sk_A sk_A\l", style=filled];
+  vertex_7 -> vertex_8 [label="s_sup-\l\{X0[0] → sk_C[1], X1[0] → sk_D[1], X2[0] → sk_A[1], X3[0] → sk_A[1]\}[0]\l", dir="back"];
+  vertex_8 [shape=box, label="forall (X0:point) (X1:point) (X2:point) (X3:point).\l[Cong X0 X1 X2 X3 ∨ ¬Cong X2 X3 X0 X1]\l", style=filled];
+  vertex_8 -> vertex_9 [label="cnf", dir="back"];
+  vertex_9 [color=yellow, shape=box, label="assert\l  [file \"../resultat/geocoq_extract/zf/Ch02_cong/cong_reverse_identity.zf\" \l   \"Labelcong_symmetry\"]\l  ∀ A/133:point B/134:point C/135:point D/136:point.\l    ((Cong A/133 B/134 C/135 D/136) ⇒ (Cong C/135 D/136 A/133 B/134)).\l", style=filled];
+  vertex_7 -> vertex_10 [label="s_sup-\l\{X0[0] → sk_C[1], X1[0] → sk_D[1], X2[0] → sk_A[1], X3[0] → sk_A[1]\}[1]\l", dir="back"];
+  vertex_10 [shape=box, label="Cong sk_A sk_A sk_C sk_D\l", style=filled];
+  vertex_10 -> vertex_2 [label="cnf", dir="back"];
+  }
+
+

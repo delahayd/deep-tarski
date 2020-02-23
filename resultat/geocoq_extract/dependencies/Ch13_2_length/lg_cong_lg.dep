@@ -1,0 +1,3 @@
+lemme : cong_transitivity
+rewrite : Q_Cong
+destruct : HQ HP

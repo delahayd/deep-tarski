@@ -1,0 +1,3 @@
+lemme : l10_10_spec image_preserves_bet l10_4_spec cong_transitivity
+rewrite : Midpoint
+destruct : 

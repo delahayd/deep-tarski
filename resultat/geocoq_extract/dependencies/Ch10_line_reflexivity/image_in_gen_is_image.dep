@@ -1,0 +1,3 @@
+lemme : image_in_is_image_spec
+rewrite : Reflect Reflect_at
+destruct : 

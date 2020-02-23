@@ -1,0 +1,3 @@
+lemme : col_trivial_3 l8_15_1
+rewrite : Perp Perp_at
+destruct : 

@@ -1,0 +1,3 @@
+lemme : sum_exists opp_exists
+rewrite : Opp Sum Diff Ar2
+destruct : 

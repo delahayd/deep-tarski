@@ -1,0 +1,3 @@
+lemme : length_eq_cong_1 diff_ar2 prod_exists cong_transitivity prod_uniqueness prod_assoc1 opp_exists opp_prod l7_20 square_distance_formula eq_squares_eq_or_opp prod_assoc2 cong_symmetry not_col_distincts col_trivial_3 opp_midpoint opp_comm col_permutation_1 col_trivial_1 col_permutation_5 is_length_exists prod_1_l cong_left_commutativity col_trivial_2 prod_comm midpoint_opp
+rewrite : Is_length Length Midpoint LtP Ar2 LeP
+destruct : 

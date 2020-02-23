@@ -1,0 +1,3 @@
+lemme : sum_assoc_1 sum_comm
+rewrite : Sum Ar2
+destruct : 

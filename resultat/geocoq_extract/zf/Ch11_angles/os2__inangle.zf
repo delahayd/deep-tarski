@@ -1,0 +1,8 @@
+include "../tarski_term_def.zf".
+#one_side_symmetry
+assert[name "Labelone_side_symmetry"] forall (P Q A B : point). OS P Q A B => OS P Q B A.
+#os_ts__inangle
+assert[name "Labelos_ts__inangle"] forall (A B C P : point). TS B P A C => OS B A C P => InAngle P A B C.
+#l9_31
+assert[name "Labell9_31"] forall (A X Y Z : point). OS A X Y Z => OS A Z Y X => TS A Y X Z.
+goal forall (A B C P : point). OS B A C P => OS B C A P => InAngle P A B C.

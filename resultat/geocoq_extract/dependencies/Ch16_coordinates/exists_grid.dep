@@ -1,0 +1,3 @@
+lemme : cong_reflexivity ex_per_cong cong_symmetry not_col_distincts cong_left_commutativity not_col_permutation_1 col_trivial_2 lower_dim_ex not_col_permutation_5 l8_2
+rewrite : 
+destruct : 

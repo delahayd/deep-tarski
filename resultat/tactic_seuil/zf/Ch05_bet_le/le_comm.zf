@@ -1,0 +1,6 @@
+include "../rew_type.zf".
+#le1221
+assert[name "Labelle1221"] forall (A B : point). Le A B B A.
+#le_transitivity
+assert[name "Labelle_transitivity"] forall (A B C D E F : point). Le A B C D => Le C D E F => Le A B E F.
+goal forall (A B C D : point). Le A B C D => Le B A D C.

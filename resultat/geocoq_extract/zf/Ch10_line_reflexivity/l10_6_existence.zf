@@ -1,0 +1,6 @@
+include "../tarski_term_def.zf".
+#l10_2_existence
+assert[name "Labell10_2_existence"] forall (A B P : point). (exists (P1 : point). Reflect P1 P1 A B).
+#l10_4
+assert[name "Labell10_4"] forall (A B P P1 : point). Reflect P P1 A B => Reflect P1 P A B.
+goal forall (A B P1 : point). (exists (P : point). Reflect P1 P A B).

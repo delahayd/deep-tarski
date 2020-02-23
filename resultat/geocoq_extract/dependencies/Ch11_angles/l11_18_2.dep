@@ -1,0 +1,3 @@
+lemme : outer_transitivity_between2 cong_symmetry l2_11 cong_right_commutativity outer_transitivity_between construction_uniqueness per_col between_symmetry cong_left_commutativity l8_2 between_identity
+rewrite : Col CongA Per
+destruct : 

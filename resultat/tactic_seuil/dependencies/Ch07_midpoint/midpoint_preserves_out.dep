@@ -1,0 +1,2 @@
+lemme : symmetric_point_uniqueness l7_15 l7_2 cong_symmetry symmetric_point_construction
+rewrite : Per Out

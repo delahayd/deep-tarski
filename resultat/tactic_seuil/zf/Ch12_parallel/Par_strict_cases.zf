@@ -1,0 +1,4 @@
+include "../rew_type.zf".
+#par_strict_comm
+assert[name "Labelpar_strict_comm"] forall (A B C D : point). Par_strict A B C D => Par_strict B A D C.
+goal forall (A B C D : point). Par_strict A B C D || Par_strict B A C D || Par_strict A B D C || Par_strict B A D C || Par_strict C D A B || Par_strict C D B A || Par_strict D C A B || Par_strict D C B A => Par_strict A B C D.

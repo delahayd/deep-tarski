@@ -1,0 +1,3 @@
+lemme : lcos_lg_anga eqA_preserves_anga anga_is_ang eqA_preserves_ang
+rewrite : Lcos EqA
+destruct : 

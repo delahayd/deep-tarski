@@ -1,0 +1,3 @@
+lemme : outer_transitivity_between2 col_permutation_3 eq_dec_points l4_2 l5_2 point_construction_different cong_left_commutativity cong_pseudo_reflexivity between_identity cong_commutativity between_trivial cong_reverse_identity col_transitivity_1 l7_20 col_permutation_4 segment_construction inner_pasch l4_17 bet_col l4_5 cong_symmetry between_exchange3 five_segment_with_def l4_13 l6_21 l7_3_2 between_symmetry cong_identity
+rewrite : Col OFSC IFSC Midpoint Cong_3
+destruct : 

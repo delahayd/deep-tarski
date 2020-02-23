@@ -1,0 +1,5 @@
+include "../tarski_term_def.zf".
+#l9_9_bis
+assert[name "Labell9_9_bis"] forall (P Q A B : point). OS P Q A B => ~TS P Q A B.
+rewrite[name "LabelTS"] forall (A B P Q : point). TS A B P Q <=> ~(Col P A B) && ~(Col Q A B) && (exists (T : point). Col T A B && Bet P T Q).
+goal forall (P Q A B : point). P!=Q => ~Col A P Q => ~Col B P Q => OS P Q A B => (forall (X : point). Col X P Q => ~Bet A X B).

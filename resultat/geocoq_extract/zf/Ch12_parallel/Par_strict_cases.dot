@@ -1,0 +1,20 @@
+digraph "unsat_graph" {
+  vertex_0 [color=red, label="[]", shape=box, style=filled];
+  vertex_0 -> vertex_1 [label="s_sup-\l", dir="back"];
+  vertex_1 [shape=box, label="¬Par_strict sk_D sk_C sk_A sk_B\l", style=filled];
+  vertex_1 -> vertex_2 [label="cnf", dir="back"];
+  vertex_2 [shape=box, label="negated_goal\l  ¬ (∀ A/149:point B/150:point C/151:point D/152:point.\l        ((Par_strict B/150 A/149 C/151 D/152)\l         ∨ (Par_strict B/150 A/149 D/152 C/151)\l         ∨ (Par_strict C/151 D/152 B/150 A/149)\l         ∨ ((Par_strict D/152 C/151 B/150 A/149) ⇒\l              (Par_strict A/149 B/150 C/151 D/152))\l         ∨ (Par_strict D/152 C/151 A/149 B/150)\l         ∨ (Par_strict C/151 D/152 A/149 B/150)\l         ∨ (Par_strict A/149 B/150 D/152 C/151)\l         ∨ (Par_strict A/149 B/150 C/151 D/152)))\l  # skolems: [].\l", style=filled];
+  vertex_2 -> vertex_3 [label="cnf.neg", dir="back"];
+  vertex_3 [color=green, shape=box, label="goal\l  [file \"../resultat/geocoq_extract/zf/Ch12_parallel/Par_strict_cases.zf\" \l   \"zf_stmt_128\"]\l  ∀ A/149:point B/150:point C/151:point D/152:point.\l    ((Par_strict B/150 A/149 C/151 D/152)\l     ∨ (Par_strict B/150 A/149 D/152 C/151)\l     ∨ (Par_strict C/151 D/152 B/150 A/149)\l     ∨ ((Par_strict D/152 C/151 B/150 A/149) ⇒\l          (Par_strict A/149 B/150 C/151 D/152))\l     ∨ (Par_strict D/152 C/151 A/149 B/150)\l     ∨ (Par_strict C/151 D/152 A/149 B/150)\l     ∨ (Par_strict A/149 B/150 D/152 C/151)\l     ∨ (Par_strict A/149 B/150 C/151 D/152)).\l", style=filled];
+  vertex_0 -> vertex_4 [label="s_sup-\l", dir="back"];
+  vertex_4 [shape=box, label="Par_strict sk_D sk_C sk_A sk_B\l", style=filled];
+  vertex_4 -> vertex_5 [label="s_sup-\l\{X0[0] → sk_D[1], X1[0] → sk_C[1], X2[0] → sk_A[1], X3[0] → sk_B[1]\}[0]\l", dir="back"];
+  vertex_5 [shape=box, label="forall (X0:point) (X1:point) (X2:point) (X3:point).\l[Par_strict X0 X1 X2 X3 ∨ ¬Par_strict X0 X1 X3 X2]\l", style=filled];
+  vertex_5 -> vertex_6 [label="cnf", dir="back"];
+  vertex_6 [color=yellow, shape=box, label="assert\l  [file \"../resultat/geocoq_extract/zf/Ch12_parallel/Par_strict_cases.zf\" \l   \"Labelpar_strict_right_comm\"]\l  ∀ A/133:point B/134:point C/135:point D/136:point.\l    ((Par_strict A/133 B/134 C/135 D/136) ⇒\l     (Par_strict A/133 B/134 D/136 C/135)).\l", style=filled];
+  vertex_4 -> vertex_7 [label="s_sup-\l\{X0[0] → sk_D[1], X1[0] → sk_C[1], X2[0] → sk_A[1], X3[0] → sk_B[1]\}[1]\l", dir="back"];
+  vertex_7 [shape=box, label="Par_strict sk_D sk_C sk_B sk_A\l", style=filled];
+  vertex_7 -> vertex_2 [label="cnf", dir="back"];
+  }
+
+

@@ -1,0 +1,3 @@
+lemme : eq_dec_points cong_symmetry construction_uniqueness cong_identity
+rewrite : Midpoint
+destruct : 

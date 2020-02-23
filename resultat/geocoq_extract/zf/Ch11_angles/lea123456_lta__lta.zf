@@ -1,0 +1,14 @@
+include "../tarski_term_def.zf".
+#l11_30
+assert[name "Labell11_30"] forall (A B C D E F A1 B1 C1 D1 E1 F1 : point). LeA A B C D E F => CongA A B C A1 B1 C1 => CongA D E F D1 E1 F1 => LeA A1 B1 C1 D1 E1 F1.
+#lta__lea
+assert[name "Labellta__lea"] forall (A B C D E F : point). LtA A B C D E F => LeA A B C D E F.
+#lea_trans
+assert[name "Labellea_trans"] forall (A B C A1 B1 C1 A2 B2 C2 : point). LeA A B C A1 B1 C1 => LeA A1 B1 C1 A2 B2 C2 => LeA A B C A2 B2 C2.
+#conga_refl
+assert[name "Labelconga_refl"] forall (A B C : point). A!=B => C!=B => CongA A B C A B C.
+#lea_distincts
+assert[name "Labellea_distincts"] forall (A B C D E F : point). LeA A B C D E F => A!=B && C!=B && D!=E && F!=E.
+#lea_asym
+assert[name "Labellea_asym"] forall (A B C D E F : point). LeA A B C D E F => LeA D E F A B C => CongA A B C D E F.
+goal forall (A B C D E F G H I : point). LeA A B C D E F => LtA D E F G H I => LtA A B C G H I.

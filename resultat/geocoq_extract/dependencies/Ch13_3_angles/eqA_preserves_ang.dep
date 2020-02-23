@@ -1,0 +1,3 @@
+lemme : 
+rewrite : EqA Q_CongA
+destruct : 

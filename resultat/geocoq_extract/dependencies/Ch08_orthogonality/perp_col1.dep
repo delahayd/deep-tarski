@@ -1,0 +1,3 @@
+lemme : col_permutation_3 col_transitivity_2 perp_distinct col_permutation_2 col_permutation_1 col_transitivity_1 col_permutation_4 col_permutation_5
+rewrite : Perp Perp_at
+destruct : 

@@ -1,0 +1,6 @@
+include "../rew_type.zf".
+#l11_47
+assert[name "Labell11_47"] forall (A B C H : point). Per A C B => Perp_at H C H A B => Bet A H B && A!=H && B!=H.
+#perp_in_left_comm
+assert[name "Labelperp_in_left_comm"] forall (A B C D X : point). Perp_at X A B C D => Perp_at X B A C D.
+goal forall (A B C P : point). ~Col A B C => Col A P C => Per A B C => Perp_at P P B A C => Bet A P C.

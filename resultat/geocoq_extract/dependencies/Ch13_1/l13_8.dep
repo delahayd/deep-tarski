@@ -1,0 +1,3 @@
+lemme : per23_preserves_bet_inv col_permutation_5 l8_8 per_perp_in not_col_distincts perp_in_sym per_not_col eq_dec_points l8_9 per23_preserves_bet perp_in_comm perp_in_per
+rewrite : Out
+destruct : 

@@ -1,0 +1,2 @@
+lemme : between_exchange4 perp_comm col_permutation_3 col_permutation_1 col_trivial_3 l7_2 l7_20 l7_3_2 col_permutation_2 l7_13 eq_dec_points per_perp_in cong_identity cong_commutativity l8_18_existence cong_symmetry cong_4321 perp_right_comm perp_sym col_permutation_5 col_trivial_1 cong_reflexivity col_trivial_2 bet_dec cong_left_commutativity l10_15 not_col_exists per_not_col between_equality between_trivial2 cong_diff between_trivial col_permutation_4 l8_2 between_identity between_symmetry
+rewrite : Col Midpoint Perp_at Le ReflectL_at Out ReflectL LeP Ps Par

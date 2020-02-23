@@ -1,0 +1,6 @@
+include "../tarski_term_def.zf".
+#conga_right_comm
+assert[name "Labelconga_right_comm"] forall (A B C D E F : point). CongA A B C D E F => CongA A B C F E D.
+#conga_left_comm
+assert[name "Labelconga_left_comm"] forall (A B C D E F : point). CongA A B C D E F => CongA C B A D E F.
+goal forall (A B C D E F : point). CongA A B C D E F => CongA C B A F E D.

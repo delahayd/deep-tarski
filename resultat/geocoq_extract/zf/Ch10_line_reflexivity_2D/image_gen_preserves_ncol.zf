@@ -1,0 +1,6 @@
+include "../tarski_term_def.zf".
+#image_gen_preserves_col
+assert[name "Labelimage_gen_preserves_col"] forall (A B C A1 B1 C1 X Y : point). X!=Y => Reflect A A1 X Y => Reflect B B1 X Y => Reflect C C1 X Y => Col A B C => Col A1 B1 C1.
+#l10_4
+assert[name "Labell10_4"] forall (A B P P1 : point). Reflect P P1 A B => Reflect P1 P A B.
+goal forall (A B C A1 B1 C1 X Y : point). X!=Y => Reflect A A1 X Y => Reflect B B1 X Y => Reflect C C1 X Y => ~Col A B C => ~Col A1 B1 C1.

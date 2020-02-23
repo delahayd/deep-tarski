@@ -1,0 +1,6 @@
+include "../tarski_term_def.zf".
+#out_trivial
+assert[name "Labelout_trivial"] forall (P A : point). A!=P => Out P A A.
+#l11_31_1
+assert[name "Labell11_31_1"] forall (A B C D E F : point). Out B A C => D!=E => F!=E => LeA A B C D E F.
+goal forall (A B C D E : point). A!=B => C!=D => D!=E => LeA A B A C D E.

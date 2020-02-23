@@ -1,0 +1,4 @@
+include "../tarski_term_def.zf".
+#lower_dim
+assert[name "Labellower_dim"]  ~(Bet PA PB PC || Bet PB PC PA || Bet PC PA PB).
+goal exists (A B C : point). ~(Bet A B C || Bet B C A || Bet C A B).

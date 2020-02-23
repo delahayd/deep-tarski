@@ -1,0 +1,10 @@
+include "../tarski_term_def.zf".
+val O : point.
+val E : point.
+val E1 : point.
+assert ~Col O E E1.
+#sum4_equiv
+assert[name "Labelsum4_equiv"] forall (O E E1 A B C D S : point). Sum4 O E E1 A B C D S <=> sum22 O E E1 A B C D S.
+#sum4_permut
+assert[name "Labelsum4_permut"] forall (O E E1 A B C D S : point). Sum4 O E E1 A B C D S => Sum4 O E E1 D A B C S.
+goal forall (O E E1 A B C D S : point). sum22 O E E1 A B C D S => sum22 O E E1 D A B C S.

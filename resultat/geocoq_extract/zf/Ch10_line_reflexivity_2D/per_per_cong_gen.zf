@@ -1,0 +1,5 @@
+include "../tarski_term_def.zf".
+#per_per_cong
+assert[name "Labelper_per_cong"] forall (A B X Y : point). A!=B => Per A B X => Per A B Y => Cong B X B Y => X=Y || ReflectL X Y A B.
+rewrite[name "LabelReflect"] forall (P1 P A B : point). Reflect P1 P A B <=> (A != B && ReflectL P1 P A B) || (A = B && Midpoint A P P1).
+goal forall (A B X Y : point). A!=B => Per A B X => Per A B Y => Cong B X B Y => X=Y || Reflect X Y A B.

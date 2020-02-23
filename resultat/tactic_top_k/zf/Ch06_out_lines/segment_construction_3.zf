@@ -1,0 +1,8 @@
+include "../rew_type.zf".
+#cong_identity
+assert[name "Labelcong_identity"] forall (A B C : point). Cong A B C C => A = B.
+#l6_11_existence
+assert[name "Labell6_11_existence"] forall (A B C R : point). R!=A => B!=C => (exists (X : point). Out A X R && Cong A X B C).
+#l6_6
+assert[name "Labell6_6"] forall (P A B : point). Out P A B => Out P B A.
+goal forall (A B X Y : point). A!=B => X!=Y => (exists (C : point). Out A B C && Cong A C X Y).

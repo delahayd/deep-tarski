@@ -1,0 +1,2 @@
+lemme : conga_diff1 cong_symmetry conga_sym
+rewrite : CongA

@@ -1,0 +1,3 @@
+lemme : eq_dec_points lower_dim_ex between_trivial
+rewrite : 
+destruct : 

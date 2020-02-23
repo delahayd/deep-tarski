@@ -1,0 +1,20 @@
+digraph "unsat_graph" {
+  vertex_0 [color=red, label="[]", shape=box, style=filled];
+  vertex_0 -> vertex_1 [label="s_sup-\l", dir="back"];
+  vertex_1 [shape=box, label="¬Perp sk_A sk_B sk_C sk_X\l", style=filled];
+  vertex_1 -> vertex_2 [label="cnf", dir="back"];
+  vertex_2 [shape=box, label="negated_goal\l  ¬ (∀ A/138:point B/139:point C/140:point X/141:point.\l        ((A/138 ≠ B/139) ⇒\l         ((Col A/138 B/139 X/141) ⇒\l          ((Perp_at X/141 A/138 B/139 C/140 X/141) ⇒\l           (Perp A/138 B/139 C/140 X/141)))))\l  # skolems: [].\l", style=filled];
+  vertex_2 -> vertex_3 [label="cnf.neg", dir="back"];
+  vertex_3 [color=green, shape=box, label="goal\l  [file \"../resultat/geocoq_extract/zf/Ch08_orthogonality/l8_15_2.zf\" \l   \"zf_stmt_128\"]\l  ∀ A/138:point B/139:point C/140:point X/141:point.\l    ((A/138 ≠ B/139) ⇒\l     ((Col A/138 B/139 X/141) ⇒\l      ((Perp_at X/141 A/138 B/139 C/140 X/141) ⇒\l       (Perp A/138 B/139 C/140 X/141)))).\l", style=filled];
+  vertex_0 -> vertex_4 [label="s_sup-\l", dir="back"];
+  vertex_4 [shape=box, label="Perp sk_A sk_B sk_C sk_X\l", style=filled];
+  vertex_4 -> vertex_5 [label="s_sup-\l\{X0[0] → sk_A[1], \l X1[0] → sk_B[1], \l X2[0] → sk_C[1], \l X3[0] → sk_X[1], \l X4[0] → sk_X[1]\}[0]\l", dir="back"];
+  vertex_5 [shape=box, label="forall (X0:point) (X1:point) (X2:point) (X3:point) (X4:point).\l[Perp X0 X1 X2 X3 ∨ ¬Perp_at X4 X0 X1 X2 X3]\l", style=filled];
+  vertex_5 -> vertex_6 [label="cnf", dir="back"];
+  vertex_6 [color=yellow, shape=box, label="assert\l  [file \"../resultat/geocoq_extract/zf/Ch08_orthogonality/l8_15_2.zf\" \l   \"Labell8_14_2_1a\"]\l  ∀ X/133:point A/134:point B/135:point C/136:point D/137:point.\l    ((Perp_at X/133 A/134 B/135 C/136 D/137) ⇒\l     (Perp A/134 B/135 C/136 D/137)).\l", style=filled];
+  vertex_4 -> vertex_7 [label="s_sup-\l\{X0[0] → sk_A[1], \l X1[0] → sk_B[1], \l X2[0] → sk_C[1], \l X3[0] → sk_X[1], \l X4[0] → sk_X[1]\}[1]\l", dir="back"];
+  vertex_7 [shape=box, label="Perp_at sk_X sk_A sk_B sk_C sk_X\l", style=filled];
+  vertex_7 -> vertex_2 [label="cnf", dir="back"];
+  }
+
+

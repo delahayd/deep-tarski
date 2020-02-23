@@ -1,0 +1,4 @@
+include "../rew_type.zf".
+#conga_trans
+assert[name "Labelconga_trans"] forall (A B C A1 B1 C1 A2 B2 C2 : point). CongA A B C A1 B1 C1 => CongA A1 B1 C1 A2 B2 C2 => CongA A B C A2 B2 C2.
+goal forall (A B C A1 B1 C1 D E F : point). CongA A B C A1 B1 C1 => ~CongA A B C D E F => ~ CongA A1 B1 C1 D E F.

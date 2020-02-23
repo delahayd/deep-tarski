@@ -1,0 +1,2 @@
+lemme : cong_symmetry cong_transitivity
+rewrite : Length sum3

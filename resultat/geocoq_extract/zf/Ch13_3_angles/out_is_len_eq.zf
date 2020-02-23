@@ -1,0 +1,11 @@
+include "../tarski_term_def.zf".
+#is_len_cong
+assert[name "Labelis_len_cong"] forall (A B C D : point) (l : point->point->prop). Len A B l => Len C D l => Cong A B C D.
+#cong_reflexivity
+assert[name "Labelcong_reflexivity"] forall (A B : point). Cong A B A B.
+#out_trivial
+assert[name "Labelout_trivial"] forall (P A : point). A!=P => Out P A A.
+#l6_11_uniqueness
+assert[name "Labell6_11_uniqueness"] forall (A B C R X Y : point). R!=A => B!=C => Out A X R => Cong A X B C => Out A Y R => Cong A Y B C => X=Y.
+rewrite[name "LabelOut"] forall (P A B : point). Out P A B <=> A != P && B != P && (Bet P A B || Bet P B A).
+goal forall (A B C : point) (l : point->point->prop). Out A B C => Len A B l => Len A C l => B=C.

@@ -1,0 +1,3 @@
+lemme : ex_point_lg_out anga_out_anga l8_5 ex_points_lg out2_out_2 l6_6 ex_points_anga l8_2
+rewrite : Out Lcos Q_CongA_Null_Acute
+destruct : 

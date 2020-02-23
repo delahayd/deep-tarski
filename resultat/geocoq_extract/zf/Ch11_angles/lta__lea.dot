@@ -1,0 +1,40 @@
+digraph "unsat_graph" {
+  vertex_0 [color=red, label="[]", shape=box, style=filled];
+  vertex_0 -> vertex_1 [label="simplify", dir="back"];
+  vertex_1 [color=red, label="[]", shape=box, style=filled];
+  vertex_1 -> vertex_2 [label="demod", dir="back"];
+  vertex_2 [shape=box, label="InAngle (sk_P sk_F sk_E sk_D sk_C sk_B sk_A) sk_D sk_E sk_F\l", style=filled];
+  vertex_2 -> vertex_3 [label="rw_clause\l\{X0[1] → sk_A[0], \l X1[1] → sk_B[0], \l X2[1] → sk_C[0], \l X3[1] → sk_D[0], \l X4[1] → sk_E[0], \l X5[1] → sk_F[0]\}[1]\l", dir="back"];
+  vertex_3 [color=navajowhite, shape=box, label="(LeA X0 X1 X2 X3 X4 X5 :=\l   [CongA X0 X1 X2 X3 X4 (sk_P X5 X4 X3 X2 X1 X0)∧\l    InAngle (sk_P X5 X4 X3 X2 X1 X0) X3 X4 X5] [B])\l", style=filled];
+  vertex_3 -> vertex_4 [label="rw.lit", dir="back"];
+  vertex_4 [color=yellow, shape=box, label="rewrite\l  [file \"../resultat/geocoq_extract/zf/Ch11_angles/lta__lea.zf\" \"LabelLeA\"]\l  LeA X0 X1 X2 X3 X4 X5\l  =\> CongA X0 X1 X2 X3 X4 (sk_P X5 X4 X3 X2 X1 X0) && \l     InAngle (sk_P X5 X4 X3 X2 X1 X0) X3 X4 X5.\l", style=filled];
+  vertex_2 -> vertex_5 [label="rw_clause\l\{X0[1] → sk_A[0], \l X1[1] → sk_B[0], \l X2[1] → sk_C[0], \l X3[1] → sk_D[0], \l X4[1] → sk_E[0], \l X5[1] → sk_F[0]\}[0]\l", dir="back"];
+  vertex_5 [shape=box, label="LeA sk_A sk_B sk_C sk_D sk_E sk_F\l", style=filled];
+  vertex_5 -> vertex_6 [label="rw_clause\l\{X7[1] → sk_A[0], \l X8[1] → sk_B[0], \l X9[1] → sk_C[0], \l X10[1] → sk_D[0], \l X11[1] → sk_E[0], \l X12[1] → sk_F[0]\}[1]\l", dir="back"];
+  vertex_6 [color=navajowhite, shape=box, label="(LtA X7 X8 X9 X10 X11 X12 :=\l   [LeA X7 X8 X9 X10 X11 X12∧\l    ¬CongA X7 X8 X9 X10 X11 X12] [B])\l", style=filled];
+  vertex_6 -> vertex_7 [label="rw.lit", dir="back"];
+  vertex_7 [color=yellow, shape=box, label="rewrite\l  [file \"../resultat/geocoq_extract/zf/Ch11_angles/lta__lea.zf\" \"LabelLtA\"]\l  LtA X7 X8 X9 X10 X11 X12\l  =\> LeA X7 X8 X9 X10 X11 X12 && ¬ CongA X7 X8 X9 X10 X11 X12.\l", style=filled];
+  vertex_5 -> vertex_8 [label="rw_clause\l\{X7[1] → sk_A[0], \l X8[1] → sk_B[0], \l X9[1] → sk_C[0], \l X10[1] → sk_D[0], \l X11[1] → sk_E[0], \l X12[1] → sk_F[0]\}[0]\l", dir="back"];
+  vertex_8 [shape=box, label="LtA sk_A sk_B sk_C sk_D sk_E sk_F\l", style=filled];
+  vertex_8 -> vertex_9 [label="cnf", dir="back"];
+  vertex_9 [shape=box, label="negated_goal\l  ¬ (∀ A/146:point B/147:point C/148:point D/149:point E/150:point \l        F/151:point.\l        ((LtA A/146 B/147 C/148 D/149 E/150 F/151) ⇒\l         (LeA A/146 B/147 C/148 D/149 E/150 F/151)))\l  # skolems: [].\l", style=filled];
+  vertex_9 -> vertex_10 [label="cnf.neg", dir="back"];
+  vertex_10 [color=green, shape=box, label="goal\l  [file \"../resultat/geocoq_extract/zf/Ch11_angles/lta__lea.zf\" \"zf_stmt_128\"]\l  ∀ A/146:point B/147:point C/148:point D/149:point E/150:point \l    F/151:point.\l    ((LtA A/146 B/147 C/148 D/149 E/150 F/151) ⇒\l     (LeA A/146 B/147 C/148 D/149 E/150 F/151)).\l", style=filled];
+  vertex_1 -> vertex_11 [label="demod", dir="back"];
+  vertex_11 [shape=box, label="¬InAngle (sk_P sk_F sk_E sk_D sk_C sk_B sk_A) sk_D sk_E sk_F\l", style=filled];
+  vertex_11 -> vertex_12 [label="s_sup-\l\{X0[1] → sk_P sk_F sk_E sk_D sk_C sk_B sk_A[0]\}[1]\l", dir="back"];
+  vertex_12 [shape=box, label="forall (X0:point).\l[¬InAngle X0 sk_D sk_E sk_F ∨ ¬CongA sk_A sk_B sk_C sk_D sk_E X0]\l", style=filled];
+  vertex_12 -> vertex_13 [label="rw_clause\l\{X0[1] → sk_A[0], \l X1[1] → sk_B[0], \l X2[1] → sk_C[0], \l X3[1] → sk_D[0], \l X4[1] → sk_E[0], \l X5[1] → sk_F[0]\}[1]\l", dir="back"];
+  vertex_13 [color=navajowhite, shape=box, label="(¬LeA X0 X1 X2 X3 X4 X5 :=\l   [¬InAngle X6 X3 X4 X5 ∨ ¬CongA X0 X1 X2 X3 X4 X6] [B])\l", style=filled];
+  vertex_13 -> vertex_14 [label="rw.lit", dir="back"];
+  vertex_14 [color=yellow, shape=box, label="rewrite\l  [file \"../resultat/geocoq_extract/zf/Ch11_angles/lta__lea.zf\" \"LabelLeA\"]\l  ¬ LeA X0 X1 X2 X3 X4 X5\l  =\> ¬ InAngle X6 X3 X4 X5 ∨ ¬ CongA X0 X1 X2 X3 X4 X6.\l", style=filled];
+  vertex_12 -> vertex_15 [label="rw_clause\l\{X0[1] → sk_A[0], \l X1[1] → sk_B[0], \l X2[1] → sk_C[0], \l X3[1] → sk_D[0], \l X4[1] → sk_E[0], \l X5[1] → sk_F[0]\}[0]\l", dir="back"];
+  vertex_15 [shape=box, label="¬LeA sk_A sk_B sk_C sk_D sk_E sk_F\l", style=filled];
+  vertex_15 -> vertex_9 [label="cnf", dir="back"];
+  vertex_11 -> vertex_16 [label="s_sup-\l\{X0[1] → sk_P sk_F sk_E sk_D sk_C sk_B sk_A[0]\}[0]\l", dir="back"];
+  vertex_16 [shape=box, label="CongA sk_A sk_B sk_C sk_D sk_E (sk_P sk_F sk_E sk_D sk_C sk_B sk_A)\l", style=filled];
+  vertex_16 -> vertex_3 [label="rw_clause\l\{X0[1] → sk_A[0], \l X1[1] → sk_B[0], \l X2[1] → sk_C[0], \l X3[1] → sk_D[0], \l X4[1] → sk_E[0], \l X5[1] → sk_F[0]\}[1]\l", dir="back"];
+  vertex_16 -> vertex_5 [label="rw_clause\l\{X0[1] → sk_A[0], \l X1[1] → sk_B[0], \l X2[1] → sk_C[0], \l X3[1] → sk_D[0], \l X4[1] → sk_E[0], \l X5[1] → sk_F[0]\}[0]\l", dir="back"];
+  }
+
+

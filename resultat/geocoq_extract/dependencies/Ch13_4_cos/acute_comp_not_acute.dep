@@ -1,0 +1,3 @@
+lemme : lea_asym between_exchange3 between_symmetry perp_col l5_3 l11_36 conga_refl perp_perp_in perp_in_comm conga_sym l11_16 conga_preserves_lta between_identity between_exchange2 perp_left_comm col_permutation_3 col_permutation_5 lta_diff flat_not_acute bet_col between_exchange4 perp_not_eq_2 l10_15 l11_30 perp_in_per
+rewrite : LtA Acute
+destruct : H8

@@ -1,0 +1,8 @@
+include "../tarski_term_def.zf".
+#not_pos_and_neg
+assert[name "Labelnot_pos_and_neg"] forall (O E A : point). ~(Ps O E A && Ng O E A).
+#diff_pos_diff_neg
+assert[name "Labeldiff_pos_diff_neg"] forall (O E E1 A B AmB BmA : point). Diff O E E1 A B AmB => Diff O E E1 B A BmA => Ps O E AmB => Ng O E BmA.
+rewrite[name "LabelLtP"] forall (O E E1 A B : point). LtP O E E1 A B <=> (exists (D : point). Diff O E E1 B A D && Ps O E D).
+rewrite[name "LabelLeP"] forall (O E E1 A B : point). LeP O E E1 A B <=> LtP O E E1 A B || A = B.
+goal forall (O E E1 A B : point). LeP O E E1 A B => LeP O E E1 B A => A=B.

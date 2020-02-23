@@ -1,0 +1,3 @@
+lemme : perp_sym perp_exists perp_comm
+rewrite : 
+destruct : 

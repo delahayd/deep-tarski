@@ -1,0 +1,2 @@
+lemme : col_permutation_5 col_permutation_2 col_trivial_1 par_strict_right_comm par_comm par_left_comm col_permutation_1 between_symmetry par_strict_one_side col_trivial_3 cong_symmetry not_two_sides_one_side
+rewrite : TS Le Par_strict Lt Par Pj

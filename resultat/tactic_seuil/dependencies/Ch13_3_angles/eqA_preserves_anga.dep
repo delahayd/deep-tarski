@@ -1,0 +1,2 @@
+lemme : is_ang_distinct is_ang_conga ex_points_anga eqA_preserves_ang in_angle_trivial_2
+rewrite : EqA Q_CongA_Acute Ang

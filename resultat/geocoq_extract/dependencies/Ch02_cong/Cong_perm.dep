@@ -1,0 +1,3 @@
+lemme : cong_left_commutativity cong_4321 cong_symmetry cong_right_commutativity cong_commutativity cong_4312 cong_3421
+rewrite : 
+destruct : 

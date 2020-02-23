@@ -1,0 +1,6 @@
+include "../tarski_term_def.zf".
+#between_exchange2
+assert[name "Labelbetween_exchange2"] forall (A B C D : point). Bet A B D => Bet B C D => Bet A C D.
+#between_symmetry
+assert[name "Labelbetween_symmetry"] forall (A B C : point). Bet A B C => Bet C B A.
+goal forall (A B C D : point). Bet A B C => Bet A C D => Bet A B D.

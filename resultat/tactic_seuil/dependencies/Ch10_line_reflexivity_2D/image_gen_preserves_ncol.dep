@@ -1,0 +1,2 @@
+lemme : col_permutation_5 l10_10_spec l10_4_spec image_preserves_bet image_preserves_col between_symmetry is_image_is_image_spec cong_transitivity cong_symmetry
+rewrite :

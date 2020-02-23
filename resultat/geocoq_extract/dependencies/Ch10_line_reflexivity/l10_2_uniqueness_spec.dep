@@ -1,0 +1,3 @@
+lemme : l10_2_uniqueness perp_distinct is_image_is_image_spec
+rewrite : 
+destruct : HR1 HR2

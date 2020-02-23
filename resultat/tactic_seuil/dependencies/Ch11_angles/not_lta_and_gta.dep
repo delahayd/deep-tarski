@@ -1,0 +1,2 @@
+lemme : cong_symmetry lea_asym conga_sym
+rewrite : GtA LtA Par

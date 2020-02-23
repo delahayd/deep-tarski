@@ -1,0 +1,2 @@
+lemme : cong_trivial_identity out_trivial between_trivial acute_distincts conga_refl l11_21_b between_symmetry cong_reflexivity eq_dec_points cong_symmetry segment_construction
+rewrite : Q_CongA_Null_Acute Q_Cong Q_Cong_Null Q_CongA Q_CongA_Acute

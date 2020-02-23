@@ -1,0 +1,6 @@
+include "../rew_type.zf".
+#between_identity
+assert[name "Labelbetween_identity"] forall (A B : point). Bet A B A => A=B.
+#not_out_bet
+assert[name "Labelnot_out_bet"] forall (A B C : point). Col A B C => ~Out B A C => Bet A B C.
+goal forall (A B C : point). Bet A B C || Out B A C || ~Col A B C.

@@ -1,0 +1,6 @@
+include "../tarski_term_def.zf".
+#par_strict_symmetry
+assert[name "Labelpar_strict_symmetry"] forall (A B C D : point). Par_strict A B C D => Par_strict C D A B.
+#l12_6
+assert[name "Labell12_6"] forall (A B C D : point). Par_strict A B C D => OS A B C D.
+goal forall (A B C D : point). Par_strict A B C D => OS C D A B.

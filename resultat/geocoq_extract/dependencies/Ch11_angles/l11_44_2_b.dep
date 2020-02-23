@@ -1,0 +1,3 @@
+lemme : lta_not_conga l11_44_1_a not_col_distincts or_lt_cong_gt l11_44_2_a not_lta_and_gta
+rewrite : Gt
+destruct : 

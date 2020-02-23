@@ -1,0 +1,2 @@
+lemme : segment_construction col_permutation_5 cong_trivial_identity
+rewrite : CongA Par_strict

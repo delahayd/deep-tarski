@@ -1,0 +1,8 @@
+include "../rew_type.zf".
+rewrite[name "LabelEqL"] forall (l1 l2 : point->point->prop). EqL l1 l2 <=> (forall (A B : point). l1 A B <=> l2 A B).
+rewrite[name "LabelLen"] forall (A B : point) (l : point->point->prop). Len A B l <=> Q_Cong l && l A B.
+#is_len_cong
+assert[name "Labelis_len_cong"] forall (A B C D : point) (l : point->point->prop). Len A B l => Len C D l => Cong A B C D.
+#is_len_cong_is_len
+assert[name "Labelis_len_cong_is_len"] forall (A B C D : point) (l : point->point->prop). Len A B l => Cong A B C D => Len C D l.
+goal forall (l1 l2 : point->point->prop). (exists (A B : point). Len A B l1 && Len A B l2) => EqL l1 l2.

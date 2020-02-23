@@ -1,0 +1,6 @@
+include "../tarski_term_def.zf".
+#lt_right_comm
+assert[name "Labellt_right_comm"] forall (A B C D : point). Lt A B C D => Lt A B D C.
+#lt_left_comm
+assert[name "Labellt_left_comm"] forall (A B C D : point). Lt A B C D => Lt B A C D.
+goal forall (A B C D : point). Lt A B C D => Lt B A D C.

@@ -1,0 +1,3 @@
+lemme : lta_left_comm
+rewrite : Acute
+destruct : 

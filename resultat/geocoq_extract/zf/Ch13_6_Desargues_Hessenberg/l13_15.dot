@@ -1,0 +1,55 @@
+digraph "unsat_graph" {
+  vertex_0 [color=red, label="[]", shape=box, style=filled];
+  vertex_0 -> vertex_1 [label="s_sup-\l", dir="back"];
+  vertex_1 [shape=box, label="¬Par sk_B sk_C sk_B1 sk_C1\l", style=filled];
+  vertex_1 -> vertex_2 [label="cnf", dir="back"];
+  vertex_2 [shape=box, label="negated_goal\l  ¬ (∀ A/151:point B/152:point C/153:point A1/154:point B1/155:point \l        C1/156:point O/157:point.\l        ((¬ (Col A/151 B/152 C/153)) ⇒\l         ((¬ (Par O/157 A/151 B/152 C/153)) ⇒\l          ((Par_strict A/151 B/152 A1/154 B1/155) ⇒\l           ((Par_strict A/151 C/153 A1/154 C1/156) ⇒\l            ((Col O/157 A/151 A1/154) ⇒\l             ((Col O/157 B/152 B1/155) ⇒\l              ((Col O/157 C/153 C1/156) ⇒ (Par B/152 C/153 B1/155 C1/156)))))))))\l  # skolems: [].\l", style=filled];
+  vertex_2 -> vertex_3 [label="cnf.neg", dir="back"];
+  vertex_3 [color=green, shape=box, label="goal\l  [file\l   \"../resultat/geocoq_extract/zf/Ch13_6_Desargues_Hessenberg/l13_15.zf\" \l   \"zf_stmt_128\"]\l  ∀ A/151:point B/152:point C/153:point A1/154:point B1/155:point \l    C1/156:point O/157:point.\l    ((¬ (Col A/151 B/152 C/153)) ⇒\l     ((¬ (Par O/157 A/151 B/152 C/153)) ⇒\l      ((Par_strict A/151 B/152 A1/154 B1/155) ⇒\l       ((Par_strict A/151 C/153 A1/154 C1/156) ⇒\l        ((Col O/157 A/151 A1/154) ⇒\l         ((Col O/157 B/152 B1/155) ⇒\l          ((Col O/157 C/153 C1/156) ⇒ (Par B/152 C/153 B1/155 C1/156)))))))).\l", style=filled];
+  vertex_0 -> vertex_4 [label="s_sup-\l", dir="back"];
+  vertex_4 [shape=box, label="Par sk_B sk_C sk_B1 sk_C1\l", style=filled];
+  vertex_4 -> vertex_5 [label="clc", dir="back"];
+  vertex_5 [shape=box, label="¬Col sk_A sk_B sk_C\l", style=filled];
+  vertex_5 -> vertex_2 [label="cnf", dir="back"];
+  vertex_4 -> vertex_6 [label="clc", dir="back"];
+  vertex_6 [shape=box, label="[Col sk_A sk_B sk_C ∨ Par sk_B sk_C sk_B1 sk_C1]\l", style=filled];
+  vertex_6 -> vertex_7 [label="simplify", dir="back"];
+  vertex_7 [shape=box, label="[Par sk_B sk_C sk_B1 sk_C1 ∨ Col sk_A sk_B sk_C ∨ ¬true]\l", style=filled];
+  vertex_7 -> vertex_8 [label="demod", dir="back"];
+  vertex_8 [shape=box, label="Col sk_O sk_C sk_C1\l", style=filled];
+  vertex_8 -> vertex_2 [label="cnf", dir="back"];
+  vertex_7 -> vertex_9 [label="demod", dir="back"];
+  vertex_9 [shape=box, label="[Par sk_B sk_C sk_B1 sk_C1 ∨ Col sk_A sk_B sk_C ∨ ¬Col sk_O sk_C sk_C1]\l", style=filled];
+  vertex_9 -> vertex_10 [label="s_sup-\l\{X0[0] → sk_C1[1], X1[0] → sk_C[1]\}[0]\l", dir="back"];
+  vertex_10 [shape=box, label="forall (X0:point) (X1:point).\l[¬Par_strict sk_A X1 sk_A1 X0\l ∨ Par sk_B X1 sk_B1 X0\l ∨ Col sk_A sk_B X1\l ∨ ¬Col sk_O X1 X0]\l", style=filled];
+  vertex_10 -> vertex_11 [label="simplify", dir="back"];
+  vertex_11 [shape=box, label="forall (X0:point) (X1:point).\l[¬Col sk_O X1 X0\l ∨ ¬true\l ∨ Col sk_A sk_B X1\l ∨ Par sk_B X1 sk_B1 X0\l ∨ ¬Par_strict sk_A X1 sk_A1 X0]\l", style=filled];
+  vertex_11 -> vertex_12 [label="demod", dir="back"];
+  vertex_12 [shape=box, label="Col sk_O sk_A sk_A1\l", style=filled];
+  vertex_12 -> vertex_2 [label="cnf", dir="back"];
+  vertex_11 -> vertex_13 [label="demod", dir="back"];
+  vertex_13 [shape=box, label="forall (X0:point) (X1:point).\l[¬Col sk_O X1 X0\l ∨ ¬Col sk_O sk_A sk_A1\l ∨ Col sk_A sk_B X1\l ∨ Par sk_B X1 sk_B1 X0\l ∨ ¬Par_strict sk_A X1 sk_A1 X0]\l", style=filled];
+  vertex_13 -> vertex_14 [label="s_sup-\l\{X2[0] → sk_A1[1], X3[0] → sk_A[1]\}[0]\l", dir="back"];
+  vertex_14 [shape=box, label="forall (X0:point) (X1:point) (X2:point) (X3:point).\l[¬Col sk_O X1 X0\l ∨ ¬Col sk_O X3 X2\l ∨ Col X3 sk_B X1\l ∨ ¬Par_strict X3 sk_B X2 sk_B1\l ∨ Par sk_B X1 sk_B1 X0\l ∨ ¬Par_strict X3 X1 X2 X0]\l", style=filled];
+  vertex_14 -> vertex_15 [label="s_sup-\l\{X11[0] → sk_B[1], X12[0] → sk_B1[1], X13[0] → sk_O[1]\}[0]\l", dir="back"];
+  vertex_15 [shape=box, label="forall (X7:point) (X8:point) (X9:point) (X10:point) (X11:point) (X12:point) \l       (X13:point).\l[¬Col X13 X11 X12\l ∨ ¬Col X13 X8 X10\l ∨ ¬Col X13 X7 X9\l ∨ Col X7 X11 X8\l ∨ ¬Par_strict X7 X11 X9 X12\l ∨ Par X11 X8 X12 X10\l ∨ ¬Par_strict X7 X8 X9 X10]\l", style=filled];
+  vertex_15 -> vertex_16 [label="clc\l\{X0[1] → X7[0], \l X1[1] → X8[0], \l X2[1] → X9[0], \l X3[1] → X10[0], \l X4[1] → X11[0], \l X5[1] → X12[0], \l X6[1] → X13[0]\}[1]\l", dir="back"];
+  vertex_16 [shape=box, label="forall (X0:point) (X1:point) (X2:point) (X3:point) (X4:point) (X5:point) \l       (X6:point).\l[¬Par_strict X0 X1 X2 X3\l ∨ Par X4 X1 X5 X3\l ∨ ¬Par_strict X0 X4 X2 X5\l ∨ Col X0 X4 X1\l ∨ ¬Col X6 X0 X2\l ∨ ¬Col X6 X1 X3\l ∨ ¬Col X6 X4 X5\l ∨ Par X6 X4 X0 X1]\l", style=filled];
+  vertex_16 -> vertex_17 [label="cnf", dir="back"];
+  vertex_17 [color=yellow, shape=box, label="assert\l  [file\l   \"../resultat/geocoq_extract/zf/Ch13_6_Desargues_Hessenberg/l13_15.zf\" \l   \"Labell13_15_1\"]\l  ∀ A/133:point B/134:point C/135:point A1/136:point B1/137:point \l    C1/138:point O/139:point.\l    ((¬ (Col A/133 B/134 C/135)) ⇒\l     ((¬ (Par O/139 B/134 A/133 C/135)) ⇒\l      ((Par_strict A/133 B/134 A1/136 B1/137) ⇒\l       ((Par_strict A/133 C/135 A1/136 C1/138) ⇒\l        ((Col O/139 A/133 A1/136) ⇒\l         ((Col O/139 B/134 B1/137) ⇒\l          ((Col O/139 C/135 C1/138) ⇒ (Par B/134 C/135 B1/137 C1/138)))))))).\l", style=filled];
+  vertex_15 -> vertex_18 [label="clc", dir="back"];
+  vertex_18 [shape=box, label="forall (X7:point) (X8:point) (X9:point) (X10:point) (X11:point) (X12:point) \l       (X13:point).\l[¬Par_strict X7 X8 X9 X10\l ∨ Par X11 X8 X12 X10\l ∨ ¬Par_strict X7 X11 X9 X12\l ∨ Col X7 X11 X8\l ∨ ¬Col X13 X7 X9\l ∨ ¬Col X13 X8 X10\l ∨ ¬Col X13 X11 X12\l ∨ ¬Par X13 X11 X7 X8]\l", style=filled];
+  vertex_18 -> vertex_19 [label="cnf", dir="back"];
+  vertex_19 [color=yellow, shape=box, label="assert\l  [file\l   \"../resultat/geocoq_extract/zf/Ch13_6_Desargues_Hessenberg/l13_15.zf\" \l   \"Labell13_15_2\"]\l  ∀ A/140:point B/141:point C/142:point A1/143:point B1/144:point \l    C1/145:point O/146:point.\l    ((¬ (Col A/140 B/141 C/142)) ⇒\l     ((Par O/146 B/141 A/140 C/142) ⇒\l      ((Par_strict A/140 B/141 A1/143 B1/144) ⇒\l       ((Par_strict A/140 C/142 A1/143 C1/145) ⇒\l        ((Col O/146 A/140 A1/143) ⇒\l         ((Col O/146 B/141 B1/144) ⇒\l          ((Col O/146 C/142 C1/145) ⇒ (Par B/141 C/142 B1/144 C1/145)))))))).\l", style=filled];
+  vertex_14 -> vertex_20 [label="s_sup-\l\{X11[0] → sk_B[1], X12[0] → sk_B1[1], X13[0] → sk_O[1]\}[1]\l", dir="back"];
+  vertex_20 [shape=box, label="Col sk_O sk_B sk_B1\l", style=filled];
+  vertex_20 -> vertex_2 [label="cnf", dir="back"];
+  vertex_13 -> vertex_21 [label="s_sup-\l\{X2[0] → sk_A1[1], X3[0] → sk_A[1]\}[1]\l", dir="back"];
+  vertex_21 [shape=box, label="Par_strict sk_A sk_B sk_A1 sk_B1\l", style=filled];
+  vertex_21 -> vertex_2 [label="cnf", dir="back"];
+  vertex_9 -> vertex_22 [label="s_sup-\l\{X0[0] → sk_C1[1], X1[0] → sk_C[1]\}[1]\l", dir="back"];
+  vertex_22 [shape=box, label="Par_strict sk_A sk_C sk_A1 sk_C1\l", style=filled];
+  vertex_22 -> vertex_2 [label="cnf", dir="back"];
+  }
+
+

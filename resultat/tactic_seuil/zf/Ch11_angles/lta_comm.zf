@@ -1,0 +1,8 @@
+include "../rew_type.zf".
+#conga_left_comm
+assert[name "Labelconga_left_comm"] forall (A B C D E F : point). CongA A B C D E F => CongA C B A D E F.
+#lta_left_comm
+assert[name "Labellta_left_comm"] forall (A B C D E F : point). LtA A B C D E F => LtA C B A D E F.
+#lta_right_comm
+assert[name "Labellta_right_comm"] forall (A B C D E F : point). LtA A B C D E F => LtA A B C F E D.
+goal forall (A B C D E F : point). LtA A B C D E F => LtA C B A F E D.

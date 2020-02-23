@@ -1,0 +1,7 @@
+include "../tarski_term_def.zf".
+#length_id_1
+assert[name "Labellength_id_1"] forall (O E E1 A B : point). Length O E E1 A B O => A=B.
+#length_id_2
+assert[name "Labellength_id_2"] forall (O E E1 A : point). O!=E => Length O E E1 A A O.
+rewrite[name "LabelLength"] forall (O E E1 A B L: point). Length O E E1 A B L <=> O != E && Col O E L && LeP O E E1 O L && Cong O L A B.
+goal forall (O E E1 A B : point). (A=B && O!=E)<=>Length O E E1 A B O.

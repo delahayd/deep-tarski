@@ -1,0 +1,3 @@
+lemme : project_pj col_permutation_3 col_permutation_5 col_trivial_3 par_right_comm
+rewrite : Prod Prodp Ar2 Proj
+destruct : 

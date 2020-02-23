@@ -1,0 +1,29 @@
+digraph "unsat_graph" {
+  vertex_0 [color=red, label="[]", shape=box, style=filled];
+  vertex_0 -> vertex_1 [label="s_sup-\l", dir="back"];
+  vertex_1 [shape=box, label="¬Midpoint sk_C sk_A1 sk_A\l", style=filled];
+  vertex_1 -> vertex_2 [label="rw\l\{X3[1] → sk_C[0], X4[1] → sk_A1[0], X5[1] → sk_A[0]\}[1]\l", dir="back"];
+  vertex_2 [color=navajowhite, shape=box, label="(ReflectP X4 X5 X3 := Midpoint X3 X4 X5 [T])\l", style=filled];
+  vertex_2 -> vertex_3 [label="", dir="back"];
+  vertex_3 [color=yellow, shape=box, label="rewrite\l  [file \"../resultat/geocoq_extract/zf/Ch09_plane/sym_sym.zf\" \"LabelReflectP\"]\l  ReflectP X4 X5 X3 = Midpoint X3 X4 X5.\l", style=filled];
+  vertex_1 -> vertex_4 [label="rw", dir="back"];
+  vertex_4 [shape=box, label="¬ReflectP sk_A1 sk_A sk_C\l", style=filled];
+  vertex_4 -> vertex_5 [label="cnf", dir="back"];
+  vertex_5 [shape=box, label="negated_goal\l  ¬ (∀ A/139:point C/140:point A1/141:point.\l        ((ReflectP A/139 A1/141 C/140) ⇒ (ReflectP A1/141 A/139 C/140)))\l  # skolems: [].\l", style=filled];
+  vertex_5 -> vertex_6 [label="cnf.neg", dir="back"];
+  vertex_6 [color=green, shape=box, label="goal\l  [file \"../resultat/geocoq_extract/zf/Ch09_plane/sym_sym.zf\" \"zf_stmt_128\"]\l  ∀ A/139:point C/140:point A1/141:point.\l    ((ReflectP A/139 A1/141 C/140) ⇒ (ReflectP A1/141 A/139 C/140)).\l", style=filled];
+  vertex_0 -> vertex_7 [label="s_sup-\l", dir="back"];
+  vertex_7 [shape=box, label="Midpoint sk_C sk_A1 sk_A\l", style=filled];
+  vertex_7 -> vertex_8 [label="s_sup-\l\{X0[0] → sk_C[1], X1[0] → sk_A1[1], X2[0] → sk_A[1]\}[0]\l", dir="back"];
+  vertex_8 [shape=box, label="forall (X0:point) (X1:point) (X2:point).\l[Midpoint X0 X1 X2 ∨ ¬Midpoint X0 X2 X1]\l", style=filled];
+  vertex_8 -> vertex_9 [label="cnf", dir="back"];
+  vertex_9 [color=yellow, shape=box, label="assert\l  [file \"../resultat/geocoq_extract/zf/Ch09_plane/sym_sym.zf\" \"Labell7_2\"]\l  ∀ M/133:point A/134:point B/135:point.\l    ((Midpoint M/133 A/134 B/135) ⇒ (Midpoint M/133 B/135 A/134)).\l", style=filled];
+  vertex_7 -> vertex_10 [label="s_sup-\l\{X0[0] → sk_C[1], X1[0] → sk_A1[1], X2[0] → sk_A[1]\}[1]\l", dir="back"];
+  vertex_10 [shape=box, label="Midpoint sk_C sk_A sk_A1\l", style=filled];
+  vertex_10 -> vertex_2 [label="rw\l\{X3[1] → sk_C[0], X4[1] → sk_A[0], X5[1] → sk_A1[0]\}[1]\l", dir="back"];
+  vertex_10 -> vertex_11 [label="rw", dir="back"];
+  vertex_11 [shape=box, label="ReflectP sk_A sk_A1 sk_C\l", style=filled];
+  vertex_11 -> vertex_5 [label="cnf", dir="back"];
+  }
+
+

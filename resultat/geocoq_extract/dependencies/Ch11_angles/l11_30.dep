@@ -1,0 +1,3 @@
+lemme : angle_construction_3 lea_line bet_conga_bet conga_sym conga_trans l11_29_a l11_29_b between_identity or_bet_out conga_refl in_angle_line segment_construction out_in_angle_out col_in_angle out_in_angle out_conga_out one_side_symmetry conga_preserves_in_angle cong_symmetry l6_6 angle_construction_1 conga_line cong_identity
+rewrite : CongA
+destruct : 

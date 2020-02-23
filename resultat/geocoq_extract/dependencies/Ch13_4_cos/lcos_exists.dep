@@ -1,0 +1,3 @@
+lemme : perp_sym lg_sym anga_out_anga anga_sym ex_points_lg perp_col perp_acute_out in_angle_trivial_2 is_null_anga_dec acute_not_per l8_18_existence perp_perp_in perp_in_comm anga_const perp_comm conga_distinct conga_sym null_lcos col_trivial_3 out_trivial perp_left_comm lg_exists acute_lea_acute anga_col_null col_permutation_1 col_permutation_3 col_permutation_5 perp_right_comm perp_in_per acute_sym
+rewrite : LeA Lcos Q_Cong_Null Acute Q_CongA_Acute
+destruct : HH

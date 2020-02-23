@@ -1,0 +1,30 @@
+include "../tarski_term_def.zf".
+val O : point.
+val E : point.
+val E1 : point.
+assert ~Col O E E1.
+#diff_ar2
+assert[name "Labeldiff_ar2"] forall (O E E1 A B AMB : point). Diff O E E1 A B AMB => Ar2 O E E1 A B AMB.
+#prod_exists
+assert[name "Labelprod_exists"] forall (A B : point). Col O E A => Col O E B => (exists (C : point). Prod O E E1 A B C).
+#sum_diff_diff_b
+assert[name "Labelsum_diff_diff_b"] forall (O E E1 A B C dBA dCB dCA : point). Diff O E E1 B A dBA => Diff O E E1 C B dCB => Sum O E E1 dCB dBA dCA => Diff O E E1 C A dCA.
+#prod_uniqueness
+assert[name "Labelprod_uniqueness"] forall (A B C1 C2 : point). Prod O E E1 A B C1 => Prod O E E1 A B C2 => C1=C2.
+#distr_r
+assert[name "Labeldistr_r"] forall (O E E1 A B C D AC BC DC : point). Sum O E E1 A B D => Prod O E E1 A C AC => Prod O E E1 B C BC => (Prod O E E1 D C DC => Sum O E E1 AC BC DC).
+#diff_exists
+assert[name "Labeldiff_exists"] forall (O E E1 A B : point). ~Col O E E1 => Col O E A => Col O E B => (exists (D : point). Diff O E E1 A B D).
+#sum_uniqueness
+assert[name "Labelsum_uniqueness"] forall (A B C1 C2 : point). Sum O E E1 A B C1 => Sum O E E1 A B C2 => C1=C2.
+#sum_exists
+assert[name "Labelsum_exists"] forall (A B : point). Col O E A => Col O E B => (exists (C : point). Sum O E E1 A B C).
+#distr_l_diff
+assert[name "Labeldistr_l_diff"] forall (O E E1 A C : point). Prod O E E1 A O C => C=O.
+#diff_uniqueness
+assert[name "Labeldiff_uniqueness"] forall (O E E1 A B D1 D2 : point). Diff O E E1 A B D1 => Diff O E E1 A B D2 => D1=D2.
+#prod_comm
+assert[name "Labelprod_comm"] forall (O E E1 A B C : point). Prod O E E1 A B C => Prod O E E1 B A C.
+rewrite[name "LabelProd"] forall (O E E1 A B C : point). Prod O E E1 A B C <=> Ar2 O E E1 A B C && (exists (B1 : point). Pj E E1 B B1 && Col O E1 B1 && Pj E1 A B1 C).
+rewrite[name "LabelAr2"] forall (O E E1 A B C : point). Ar2 O E E1 A B C <=> ~ Col O E E1 && Col O E A && Col O E B && Col O E C.
+goal forall (O E E1 A B A2 B2 A2MB2 APB AMB F : point). Prod O E E1 A A A2 => Prod O E E1 B B B2 => Diff O E E1 A2 B2 A2MB2 => Sum O E E1 A B APB => Diff O E E1 A B AMB => Prod O E E1 APB AMB F => A2MB2=F.

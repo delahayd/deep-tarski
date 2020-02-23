@@ -1,0 +1,2 @@
+lemme : l4_16 cong_reflexivity
+rewrite : FSC Cong_3

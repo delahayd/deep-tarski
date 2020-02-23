@@ -1,0 +1,6 @@
+include "../tarski_term_def.zf".
+#conga_diff1
+assert[name "Labelconga_diff1"] forall (A B C A1 B1 C1 : point). CongA A B C A1 B1 C1 => A!=B.
+#conga_diff2
+assert[name "Labelconga_diff2"] forall (A B C A1 B1 C1 : point). CongA A B C A1 B1 C1 => C!=B.
+goal forall (A B C D E F : point). LeA A B C D E F => A!=B && C!=B && D!=E && F!=E.

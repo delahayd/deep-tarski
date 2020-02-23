@@ -1,0 +1,4 @@
+include "../tarski_term_def.zf".
+#l8_8
+assert[name "Labell8_8"] forall (A B : point). Per A B A => A=B.
+goal forall (A B C : point). Per A B C => A!=B => A!=C.

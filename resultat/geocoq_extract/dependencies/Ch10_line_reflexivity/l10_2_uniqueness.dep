@@ -1,0 +1,3 @@
+lemme : eq_dec_points perp_distinct perp_col col_trivial_3 is_image_is_image_spec perp_sym l7_3 l7_2 midpoint_bet is_midpoint_id symmetric_point_uniqueness col_trivial_2 l8_18_uniqueness l8_16_1
+rewrite : Col Reflect ReflectL
+destruct : 

@@ -1,0 +1,2 @@
+lemme : acute_lea_acute conga_sym conga_right_comm anga_not_null_lg between_trivial acute_distincts out_trivial between_symmetry cong_reflexivity
+rewrite : Col Q_CongA_Null_Acute Ang LeA InAngle Q_Cong_Null Q_CongA_Acute

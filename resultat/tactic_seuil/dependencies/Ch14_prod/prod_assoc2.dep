@@ -1,0 +1,2 @@
+lemme : prod_assoc1 col_permutation_3 col_permutation_1 col_trivial_3 not_col_distincts col_permutation_2 out_trivial eq_dec_points prod_comm cong_identity cong_symmetry l6_6 sum_ar2 sum_assoc_2 col_permutation_5 col_trivial_1 diff_uniqueness between_trivial2 bet_col between_trivial col_permutation_4 between_symmetry sum_assoc_1 cong_transitivity sum3_col
+rewrite : Sum LtP sum3 Sum4 Out Ar2 Length LeP Ps

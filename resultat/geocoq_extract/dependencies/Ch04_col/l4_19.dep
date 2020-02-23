@@ -1,0 +1,3 @@
+lemme : eq_dec_points cong_symmetry l4_18 bet_col col_permutation_5 cong_identity between_identity
+rewrite : 
+destruct : 

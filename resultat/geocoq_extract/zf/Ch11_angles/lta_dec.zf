@@ -1,0 +1,7 @@
+include "../tarski_term_def.zf".
+#conga_dec
+assert[name "Labelconga_dec"] forall (A B C D E F : point). CongA A B C D E F || ~CongA A B C D E F.
+#lea_dec
+assert[name "Labellea_dec"] forall (A B C D E F : point). LeA A B C D E F || ~LeA A B C D E F.
+rewrite[name "LabelLtA"] forall (A B C D E F : point). LtA A B C D E F <=> LeA A B C D E F && ~ CongA A B C D E F.
+goal forall (A B C D E F : point). LtA A B C D E F || ~LtA A B C D E F.

@@ -1,0 +1,7 @@
+include "../rew_type.zf".
+rewrite[name "LabelOut"] forall (P A B : point). Out P A B <=> A != P && B != P && (Bet P A B || Bet P B A).
+#image_preserves_bet1
+assert[name "Labelimage_preserves_bet1"] forall (X Y A B C A1 B1 C1 : point). Bet A B C => Reflect A A1 X Y => Reflect B B1 X Y => Reflect C C1 X Y => Bet A1 B1 C1.
+#l10_2_uniqueness
+assert[name "Labell10_2_uniqueness"] forall (A B P P2 P1 : point). Reflect P1 P A B => Reflect P2 P A B => P1=P2.
+goal forall (X Y A B C A1 B1 C1 : point). Out A B C => Reflect A A1 X Y => Reflect B B1 X Y => Reflect C C1 X Y => Out A1 B1 C1.

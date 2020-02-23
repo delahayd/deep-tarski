@@ -1,0 +1,4 @@
+include "../rew_type.zf".
+#diff_uniqueness
+assert[name "Labeldiff_uniqueness"] forall (O E E1 A B D1 D2 : point). Diff O E E1 A B D1 => Diff O E E1 A B D2 => D1=D2.
+goal forall (O E E1 A B C D1 D2 : point). A=B => Diff O E E1 A C D1 => Diff O E E1 B C D2 => D1=D2.

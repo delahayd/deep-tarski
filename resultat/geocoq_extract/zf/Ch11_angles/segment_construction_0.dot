@@ -1,0 +1,44 @@
+digraph "unsat_graph" {
+  vertex_0 [color=red, label="[]", shape=box, style=filled];
+  vertex_0 -> vertex_1 [label="s_sup-\l\{X9[0] → sk_A1[0], X3[1] → sk_A1[0], X4[1] → sk_A[0]\}[0]\l", dir="back"];
+  vertex_1 [shape=box, label="forall (X9:point). ¬Cong sk_A1 X9 sk_A sk_A\l", style=filled];
+  vertex_1 -> vertex_2 [label="demod", dir="back"];
+  vertex_2 [shape=box, label="sk_A = sk_B1\l", style=filled];
+  vertex_2 -> vertex_3 [label="simpl_trail", dir="back"];
+  vertex_3 [color=cyan3, shape=box, label="⟦sk_A = sk_B1⟧/3\l", style=filled];
+  vertex_3 -> vertex_4 [label="sat_resolution", dir="back"];
+  vertex_4 [color=cyan3, shape=box, label="¬⟦sk_A1 = X0⟧/2\l", style=filled];
+  vertex_4 -> vertex_5 [label="simplify\l\{X0[0] → sk_A1[0]\}[0]\l", dir="back"];
+  vertex_5 [shape=box, label="forall (X0:point). X0 ≠ sk_A1 ← ⟦sk_A1 = X0⟧/2\l", style=filled];
+  vertex_5 -> vertex_6 [label="s_sup-\l\{X0[0] → sk_B X2[1]\}[1]\l", dir="back"];
+  vertex_6 [shape=box, label="forall (X2:point). X2 ≠ sk_B X2\l", style=filled];
+  vertex_6 -> vertex_7 [label="cnf", dir="back"];
+  vertex_7 [color=yellow, shape=box, label="assert\l  [file\l   \"../resultat/geocoq_extract/zf/Ch11_angles/segment_construction_0.zf\" \l   \"Labelanother_point\"]\l  ∀ A/135:point. (∃ B/136:point. (A/135 ≠ B/136)).\l", style=filled];
+  vertex_5 -> vertex_8 [label="s_sup-\l\{X0[0] → sk_B X2[1]\}[0]\l", dir="back"];
+  vertex_8 [shape=box, label="forall (X0:point). sk_A1 = X0 ← ⟦sk_A1 = X0⟧/2\l", style=filled];
+  vertex_8 -> vertex_9 [label="split", dir="back"];
+  vertex_9 [shape=box, label="forall (X0:point). [sk_A = sk_B1 ∨ sk_A1 = X0]\l", style=filled];
+  vertex_9 -> vertex_10 [label="s_sup-\l\{X6[0] → sk_A1[1], \l X7[0] → sk_B1[1], \l X8[0] → sk_A[1], \l X9[1] → sk_C X7 X8 X5 X6[0]\}[1]\l", dir="back"];
+  vertex_10 [shape=box, label="forall (X9:point). ¬Cong sk_A1 X9 sk_A sk_B1\l", style=filled];
+  vertex_10 -> vertex_11 [label="cnf", dir="back"];
+  vertex_11 [shape=box, label="negated_goal\l  ¬ (∀ A/144:point B/145:point A1/146:point.\l        (∃ B1/147:point. (Cong A1/146 B1/147 A/144 B/145)))\l  # skolems: [].\l", style=filled];
+  vertex_11 -> vertex_12 [label="cnf.neg", dir="back"];
+  vertex_12 [color=green, shape=box, label="goal\l  [file\l   \"../resultat/geocoq_extract/zf/Ch11_angles/segment_construction_0.zf\" \l   \"zf_stmt_128\"]\l  ∀ A/144:point B/145:point A1/146:point.\l    (∃ B1/147:point. (Cong A1/146 B1/147 A/144 B/145)).\l", style=filled];
+  vertex_9 -> vertex_13 [label="s_sup-\l\{X6[0] → sk_A1[1], \l X7[0] → sk_B1[1], \l X8[0] → sk_A[1], \l X9[1] → sk_C X7 X8 X5 X6[0]\}[0]\l", dir="back"];
+  vertex_13 [shape=box, label="forall (X5:point) (X6:point) (X7:point) (X8:point).\l[X6 = X5 ∨ Cong X6 (sk_C X7 X8 X5 X6) X8 X7 ∨ X8 = X7]\l", style=filled];
+  vertex_13 -> vertex_14 [label="cnf", dir="back"];
+  vertex_14 [color=yellow, shape=box, label="assert\l  [file\l   \"../resultat/geocoq_extract/zf/Ch11_angles/segment_construction_0.zf\" \l   \"Labelsegment_construction_3\"]\l  ∀ A/139:point B/140:point X/141:point Y/142:point.\l    ((A/139 ≠ B/140) ⇒\l     ((X/141 ≠ Y/142) ⇒\l      (∃ C/143:point.\l         ((Cong A/139 C/143 X/141 Y/142) ∧ (Out A/139 B/140 C/143))))).\l", style=filled];
+  vertex_3 -> vertex_15 [label="sat_resolution", dir="back"];
+  vertex_15 [color=cyan3, shape=box, label="⟦sk_A1 = X0⟧/2 ⊔ ⟦sk_A = sk_B1⟧/3\l", style=filled];
+  vertex_15 -> vertex_9 [label="split", dir="back"];
+  vertex_2 -> vertex_16 [label="simpl_trail", dir="back"];
+  vertex_16 [shape=box, label="sk_A = sk_B1 ← ⟦sk_A = sk_B1⟧/3\l", style=filled];
+  vertex_16 -> vertex_9 [label="split", dir="back"];
+  vertex_1 -> vertex_10 [label="demod", dir="back"];
+  vertex_0 -> vertex_17 [label="s_sup-\l\{X9[0] → sk_A1[0], X3[1] → sk_A1[0], X4[1] → sk_A[0]\}[1]\l", dir="back"];
+  vertex_17 [shape=box, label="forall (X3:point) (X4:point). Cong X3 X3 X4 X4\l", style=filled];
+  vertex_17 -> vertex_18 [label="cnf", dir="back"];
+  vertex_18 [color=yellow, shape=box, label="assert\l  [file\l   \"../resultat/geocoq_extract/zf/Ch11_angles/segment_construction_0.zf\" \l   \"Labelcong_trivial_identity\"]\l  ∀ A/137:point B/138:point. (Cong A/137 A/137 B/138 B/138).\l", style=filled];
+  }
+
+

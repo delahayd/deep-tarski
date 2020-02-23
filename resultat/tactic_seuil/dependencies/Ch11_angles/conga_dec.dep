@@ -1,0 +1,2 @@
+lemme : conga_sym eq_dec_points
+rewrite : CongA

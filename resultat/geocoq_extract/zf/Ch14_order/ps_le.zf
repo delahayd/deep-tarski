@@ -1,0 +1,16 @@
+include "../tarski_term_def.zf".
+val O : point.
+val E : point.
+val E1 : point.
+assert ~Col O E E1.
+#col_permutation_5
+assert[name "Labelcol_permutation_5"] forall (A B C : point). Col A B C => Col A C B.
+#diff_A_O
+assert[name "Labeldiff_A_O"] forall (O E E1 A : point). ~Col O E E1 => Col O E A => Diff O E E1 A O A.
+#not_col_distincts
+assert[name "Labelnot_col_distincts"] forall (A B C : point). ~Col A B C => ~Col A B C && A!=B && B!=C && A!=C.
+#eq_dec_points
+assert[name "Labeleq_dec_points"] forall (A B : point). A=B || A!=B.
+#bet_col
+assert[name "Labelbet_col"] forall (A B C : point). Bet A B C => Col A B C.
+goal forall (O E E1 X : point). ~Col O E E1 => Bet O X E || Bet O E X => LeP O E E1 O X.

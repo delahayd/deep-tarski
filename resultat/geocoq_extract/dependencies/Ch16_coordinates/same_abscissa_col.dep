@@ -1,0 +1,3 @@
+lemme : l4_13 eq_dec_points col_cong_3_cong_3_eq cong_3_sym perp_left_comm perp_sym col_trivial_1 col_trivial_3 perp_perp_col perp_comm
+rewrite : Cs
+destruct : HCdA HCdC HCdB H H1 H2

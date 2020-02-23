@@ -1,0 +1,6 @@
+include "../tarski_term_def.zf".
+#l11_44_1_b
+assert[name "Labell11_44_1_b"] forall (A B C : point). ~Col A B C => CongA B A C B C A => Cong B A B C.
+#l11_44_1_a
+assert[name "Labell11_44_1_a"] forall (A B C : point). ~Col A B C => Cong B A B C => CongA B A C B C A.
+goal forall (A B C : point). ~Col A B C => (CongA B A C B C A <=> Cong B A B C).

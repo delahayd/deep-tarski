@@ -1,0 +1,3 @@
+lemme : col_permutation_3 eq_dec_points perp_distinct midpoint_col perp_sym l7_2 symmetric_point_construction out_distinct l9_2 perp_left_comm col_permutation_1 l8_18_existence between_trivial col_transitivity_1 not_col_distincts midpoint_distinct_1 col_permutation_5 l9_4_2 perp_col perp_right_comm l7_3 out_trivial col_trivial_2 l9_3 l6_6 l9_4_1 col_permutation_2 midpoint_existence out_col
+rewrite : TS Out
+destruct : H11

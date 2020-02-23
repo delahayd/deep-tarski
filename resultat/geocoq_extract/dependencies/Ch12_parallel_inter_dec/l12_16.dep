@@ -1,0 +1,3 @@
+lemme : col_permutation_3 col_permutation_5 col_trivial_1 par_symmetry col_permutation_2 col_permutation_4 not_col_permutation_1 col_not_col_not_par col3 not_par_inter_exists l8_18_existence par_trans col_permutation_1
+rewrite : Par_strict Par Inter
+destruct : 

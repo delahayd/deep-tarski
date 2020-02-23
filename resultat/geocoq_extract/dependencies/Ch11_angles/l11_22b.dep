@@ -1,0 +1,3 @@
+lemme : cong_symmetry col_permutation_2 l11_13 col_trivial_1 l11_22a l9_8_2 col_transitivity_1 l9_2 between_symmetry col_permutation_4 segment_construction cong_identity
+rewrite : Col OS CongA TS
+destruct : 

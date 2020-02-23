@@ -1,0 +1,3 @@
+lemme : bet_neq12__neq not_col_permutation_4 col_permutation_4 perp_sym eq_dec_points between_symmetry l9_2 l6_21 col_permutation_2 perp2_par perp_comm l12_6 between_identity not_col_distincts col_trivial_1 col_permutation_5 perp_perp_col between_trivial bet_col l9_8_2 col_trivial_2 not_col_permutation_5
+rewrite : TS Perp2
+destruct : 

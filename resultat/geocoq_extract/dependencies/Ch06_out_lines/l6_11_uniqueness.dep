@@ -1,0 +1,3 @@
+lemme : between_exchange4 cong_symmetry cong_commutativity l4_19 between_cong l5_1 cong_reflexivity between_symmetry cong_transitivity l4_3
+rewrite : Out
+destruct : 

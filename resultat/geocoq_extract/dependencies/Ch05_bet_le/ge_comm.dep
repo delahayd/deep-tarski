@@ -1,0 +1,3 @@
+lemme : ge_right_comm ge_left_comm
+rewrite : 
+destruct : 

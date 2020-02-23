@@ -1,0 +1,3 @@
+lemme : bet_in_angle_bet bet_conga_bet
+rewrite : InAngle LeA
+destruct : 

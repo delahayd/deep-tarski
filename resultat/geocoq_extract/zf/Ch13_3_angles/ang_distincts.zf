@@ -1,0 +1,9 @@
+include "../tarski_term_def.zf".
+#ex_lg
+assert[name "Labelex_lg"] forall (A B : point). (exists (l : point->point->prop). Q_Cong l && l A B).
+#ang_sym
+assert[name "Labelang_sym"] forall (A B C : point) ( a : point->point->point->prop). Q_CongA a => a A B C => a C B A.
+#ang_not_null_lg
+assert[name "Labelang_not_null_lg"] forall (A B C : point) (l : point->point->prop) (a : point->point->point->prop). Q_CongA a => Q_Cong l => a A B C => l A B => ~Q_Cong_Null l.
+rewrite[name "LabelQ_Cong_Null"] forall (l : point->point->prop). Q_Cong_Null l <=> Q_Cong l && (exists (A : point). l A A).
+goal forall (A B C : point) (a : point->point->point->prop). Q_CongA a => a A B C => A!=B && C!=B.

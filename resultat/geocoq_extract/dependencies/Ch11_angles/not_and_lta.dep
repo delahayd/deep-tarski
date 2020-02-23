@@ -1,0 +1,3 @@
+lemme : lea_asym
+rewrite : LtA
+destruct : 

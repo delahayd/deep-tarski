@@ -1,0 +1,2 @@
+lemme : cong_3_swap_2 conga_sym cong_3_swap out_trivial cong_identity cong_commutativity l4_6 cong_symmetry
+rewrite : Col Out Cong_3

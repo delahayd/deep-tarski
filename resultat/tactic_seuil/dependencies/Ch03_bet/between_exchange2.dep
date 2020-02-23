@@ -1,0 +1,2 @@
+lemme : inner_pasch between_identity between_symmetry between_inner_transitivity cong_identity cong_symmetry outer_transitivity_between2
+rewrite :

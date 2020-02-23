@@ -1,0 +1,4 @@
+include "../rew_type.zf".
+#between_trivial
+assert[name "Labelbetween_trivial"] forall (A B : point). Bet A B B.
+goal forall (A B : point). A=B || A!=B.

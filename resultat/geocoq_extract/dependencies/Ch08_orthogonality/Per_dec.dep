@@ -1,0 +1,3 @@
+lemme : symmetric_point_construction symmetric_point_uniqueness
+rewrite : Per
+destruct : 

@@ -1,0 +1,13 @@
+include "../tarski_term_def.zf".
+#anga_acute
+assert[name "Labelanga_acute"] forall (A B C : point) (a : point->point->point->prop). Q_CongA_Acute a => a A B C => Acute A B C.
+#acute_not_bet
+assert[name "Labelacute_not_bet"] forall (A B C : point). Acute A B C => ~Bet A B C.
+#between_symmetry
+assert[name "Labelbetween_symmetry"] forall (A B C : point). Bet A B C => Bet C B A.
+#out_null_anga
+assert[name "Labelout_null_anga"] forall (A B C : point) (a : point->point->point->prop). Q_CongA_Acute a => a A B C => Out B A C => Q_CongA_Null_Acute a.
+#anga_distincts
+assert[name "Labelanga_distincts"] forall (A B C : point) ( a : point->point->point->prop). Q_CongA_Acute a => a A B C => A!=B && C!=B.
+rewrite[name "LabelOut"] forall (P A B : point). Out P A B <=> A != P && B != P && (Bet P A B || Bet P B A).
+goal forall (A B C : point) (a : point->point->point->prop). Q_CongA_Acute a => a A B C => Col A B C => Out B A C && Q_CongA_Null_Acute a.

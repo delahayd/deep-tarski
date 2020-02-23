@@ -1,0 +1,3 @@
+lemme : another_point cong_reflexivity segment_construction_3 cong_symmetry lg_null_instance lg_null_dec
+rewrite : Q_Cong Q_Cong_Null
+destruct : HH HP

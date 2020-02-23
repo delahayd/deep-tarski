@@ -1,0 +1,20 @@
+digraph "unsat_graph" {
+  vertex_0 [color=red, label="[]", shape=box, style=filled];
+  vertex_0 -> vertex_1 [label="s_sup-\l", dir="back"];
+  vertex_1 [shape=box, label="¬Prod sk_O sk_E sk_E1 sk_B sk_A sk_C\l", style=filled];
+  vertex_1 -> vertex_2 [label="cnf", dir="back"];
+  vertex_2 [shape=box, label="negated_goal\l  ¬ (∀ O/142:point E/143:point E1/144:point A/145:point B/146:point \l        C/147:point.\l        ((Prod O/142 E/143 E1/144 A/145 B/146 C/147) ⇒\l         (Prod O/142 E/143 E1/144 B/146 A/145 C/147)))\l  # skolems: [].\l", style=filled];
+  vertex_2 -> vertex_3 [label="cnf.neg", dir="back"];
+  vertex_3 [color=green, shape=box, label="goal\l  [file \"../resultat/geocoq_extract/zf/Ch14_prod/prod_sym.zf\" \"zf_stmt_132\"]\l  ∀ O/142:point E/143:point E1/144:point A/145:point B/146:point \l    C/147:point.\l    ((Prod O/142 E/143 E1/144 A/145 B/146 C/147) ⇒\l     (Prod O/142 E/143 E1/144 B/146 A/145 C/147)).\l", style=filled];
+  vertex_0 -> vertex_4 [label="s_sup-\l", dir="back"];
+  vertex_4 [shape=box, label="Prod sk_O sk_E sk_E1 sk_B sk_A sk_C\l", style=filled];
+  vertex_4 -> vertex_5 [label="s_sup-\l\{X0[0] → sk_O[1], \l X1[0] → sk_E[1], \l X2[0] → sk_E1[1], \l X3[0] → sk_B[1], \l X4[0] → sk_A[1], \l X5[0] → sk_C[1]\}[0]\l", dir="back"];
+  vertex_5 [shape=box, label="forall (X0:point) (X1:point) (X2:point) (X3:point) (X4:point) (X5:point).\l[Prod X0 X1 X2 X3 X4 X5 ∨ ¬Prod X0 X1 X2 X4 X3 X5]\l", style=filled];
+  vertex_5 -> vertex_6 [label="cnf", dir="back"];
+  vertex_6 [color=yellow, shape=box, label="assert\l  [file \"../resultat/geocoq_extract/zf/Ch14_prod/prod_sym.zf\" \l   \"Labelprod_comm\"]\l  ∀ O/136:point E/137:point E1/138:point A/139:point B/140:point \l    C/141:point.\l    ((Prod O/136 E/137 E1/138 A/139 B/140 C/141) ⇒\l     (Prod O/136 E/137 E1/138 B/140 A/139 C/141)).\l", style=filled];
+  vertex_4 -> vertex_7 [label="s_sup-\l\{X0[0] → sk_O[1], \l X1[0] → sk_E[1], \l X2[0] → sk_E1[1], \l X3[0] → sk_B[1], \l X4[0] → sk_A[1], \l X5[0] → sk_C[1]\}[1]\l", dir="back"];
+  vertex_7 [shape=box, label="Prod sk_O sk_E sk_E1 sk_A sk_B sk_C\l", style=filled];
+  vertex_7 -> vertex_2 [label="cnf", dir="back"];
+  }
+
+

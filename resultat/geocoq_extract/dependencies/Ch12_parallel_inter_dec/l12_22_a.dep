@@ -1,0 +1,3 @@
+lemme : col_one_side_out l11_10 col_permutation_4 par_neq2 eq_dec_points between_symmetry l9_2 l12_21_a par_left_comm l11_14 bet_out l6_6 conga_sym os_distincts par_symmetry conga_trans not_col_distincts col_one_side out_trivial par_id cong_diff_4 one_side_symmetry out2__conga invert_one_side col_trivial_1 col_permutation_5 segment_construction bet_col l9_8_2 one_side_not_col123 bet_neq21__neq par_col_par_2
+rewrite : 
+destruct : HOut

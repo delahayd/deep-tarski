@@ -1,0 +1,3 @@
+lemme : sum_A_O_eq perp_in_per eq_dec_points cong_symmetry col_permutation_1 not_col_distincts perp_perp_in col_permutation_5 cong_transitivity perp_col l7_20 perp_in_comm sum_pos_pos out2_out_1 l6_4_1 sum_comm col_trivial_1 l6_6 cong_identity perp_distinct O_not_positive perp_perp_col col_permutation_4 sum_uniquenessA symmetric_point_uniqueness col_transitivity_1 perp_sym perp_comm sum_O_B_eq perp_right_comm
+rewrite : Opp Ps PythRel Midpoint Per Ar2
+destruct : 
